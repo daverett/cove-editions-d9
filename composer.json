@@ -56,7 +56,9 @@
         "drupal/geocoder": "^3.31",
         "drupal/geocoder_autocomplete": "^2.0",
         "geocoder-php/google-maps-provider": "^4.7",
-        "drupal/geofield": "^1.49"
+        "drupal/geofield": "^1.49",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_tools": "^6.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
