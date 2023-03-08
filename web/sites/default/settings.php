@@ -32,3 +32,19 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+$databases['cove7']['default'] = array(
+  'database' => 'drupal',
+  'username' => 'covemigrate2',
+  'password' => '*rik@2tGK6RS',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+
+$migrate_settings = __DIR__ . "/settings.migrate-on-pantheon.php";
+if (file_exists($migrate_settings) && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+ include $migrate_settings;
+}
