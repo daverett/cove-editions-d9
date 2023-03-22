@@ -48,3 +48,4 @@ $migrate_settings = __DIR__ . "/settings.migrate-on-pantheon.php";
 if (file_exists($migrate_settings) && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
  include $migrate_settings;
 }
+ini_set('memory_limit', '512M');
