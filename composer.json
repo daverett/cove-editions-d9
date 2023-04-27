@@ -60,7 +60,8 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/migrate_manifest": "^3.0",
-        "drupal/features": "^3.12"
+        "drupal/features": "^3.12",
+        "drupal/entity_browser": "^2.9"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
