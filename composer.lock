@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45fa6d08dafe1b17d039d54d8827c5e5",
+    "content-hash": "b48a2200a332c63e66a9ea3c1430346a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4537,67 +4537,6 @@
                 "source": "http://git.drupal.org/project/views_geojson.git",
                 "issues": "https://www.drupal.org/project/issues/views_geojson",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/views_migration",
-            "version": "1.2.6",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/views_migration.git",
-                "reference": "1.2.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_migration-1.2.6.zip",
-                "reference": "1.2.6",
-                "shasum": "f6fb8b2b43f28a493b2d06b4e48af51b2eb119bc"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10",
-                "drupal/migrate_plus": "^6.0",
-                "drupal/migrate_tools": "^6.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.2.6",
-                    "datestamp": "1683040002",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Jeya Sundharam (Jeya sundhar)",
-                    "homepage": "https://www.drupal.org/u/jeya-sundhar",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://git.drupalcode.org/project/views_migration/-/graphs/HEAD",
-                    "role": "Contributor"
-                },
-                {
-                    "name": "tame4tex",
-                    "homepage": "https://www.drupal.org/user/1824356"
-                },
-                {
-                    "name": "webchick",
-                    "homepage": "https://www.drupal.org/user/24967"
-                }
-            ],
-            "description": "Migrate Drupal 7 Views to Drupal 9",
-            "homepage": "https://drupal.org/project/views_migration",
-            "support": {
-                "source": "https://git.drupalcode.org/project/views_migration",
-                "issues": "https://www.drupal.org/project/issues/views_migration"
             }
         },
         {
