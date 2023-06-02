@@ -11,8 +11,21 @@
         {
             "type": "path",
             "url": "upstream-configuration"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "Gizra/og",
+        "version": "1.0",
+        "type": "drupal-module",
+        "source": {
+          "url": "https://github.com/Gizra/og.git",
+          "type": "git",
+          "reference": "8.x-1.x"
         }
-    ],
+      }
+    }
+  ],
     "require": {
         "pantheon-upstreams/upstream-configuration": "dev-main",
         "composer/installers": "^1.9",
