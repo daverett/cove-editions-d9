@@ -62,7 +62,8 @@
         "drupal/migrate_manifest": "^3.0",
         "drupal/features": "^3.12",
         "drupal/entity_browser": "^2.9",
-        "drupal/views_migration": "^1.2"
+        "drupal/views_migration": "^1.2",
+        "drupal/og": "^1.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
