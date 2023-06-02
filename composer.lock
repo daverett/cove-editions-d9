@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60d438283c6b9366039fa8ee75ef7bc0",
+    "content-hash": "ef86edf2d1d5e49cb9969aaaf8d11ad3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5333,6 +5333,16 @@
                 "source": "https://github.com/geocoder-php/google-maps-provider/tree/4.7.0"
             },
             "time": "2022-07-30T12:09:30+00:00"
+        },
+        {
+            "name": "gizra/og",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gizra/og.git",
+                "reference": "8.x-1.x"
+            },
+            "type": "drupal-module"
         },
         {
             "name": "grasmash/expander",
