@@ -77,7 +77,8 @@
         "drupal/entity_browser": "^2.9",
         "drupal/views_migration": "^1.2",
         "drupal/og": "^1.0@alpha",
-        "gizra/og": "^1.0"
+        "gizra/og": "^1.0",
+        "drupal/imce": "^3.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
