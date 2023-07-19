@@ -15,11 +15,11 @@
     {
       "type": "package",
       "package": {
-        "name": "gizra/og",
+        "name": "mradcliffe/og",
         "version": "1.0",
         "type": "drupal-module",
         "source": {
-          "url": "https://github.com/gizra/og.git",
+          "url": "https://github.com/mradcliffe/og.git",
           "type": "git",
           "reference": "8.x-1.x"
         }
