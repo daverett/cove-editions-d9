@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "493359c1b65d37db15ecf582ab051cf3",
+    "content-hash": "95bfc3f48af04eb37efc07b66d3ff157",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6171,6 +6171,16 @@
                 "source": "https://github.com/mehrpadin/Superfish-for-Drupal/tree/2.x"
             },
             "time": "2017-05-30T13:00:18+00:00"
+        },
+        {
+            "name": "mradcliffe/og",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mradcliffe/og.git",
+                "reference": "8.x-1.x"
+            },
+            "type": "drupal-module"
         },
         {
             "name": "nikic/php-parser",

@@ -21,7 +21,7 @@
         "source": {
           "url": "https://github.com/mradcliffe/og.git",
           "type": "git",
-          "reference": "8.x-1.x"
+          "reference": "og-migrate"
         }
       }
     }
