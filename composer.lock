@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a7e6a6a2ee6c32d0541df129a93c365",
+    "content-hash": "493359c1b65d37db15ecf582ab051cf3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5289,16 +5289,6 @@
             "time": "2022-07-30T12:09:30+00:00"
         },
         {
-            "name": "gizra/og",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Gizra/og.git",
-                "reference": "8.x-1.x"
-            },
-            "type": "drupal-module"
-        },
-        {
             "name": "grasmash/expander",
             "version": "2.0.3",
             "source": {
@@ -6181,16 +6171,6 @@
                 "source": "https://github.com/mehrpadin/Superfish-for-Drupal/tree/2.x"
             },
             "time": "2017-05-30T13:00:18+00:00"
-        },
-        {
-            "name": "mradcliffe/og",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mradcliffe/og.git",
-                "reference": "8.x-1.x"
-            },
-            "type": "drupal-module"
         },
         {
             "name": "nikic/php-parser",
