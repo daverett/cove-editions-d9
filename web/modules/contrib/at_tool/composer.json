@@ -1,0 +1,24 @@
+{
+  "name": "drupal/at_tools",
+  "description": "Tools to support Adaptivetheme 8.x and sub-themes, includes the AT Theme Generator.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/at_tool",
+  "authors": [
+    {
+      "name": "Matt",
+      "homepage": "http://adaptivethemes.com",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/at_tool",
+    "irc": "irc://irc.freenode.org/drupal-contribute",
+    "source": "http://git.drupal.org/project/at_tool.git"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/adaptivetheme": "^5.0",
+	"drupal/core": "^9.3 || ^10"
+  }
+}

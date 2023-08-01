@@ -1,0 +1,9 @@
+name: AT Tool
+type: module
+description: Module level features to support Adpativetheme. This is a new version of AT Tools that supports Drupal 9
+core_version_requirement: ^9.3 || ^10
+package: Adaptivethemes
+# Information added by Drupal.org packaging script on 2022-02-03
+version: '2.0.3'
+project: 'at_tool'
+datestamp: 1643915560
