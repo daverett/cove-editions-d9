@@ -1,0 +1,11 @@
+name: AT Theme Generator
+type: module
+description: Adaptivetheme theme generator.
+core_version_requirement: ^9.3 || ^10
+package: Adaptivethemes
+dependencies:
+  - at_tool
+# Information added by Drupal.org packaging script on 2022-02-03
+version: '2.0.3'
+project: 'at_tool'
+datestamp: 1643915560

@@ -1,0 +1,12 @@
+type: module
+name: Migrate Manifest
+description: 'Supports the running of migrations using a structured manifest file.'
+package: Migration
+core_version_requirement: ^9.1
+dependencies:
+- migrate
+
+# Information added by Drupal.org packaging script on 2021-07-28
+version: '3.0.2'
+project: 'migrate_manifest'
+datestamp: 1627500289

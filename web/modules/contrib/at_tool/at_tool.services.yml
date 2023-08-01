@@ -1,0 +1,4 @@
+services:
+  at_tool.lazy_builders:
+    class: Drupal\at_tool\AtToolLazyBuilders
+    arguments: ['@request_stack', '@current_route_match', '@title_resolver']
