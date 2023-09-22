@@ -13,8 +13,17 @@
       "url": "upstream-configuration"
     },
     {
-      "type": "git",
-      "url": "https://github.com/mradcliffe/og.git"
+      "type": "package",
+      "package": {
+        "name": "mradcliffe/og",
+        "version": "master",
+        "type": "drupal-module",
+        "source": {
+          "url": "https://github.com/mradcliffe/og.git",
+          "type": "git",
+          "reference": "og-migrate"
+        }
+      }
     }
   ],
   "require": {
@@ -24,7 +33,7 @@
     "drupal/core-recommended": "^9.2",
     "pantheon-systems/drupal-integrations": "^9",
     "cweagans/composer-patches": "^1.7",
-    "drush/drush": "^11 || ^12",
+    "drush/drush": "^11.6",
     "drupal/admin_toolbar": "^3.3",
     "drupal/adaptivetheme": "^5.1",
     "drupal/at_tool": "^2.0",
@@ -68,11 +77,18 @@
     "drupal/entity_browser": "^2.9",
     "drupal/views_migration": "^1.2",
     "drupal/imce": "^3.0",
-    "mradcliffe/og": "^1.0"
+    "mradcliffe/og": "master",
+    "drupal/feeds": "^3.0@beta",
+    "drupal/bootstrap_barrio": "^5.1",
+    "drupal/bootstrap": "^3.29",
+    "drupal/devel": "^5.0",
+    "drupal/classy": "^1.0",
+    "drupal/dxpr_theme": "^5.1",
+    "drupal/dxpr_theme_helper": "^1.0"
   },
   "require-dev": {"drupal/core-dev": "^9.2"},
   "conflict": {"drupal/drupal": "*"},
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
     "drupal-scaffold": {
@@ -114,7 +130,8 @@
       "cweagans/composer-patches": true,
       "drupal/core-composer-scaffold": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "wikimedia/composer-merge-plugin": true
+      "wikimedia/composer-merge-plugin": true,
+      "php-http/discovery": true
     }
   }
 }

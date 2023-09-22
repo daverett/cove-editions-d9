@@ -33,12 +33,12 @@ if (file_exists($local_settings)) {
   include $local_settings;
 }
 
-$databases['cove7']['default'] = array(
+$databases['migrate']['default'] = array(
   'database' => 'drupal',
   'username' => 'covemigrate2',
   'password' => '*rik@2tGK6RS',
   'prefix' => '',
-  'host' => 'localhost',
+  'host' => '164.92.87.250',
   'port' => '',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
@@ -49,3 +49,8 @@ if (file_exists($migrate_settings) && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
  include $migrate_settings;
 }
 ini_set('memory_limit', '512M');
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
+}
