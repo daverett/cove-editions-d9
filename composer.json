@@ -13,6 +13,18 @@
       "url": "upstream-configuration"
     },
     {
+		"type": "package",
+		"package": {
+		"name": "jackmoore/colorbox",
+		"version": "1.6.4",
+		"type": "drupal-library",
+			"dist": {
+                "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
+                "type": "zip"
+    }
+    }
+    },
+    {
       "type": "package",
       "package": {
         "name": "mradcliffe/og",
@@ -84,7 +96,11 @@
     "drupal/devel": "^5.0",
     "drupal/classy": "^1.0",
     "drupal/dxpr_theme": "^5.1",
-    "drupal/dxpr_theme_helper": "^1.0"
+    "drupal/dxpr_theme_helper": "^1.0",
+    "drupal/dxpr_builder": "^2.5",
+    "drupal/inline_entity_form": "^2.0@RC",
+    "jackmoore/colorbox": "^1.6",
+    "drupal/feeds_tamper": "^2.0@beta"
   },
   "require-dev": {"drupal/core-dev": "^9.2"},
   "conflict": {"drupal/drupal": "*"},
