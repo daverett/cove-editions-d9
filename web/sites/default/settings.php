@@ -58,3 +58,4 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
 $config_directories['sync'] = '../config/sync';
 
 $settings['file_private_path'] = __DIR__ . '/files/private';
+$settings['file_private_path'] = '/private';
