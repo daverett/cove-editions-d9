@@ -20,3 +20,11 @@ directly accept pull requests.
 
 Instead, to propose a change, please fork [pantheon-systems/drupal-composer-managed](https://github.com/pantheon-systems/drupal-composer-managed)
 and submit a PR to that repository.
+
+## Database and files
+
+Backups of the database and site files can be found here: 
+
+Files: https://drive.google.com/drive/folders/1--srUMxQVX_mgXtMQvyC1I6T2TVvAvkN?usp=sharing
+
+DB: https://drive.google.com/drive/folders/1VlldnwwOAQ-Gh3Zy4Eo89FQctP_jHkBD?usp=sharing
