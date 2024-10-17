@@ -23,7 +23,7 @@ base:
       styles/css/components/markers.css: {}
       styles/css/components/messages.css: {}
       styles/css/components/print.css: {}
-
+      
 # Aggregator
 aggregator:
   version: 8.x-1.0
@@ -418,3 +418,9 @@ custom_css_file:
   css:
     theme:
       styles/css/custom.css: { weight: 1000 }
+      
+# Google font
+google-fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200': { type: external, minified: true }

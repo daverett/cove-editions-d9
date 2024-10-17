@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a4b2400f01d21f98533bb6b6dc7186c",
+    "content-hash": "4e54f1e82c5a0923d8752a1000bd3865",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4702,6 +4702,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/leaflet",
                 "issues": "https://www.drupal.org/project/issues/leaflet"
+            }
+        },
+        {
+            "name": "drupal/leaflet_layers",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/leaflet_layers.git",
+                "reference": "1.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/leaflet_layers-1.1.4.zip",
+                "reference": "1.1.4",
+                "shasum": "937f9e6e2f51521787a6a813e67ec6e57607dd40"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10",
+                "drupal/leaflet": "^2.0 || ^10.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.4",
+                    "datestamp": "1671980897",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/3164541/committers"
+                },
+                {
+                    "name": "askildolsen",
+                    "homepage": "https://www.drupal.org/user/1856380"
+                }
+            ],
+            "description": "Provide configurable config for Leaflet.",
+            "homepage": "https://www.drupal.org/project/leaflet_layers/",
+            "support": {
+                "source": "https://git.drupalcode.org/project/leaflet_layers",
+                "issues": "https://www.drupal.org/project/issues/leaflet_layers"
             }
         },
         {

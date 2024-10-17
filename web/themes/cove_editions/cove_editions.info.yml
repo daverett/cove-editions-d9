@@ -44,3 +44,7 @@ features:
   - node_user_picture
   - comment_user_picture
   - comment_user_verification
+libraries:
+  - 'cove_editions/global-styling'
+  - 'cove_editions/bootstrap-scripts'
+  - 'cove_editions/google-fonts'
