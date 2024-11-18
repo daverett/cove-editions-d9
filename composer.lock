@@ -125,23 +125,23 @@
         },
         {
             "name": "clue/stream-filter",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clue/stream-filter.git",
-                "reference": "d6169430c7731d8509da7aecd0af756a5747b78e"
+                "reference": "049509fef80032cb3f051595029ab75b49a3c2f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/stream-filter/zipball/d6169430c7731d8509da7aecd0af756a5747b78e",
-                "reference": "d6169430c7731d8509da7aecd0af756a5747b78e",
+                "url": "https://api.github.com/repos/clue/stream-filter/zipball/049509fef80032cb3f051595029ab75b49a3c2f7",
+                "reference": "049509fef80032cb3f051595029ab75b49a3c2f7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.36"
+                "phpunit/phpunit": "^9.6 || ^5.7 || ^4.8.36"
             },
             "type": "library",
             "autoload": {
@@ -163,7 +163,7 @@
                 }
             ],
             "description": "A simple and modern approach to stream filtering in PHP",
-            "homepage": "https://github.com/clue/php-stream-filter",
+            "homepage": "https://github.com/clue/stream-filter",
             "keywords": [
                 "bucket brigade",
                 "callback",
@@ -175,7 +175,7 @@
             ],
             "support": {
                 "issues": "https://github.com/clue/stream-filter/issues",
-                "source": "https://github.com/clue/stream-filter/tree/v1.6.0"
+                "source": "https://github.com/clue/stream-filter/tree/v1.7.0"
             },
             "funding": [
                 {
@@ -187,7 +187,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-21T13:15:14+00:00"
+            "time": "2023-12-20T15:40:13+00:00"
         },
         {
             "name": "composer/installers",
@@ -1748,7 +1748,7 @@
                     "homepage": "https://www.drupal.org/user/3308753"
                 },
                 {
-                    "name": "Neslee Canil Pinto",
+                    "name": "neslee canil pinto",
                     "homepage": "https://www.drupal.org/user/3580850"
                 },
                 {
@@ -1765,20 +1765,20 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "3.4.1",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.4.1"
+                "reference": "3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.4.1.zip",
-                "reference": "3.4.1",
-                "shasum": "bcb15ab40016becdb3ac8f21d7d1a721f48f3577"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.5.1.zip",
+                "reference": "3.5.1",
+                "shasum": "b5215109836f7fade374fef531231e36c1c9b945"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.5 || ^10 || ^11"
             },
             "require-dev": {
                 "drupal/admin_toolbar_tools": "*"
@@ -1786,8 +1786,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.4.1",
-                    "datestamp": "1684944156",
+                    "version": "3.5.1",
+                    "datestamp": "1730409973",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1821,11 +1821,15 @@
                     "role": "Maintainer"
                 },
                 {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
                     "name": "matio89",
                     "homepage": "https://www.drupal.org/user/2320090"
                 },
                 {
-                    "name": "Musa.thomas",
+                    "name": "musa.thomas",
                     "homepage": "https://www.drupal.org/user/1213824"
                 },
                 {
@@ -1886,7 +1890,7 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "DamienMcKenna",
+                    "name": "damienmckenna",
                     "homepage": "https://www.drupal.org/user/108450"
                 },
                 {
@@ -1989,17 +1993,17 @@
         },
         {
             "name": "drupal/bootstrap5",
-            "version": "3.0.10",
+            "version": "3.0.14",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap5.git",
-                "reference": "3.0.10"
+                "reference": "3.0.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap5-3.0.10.zip",
-                "reference": "3.0.10",
-                "shasum": "8345e29e23439ed25037ede4e2221b3b12ae958a"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-3.0.14.zip",
+                "reference": "3.0.14",
+                "shasum": "a595afb1f983e96b4719f47592f08349792ef058"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -2007,8 +2011,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "3.0.10",
-                    "datestamp": "1694747986",
+                    "version": "3.0.14",
+                    "datestamp": "1723049842",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2026,7 +2030,7 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "VladimirAus",
+                    "name": "vladimiraus",
                     "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
@@ -2039,86 +2043,27 @@
         },
         {
             "name": "drupal/bootstrap_layout_builder",
-            "version": "2.1.2",
+            "version": "2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap_layout_builder.git",
-                "reference": "2.1.2"
+                "reference": "2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_layout_builder-2.1.2.zip",
-                "reference": "2.1.2",
-                "shasum": "c0000f57f9b218fd43b893f3311de73911020ced"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_layout_builder-2.1.7.zip",
+                "reference": "2.1.7",
+                "shasum": "c77c4c93f85c75d750f1cd9c66550c00b67aa867"
             },
             "require": {
-                "drupal/bootstrap_styles": "^1.1",
-                "drupal/core": "^9.3 || ^10"
+                "drupal/bootstrap_styles": "^1.1.0",
+                "drupal/core": "<10.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.2",
-                    "datestamp": "1690460409",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Amira Dowidar",
-                    "homepage": "https://www.drupal.org/user/3092603"
-                },
-                {
-                    "name": "mahmoud-zayed",
-                    "homepage": "https://www.drupal.org/user/2947001"
-                },
-                {
-                    "name": "Rajab Natshah",
-                    "homepage": "https://www.drupal.org/user/1414312"
-                }
-            ],
-            "description": "Add Bootstrap Grid support to Layout Builder module.",
-            "homepage": "https://www.drupal.org/project/bootstrap_layout_builder",
-            "keywords": [
-                "Bootstrap",
-                "Drupal",
-                "Grid",
-                "Layout Builder"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/bootstrap_layout_builder"
-            }
-        },
-        {
-            "name": "drupal/bootstrap_styles",
-            "version": "1.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/bootstrap_styles.git",
-                "reference": "1.1.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_styles-1.1.6.zip",
-                "reference": "1.1.6",
-                "shasum": "9453e50f155776ebe5051f728ab04145faeb94e9"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10",
-                "drupal/media_library_form_element": "^2.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.6",
-                    "datestamp": "1721035698",
+                    "version": "2.1.7",
+                    "datestamp": "1729495432",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2139,7 +2084,66 @@
                     "homepage": "https://www.drupal.org/user/2947001"
                 },
                 {
-                    "name": "Rajab Natshah",
+                    "name": "rajab natshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
+                }
+            ],
+            "description": "Add Bootstrap Grid support to Layout Builder module.",
+            "homepage": "https://www.drupal.org/project/bootstrap_layout_builder",
+            "keywords": [
+                "Bootstrap",
+                "Drupal",
+                "Grid",
+                "Layout Builder"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_layout_builder"
+            }
+        },
+        {
+            "name": "drupal/bootstrap_styles",
+            "version": "1.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_styles.git",
+                "reference": "1.1.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_styles-1.1.10.zip",
+                "reference": "1.1.10",
+                "shasum": "6f1801a1304974589091148ef095ee86773debc4"
+            },
+            "require": {
+                "drupal/core": "<10.3",
+                "drupal/media_library_form_element": "^2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.10",
+                    "datestamp": "1729496381",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Amira Dowidar",
+                    "homepage": "https://www.drupal.org/user/3092603"
+                },
+                {
+                    "name": "mahmoud-zayed",
+                    "homepage": "https://www.drupal.org/user/2947001"
+                },
+                {
+                    "name": "rajab natshah",
                     "homepage": "https://www.drupal.org/user/1414312"
                 }
             ],
@@ -2157,26 +2161,26 @@
         },
         {
             "name": "drupal/captcha",
-            "version": "1.13.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/captcha.git",
-                "reference": "8.x-1.13"
+                "reference": "8.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/captcha-8.x-1.13.zip",
-                "reference": "8.x-1.13",
-                "shasum": "761137637d2ef3dfcacecd3b150d5d13e1e53e24"
+                "url": "https://ftp.drupal.org/files/projects/captcha-8.x-1.15.zip",
+                "reference": "8.x-1.15",
+                "shasum": "57c4ac12b9b67f14c4c75f10f8615bb621c59272"
             },
             "require": {
-                "drupal/core": ">=9.4 <11"
+                "drupal/core": "^9.5 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.13",
-                    "datestamp": "1690471985",
+                    "version": "8.x-1.15",
+                    "datestamp": "1719900377",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2237,17 +2241,17 @@
         },
         {
             "name": "drupal/charts",
-            "version": "5.0.7",
+            "version": "5.0.16",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/charts.git",
-                "reference": "5.0.7"
+                "reference": "5.0.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/charts-5.0.7.zip",
-                "reference": "5.0.7",
-                "shasum": "9f38acb8a27888001613a50d9b054058d96464df"
+                "url": "https://ftp.drupal.org/files/projects/charts-5.0.16.zip",
+                "reference": "5.0.16",
+                "shasum": "514e97202dbb5a2fc170ea21ca7437c08f942e35"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -2255,8 +2259,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.0.7",
-                    "datestamp": "1687898050",
+                    "version": "5.0.16",
+                    "datestamp": "1721677969",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2394,20 +2398,20 @@
         },
         {
             "name": "drupal/colorbox",
-            "version": "2.0.1",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/colorbox.git",
-                "reference": "2.0.1"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/colorbox-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "ed5c40e3abc8f9d7ab6b1dc7f70958de266db404"
+                "url": "https://ftp.drupal.org/files/projects/colorbox-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "59f2fc48ba12ebc91293f7d33138ae6a7761b4b1"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^9 || ^10 || ^11"
             },
             "suggest": {
                 "jackmoore/colorbox": "The Colorbox library is required to use the drupal/colorbox module."
@@ -2415,8 +2419,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1684418527",
+                    "version": "2.1.1",
+                    "datestamp": "1723487172",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2424,7 +2428,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
@@ -2434,22 +2438,19 @@
             ],
             "authors": [
                 {
+                    "name": "Paul McKibben",
+                    "homepage": "https://www.drupal.org/u/paulmckibben",
+                    "role": "Maintainer"
+                },
+                {
                     "name": "Neslee Canil Pinto",
                     "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
-                    "role": "Maintainer"
+                    "role": "Former Maintainer"
                 },
                 {
                     "name": "Fredrik Jonsson",
                     "homepage": "https://www.drupal.org/u/frjo",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "RenatoG",
-                    "homepage": "https://www.drupal.org/user/3326031"
-                },
-                {
-                    "name": "Unsupported Projects",
-                    "homepage": "https://www.drupal.org/user/291168"
+                    "role": "Former Maintainer"
                 }
             ],
             "description": "A light-weight, customizable lightbox plugin for jQuery.",
@@ -2854,17 +2855,17 @@
         },
         {
             "name": "drupal/ctools",
-            "version": "3.14.0",
+            "version": "3.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "8.x-3.14"
+                "reference": "8.x-3.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-8.x-3.14.zip",
-                "reference": "8.x-3.14",
-                "shasum": "8895a8e47199b458013bc153ceafa0b1495f33c1"
+                "url": "https://ftp.drupal.org/files/projects/ctools-8.x-3.15.zip",
+                "reference": "8.x-3.15",
+                "shasum": "84e360763162bf97dfb99a21a65580e7ea504bc6"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -2872,8 +2873,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.14",
-                    "datestamp": "1684299793",
+                    "version": "8.x-3.15",
+                    "datestamp": "1718145169",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3063,10 +3064,6 @@
             ],
             "authors": [
                 {
-                    "name": "drupalspoons",
-                    "homepage": "https://www.drupal.org/user/3647684"
-                },
-                {
                     "name": "moshe weitzman",
                     "homepage": "https://www.drupal.org/user/23"
                 }
@@ -3081,20 +3078,20 @@
         },
         {
             "name": "drupal/draggableviews",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/draggableviews.git",
-                "reference": "2.1.3"
+                "reference": "2.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/draggableviews-2.1.3.zip",
-                "reference": "2.1.3",
-                "shasum": "d22af995f543ab9dfb1c8eeaaa79bdf3ef233879"
+                "url": "https://ftp.drupal.org/files/projects/draggableviews-2.1.4.zip",
+                "reference": "2.1.4",
+                "shasum": "09a484ed290cf0f52dfa399b4dfea8fd50cd403b"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^9 || ^10 || ^11"
             },
             "require-dev": {
                 "drupal/draggableviews_demo": "*"
@@ -3102,8 +3099,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.3",
-                    "datestamp": "1682439050",
+                    "version": "2.1.4",
+                    "datestamp": "1717236719",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3137,18 +3134,6 @@
                     "name": "Severin Unger (sevi)",
                     "homepage": "https://www.drupal.org/u/sevi",
                     "role": "Ex Maintainer (D6)"
-                },
-                {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
-                },
-                {
-                    "name": "sevi",
-                    "homepage": "https://www.drupal.org/user/199290"
-                },
-                {
-                    "name": "ygerasimov",
-                    "homepage": "https://www.drupal.org/user/257311"
                 }
             ],
             "description": "DraggableViews module makes views draggable.",
@@ -3223,29 +3208,29 @@
         },
         {
             "name": "drupal/dxpr_theme",
-            "version": "5.1.2",
+            "version": "5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/dxpr_theme.git",
-                "reference": "5.1.2"
+                "reference": "5.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dxpr_theme-5.1.2.zip",
-                "reference": "5.1.2",
-                "shasum": "e09db24bf136fc9623a6ee49cb86bccc06cff34d"
+                "url": "https://ftp.drupal.org/files/projects/dxpr_theme-5.2.1.zip",
+                "reference": "5.2.1",
+                "shasum": "3c6e563f52ee0fc09e6e3900756b974346c641c3"
             },
             "require": {
                 "drupal/bootstrap5": "^3",
-                "drupal/color": "*",
+                "drupal/color": "^1.0.3",
                 "drupal/core": ">=9.3",
                 "drupal/dxpr_theme_helper": "*"
             },
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "5.1.2",
-                    "datestamp": "1692390353",
+                    "version": "5.2.1",
+                    "datestamp": "1706167329",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3336,35 +3321,39 @@
         },
         {
             "name": "drupal/entity_browser",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_browser.git",
-                "reference": "8.x-2.9"
+                "reference": "8.x-2.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.9.zip",
-                "reference": "8.x-2.9",
-                "shasum": "251afad80cde9fa547501a8d9de5d94b9f5bacff"
+                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.10.zip",
+                "reference": "8.x-2.10",
+                "shasum": "d52548ea66dc56108c2e211aeaff6e1cc0522e85"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.5 || ^10"
+            },
+            "conflict": {
+                "drupal/media_entity": "1.*"
             },
             "require-dev": {
-                "drupal/embed": "~1.0",
-                "drupal/entity_embed": "1.x-dev",
-                "drupal/entity_reference_revisions": "1.x-dev",
-                "drupal/entityqueue": "1.x-dev",
-                "drupal/inline_entity_form": "1.x-dev",
-                "drupal/paragraphs": "1.x-dev",
-                "drupal/token": "1.x-dev"
+                "drupal/ckeditor": "^1.0",
+                "drupal/embed": "^1.0",
+                "drupal/entity_embed": "^1.0",
+                "drupal/entity_reference_revisions": "^1.0",
+                "drupal/entityqueue": "^1.0",
+                "drupal/inline_entity_form": "^1.0@rc",
+                "drupal/paragraphs": "^1.0",
+                "drupal/token": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.9",
-                    "datestamp": "1674070933",
+                    "version": "8.x-2.10",
+                    "datestamp": "1702325310",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3404,7 +3393,7 @@
                     "homepage": "https://www.drupal.org/user/471638"
                 },
                 {
-                    "name": "Primsi",
+                    "name": "primsi",
                     "homepage": "https://www.drupal.org/user/282629"
                 },
                 {
@@ -3417,7 +3406,7 @@
                 }
             ],
             "description": "Entity browsing and selecting component.",
-            "homepage": "http://drupal.org/project/entity_browser",
+            "homepage": "https://drupal.org/project/entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser",
                 "issues": "https://www.drupal.org/project/issues/entity_browser",
@@ -3480,17 +3469,17 @@
         },
         {
             "name": "drupal/features",
-            "version": "3.13.0",
+            "version": "3.14.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/features.git",
-                "reference": "8.x-3.13"
+                "reference": "8.x-3.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.13.zip",
-                "reference": "8.x-3.13",
-                "shasum": "d722769994ae9277fa99bba3abc2a891011055db"
+                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.14.zip",
+                "reference": "8.x-3.14",
+                "shasum": "fff0bb2d133c524ddb326422eba625c55585232c"
             },
             "require": {
                 "drupal/config_update": "^1.4 || ^2",
@@ -3499,8 +3488,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.13",
-                    "datestamp": "1686073886",
+                    "version": "8.x-3.14",
+                    "datestamp": "1702059191",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3556,10 +3545,6 @@
                 {
                     "name": "mpotter",
                     "homepage": "https://www.drupal.org/user/616192"
-                },
-                {
-                    "name": "nedjo",
-                    "homepage": "https://www.drupal.org/user/4481"
                 }
             ],
             "description": "Enables administrators to package configuration into modules",
@@ -3616,7 +3601,7 @@
                     "homepage": "https://www.drupal.org/user/53995"
                 },
                 {
-                    "name": "Dave Reid",
+                    "name": "dave reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 },
                 {
@@ -3648,7 +3633,7 @@
                     "homepage": "https://www.drupal.org/user/24399"
                 },
                 {
-                    "name": "MegaChriz",
+                    "name": "megachriz",
                     "homepage": "https://www.drupal.org/user/654114"
                 },
                 {
@@ -3680,20 +3665,20 @@
         },
         {
             "name": "drupal/feeds_tamper",
-            "version": "2.0.0-beta3",
+            "version": "2.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/feeds_tamper.git",
-                "reference": "8.x-2.0-beta3"
+                "reference": "8.x-2.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/feeds_tamper-8.x-2.0-beta3.zip",
-                "reference": "8.x-2.0-beta3",
-                "shasum": "5e70d15af38b41d913eb4d8ffea99db29024cbc9"
+                "url": "https://ftp.drupal.org/files/projects/feeds_tamper-8.x-2.0-beta4.zip",
+                "reference": "8.x-2.0-beta4",
+                "shasum": "2d72f372c6a58a1273e26a07dcb906f0fd264b99"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
                 "drupal/feeds": "^3.0",
                 "drupal/tamper": "^1.0-alpha3"
             },
@@ -3703,8 +3688,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta3",
-                    "datestamp": "1670507596",
+                    "version": "8.x-2.0-beta4",
+                    "datestamp": "1725795667",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3729,7 +3714,7 @@
                     "homepage": "https://www.drupal.org/user/642118"
                 },
                 {
-                    "name": "MegaChriz",
+                    "name": "megachriz",
                     "homepage": "https://www.drupal.org/user/654114"
                 },
                 {
@@ -3751,26 +3736,29 @@
         },
         {
             "name": "drupal/field_group",
-            "version": "3.4.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "8.x-3.4"
+                "reference": "8.x-3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.4.zip",
-                "reference": "8.x-3.4",
-                "shasum": "80b937e1a11f8b29c69d853fc4bf798c057c6f94"
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.6.zip",
+                "reference": "8.x-3.6",
+                "shasum": "427c0a65dc1936e69e60c120776056cfe5b43e86"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/jquery_ui_accordion": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.4",
-                    "datestamp": "1667241979",
+                    "version": "8.x-3.6",
+                    "datestamp": "1722672510",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3783,8 +3771,20 @@
             ],
             "authors": [
                 {
-                    "name": "Hydra",
+                    "name": "anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
+                    "name": "hydra",
                     "homepage": "https://www.drupal.org/user/647364"
+                },
+                {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
                 },
                 {
                     "name": "jyve",
@@ -3812,26 +3812,26 @@
         },
         {
             "name": "drupal/field_permissions",
-            "version": "1.2.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_permissions.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_permissions-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "0b1a5edfac518fe6005d015b3781774b41cdec76"
+                "url": "https://ftp.drupal.org/files/projects/field_permissions-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "bd3f5803d8c195bc136d4a25774346d69f653029"
             },
             "require": {
-                "drupal/core": ">=8.9 <11"
+                "drupal/core": "^9.5 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1658941749",
+                    "version": "8.x-1.4",
+                    "datestamp": "1721754779",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3876,17 +3876,17 @@
         },
         {
             "name": "drupal/geocoder",
-            "version": "3.34.0",
+            "version": "3.47.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geocoder.git",
-                "reference": "8.x-3.34"
+                "reference": "8.x-3.47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-3.34.zip",
-                "reference": "8.x-3.34",
-                "shasum": "6eb44d0b055f4239a4bd65f3fedef5829a761fce"
+                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-3.47.zip",
+                "reference": "8.x-3.47",
+                "shasum": "841705b269361b01adb00d34c7d74a14d3973054"
             },
             "require": {
                 "davedevelopment/stiphle": "^0.9.2",
@@ -3897,24 +3897,24 @@
                 "willdurand/geocoder": "^4.0"
             },
             "require-dev": {
-                "drupal/address": "*",
+                "drupal/address": "^1.11 || ^2.0",
                 "drupal/geocoder_field": "*",
-                "drupal/geofield": "*",
+                "drupal/geofield": "^1.52",
                 "geo6/geocoder-php-addok-provider": "^1.0",
                 "geo6/geocoder-php-bpost-provider": "^1.3.0",
                 "geo6/geocoder-php-geopunt-provider": "^1.0",
                 "geo6/geocoder-php-spw-provider": "^1.0",
                 "geocoder-php/arcgis-online-provider": "^4.0",
+                "geocoder-php/azure-maps-provider": "^1.2",
                 "geocoder-php/bing-maps-provider": "^4.0",
                 "geocoder-php/free-geoip-provider": "^4.1",
                 "geocoder-php/geo-plugin-provider": "^4.0",
-                "geocoder-php/geoips-provider": "^4.1",
                 "geocoder-php/geonames-provider": "^4.1",
                 "geocoder-php/google-maps-provider": "^4.2",
-                "geocoder-php/graphhopper-provider": "^0.1.0",
+                "geocoder-php/graphhopper-provider": "^0.5.0",
                 "geocoder-php/host-ip-provider": "^4.0",
                 "geocoder-php/ip-info-db-provider": "^4.0",
-                "geocoder-php/mapbox-provider": "^0.1",
+                "geocoder-php/mapbox-provider": "^1.0",
                 "geocoder-php/mapquest-provider": "^4.0",
                 "geocoder-php/maptiler-provider": "^1.0",
                 "geocoder-php/maxmind-provider": "^4.1",
@@ -3922,15 +3922,16 @@
                 "geocoder-php/open-cage-provider": "^4.0",
                 "geocoder-php/openrouteservice-provider": "^1.0",
                 "geocoder-php/pelias-provider": "^1.1",
-                "geocoder-php/photon-provider": "^0.1.0",
+                "geocoder-php/photon-provider": "^0.6",
                 "geocoder-php/tomtom-provider": "^4.0",
-                "geocoder-php/yandex-provider": "^4.0"
+                "geocoder-php/yandex-provider": "^4.0",
+                "systonic/ban-france-provider": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.34",
-                    "datestamp": "1682585666",
+                    "version": "8.x-3.47",
+                    "datestamp": "1707161761",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3971,26 +3972,26 @@
         },
         {
             "name": "drupal/geocoder_autocomplete",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geocoder_autocomplete.git",
-                "reference": "2.0.0"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geocoder_autocomplete-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "8aa658e833339688425e80c011718eefac5c9c83"
+                "url": "https://ftp.drupal.org/files/projects/geocoder_autocomplete-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "cdb6fc7af9d62ab161be5a01604496157efb9169"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1635545978",
+                    "version": "2.0.1",
+                    "datestamp": "1728642253",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4027,27 +4028,31 @@
         },
         {
             "name": "drupal/geofield",
-            "version": "1.54.0",
+            "version": "1.62.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geofield.git",
-                "reference": "8.x-1.54"
+                "reference": "8.x-1.62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.54.zip",
-                "reference": "8.x-1.54",
-                "shasum": "a9fd5434d50cfc50d0fdce716159728855bd36c9"
+                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.62.zip",
+                "reference": "8.x-1.62",
+                "shasum": "0d5a59c934c96f38dcf2742f6d715316b695ec7e"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10",
-                "itamair/geophp": "^1.3"
+                "drupal/core": "^9 || ^10 || ^11",
+                "itamair/geophp": "^1.6"
+            },
+            "require-dev": {
+                "drupal/diff": "^1.3",
+                "drupal/feeds": "^3.0@beta"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.54",
-                    "datestamp": "1690796214",
+                    "version": "8.x-1.62",
+                    "datestamp": "1730931913",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4135,17 +4140,17 @@
         },
         {
             "name": "drupal/inline_entity_form",
-            "version": "2.0.0-rc9",
+            "version": "2.0.0-rc10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/inline_entity_form.git",
-                "reference": "2.0.0-rc9"
+                "reference": "2.0.0-rc10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-2.0.0-rc9.zip",
-                "reference": "2.0.0-rc9",
-                "shasum": "aa3a2b086088b2819b9524b88876f0ca14f690e8"
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-2.0.0-rc10.zip",
+                "reference": "2.0.0-rc10",
+                "shasum": "f984e26786c5c5187246e8ee9f54d43f44b0ca53"
             },
             "require": {
                 "drupal/core": "^9.1 || ^10",
@@ -4158,8 +4163,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc9",
-                    "datestamp": "1694533805",
+                    "version": "2.0.0-rc10",
+                    "datestamp": "1698919897",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -4184,6 +4189,10 @@
                     "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                },
+                {
                     "name": "geek-merlin",
                     "homepage": "https://www.drupal.org/user/229048"
                 },
@@ -4198,10 +4207,6 @@
                 {
                     "name": "oknate",
                     "homepage": "https://www.drupal.org/user/471638"
-                },
-                {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
                 },
                 {
                     "name": "ram4nd",
@@ -4324,27 +4329,27 @@
         },
         {
             "name": "drupal/jquery_ui_datepicker",
-            "version": "1.4.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jquery_ui_datepicker.git",
-                "reference": "8.x-1.4"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jquery_ui_datepicker-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "6d0e9463006d94ba21ee7547dc92ade6c9f96c8e"
+                "url": "https://ftp.drupal.org/files/projects/jquery_ui_datepicker-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "29e56e8fa351fefd34e80529768ddc69a460149d"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "drupal/jquery_ui": "*"
+                "drupal/core": "^9.2 || ^10 || ^11",
+                "drupal/jquery_ui": "^1.7"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1665821291",
+                    "version": "2.1.1",
+                    "datestamp": "1730932612",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4357,13 +4362,8 @@
             ],
             "authors": [
                 {
-                    "name": "Andrei Ivnitskii",
-                    "homepage": "https://www.drupal.org/u/ivnish",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "ivnish",
-                    "homepage": "https://www.drupal.org/user/3547706"
+                    "name": "bnjmnm",
+                    "homepage": "https://www.drupal.org/user/2369194"
                 },
                 {
                     "name": "jrockowitz",
@@ -4389,8 +4389,7 @@
             "description": "Provides jQuery UI Datepicker library.",
             "homepage": "https://www.drupal.org/project/jquery_ui_datepicker",
             "support": {
-                "source": "https://git.drupalcode.org/project/jquery_ui_datepicker",
-                "issues": "https://www.drupal.org/project/issues/jquery_ui_datepicker"
+                "source": "https://git.drupalcode.org/project/jquery_ui_datepicker"
             }
         },
         {
@@ -4448,28 +4447,28 @@
         },
         {
             "name": "drupal/jquery_ui_touch_punch",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jquery_ui_touch_punch.git",
-                "reference": "1.1.0"
+                "reference": "1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jquery_ui_touch_punch-1.1.0.zip",
-                "reference": "1.1.0",
-                "shasum": "4b7e50a98246dfa6ef48e5b12c70277873902824"
+                "url": "https://ftp.drupal.org/files/projects/jquery_ui_touch_punch-1.1.1.zip",
+                "reference": "1.1.1",
+                "shasum": "f16bc2ffa500131f43c84427ff213e753de9b6a6"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^9.2 || ^10 || ^11",
                 "drupal/jquery_ui": "^1.0",
                 "politsin/jquery-ui-touch-punch": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.0",
-                    "datestamp": "1662744607",
+                    "version": "1.1.1",
+                    "datestamp": "1717663479",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4504,27 +4503,27 @@
         },
         {
             "name": "drupal/layout_builder_blocks",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_builder_blocks.git",
-                "reference": "1.1.1"
+                "reference": "1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_builder_blocks-1.1.1.zip",
-                "reference": "1.1.1",
-                "shasum": "7ff492dd75b25a37b2281de5cedbe75686b8f264"
+                "url": "https://ftp.drupal.org/files/projects/layout_builder_blocks-1.1.2.zip",
+                "reference": "1.1.2",
+                "shasum": "c6a662e731cc5680b8f4dc4e7347689ef5199ad6"
             },
             "require": {
-                "drupal/bootstrap_styles": "^1.1",
-                "drupal/core": "^9.3 || ^10"
+                "drupal/bootstrap_styles": "^1.1 || ^2.0",
+                "drupal/core": "^9.3 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.1",
-                    "datestamp": "1702397566",
+                    "version": "1.1.2",
+                    "datestamp": "1726509193",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4545,7 +4544,7 @@
                     "homepage": "https://www.drupal.org/user/2947001"
                 },
                 {
-                    "name": "Rajab Natshah",
+                    "name": "rajab natshah",
                     "homepage": "https://www.drupal.org/user/1414312"
                 }
             ],
@@ -4563,27 +4562,27 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "10.0.19",
+            "version": "10.2.26",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "10.0.19"
+                "reference": "10.2.26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.19.zip",
-                "reference": "10.0.19",
-                "shasum": "16194181219bb197b4260ad82519bb114ffdbb8a"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.2.26.zip",
+                "reference": "10.2.26",
+                "shasum": "826389d325634e42587d4a3ec47485ab350f881a"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^9.3 || ^10 || ^11",
                 "drupal/geofield": "^1.31"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "10.0.19",
-                    "datestamp": "1690895717",
+                    "version": "10.2.26",
+                    "datestamp": "1730930365",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4685,26 +4684,26 @@
         },
         {
             "name": "drupal/libraries",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/libraries.git",
-                "reference": "4.0.4"
+                "reference": "4.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/libraries-4.0.4.zip",
-                "reference": "4.0.4",
-                "shasum": "45848ac6ebdfb77755305ece4c6cae436ca1b0cc"
+                "url": "https://ftp.drupal.org/files/projects/libraries-4.0.5.zip",
+                "reference": "4.0.5",
+                "shasum": "24da67bb58b9e4b1ae28cdfdc4f6152587d17baf"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10"
+                "drupal/core": "^9.5 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.4",
-                    "datestamp": "1687020889",
+                    "version": "4.0.5",
+                    "datestamp": "1725052147",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4825,17 +4824,17 @@
         },
         {
             "name": "drupal/menu_block",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_block.git",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_block-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "97de632d77448ae0a974e20c2ffbe42c7ddd4633"
+                "url": "https://ftp.drupal.org/files/projects/menu_block-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "7b2dec26a81177094860b1f884cca5c40b60fa85"
             },
             "require": {
                 "drupal/core": "^9.1 || ^10"
@@ -4843,8 +4842,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1667434255",
+                    "version": "8.x-1.11",
+                    "datestamp": "1715036334",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4873,7 +4872,7 @@
                     "homepage": "https://www.drupal.org/user/370574"
                 },
                 {
-                    "name": "RenatoG",
+                    "name": "renatog",
                     "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
@@ -4938,7 +4937,7 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "Dave Reid",
+                    "name": "dave reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 }
             ],
@@ -4956,17 +4955,17 @@
         },
         {
             "name": "drupal/migrate_plus",
-            "version": "6.0.1",
+            "version": "6.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/migrate_plus.git",
-                "reference": "6.0.1"
+                "reference": "6.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_plus-6.0.1.zip",
-                "reference": "6.0.1",
-                "shasum": "154e5c627c8b32648cb4b4034a196a289b0626fa"
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-6.0.4.zip",
+                "reference": "6.0.4",
+                "shasum": "0357c416d2a9fd3f4211dd13c6585ed8072fabe7"
             },
             "require": {
                 "drupal/core": ">=9.1",
@@ -4983,8 +4982,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.1",
-                    "datestamp": "1672428002",
+                    "version": "6.0.4",
+                    "datestamp": "1721745585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5021,17 +5020,17 @@
         },
         {
             "name": "drupal/migrate_tools",
-            "version": "6.0.2",
+            "version": "6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/migrate_tools.git",
-                "reference": "6.0.2"
+                "reference": "6.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_tools-6.0.2.zip",
-                "reference": "6.0.2",
-                "shasum": "9d6346306e52a6741f3eb52e32caaa95a2752ad0"
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-6.0.5.zip",
+                "reference": "6.0.5",
+                "shasum": "c82519b366f43827818b04bfbc0009a6e028b835"
             },
             "require": {
                 "drupal/core": ">=9.1",
@@ -5049,8 +5048,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.2",
-                    "datestamp": "1688670937",
+                    "version": "6.0.5",
+                    "datestamp": "1730824457",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5092,17 +5091,17 @@
         },
         {
             "name": "drupal/migrate_upgrade",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/migrate_upgrade.git",
-                "reference": "4.0.1"
+                "reference": "4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_upgrade-4.0.1.zip",
-                "reference": "4.0.1",
-                "shasum": "e9507affa61ae27adb1ea6e0d55f3bb32506ddfc"
+                "url": "https://ftp.drupal.org/files/projects/migrate_upgrade-4.0.2.zip",
+                "reference": "4.0.2",
+                "shasum": "358f3cea91411b179a1c78841f1cc3166a947088"
             },
             "require": {
                 "drupal/core": ">=9",
@@ -5113,8 +5112,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.1",
-                    "datestamp": "1672260874",
+                    "version": "4.0.2",
+                    "datestamp": "1719350600",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5214,30 +5213,30 @@
         },
         {
             "name": "drupal/page_manager",
-            "version": "4.0.0-rc2",
+            "version": "4.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/page_manager.git",
-                "reference": "8.x-4.0-rc2"
+                "reference": "8.x-4.0-rc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/page_manager-8.x-4.0-rc2.zip",
-                "reference": "8.x-4.0-rc2",
-                "shasum": "4a1e96284c5775343fbb4612072a2abfc83ebc33"
+                "url": "https://ftp.drupal.org/files/projects/page_manager-8.x-4.0-rc3.zip",
+                "reference": "8.x-4.0-rc3",
+                "shasum": "9c68ed3e87196e42ceeb80d53064494d7a104abc"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
-                "drupal/ctools": "^3.11 || ^4.0"
+                "drupal/core": "^9.5 || ^10 || ^11",
+                "drupal/ctools": "^3.15 || ^4.1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-4.0-rc2",
-                    "datestamp": "1671210021",
+                    "version": "8.x-4.0-rc3",
+                    "datestamp": "1721976404",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 },
                 "branch-alias": {
@@ -5263,6 +5262,10 @@
                     "homepage": "https://www.drupal.org/user/45640"
                 },
                 {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                },
+                {
                     "name": "manuel.adan",
                     "homepage": "https://www.drupal.org/user/516420"
                 },
@@ -5281,22 +5284,25 @@
         },
         {
             "name": "drupal/pathauto",
-            "version": "1.11.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pathauto.git",
-                "reference": "8.x-1.11"
+                "reference": "8.x-1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.11.zip",
-                "reference": "8.x-1.11",
-                "shasum": "a006fe9e6046a9833711a1ae56aa4752e65bcdc8"
+                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "e64b5a82cf1b8ab48bce400b21ae6fc99c8078fd"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
+                "drupal/core": "^9.4 || ^10 || ^11",
                 "drupal/ctools": "*",
                 "drupal/token": "*"
+            },
+            "require-dev": {
+                "drupal/forum": "*"
             },
             "suggest": {
                 "drupal/redirect": "When installed Pathauto will provide a new \"Update Action\" in case your URLs change. This is the recommended update action and is considered the best practice for SEO and usability."
@@ -5304,8 +5310,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.11",
-                    "datestamp": "1660129564",
+                    "version": "8.x-1.13",
+                    "datestamp": "1722507672",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5423,6 +5429,12 @@
                 "url": "https://git.drupalcode.org/project/rat.git",
                 "reference": "28202b02262a39ac8dbbfd43696b67c0c8c46b71"
             },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.drupalcode.org/api/v4/projects/project%2Frat/repository/archive.zip?sha=28202b02262a39ac8dbbfd43696b67c0c8c46b71",
+                "reference": "28202b02262a39ac8dbbfd43696b67c0c8c46b71",
+                "shasum": ""
+            },
             "require": {
                 "php": "^7.4 || ^8.0"
             },
@@ -5446,34 +5458,38 @@
                     "email": "merlin@geeks4change.net"
                 }
             ],
-            "time": "2023-07-19T20:22:22+00:00"
+            "support": {
+                "source": "https://git.drupalcode.org/project/rat/-/tree/1.0.0"
+            },
+            "time": "2023-07-19T22:22:22+00:00"
         },
         {
             "name": "drupal/realname",
-            "version": "2.0.0-beta2",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/realname.git",
-                "reference": "2.0.0-beta2"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/realname-2.0.0-beta2.zip",
-                "reference": "2.0.0-beta2",
-                "shasum": "cbe209423e9f089ce472acce11bd059e860c3537"
+                "url": "https://ftp.drupal.org/files/projects/realname-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "b1eaac469916c64b8593a24d7c9d20bbcb78baf9"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "drupal/token": "^1.0.0-alpha2"
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
+                "drupal/token": "^1.0.0-alpha2",
+                "php": ">=8.1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-beta2",
-                    "datestamp": "1677775747",
+                    "version": "2.0.0",
+                    "datestamp": "1726781900",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -5583,20 +5599,20 @@
         },
         {
             "name": "drupal/smtp",
-            "version": "1.2.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smtp.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "10d302d4a90521d674bdd078da8aed886fa5ec41"
+                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "963b4670dc609f30a8c003d888d88893d0841b21"
             },
             "require": {
-                "drupal/core": ">=8.9 <11",
+                "drupal/core": "^9.5 || ^10 || ^11",
                 "phpmailer/phpmailer": "^6.1.7"
             },
             "suggest": {
@@ -5605,8 +5621,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1667416337",
+                    "version": "8.x-1.4",
+                    "datestamp": "1722032780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5628,10 +5644,6 @@
                 {
                     "name": "joseph.olstad",
                     "homepage": "https://www.drupal.org/user/1321830"
-                },
-                {
-                    "name": "josesanmartin",
-                    "homepage": "https://www.drupal.org/user/72012"
                 },
                 {
                     "name": "LukeLast",
@@ -5719,27 +5731,27 @@
         },
         {
             "name": "drupal/superfish",
-            "version": "1.6.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/superfish.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "5c3d2e88e64ce9b0c44ea0e55a5c3ec2e6bda430"
+                "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "6bac51a839502d3791ac5c06f5c84d4509ea157b"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "mehrpadin/superfish": "~2"
+                "drupal/core": "^9 || ^10 || ^11",
+                "lobsterr/drupal-superfish": "~2"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1690322107",
+                    "version": "8.x-1.8",
+                    "datestamp": "1722943137",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5767,8 +5779,9 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "NickDickinsonWilde",
-                    "homepage": "https://www.drupal.org/user/3094661"
+                    "name": "Andrei Ivnitskii",
+                    "homepage": "https://www.drupal.org/u/ivnish",
+                    "role": "Maintainer"
                 }
             ],
             "description": "Adds jQuery Superfish plugin to menu blocks.",
@@ -5780,26 +5793,26 @@
         },
         {
             "name": "drupal/tamper",
-            "version": "1.0.0-alpha4",
+            "version": "1.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tamper.git",
-                "reference": "8.x-1.0-alpha4"
+                "reference": "8.x-1.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tamper-8.x-1.0-alpha4.zip",
-                "reference": "8.x-1.0-alpha4",
-                "shasum": "ab591ab64adb923a9901390119bbe0beabc23859"
+                "url": "https://ftp.drupal.org/files/projects/tamper-8.x-1.0-alpha5.zip",
+                "reference": "8.x-1.0-alpha5",
+                "shasum": "c07e82d00a81b0ea9dd74dc4429e13659f8111b1"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha4",
-                    "datestamp": "1684984837",
+                    "version": "8.x-1.0-alpha5",
+                    "datestamp": "1725792623",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -5820,7 +5833,7 @@
                     "homepage": "https://www.drupal.org/user/762570"
                 },
                 {
-                    "name": "MegaChriz",
+                    "name": "megachriz",
                     "homepage": "https://www.drupal.org/user/654114"
                 },
                 {
@@ -5841,26 +5854,29 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.12.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token.git",
-                "reference": "8.x-1.12"
+                "reference": "8.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "cefe1b203b793682f74ea43e18d0a814cf768763"
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.15.zip",
+                "reference": "8.x-1.15",
+                "shasum": "5916fbccc86458a5f51e71f832ac70ff4c84ebdf"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/book": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1688015262",
+                    "version": "8.x-1.15",
+                    "datestamp": "1722206211",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5868,7 +5884,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": ">=9"
                     }
                 }
             },
@@ -5878,11 +5894,11 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
+                    "name": "berdir",
                     "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
-                    "name": "Dave Reid",
+                    "name": "dave reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 },
                 {
@@ -5968,26 +5984,30 @@
         },
         {
             "name": "drupal/view_unpublished",
-            "version": "1.1.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/view_unpublished.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/view_unpublished-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "f9f5e88cbaf1a1e71952d94cf67ef2f180e292be"
+                "url": "https://ftp.drupal.org/files/projects/view_unpublished-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "7dd4411c53866585ac6319d147ab11d214d55877"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10"
+                "drupal/core": "^9.4 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3.18",
+                "phpcompatibility/php-compatibility": "10.x-dev@dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1681757575",
+                    "version": "8.x-1.3",
+                    "datestamp": "1724503131",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6001,20 +6021,8 @@
             "authors": [
                 {
                     "name": "Agnes Chisholm",
-                    "homepage": "https://www.drupal.org/user/66428",
+                    "homepage": "https://www.drupal.org/user/173461",
                     "email": "amaria@chisholmtech.com"
-                },
-                {
-                    "name": "beeradb",
-                    "homepage": "https://www.drupal.org/user/120651"
-                },
-                {
-                    "name": "elevins",
-                    "homepage": "https://www.drupal.org/user/781882"
-                },
-                {
-                    "name": "entendu",
-                    "homepage": "https://www.drupal.org/user/173461"
                 },
                 {
                     "name": "fathima.asmat",
@@ -6033,33 +6041,33 @@
         },
         {
             "name": "drupal/views_bulk_operations",
-            "version": "4.2.4",
+            "version": "4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
-                "reference": "4.2.4"
+                "reference": "4.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.4.zip",
-                "reference": "4.2.4",
-                "shasum": "26f1dea73780fab2e338380ae803feca989172e1"
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.7.zip",
+                "reference": "4.2.7",
+                "shasum": "25c9fa531ac49664a361fdd2202eec0a6e53bc61"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10",
+                "drupal/core": "^9.4 || ^10 || ^11",
                 "php": ">=7.4.0"
             },
             "require-dev": {
-                "drush/drush": "^11"
+                "drush/drush": "^12"
             },
             "suggest": {
-                "drush/drush": "^10 || ^11"
+                "drush/drush": "^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.2.4",
-                    "datestamp": "1685368786",
+                    "version": "4.2.7",
+                    "datestamp": "1717665214",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6081,7 +6089,7 @@
                     "homepage": "https://www.drupal.org/u/graber"
                 },
                 {
-                    "name": "Graber",
+                    "name": "graber",
                     "homepage": "https://www.drupal.org/user/1599440"
                 },
                 {
@@ -6195,10 +6203,6 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
-                {
-                    "name": "clemens.tolboom",
-                    "homepage": "https://www.drupal.org/user/125814"
-                },
                 {
                     "name": "jeffschuler",
                     "homepage": "https://www.drupal.org/user/239714"
@@ -6341,26 +6345,26 @@
         },
         {
             "name": "drupal/views_timelinejs",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_timelinejs.git",
-                "reference": "4.0.0"
+                "reference": "4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_timelinejs-4.0.0.zip",
-                "reference": "4.0.0",
-                "shasum": "86fa1c651b9eeb3a72286f2aea58ca135c3d3be1"
+                "url": "https://ftp.drupal.org/files/projects/views_timelinejs-4.0.1.zip",
+                "reference": "4.0.1",
+                "shasum": "71f9e0720097a500908e18bebf2df2b88c4b95a9"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9.0 || ^10"
+                "drupal/core": "^8.7.7 || ^9.0 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.0",
-                    "datestamp": "1656709069",
+                    "version": "4.0.1",
+                    "datestamp": "1718688033",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6404,17 +6408,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.2.0",
+            "version": "6.2.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.2.0"
+                "reference": "6.2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.2.0.zip",
-                "reference": "6.2.0",
-                "shasum": "7a8292fb86fa60c88377279769fd6f1b1fad05c2"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.2.6.zip",
+                "reference": "6.2.6",
+                "shasum": "4199a563123ec2512b84b04ce8e7b45d8fc589da"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
@@ -6426,16 +6430,16 @@
                 "drupal/captcha": "^1 || ^2",
                 "drupal/chosen": "3.0.x-dev",
                 "drupal/ckeditor": "1.0.x-dev",
-                "drupal/clientside_validation": "^3 || ^4",
+                "drupal/clientside_validation": "*",
                 "drupal/clientside_validation_jquery": "*",
-                "drupal/devel": "5.x-dev",
+                "drupal/devel": "*",
                 "drupal/entity": "1.x-dev",
-                "drupal/entity_print": "2.x-dev",
+                "drupal/entity_print": "*",
                 "drupal/group": "1.x-dev",
                 "drupal/hal": "1 - 2",
                 "drupal/jquery_ui": "1.x-dev",
-                "drupal/jquery_ui_checkboxradio": "2.x-dev",
-                "drupal/jquery_ui_datepicker": "2.x-dev",
+                "drupal/jquery_ui_checkboxradio": "*",
+                "drupal/jquery_ui_datepicker": "*",
                 "drupal/mailsystem": "4.x-dev",
                 "drupal/metatag": "1.x-dev",
                 "drupal/paragraphs": "1.x-dev",
@@ -6443,7 +6447,7 @@
                 "drupal/smtp": "1.x-dev",
                 "drupal/styleguide": "^1 || ^2",
                 "drupal/telephone_validation": "2.x-dev",
-                "drupal/token": "1.x-dev",
+                "drupal/token": "*",
                 "drupal/variationcache": "1.x-dev",
                 "drupal/webform_access": "*",
                 "drupal/webform_attachment": "*",
@@ -6463,8 +6467,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.2.0",
-                    "datestamp": "1698674300",
+                    "version": "6.2.6",
+                    "datestamp": "1721424721",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6492,7 +6496,7 @@
                     "role": "Contributor"
                 },
                 {
-                    "name": "Liam Morland",
+                    "name": "liam morland",
                     "homepage": "https://www.drupal.org/user/493050"
                 },
                 {
@@ -6793,26 +6797,23 @@
         },
         {
             "name": "geocoder-php/common-http",
-            "version": "4.5.0",
+            "version": "4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geocoder-php/php-common-http.git",
-                "reference": "4ee2cee60d21631e2a09c196bf6b9fd296bca728"
+                "reference": "d8c22a66120daed35ba8017467bc1ebfec28a63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/4ee2cee60d21631e2a09c196bf6b9fd296bca728",
-                "reference": "4ee2cee60d21631e2a09c196bf6b9fd296bca728",
+                "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/d8c22a66120daed35ba8017467bc1ebfec28a63e",
+                "reference": "d8c22a66120daed35ba8017467bc1ebfec28a63e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "php-http/client-implementation": "^1.0",
-                "php-http/discovery": "^1.6",
-                "php-http/httplug": "^1.0 || ^2.0",
-                "php-http/message-factory": "^1.0.2",
-                "psr/http-message": "^1.0",
-                "psr/http-message-implementation": "^1.0",
+                "php": "^8.0",
+                "php-http/discovery": "^1.17",
+                "psr/http-client-implementation": "^1.0",
+                "psr/http-factory-implementation": "^1.0",
                 "willdurand/geocoder": "^4.0"
             },
             "require-dev": {
@@ -6820,7 +6821,7 @@
                 "php-http/message": "^1.0",
                 "php-http/mock-client": "^1.0",
                 "phpunit/phpunit": "^9.5",
-                "symfony/stopwatch": "~2.5"
+                "symfony/stopwatch": "~2.5 || ~5.0"
             },
             "type": "library",
             "extra": {
@@ -6852,9 +6853,9 @@
                 "http geocoder"
             ],
             "support": {
-                "source": "https://github.com/geocoder-php/php-common-http/tree/4.5.0"
+                "source": "https://github.com/geocoder-php/php-common-http/tree/4.6.0"
             },
-            "time": "2022-07-30T12:09:30+00:00"
+            "time": "2023-12-28T10:51:54+00:00"
         },
         {
             "name": "geocoder-php/google-maps-provider",
@@ -7267,16 +7268,16 @@
         },
         {
             "name": "itamair/geophp",
-            "version": "1.5",
+            "version": "1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itamair/geoPHP.git",
-                "reference": "645f3262ebaa7443d58910207c65f386c733f614"
+                "reference": "f210e37ab3d4706b7e8cfe3183fec2f5be8a85e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itamair/geoPHP/zipball/645f3262ebaa7443d58910207c65f386c733f614",
-                "reference": "645f3262ebaa7443d58910207c65f386c733f614",
+                "url": "https://api.github.com/repos/itamair/geoPHP/zipball/f210e37ab3d4706b7e8cfe3183fec2f5be8a85e6",
+                "reference": "f210e37ab3d4706b7e8cfe3183fec2f5be8a85e6",
                 "shasum": ""
             },
             "require-dev": {
@@ -7307,9 +7308,9 @@
             "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
             "homepage": "https://github.com/itamair/geoPHP",
             "support": {
-                "source": "https://github.com/itamair/geoPHP/tree/1.5"
+                "source": "https://github.com/itamair/geoPHP/tree/1.6"
             },
-            "time": "2023-04-26T23:16:44+00:00"
+            "time": "2023-12-23T23:28:59+00:00"
         },
         {
             "name": "jackmoore/colorbox",
@@ -7523,16 +7524,16 @@
         },
         {
             "name": "league/container",
-            "version": "4.2.3",
+            "version": "4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/container.git",
-                "reference": "72f9bebe7bd623007782a40f5ec305661ab706d8"
+                "reference": "7ea728b013b9a156c409c6f0fc3624071b742dec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/container/zipball/72f9bebe7bd623007782a40f5ec305661ab706d8",
-                "reference": "72f9bebe7bd623007782a40f5ec305661ab706d8",
+                "url": "https://api.github.com/repos/thephpleague/container/zipball/7ea728b013b9a156c409c6f0fc3624071b742dec",
+                "reference": "7ea728b013b9a156c409c6f0fc3624071b742dec",
                 "shasum": ""
             },
             "require": {
@@ -7593,7 +7594,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/container/issues",
-                "source": "https://github.com/thephpleague/container/tree/4.2.3"
+                "source": "https://github.com/thephpleague/container/tree/4.2.4"
             },
             "funding": [
                 {
@@ -7601,7 +7602,50 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-23T12:06:58+00:00"
+            "time": "2024-11-10T12:42:13+00:00"
+        },
+        {
+            "name": "lobsterr/drupal-superfish",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LOBsTerr/drupal-superfish.git",
+                "reference": "a2c677d0e4b09b455792db45f37cde8f5e45e2f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LOBsTerr/drupal-superfish/zipball/a2c677d0e4b09b455792db45f37cde8f5e45e2f6",
+                "reference": "a2c677d0e4b09b455792db45f37cde8f5e45e2f6",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolay Lobachev",
+                    "homepage": "https://www.drupal.org/u/lobsterr",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mehrpadin",
+                    "homepage": "https://www.drupal.org/u/mehrpadin",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Superfish library for the Drupal Superfish module.",
+            "homepage": "https://github.com/LOBsTerr/drupal-superfish",
+            "keywords": [
+                "jquery",
+                "plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/LOBsTerr/drupal-superfish/issues",
+                "source": "https://github.com/LOBsTerr/drupal-superfish"
+            },
+            "time": "2023-10-10T22:20:13+00:00"
         },
         {
             "name": "longwave/laminas-diactoros",
@@ -7767,36 +7811,6 @@
                 "source": "https://github.com/Masterminds/html5-php/tree/2.7.6"
             },
             "time": "2022-08-18T16:18:26+00:00"
-        },
-        {
-            "name": "mehrpadin/superfish",
-            "version": "2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mehrpadin/Superfish-for-Drupal.git",
-                "reference": "80a0a484b727e9fbe6b0ee609f80e10e5e158683"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mehrpadin/Superfish-for-Drupal/zipball/80a0a484b727e9fbe6b0ee609f80e10e5e158683",
-                "reference": "80a0a484b727e9fbe6b0ee609f80e10e5e158683",
-                "shasum": ""
-            },
-            "type": "drupal-library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Superfish library for the Drupal Superfish module.",
-            "homepage": "https://github.com/mehrpadin/Superfish-for-Drupal",
-            "keywords": [
-                "jquery",
-                "plugin"
-            ],
-            "support": {
-                "source": "https://github.com/mehrpadin/Superfish-for-Drupal/tree/2.x"
-            },
-            "time": "2017-05-30T13:00:18+00:00"
         },
         {
             "name": "mglaman/phpstan-drupal",
@@ -8019,7 +8033,7 @@
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
-                "reference": "9542d5ac59c22fe5b54868cc99367db9e9895f51"
+                "reference": "8f0ed84bdee567675c8e41c5ce8c993f71899fa5"
             },
             "type": "project",
             "extra": {
@@ -8270,16 +8284,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.19.1",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "57f3de01d32085fea20865f9b16fb0e69347c39e"
+                "reference": "82fe4c73ef3363caed49ff8dd1539ba06044910d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/57f3de01d32085fea20865f9b16fb0e69347c39e",
-                "reference": "57f3de01d32085fea20865f9b16fb0e69347c39e",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/82fe4c73ef3363caed49ff8dd1539ba06044910d",
+                "reference": "82fe4c73ef3363caed49ff8dd1539ba06044910d",
                 "shasum": ""
             },
             "require": {
@@ -8303,7 +8317,8 @@
                 "php-http/httplug": "^1.0 || ^2.0",
                 "php-http/message-factory": "^1.0",
                 "phpspec/phpspec": "^5.1 || ^6.1 || ^7.3",
-                "symfony/phpunit-bridge": "^6.2"
+                "sebastian/comparator": "^3.0.5 || ^4.0.8",
+                "symfony/phpunit-bridge": "^6.4.4 || ^7.0.1"
             },
             "type": "composer-plugin",
             "extra": {
@@ -8342,9 +8357,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/discovery/issues",
-                "source": "https://github.com/php-http/discovery/tree/1.19.1"
+                "source": "https://github.com/php-http/discovery/tree/1.20.0"
             },
-            "time": "2023-07-11T07:02:26+00:00"
+            "time": "2024-10-02T11:20:13+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -8411,20 +8426,21 @@
                 "issues": "https://github.com/php-http/guzzle6-adapter/issues",
                 "source": "https://github.com/php-http/guzzle6-adapter/tree/v2.0.2"
             },
+            "abandoned": "guzzlehttp/guzzle or php-http/guzzle7-adapter",
             "time": "2021-03-02T10:52:33+00:00"
         },
         {
             "name": "php-http/httplug",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/httplug.git",
-                "reference": "625ad742c360c8ac580fcc647a1541d29e257f67"
+                "reference": "5cad731844891a4c282f3f3e1b582c46839d22f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/httplug/zipball/625ad742c360c8ac580fcc647a1541d29e257f67",
-                "reference": "625ad742c360c8ac580fcc647a1541d29e257f67",
+                "url": "https://api.github.com/repos/php-http/httplug/zipball/5cad731844891a4c282f3f3e1b582c46839d22f4",
+                "reference": "5cad731844891a4c282f3f3e1b582c46839d22f4",
                 "shasum": ""
             },
             "require": {
@@ -8466,9 +8482,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/httplug/issues",
-                "source": "https://github.com/php-http/httplug/tree/2.4.0"
+                "source": "https://github.com/php-http/httplug/tree/2.4.1"
             },
-            "time": "2023-04-14T15:10:03+00:00"
+            "time": "2024-09-23T11:39:58+00:00"
         },
         {
             "name": "php-http/message",
@@ -8596,31 +8612,26 @@
         },
         {
             "name": "php-http/promise",
-            "version": "1.1.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/promise.git",
-                "reference": "4c4c1f9b7289a2ec57cde7f1e9762a5789506f88"
+                "reference": "fc85b1fba37c169a69a07ef0d5a8075770cc1f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/promise/zipball/4c4c1f9b7289a2ec57cde7f1e9762a5789506f88",
-                "reference": "4c4c1f9b7289a2ec57cde7f1e9762a5789506f88",
+                "url": "https://api.github.com/repos/php-http/promise/zipball/fc85b1fba37c169a69a07ef0d5a8075770cc1f83",
+                "reference": "fc85b1fba37c169a69a07ef0d5a8075770cc1f83",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
-                "phpspec/phpspec": "^5.1.2 || ^6.2"
+                "friends-of-phpspec/phpspec-code-coverage": "^4.3.2 || ^6.3",
+                "phpspec/phpspec": "^5.1.2 || ^6.2 || ^7.4"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Http\\Promise\\": "src/"
@@ -8647,22 +8658,22 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/promise/issues",
-                "source": "https://github.com/php-http/promise/tree/1.1.0"
+                "source": "https://github.com/php-http/promise/tree/1.3.1"
             },
-            "time": "2020-07-07T09:29:14+00:00"
+            "time": "2024-03-15T13:55:21+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.8.0",
+            "version": "v6.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "df16b615e371d81fb79e506277faea67a1be18f1"
+                "reference": "a7b17b42fa4887c92146243f3d2f4ccb962af17c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/df16b615e371d81fb79e506277faea67a1be18f1",
-                "reference": "df16b615e371d81fb79e506277faea67a1be18f1",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/a7b17b42fa4887c92146243f3d2f4ccb962af17c",
+                "reference": "a7b17b42fa4887c92146243f3d2f4ccb962af17c",
                 "shasum": ""
             },
             "require": {
@@ -8672,16 +8683,17 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "doctrine/annotations": "^1.2.6 || ^1.13.3",
                 "php-parallel-lint/php-console-highlighter": "^1.0.0",
                 "php-parallel-lint/php-parallel-lint": "^1.3.2",
                 "phpcompatibility/php-compatibility": "^9.3.5",
                 "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.7.1",
+                "squizlabs/php_codesniffer": "^3.7.2",
                 "yoast/phpunit-polyfills": "^1.0.4"
             },
             "suggest": {
+                "decomplexity/SendOauth2": "Adapter for using XOAUTH2 authentication",
                 "ext-mbstring": "Needed to send email in multibyte encoding charset or decode encoded addresses",
                 "ext-openssl": "Needed for secure SMTP sending and DKIM signing",
                 "greew/oauth2-azure-provider": "Needed for Microsoft Azure XOAUTH2 authentication",
@@ -8721,7 +8733,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.8.0"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.9.2"
             },
             "funding": [
                 {
@@ -8729,20 +8741,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-06T14:43:22+00:00"
+            "time": "2024-10-09T10:07:50+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.12.8",
+            "version": "1.12.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "f6a60a4d66142b8156c9da923f1972657bc4748c"
+                "reference": "0d1fc20a962a91be578bcfe7cf939e6e1a2ff733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f6a60a4d66142b8156c9da923f1972657bc4748c",
-                "reference": "f6a60a4d66142b8156c9da923f1972657bc4748c",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0d1fc20a962a91be578bcfe7cf939e6e1a2ff733",
+                "reference": "0d1fc20a962a91be578bcfe7cf939e6e1a2ff733",
                 "shasum": ""
             },
             "require": {
@@ -8787,7 +8799,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-06T19:06:49+00:00"
+            "time": "2024-11-17T14:08:01+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -11562,16 +11574,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v6.4.13",
+            "version": "v6.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "38371c60c71c72b3d64d8d76f6b1bb81a2cc3627"
+                "reference": "73a5e66ea2e1677c98d4449177c5a9cf9d8b4c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/38371c60c71c72b3d64d8d76f6b1bb81a2cc3627",
-                "reference": "38371c60c71c72b3d64d8d76f6b1bb81a2cc3627",
+                "url": "https://api.github.com/repos/symfony/string/zipball/73a5e66ea2e1677c98d4449177c5a9cf9d8b4c6f",
+                "reference": "73a5e66ea2e1677c98d4449177c5a9cf9d8b4c6f",
                 "shasum": ""
             },
             "require": {
@@ -11628,7 +11640,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v6.4.13"
+                "source": "https://github.com/symfony/string/tree/v6.4.15"
             },
             "funding": [
                 {
@@ -11644,7 +11656,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:18:03+00:00"
+            "time": "2024-11-13T13:31:12+00:00"
         },
         {
             "name": "symfony/translation",
@@ -11921,16 +11933,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.46",
+            "version": "v5.4.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "f51f11e4fc5ca24fa0defcdf4df027078950b9e0"
+                "reference": "e13e8dfa8eaab2b0536ef365beddc2af723a9ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f51f11e4fc5ca24fa0defcdf4df027078950b9e0",
-                "reference": "f51f11e4fc5ca24fa0defcdf4df027078950b9e0",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/e13e8dfa8eaab2b0536ef365beddc2af723a9ac0",
+                "reference": "e13e8dfa8eaab2b0536ef365beddc2af723a9ac0",
                 "shasum": ""
             },
             "require": {
@@ -11990,7 +12002,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.4.46"
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.47"
             },
             "funding": [
                 {
@@ -12006,7 +12018,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-05T14:17:06+00:00"
+            "time": "2024-11-08T15:21:10+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -13932,16 +13944,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.5.1",
+            "version": "5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "0c70d2c566e899666f367ab7b80986beb3581e6f"
+                "reference": "f3558a4c23426d12bffeaab463f8a8d8b681193c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/0c70d2c566e899666f367ab7b80986beb3581e6f",
-                "reference": "0c70d2c566e899666f367ab7b80986beb3581e6f",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/f3558a4c23426d12bffeaab463f8a8d8b681193c",
+                "reference": "f3558a4c23426d12bffeaab463f8a8d8b681193c",
                 "shasum": ""
             },
             "require": {
@@ -13950,7 +13962,7 @@
                 "php": "^7.4 || ^8.0",
                 "phpdocumentor/reflection-common": "^2.2",
                 "phpdocumentor/type-resolver": "^1.7",
-                "phpstan/phpdoc-parser": "^1.7",
+                "phpstan/phpdoc-parser": "^1.7|^2.0",
                 "webmozart/assert": "^1.9.1"
             },
             "require-dev": {
@@ -13990,29 +14002,29 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.5.1"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.0"
             },
-            "time": "2024-11-06T11:58:54+00:00"
+            "time": "2024-11-12T11:25:25+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "1fb5ba8d045f5dd984ebded5b1cc66f29459422d"
+                "reference": "679e3ce485b99e84c775d28e2e96fade9a7fb50a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/1fb5ba8d045f5dd984ebded5b1cc66f29459422d",
-                "reference": "1fb5ba8d045f5dd984ebded5b1cc66f29459422d",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/679e3ce485b99e84c775d28e2e96fade9a7fb50a",
+                "reference": "679e3ce485b99e84c775d28e2e96fade9a7fb50a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/deprecations": "^1.0",
                 "php": "^7.3 || ^8.0",
                 "phpdocumentor/reflection-common": "^2.0",
-                "phpstan/phpdoc-parser": "^1.18"
+                "phpstan/phpdoc-parser": "^1.18|^2.0"
             },
             "require-dev": {
                 "ext-tokenizer": "*",
@@ -14048,9 +14060,9 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.9.0"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.10.0"
             },
-            "time": "2024-11-03T20:11:34+00:00"
+            "time": "2024-11-09T15:12:26+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -15862,16 +15874,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.10.3",
+            "version": "3.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "62d32998e820bddc40f99f8251958aed187a5c9c"
+                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/62d32998e820bddc40f99f8251958aed187a5c9c",
-                "reference": "62d32998e820bddc40f99f8251958aed187a5c9c",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
+                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
                 "shasum": ""
             },
             "require": {
@@ -15938,7 +15950,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-09-18T10:38:58+00:00"
+            "time": "2024-11-16T12:02:36+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -16385,5 +16397,5 @@
     "platform-overrides": {
         "php": "8.1.13"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
