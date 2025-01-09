@@ -1,0 +1,22 @@
+<?php
+use Drupal\Core\Asset\LibraryDiscoveryInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function cove_anno_viewer_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] === '13') {
+    $variables['#attached']['library'][] = 'cove_anno_viewer/react_app';
+  }
+}
+ 
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function cove_anno_viewer_page_attachments_alter(array &$attachments) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === 'entity.node.canonical') {
+    $attachments['#attached']['library'][] = 'cove_anno_viewer/react_app';
+  }
+}

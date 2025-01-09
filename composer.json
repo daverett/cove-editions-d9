@@ -1,159 +1,179 @@
 {
-  "name": "pantheon-upstreams/drupal-composer-managed",
-  "description": "Install Drupal 9 with Composer on Pantheon.",
-  "type": "project",
-  "license": "MIT",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    },
-    {
-      "type": "path",
-      "url": "upstream-configuration"
-    },
-    {
-		"type": "package",
-		"package": {
-		"name": "jackmoore/colorbox",
-		"version": "1.6.4",
-		"type": "drupal-library",
-			"dist": {
-                "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
-                "type": "zip"
-    }
-    }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "mradcliffe/og",
-        "version": "master",
-        "type": "drupal-module",
-        "source": {
-          "url": "https://github.com/mradcliffe/og.git",
-          "type": "git",
-          "reference": "og-migrate"
+    "name": "pantheon-upstreams/drupal-composer-managed",
+    "description": "Install Drupal 9 with Composer on Pantheon.",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "path",
+            "url": "upstream-configuration"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jackmoore/colorbox",
+                "version": "1.6.4",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mradcliffe/og",
+                "version": "master",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/mradcliffe/og.git",
+                    "type": "git",
+                    "reference": "og-migrate"
+                }
+            }
         }
-      }
-    }
-  ],
-  "require": {
-    "pantheon-upstreams/upstream-configuration": "dev-main",
-    "composer/installers": "^1.9",
-    "drupal/core-composer-scaffold": "9.5.11",
-    "drupal/core-recommended": "9.5.11",
-    "pantheon-systems/drupal-integrations": "^9",
-    "cweagans/composer-patches": "^1.7",
-    "drupal/admin_toolbar": "^3.3",
-    "drupal/page_manager": "^4.0@RC",
-    "drupal/custom_breadcrumbs": "^1.1",
-    "drupal/charts": "^5.0",
-    "drupal/views_timelinejs": "^4.0",
-    "drupal/ctools": "^3.13",
-    "drupal/better_exposed_filters": "^6.0",
-    "drupal/captcha": "^1.9",
-    "drupal/colorbox": "^2.0",
-    "drupal/draggableviews": "^2.1",
-    "drupal/prepopulate": "^2.4",
-    "drupal/field_group": "^3.4",
-    "drupal/field_permissions": "^1.2",
-    "drupal/libraries": "^4.0",
-    "drupal/menu_block": "^1.10",
-    "drupal/metatag": "^1.22",
-    "drupal/openid_connect": "^3.0@alpha",
-    "drupal/pathauto": "^1.11",
-    "drupal/realname": "^2.0@beta",
-    "drupal/smtp": "^1.2",
-    "drupal/superfish": "^1.4",
-    "drupal/view_unpublished": "^1.0",
-    "drupal/views_bulk_operations": "^4.2",
-    "drupal/views_geojson": "^1.2",
-    "drupal/views_field_view": "^1.0@beta",
-    "drupal/views_slideshow": "^5.0",
-    "drupal/webform": "^6.1",
-    "drupal/migrate_upgrade": "^4.0",
-    "wikimedia/composer-merge-plugin": "^2.0",
-    "drupal/leaflet": "^10.0",
-    "drupal/geocoder": "^3.31",
-    "drupal/geocoder_autocomplete": "^2.0",
-    "geocoder-php/google-maps-provider": "^4.7",
-    "drupal/geofield": "^1.49",
-    "drupal/migrate_plus": "^6.0",
-    "drupal/migrate_tools": "^6.0",
-    "drupal/features": "^3.12",
-    "drupal/entity_browser": "^2.9",
-    "drupal/views_migration": "^1.2",
-    "drupal/imce": "^3.0",
-    "mradcliffe/og": "master",
-    "drupal/feeds": "^3.0@beta",
-    "drupal/devel": "^5.0",
-    "drupal/classy": "^1.0",
-    "drupal/dxpr_theme": "^5.1",
-    "drupal/dxpr_theme_helper": "^1.0",
-    "drupal/dxpr_builder": "^2.6",
-    "drupal/inline_entity_form": "^2.0@RC",
-    "jackmoore/colorbox": "^1.6",
-    "drupal/feeds_tamper": "^2.0@beta",
-    "drupal/backup_migrate": "^5.0",
-    "drupal/addanother": "^1.3",
-    "drupal/bootstrap_layout_builder": "^2.1",
-    "drupal/layout_builder_blocks": "^1.1",
-    "drupal/leaflet_layers": "^1.1",
-    "drupal/upgrade_status": "^4.3",
-    "drupal/core-project-message": "9.5.11",
-    "drupal/config_update": "^2.0@alpha",
-    "drupal/jquery_ui_slider": "^2.1",
-    "guzzlehttp/guzzle": "^6",
-    "drupal/rip": "^1.1"
-  },
-  "require-dev": {"drupal/core-dev": "9.5.10"},
-  "conflict": {"drupal/drupal": "*"},
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "drupal-scaffold": {
-      "locations": {"web-root": "./web"},
-      "allowed-packages": ["pantheon-systems/drupal-integrations"],
-      "file-mapping": {
-        "[project-root]/.editorconfig": false,
-        "[project-root]/pantheon.upstream.yml": false,
-        "[project-root]/.gitattributes": false
-      }
+    ],
+    "require": {
+        "pantheon-upstreams/upstream-configuration": "dev-main",
+        "composer/installers": "^1.9",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-recommended": "^10",
+        "pantheon-systems/drupal-integrations": "^9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.3",
+        "drupal/page_manager": "^4.0@RC",
+        "drupal/custom_breadcrumbs": "^1.1",
+        "drupal/charts": "^5.0",
+        "drupal/views_timelinejs": "^4.0",
+        "drupal/ctools": "^3.13",
+        "drupal/better_exposed_filters": "^6.0",
+        "drupal/captcha": "^1.9",
+        "drupal/colorbox": "^2.0",
+        "drupal/draggableviews": "^2.1",
+        "drupal/prepopulate": "^2.4",
+        "drupal/field_group": "^3.4",
+        "drupal/field_permissions": "^1.2",
+        "drupal/libraries": "^4.0",
+        "drupal/menu_block": "^1.10",
+        "drupal/metatag": "^1.22",
+        "drupal/openid_connect": "^3.0@alpha",
+        "drupal/pathauto": "^1.11",
+        "drupal/realname": "^2.0@beta",
+        "drupal/smtp": "^1.2",
+        "drupal/superfish": "^1.4",
+        "drupal/view_unpublished": "^1.0",
+        "drupal/views_bulk_operations": "^4.2",
+        "drupal/views_geojson": "^1.2",
+        "drupal/views_field_view": "^1.0@beta",
+        "drupal/views_slideshow": "^5.0",
+        "drupal/webform": "^6.1",
+        "drupal/migrate_upgrade": "^4.0",
+        "wikimedia/composer-merge-plugin": "^2.0",
+        "drupal/leaflet": "^10.0",
+        "drupal/geocoder": "^3.20 || ^4.0",
+        "drupal/geocoder_autocomplete": "^2.0",
+        "geocoder-php/google-maps-provider": "^4.7",
+        "drupal/geofield": "^1.49",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/features": "^3.12",
+        "drupal/entity_browser": "^2.9",
+        "drupal/views_migration": "^1.2",
+        "drupal/imce": "^3.0",
+        "mradcliffe/og": "master",
+        "drupal/feeds": "^3.0@beta",
+        "drupal/devel": "^5.0",
+        "drupal/classy": "^1.0",
+        "drupal/dxpr_theme": "^5.2",
+        "drupal/dxpr_theme_helper": "^1.0",
+        "drupal/dxpr_builder": "^2.6",
+        "drupal/inline_entity_form": "^2.0@RC",
+        "jackmoore/colorbox": "^1.6",
+        "drupal/feeds_tamper": "^2.0@beta",
+        "drupal/backup_migrate": "^5.0",
+        "drupal/addanother": "^1.3",
+        "drupal/bootstrap_layout_builder": "^2.1",
+        "drupal/layout_builder_blocks": "^1.1",
+        "drupal/leaflet_layers": "^1.1",
+        "drupal/core-project-message": "^10",
+        "drupal/config_update": "^2.0@alpha",
+        "drupal/jquery_ui_slider": "^2.1",
+        "guzzlehttp/guzzle": "^6 || ^7",
+        "drupal/rip": "^1.1",
+        "drupal/rdf": "^3.0@beta",
+        "drupal/views_bootstrap": "^4.5",
+        "drupal/cer": "^5.0@beta",
+        "drupal/leaflet_more_maps": "^2.2",
+        "drupal/imagezoom": "^2.0@beta",
+        "drupal/devel_entity_updates": "^4.2",
+        "drupal/optional_end_date": "^2.0@beta"
     },
-    "installer-paths": {
-      "web/core": ["type:drupal-core"],
-      "web/libraries/{$name}": ["type:drupal-library"],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-      "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-      "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-      "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-      "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+    "require-dev": {
+        "drupal/core-dev": "^10"
     },
-    "composer-exit-on-patch-failure": true,
-    "patchLevel": {"drupal/core": "-p2"}
-  },
-  "autoload": {"classmap": ["upstream-configuration/scripts/ComposerScripts.php"]},
-  "scripts": {
-    "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
-    "upstream-require": ["DrupalComposerManaged\\ComposerScripts::upstreamRequire"]
-  },
-  "scripts-descriptions": {"upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."},
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": false,
-    "platform": {"php": "8.1.13"},
-    "allow-plugins": {
-      "composer/installers": true,
-      "cweagans/composer-patches": true,
-      "drupal/core-composer-scaffold": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "wikimedia/composer-merge-plugin": true,
-      "php-http/discovery": true,
-      "drupal/core-project-message": true
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            },
+            "allowed-packages": ["pantheon-systems/drupal-integrations"],
+            "file-mapping": {
+                "[project-root]/.editorconfig": false,
+                "[project-root]/pantheon.upstream.yml": false,
+                "[project-root]/.gitattributes": false
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+        },
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "enable-patching": true
+    },
+    "autoload": {
+        "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
+    },
+    "scripts": {
+        "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
+        "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": false,
+        "platform": {
+            "php": "8.2.0"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true,
+            "php-http/discovery": true,
+            "drupal/core-project-message": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
+        }
     }
-  }
 }

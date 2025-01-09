@@ -1,0 +1,19 @@
+{
+  "name": "cove_anno_viewer",
+  "version": "1.0.0",
+  "description": "Annotation viewer for integration with Recogito/COVE Studio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "annotations"
+  ],
+  "author": "COVE Editions",
+  "license": "ISC",
+  "dependencies": {
+    "@performant-software/cove-edition": "^0.1.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

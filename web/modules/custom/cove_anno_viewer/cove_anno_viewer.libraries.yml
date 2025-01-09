@@ -1,0 +1,6 @@
+react_app:
+  js:
+    components/components.jsx: { attributes: { type: module } }
+  dependencies:
+    - core/jquery
+    - core/drupal
