@@ -44,6 +44,17 @@ $databases['migrate']['default'] = array(
   'driver' => 'mysql',
 );
 
+$databases['migrate-pantheon']['default'] = array(
+  'database' => 'drupal',
+  'username' => 'covemigrate3',
+  'password' => '*rik@2tGKL!D',
+  'prefix' => '',
+  'host' => '164.92.87.250',
+  'port' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+
 $migrate_settings = __DIR__ . "/settings.migrate-on-pantheon.php";
 if (file_exists($migrate_settings) && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
  include $migrate_settings;
