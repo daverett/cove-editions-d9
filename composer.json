@@ -49,7 +49,7 @@
         "drupal/page_manager": "^4.0@RC",
         "drupal/custom_breadcrumbs": "^1.1",
         "drupal/charts": "^5.0",
-        "drupal/views_timelinejs": "^4.0",
+        "drupal/views_timelinejs": "^4.1",
         "drupal/ctools": "^3.13",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/captcha": "^1.9",
