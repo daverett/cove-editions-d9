@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b01cfe8f4d76e0f05b47c18219e633be",
+    "content-hash": "d3cb0624f17b0cd91b74ddb25d0e2569",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6614,26 +6614,26 @@
         },
         {
             "name": "drupal/views_timelinejs",
-            "version": "4.0.1",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_timelinejs.git",
-                "reference": "4.0.1"
+                "reference": "4.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_timelinejs-4.0.1.zip",
-                "reference": "4.0.1",
-                "shasum": "71f9e0720097a500908e18bebf2df2b88c4b95a9"
+                "url": "https://ftp.drupal.org/files/projects/views_timelinejs-4.1.0.zip",
+                "reference": "4.1.0",
+                "shasum": "e4a1dbe57558abe90420c133f9f4569e9dca0cba"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9.0 || ^10 || ^11"
+                "drupal/core": "^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.1",
-                    "datestamp": "1718688033",
+                    "version": "4.1.0",
+                    "datestamp": "1735225326",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6659,7 +6659,7 @@
                     "homepage": "https://www.drupal.org/user/1806534"
                 },
                 {
-                    "name": "Pol",
+                    "name": "pol",
                     "homepage": "https://www.drupal.org/user/47194"
                 },
                 {
@@ -17780,26 +17780,26 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pantheon-upstreams/upstream-configuration": 20,
-        "drupal/page_manager": 5,
+        "drupal/cer": 10,
+        "drupal/config_update": 15,
+        "drupal/feeds": 10,
+        "drupal/feeds_tamper": 10,
+        "drupal/imagezoom": 10,
+        "drupal/inline_entity_form": 5,
         "drupal/openid_connect": 15,
+        "drupal/optional_end_date": 10,
+        "drupal/page_manager": 5,
+        "drupal/rdf": 10,
         "drupal/realname": 10,
         "drupal/views_field_view": 10,
-        "drupal/feeds": 10,
-        "drupal/inline_entity_form": 5,
-        "drupal/feeds_tamper": 10,
-        "drupal/config_update": 15,
-        "drupal/rdf": 10,
-        "drupal/cer": 10,
-        "drupal/imagezoom": 10,
-        "drupal/optional_end_date": 10
+        "pantheon-upstreams/upstream-configuration": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.2.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
