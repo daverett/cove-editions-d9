@@ -1,0 +1,5 @@
+# Schema for the theme setting configuration file of the COVE Editions Subtheme theme.
+
+cove_editions_subtheme.settings:
+  type: theme_settings
+  label: 'COVE Editions Subtheme settings'
