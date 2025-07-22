@@ -117,7 +117,8 @@
         "drupal/ckeditor_media_resize": "^1.0",
         "drupal/media_bulk_upload": "^3.0",
         "drupal/asset_injector": "^2.21",
-        "drupal/ymd_date": "^1.0"
+        "drupal/ymd_date": "^1.0",
+        "drupal/og": "^2.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
