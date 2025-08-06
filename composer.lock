@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9540d82f9beac2be06196bae608bcbe2",
+    "content-hash": "6f979aab74abb97b5daf75285a1c9314",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5622,34 +5622,30 @@
         },
         {
             "name": "drupal/og",
-            "version": "2.0.0-alpha1",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/og.git",
-                "reference": "2.0.0-alpha1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/og-2.0.0-alpha1.zip",
-                "reference": "2.0.0-alpha1",
-                "shasum": "8716eaad445b1a909047afe6ff98cc1c1494237f"
+                "reference": "d56c8e307581a32b8de0ce8c7bc100f7639a2551"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
             },
             "require-dev": {
                 "drupal/coder": "^8.3.16",
-                "drush/drush": "^12.5 || ^13.3",
-                "phpunit/phpunit": "^7 || ^8 || ^9 || ^10.5"
+                "drush/drush": "^12.5 || ^13.3"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
                 "drupal": {
-                    "version": "2.0.0-alpha1",
-                    "datestamp": "1744224067",
+                    "version": "2.0.0-alpha1+7-dev",
+                    "datestamp": "1753507843",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -18463,7 +18459,7 @@
         "drupal/feeds_tamper": 10,
         "drupal/imagezoom": 10,
         "drupal/inline_entity_form": 5,
-        "drupal/og": 15,
+        "drupal/og": 20,
         "drupal/openid_connect": 15,
         "drupal/optional_end_date": 10,
         "drupal/page_manager": 5,
