@@ -23,7 +23,7 @@
                     "type": "zip"
                 }
             }
-        },
+        }
     ],
     "require": {
         "pantheon-upstreams/upstream-configuration": "dev-main",
