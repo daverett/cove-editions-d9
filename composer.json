@@ -45,7 +45,7 @@
         "drupal/core-recommended": "^10",
         "pantheon-systems/drupal-integrations": "^9",
         "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "^3.3",
+        "drupal/admin_toolbar": "^3.6",
         "drupal/page_manager": "^4.0@RC",
         "drupal/custom_breadcrumbs": "^1.1",
         "drupal/charts": "^5.0",
@@ -89,7 +89,7 @@
         "drupal/feeds": "^3.0@beta",
         "drupal/devel": "^5.0",
         "drupal/classy": "^1.0",
-        "drupal/dxpr_theme": "^5.2",
+        "drupal/dxpr_theme": "^6.0",
         "drupal/dxpr_theme_helper": "^1.0",
         "drupal/dxpr_builder": "^2.6",
         "drupal/inline_entity_form": "^2.0@RC",
@@ -118,7 +118,8 @@
         "drupal/media_bulk_upload": "^3.0",
         "drupal/asset_injector": "^2.21",
         "drupal/ymd_date": "^1.0",
-        "drupal/og": "^2.0@alpha"
+        "drupal/og": "^2.0@alpha",
+        "drupal/color": "^2.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
