@@ -35,7 +35,7 @@
         "drupal/admin_toolbar": "^3.6",
         "drupal/page_manager": "^4.0@RC",
         "drupal/custom_breadcrumbs": "^1.1",
-        "drupal/charts": "^5.0",
+        "drupal/charts": "^5.1",
         "drupal/views_timelinejs": "^4.1",
         "drupal/ctools": "^3.13",
         "drupal/better_exposed_filters": "^6.0",
@@ -93,7 +93,7 @@
         "guzzlehttp/guzzle": "^6 || ^7",
         "drupal/rip": "^1.1",
         "drupal/rdf": "^3.0@beta",
-        "drupal/views_bootstrap": "^4.5",
+        "drupal/views_bootstrap": "^5.3",
         "drupal/cer": "^5.0@beta",
         "drupal/leaflet_more_maps": "^2.2",
         "drupal/imagezoom": "^2.0@beta",
@@ -144,6 +144,11 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "patches": {
+            "drupal/ckeditor_media_resize": {
+            "Plugin not found error in CKEditor5 45.x prevents loading of CKEditor5 altogether when enabled": "patches/3531299-MR16-22.patch"
+        }
+    },
         "enable-patching": true
     },
     "autoload": {
