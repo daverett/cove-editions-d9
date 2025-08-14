@@ -9,6 +9,10 @@
             "url": "https://packages.drupal.org/8"
         },
         {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+        },
+        {
             "type": "path",
             "url": "upstream-configuration"
         },
@@ -108,7 +112,8 @@
         "drupal/og": "2.x-dev@dev",
         "drupal/color": "^2.0@alpha",
         "drupal/linkchecker": "^2.0",
-        "drupal/image_resize_filter": "^1.2"
+        "drupal/image_resize_filter": "^1.2",
+        "oomphinc/composer-installers-extender": "*"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
@@ -130,9 +135,17 @@
                 "[project-root]/.gitattributes": false
             }
         },
+        "installer-types": [
+        "npm-asset",
+        "bower-asset"
+        ],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+            "type:drupal-library",
+            "type:npm-asset",
+            "type:bower-asset"
+        ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -175,7 +188,8 @@
             "php-http/discovery": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
-            "tbachert/spi": true
+            "tbachert/spi": true,
+            "oomphinc/composer-installers-extender": true
         }
     }
 }
