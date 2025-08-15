@@ -76,7 +76,6 @@
         "drupal/entity_browser": "^2.9",
         "drupal/views_migration": "^1.2",
         "drupal/imce": "^3.0",
-        "mradcliffe/og": "master",
         "drupal/feeds": "^3.0@beta",
         "drupal/devel": "^5.0",
         "drupal/classy": "^1.0",
@@ -109,11 +108,11 @@
         "drupal/media_bulk_upload": "^3.0",
         "drupal/asset_injector": "^2.21",
         "drupal/ymd_date": "^1.0",
-        "drupal/og": "2.x-dev@dev",
         "drupal/color": "^2.0@alpha",
         "drupal/linkchecker": "^2.0",
         "drupal/image_resize_filter": "^1.2",
-        "oomphinc/composer-installers-extender": "*"
+        "oomphinc/composer-installers-extender": "*",
+        "drupal/og": "2.x-dev@dev"
     },
     "require-dev": {
         "drupal/core-dev": "^10"

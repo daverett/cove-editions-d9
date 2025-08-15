@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47aaa27124a905d6d9dca9863c337ea4",
+    "content-hash": "1f61d28cc8847cf93f87c53f1c9a257a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8903,16 +8903,6 @@
                 "source": "https://github.com/mck89/peast/tree/v1.17.2"
             },
             "time": "2025-07-01T09:30:45+00:00"
-        },
-        {
-            "name": "mradcliffe/og",
-            "version": "master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mradcliffe/og.git",
-                "reference": "og-migrate"
-            },
-            "type": "drupal-module"
         },
         {
             "name": "nikic/php-parser",
