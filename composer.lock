@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a34693433cd57668026a6f6570a621d",
+    "content-hash": "47aaa27124a905d6d9dca9863c337ea4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5843,7 +5843,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/og.git",
-                "reference": "d56c8e307581a32b8de0ce8c7bc100f7639a2551"
+                "reference": "cf13717514d007a5e23833570d60d1e96034a4f6"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -5858,8 +5858,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "2.0.0-alpha1+7-dev",
-                    "datestamp": "1753507843",
+                    "version": "2.0.0-alpha1+8-dev",
+                    "datestamp": "1755209476",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
