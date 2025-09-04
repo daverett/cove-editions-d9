@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f61d28cc8847cf93f87c53f1c9a257a",
+    "content-hash": "56483811801da050732c593504246731",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,15 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.3.0"
             },
             "time": "2025-03-13T08:50:04+00:00"
+        },
+        {
+            "name": "briancherne/jquery.hover-intent",
+            "version": "1.10.2",
+            "dist": {
+                "type": "tar",
+                "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.2.tar.gz"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -1541,6 +1550,25 @@
                 }
             ],
             "time": "2024-11-01T21:49:07+00:00"
+        },
+        {
+            "name": "douglascrockford/json2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/douglascrockford/JSON-js",
+                "reference": "master"
+            },
+            "type": "drupal-library"
+        },
+        {
+            "name": "dropzone/dropzone",
+            "version": "v6.0.0-beta.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/dropzone/dropzone/releases/download/v6.0.0-beta.2/dist.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "drupal/addanother",
@@ -8789,6 +8817,15 @@
             "time": "2025-05-28T08:48:57+00:00"
         },
         {
+            "name": "malsup/jquery.cycle",
+            "version": "3.0.3-a",
+            "dist": {
+                "type": "tar",
+                "url": "https://github.com/malsup/cycle/archive/refs/tags/3.0.3-a.tar.gz"
+            },
+            "type": "drupal-library"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.9.0",
             "source": {
@@ -12943,6 +12980,16 @@
                 }
             ],
             "time": "2025-06-03T06:46:12+00:00"
+        },
+        {
+            "name": "tobia/jquery.pause",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tobia/Pause",
+                "reference": "master"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "twig/twig",
@@ -18708,6 +18755,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dropzone/dropzone": 10,
         "drupal/cer": 10,
         "drupal/color": 15,
         "drupal/config_update": 15,

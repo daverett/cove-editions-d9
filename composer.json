@@ -27,6 +27,18 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dropzone/dropzone",
+                "version": "v6.0.0-beta.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/dropzone/dropzone/releases/download/v6.0.0-beta.2/dist.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -64,7 +76,7 @@
         "drupal/views_slideshow": "^5.0",
         "drupal/webform": "^6.1",
         "drupal/migrate_upgrade": "^4.0",
-        "wikimedia/composer-merge-plugin": "^2.0",
+        "wikimedia/composer-merge-plugin": "*",
         "drupal/leaflet": "^10.0",
         "drupal/geocoder": "^3.20 || ^4.0",
         "drupal/geocoder_autocomplete": "^2.0",
@@ -112,7 +124,8 @@
         "drupal/linkchecker": "^2.0",
         "drupal/image_resize_filter": "^1.2",
         "oomphinc/composer-installers-extender": "*",
-        "drupal/og": "2.x-dev@dev"
+        "drupal/og": "2.x-dev@dev",
+        "dropzone/dropzone": "^6.0@beta"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
@@ -153,6 +166,12 @@
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/views_slideshow/composer.libraries.json",
+                "web/modules/contrib/views_slideshow/modules/views_slideshow_cycle/composer.libraries.json"
+            ]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
