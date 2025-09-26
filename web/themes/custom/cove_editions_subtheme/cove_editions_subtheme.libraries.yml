@@ -1,12 +1,28 @@
+react_app:
+  version: 19.1.1
+  js:
+    js/dist/main.min.js: {minified: true}
+  css:
+    theme:
+      css/cove-edition.css: {minified: true}
+
+react_app_dev:
+  version: 19.1.1
+  js:
+    js/dist_dev/main.min.js: {minified: true}
+  css:
+    theme:
+      css/cove-edition.css: {minified: true}
+  
+  dependencies:
+    - core/jquery
+    - core/drupal
+
 global-styling:
   css:
     theme:
       css/dxpr_theme_subtheme.css: {weight: 6}
-      css/annotationSupport.css: {}
-      css/annotationSupport_lineNumbers.css: {}
-  js:
-    js/annotationSupport_init.js: {}
-    js/annotationSupport_annotationPanel.js: {}
+      
 bootstrap-3:
   css:
     theme:

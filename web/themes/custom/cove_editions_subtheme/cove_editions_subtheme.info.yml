@@ -24,6 +24,7 @@ regions:
 
 libraries:
   - 'cove_editions_subtheme/global-styling'
+  - 'cove_editions_subtheme/react_app'
 
 libraries-override:
   dxpr_theme/bootstrap-3: false

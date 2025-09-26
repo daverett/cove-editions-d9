@@ -25,6 +25,17 @@ function cove_editions_subtheme_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements hook_page_attachments_alter().
+ */
+function cove_editions_subtheme_page_attachments_alter(array &$attachments) {
+  // Use the dev library if we're developing locally.
+  if (in_array('cove_editions_subtheme/react_app', $attachments['#attached']['library']) && file_exists(__DIR__ . '/js/dist_dev')) {
+    $index = array_search('cove_editions_subtheme/react_app', $attachments['#attached']['library']);
+    $attachments['#attached']['library'][$index] = 'cove_editions_subtheme/react_app_dev';
+  }
+}
+
+/**
  * Implements template_preprocess_page()
  */
 function cove_editions_subtheme_preprocess_page(&$variables) {
