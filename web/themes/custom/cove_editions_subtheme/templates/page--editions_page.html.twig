@@ -244,7 +244,7 @@
         {# Content #}
         {% block content %}
           <a id="main-content"></a>
-          <div id="react-app" class="block"/>
+         {{ attach_library('cove_editions_subtheme/react_app') }}
           {{ page.content }}
         {% endblock %}
       </section>

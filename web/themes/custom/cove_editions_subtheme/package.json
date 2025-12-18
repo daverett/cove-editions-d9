@@ -4,9 +4,9 @@
   "description": "Annotation viewer for integration with Recogito/COVE Studio",
   "main": "js/src/index.jsx",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "build:dev": "webpack",
-    "start": "webpack --watch"
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "NODE_ENV=development webpack --watch --config webpack.config.js",
+    "start": "npm run dev"
   },
   "keywords": [
     "annotations"
