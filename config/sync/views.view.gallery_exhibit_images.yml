@@ -248,6 +248,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        delta:
+          id: delta
+          table: node__field_images_in_exhibit
+          field: delta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data

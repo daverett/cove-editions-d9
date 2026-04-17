@@ -23,6 +23,7 @@ dependencies:
     - entity_browser
     - field_group
     - image
+    - og
     - path
     - text
 third_party_settings:
@@ -128,7 +129,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   og_audience:
-    type: entity_reference_autocomplete
+    type: og_complex
     weight: 17
     region: content
     settings:

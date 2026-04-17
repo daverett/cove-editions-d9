@@ -11,8 +11,8 @@ label: administrator
 weight: 7
 is_admin: true
 permissions:
-  - 'create body'
-  - 'edit body'
-  - 'edit own body'
-  - 'view body'
-  - 'view own body'
+  - 'create field_index_banner'
+  - 'edit field_index_banner'
+  - 'edit own field_index_banner'
+  - 'view field_index_banner'
+  - 'view own field_index_banner'

@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_index_banner
     - field.storage.node.field_main_author
     - field.storage.node.field_original_publication_date
-    - image.style.index_banner
   module:
     - datetime_range
     - image
@@ -82,7 +81,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: index_banner
+            image_style: ''
             image_loading:
               attribute: lazy
           group_column: ''
@@ -269,7 +268,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
