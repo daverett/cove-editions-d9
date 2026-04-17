@@ -1,0 +1,14 @@
+uuid: 04740314-3224-448e-a788-29f967551ea3
+langcode: en
+status: true
+dependencies: {  }
+id: map_sync
+label: 'Map sync'
+enabled: true
+first_field: field_places_in_this_map
+second_field: field_parent_map
+add_direction: append
+bundles:
+  node:
+    - map
+    - place

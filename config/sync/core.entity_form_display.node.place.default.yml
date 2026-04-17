@@ -1,0 +1,228 @@
+uuid: c7ed0002-3eb1-4448-a6ba-6151f0a8a719
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.associated_events_browser
+    - field.field.node.place.body
+    - field.field.node.place.feeds_item
+    - field.field.node.place.field_assoc_events
+    - field.field.node.place.field_associated_place_anchor_ta
+    - field.field.node.place.field_geocode
+    - field.field.node.place.field_geocoder
+    - field.field.node.place.field_latitude_longitude
+    - field.field.node.place.field_parent_map
+    - field.field.node.place.field_place_search
+    - field.field.node.place.field_resource_index
+    - field.field.node.place.field_vetted_
+    - field.field.node.place.group_content_access
+    - field.field.node.place.og_audience
+    - field.field.node.place.og_group_ref
+    - node.type.place
+  module:
+    - entity_browser
+    - leaflet
+    - path
+    - text
+id: node.place.default
+targetEntityType: node
+bundle: place
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_assoc_events:
+    type: entity_browser_entity_reference
+    weight: 12
+    region: content
+    settings:
+      entity_browser: associated_events_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_geocoder:
+    type: leaflet_widget_default
+    weight: 2
+    region: content
+    settings:
+      geometry_validation: true
+      map:
+        leaflet_map: great_britain
+        height: 500
+        auto_center: 1
+        map_position:
+          force: true
+          center:
+            lat: 28.300781
+            lon: 44.813019
+          zoomControlPosition: topleft
+          zoom: 2
+          minZoom: 1
+          maxZoom: 18
+          zoomFiner: 0
+        scroll_zoom_enabled: 1
+      input:
+        show: true
+        readonly: false
+      toolbar:
+        position: topright
+        marker: defaultMarker
+        drawPolyline: true
+        drawRectangle: true
+        drawPolygon: true
+        drawCircle: false
+        drawText: false
+        editMode: true
+        dragMode: true
+        cutPolygon: false
+        removalMode: true
+        rotateMode: false
+      reset_map:
+        control: true
+        options: '{"position":"bottomright","title":"Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+      fullscreen:
+        control: true
+        options: '{"position":"topleft","pseudoFullscreen":false}'
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      feature_properties:
+        values: ''
+      locate:
+        control: false
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+        automatic: false
+      geocoder:
+        control: true
+        settings:
+          set_marker: true
+          popup: false
+          autocomplete:
+            placeholder: 'Search location'
+            title: 'Search a location on the map'
+          position: topright
+          input_size: 40
+          providers:
+            googlemaps:
+              weight: -100
+              checked: true
+            random:
+              weight: 0
+              checked: false
+          min_terms: 4
+          delay: 600
+          zoom: 12
+          options: ''
+      geojson_overlays:
+        sources:
+          fields: {  }
+        zoom_to_geojson: true
+        path: '{"color":"#f71ed3","opacity":"0.7","stroke":true,"weight":2,"fillColor":"#ffddfe","fillOpacity":"0.1","radius":3,"dashArray":"5, 5"}'
+        snapping: true
+    third_party_settings: {  }
+  field_parent_map:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_resource_index:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_vetted_:
+    type: options_buttons
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  group_content_access:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  og_group_ref:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  field_associated_place_anchor_ta: true
+  field_geocode: true
+  field_latitude_longitude: true
+  field_place_search: true
+  og_audience: true

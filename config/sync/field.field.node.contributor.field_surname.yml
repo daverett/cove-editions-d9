@@ -1,0 +1,19 @@
+uuid: 66d8841d-17e6-4a79-9138-db53e991ae57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_surname
+    - node.type.contributor
+id: node.contributor.field_surname
+field_name: field_surname
+entity_type: node
+bundle: contributor
+label: Surname
+description: 'The surname or last name of the contributor'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

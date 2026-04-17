@@ -1,0 +1,21 @@
+uuid: 69f03c99-d789-47f7-8d65-cf3496b8ec2d
+langcode: en
+status: true
+dependencies: {  }
+id: great_britain_os_one_inch_1885_1900
+label: 'Great Britain - OS One Inch, 1885-1900'
+description: 'Served from National Library of Scotland site'
+settings:
+  plugin_type: tilelayer
+  urlTemplate: 'https://geo.nls.uk/maps/os/1inch_2nd_ed/{z}/{x}/{y}.png'
+  attribution: 'Copyright <a href="http://maps.nls.uk/projects/subscription-api/">National Library of Scotland</a>'
+  minZoom: '0'
+  maxZoom: '19'
+  opacity: '0.8'
+  subdomains: ''
+  errorTileUrl: ''
+  zoomOffset: '0'
+  tms: 0
+  zoomReverse: 0
+  detectRetina: 0
+  layer_type: overlay

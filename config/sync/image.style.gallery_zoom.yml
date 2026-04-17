@@ -1,0 +1,15 @@
+uuid: 023e1c19-fade-40fa-8ca9-bbc4866450a5
+langcode: en
+status: true
+dependencies: {  }
+name: gallery_zoom
+label: 'Gallery Zoom'
+effects:
+  b2ace6cf-6fac-4585-8fb2-2bb00e43d261:
+    uuid: b2ace6cf-6fac-4585-8fb2-2bb00e43d261
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false

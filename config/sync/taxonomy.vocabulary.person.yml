@@ -1,0 +1,9 @@
+uuid: 400219a0-4a8d-4aef-8e13-96d8ae3d62b9
+langcode: en
+status: true
+dependencies: {  }
+name: Person
+vid: person
+description: 'Tags sourced from OpenCalais about Person.'
+weight: -6
+new_revision: false

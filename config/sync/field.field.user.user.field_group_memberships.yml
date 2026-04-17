@@ -1,0 +1,30 @@
+uuid: ba9c1670-a177-4173-a800-6617e32da429
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_group_memberships
+    - node.type.course
+  module:
+    - user
+id: user.user.field_group_memberships
+field_name: field_group_memberships
+entity_type: user
+bundle: user
+label: 'Group memberships'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

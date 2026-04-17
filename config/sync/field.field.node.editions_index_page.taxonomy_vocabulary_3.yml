@@ -1,0 +1,26 @@
+uuid: f6d02368-104a-44e0-bb57-12366070e4cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.taxonomy_vocabulary_3
+    - node.type.editions_index_page
+    - taxonomy.vocabulary.vocabulary_3
+id: node.editions_index_page.taxonomy_vocabulary_3
+field_name: taxonomy_vocabulary_3
+entity_type: node
+bundle: editions_index_page
+label: Tags
+description: 'Enter a comma separated list of words'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vocabulary_3: vocabulary_3
+    sort:
+      field: _none
+field_type: entity_reference

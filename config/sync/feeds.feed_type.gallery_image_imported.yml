@@ -1,0 +1,275 @@
+uuid: 836f0c95-2ecf-443d-b26a-a4a8fda1129e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery_image.field_artist
+    - field.field.node.gallery_image.field_artist_unknown
+    - field.field.node.gallery_image.field_assoc_events
+    - field.field.node.gallery_image.field_assoc_places
+    - field.field.node.gallery_image.field_copyright
+    - field.field.node.gallery_image.field_description
+    - field.field.node.gallery_image.field_featured_in_exhibit
+    - field.field.node.gallery_image.field_galleryimage
+    - field.field.node.gallery_image.og_group_ref
+    - node.type.gallery_image
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      41d253d4-1812-4e6c-8cec-931eab18e65f:
+        separator: ','
+        limit: null
+        uuid: 41d253d4-1812-4e6c-8cec-931eab18e65f
+        plugin: explode
+        source: gallery_image_fid
+        weight: 0
+        label: Explode
+label: 'Gallery image imported'
+id: gallery_image_imported
+description: 'This is to correct missing gallery images after 12/14/24'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: gallery_image
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  nid:
+    value: Nid
+    label: Nid
+    machine_name: nid
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  post_date:
+    value: 'Post date'
+    label: 'Post date'
+    machine_name: post_date
+    type: csv
+  author_uid:
+    value: 'Author uid'
+    label: 'Author uid'
+    machine_name: author_uid
+    type: csv
+  gallery_image:
+    value: 'Gallery Image'
+    label: 'Gallery Image'
+    machine_name: gallery_image
+    type: csv
+  gallery_image_alt:
+    value: 'Gallery Image Alt'
+    label: 'Gallery Image Alt'
+    machine_name: gallery_image_alt
+    type: csv
+  gallery_image_title:
+    value: 'Gallery Image Title'
+    label: 'Gallery Image Title'
+    machine_name: gallery_image_title
+    type: csv
+  associated_events:
+    value: 'Associated Events'
+    label: 'Associated Events'
+    machine_name: associated_events
+    type: csv
+  associated_places:
+    value: 'Associated Places'
+    label: 'Associated Places'
+    machine_name: associated_places
+    type: csv
+  featured_in_exhibit:
+    value: 'Featured in Exhibit'
+    label: 'Featured in Exhibit'
+    machine_name: featured_in_exhibit
+    type: csv
+  artist:
+    value: Artist
+    label: Artist
+    machine_name: artist
+    type: csv
+  artist_unknown:
+    value: 'Artist Unknown'
+    label: 'Artist Unknown'
+    machine_name: artist_unknown
+    type: csv
+  copyright:
+    value: Copyright
+    label: Copyright
+    machine_name: copyright
+    type: csv
+  description:
+    value: Description
+    label: Description
+    machine_name: description
+    type: csv
+  group_content_visibility:
+    value: 'Group content visibility'
+    label: 'Group content visibility'
+    machine_name: group_content_visibility
+    type: csv
+  groups_audience:
+    value: 'Groups audience'
+    label: 'Groups audience'
+    machine_name: groups_audience
+    type: csv
+  gallery_image_fid:
+    value: 'Gallery Image Fid'
+    label: 'Gallery Image Fid'
+    machine_name: gallery_image_fid
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: nid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: created
+    map:
+      value: post_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: uid
+    map:
+      target_id: author_uid
+    settings:
+      language: ''
+      reference_by: uid
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: field_galleryimage
+    map:
+      target_id: gallery_image_fid
+      alt: gallery_image_alt
+      title: gallery_image_title
+    settings:
+      language: ''
+      reference_by: fid
+      autocreate: 1
+      existing: '2'
+      autocreate_bundle: false
+  -
+    target: field_assoc_events
+    map:
+      target_id: associated_events
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: chronology_entry
+  -
+    target: field_assoc_places
+    map:
+      target_id: associated_places
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: place
+  -
+    target: field_featured_in_exhibit
+    map:
+      target_id: featured_in_exhibit
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: galler_exhibit
+  -
+    target: field_artist
+    map:
+      target_id: artist
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: artist
+  -
+    target: field_artist_unknown
+    map:
+      value: artist_unknown
+    settings:
+      language: null
+  -
+    target: field_copyright
+    map:
+      value: copyright
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_description
+    map:
+      value: description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: og_group_ref
+    map:
+      target_id: groups_audience
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: course
+      feeds_item: false

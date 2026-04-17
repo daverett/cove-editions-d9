@@ -1,0 +1,28 @@
+uuid: bae01d03-dba6-43a3-97e5-c989a2a99595
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edited_by
+    - node.type.editions_index_page
+id: node.editions_index_page.field_edited_by
+field_name: field_edited_by
+entity_type: node
+bundle: editions_index_page
+label: Editor(s)
+description: 'Use the autocomplete form to add editors to this resource'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 1
+field_type: entity_reference

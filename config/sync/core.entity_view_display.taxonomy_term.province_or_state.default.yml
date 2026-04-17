@@ -1,0 +1,58 @@
+uuid: af14e4e3-bf42-4f86-8147-5a1667837f23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.province_or_state.containedbycounty
+    - field.field.taxonomy_term.province_or_state.containedbystate
+    - field.field.taxonomy_term.province_or_state.latitude
+    - field.field.taxonomy_term.province_or_state.longitude
+    - taxonomy.vocabulary.province_or_state
+  module:
+    - text
+id: taxonomy_term.province_or_state.default
+targetEntityType: taxonomy_term
+bundle: province_or_state
+mode: default
+content:
+  containedbycounty:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  containedbystate:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  latitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  longitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true

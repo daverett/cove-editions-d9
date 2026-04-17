@@ -1,0 +1,25 @@
+uuid: bdd96d29-bcb8-4d8d-8957-47e1be5448e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cove_editions_subtheme
+_core:
+  default_config_hash: lOdPdXWPbE5QLAuSRidWj90DTENmQzKLeNjvr64juyo
+id: cove_editions_subtheme_branding
+theme: cove_editions_subtheme
+region: navigation
+weight: -12
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

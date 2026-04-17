@@ -1,0 +1,57 @@
+uuid: 85c9ec69-4d79-4d04-bb21-f4e752edd0bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.article
+    - node.type.page
+    - taxonomy.vocabulary.tags
+  module:
+    - comment
+    - contextual
+    - field_permissions
+    - file
+    - filter
+    - help
+    - node
+    - path
+    - system
+    - taxonomy
+    - tour
+_core:
+  default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access tour'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create field_items_in_this_chronology'
+  - 'create field_places_in_this_map'
+  - 'create page content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'delete own files'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own field_items_in_this_chronology'
+  - 'edit own field_places_in_this_map'
+  - 'edit own page content'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'use text format full_html'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

@@ -1,0 +1,23 @@
+uuid: 3b81d897-8993-49a2-bd16-2f7dc7fbd134
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.group_content_access
+    - node.type.map
+  module:
+    - options
+id: node.map.group_content_access
+field_name: group_content_access
+entity_type: node
+bundle: map
+label: 'Group content visibility'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,108 @@
+uuid: a902b0e1-add0-403a-84b0-ff65cdaaed40
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.editions_page.body
+    - field.field.node.editions_page.field_authored_by_primary_
+    - field.field.node.editions_page.field_authored_by_secondary_
+    - field.field.node.editions_page.field_cove_studio_uri
+    - field.field.node.editions_page.field_doc_owner
+    - field.field.node.editions_page.field_document_order
+    - field.field.node.editions_page.field_document_upload
+    - field.field.node.editions_page.field_edition_component
+    - field.field.node.editions_page.field_nines_discipline_s_
+    - field.field.node.editions_page.field_nines_genre_s_
+    - field.field.node.editions_page.field_nines_type_s_
+    - field.field.node.editions_page.field_original_publication_date
+    - field.field.node.editions_page.field_published
+    - field.field.node.editions_page.field_resource_index
+    - field.field.node.editions_page.field_unique_target
+    - field.field.node.editions_page.field_xml_tei
+    - field.field.node.editions_page.opencalais_city_tags
+    - field.field.node.editions_page.opencalais_continent_tags
+    - field.field.node.editions_page.opencalais_country_tags
+    - field.field.node.editions_page.opencalais_naturalfeature_tags
+    - field.field.node.editions_page.opencalais_organization_tags
+    - field.field.node.editions_page.opencalais_person_tags
+    - field.field.node.editions_page.opencalais_provinceorstate_tags
+    - field.field.node.editions_page.opencalais_region_tags
+    - field.field.node.editions_page.taxonomy_vocabulary_3
+    - node.type.editions_page
+  module:
+    - datetime
+    - text
+    - user
+id: node.editions_page.search_result
+targetEntityType: node
+bundle: editions_page
+mode: search_result
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_authored_by_primary_:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_authored_by_secondary_:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_published:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  field_resource_index:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_cove_studio_uri: true
+  field_doc_owner: true
+  field_document_order: true
+  field_document_upload: true
+  field_edition_component: true
+  field_nines_discipline_s_: true
+  field_nines_genre_s_: true
+  field_nines_type_s_: true
+  field_original_publication_date: true
+  field_unique_target: true
+  field_xml_tei: true
+  opencalais_city_tags: true
+  opencalais_continent_tags: true
+  opencalais_country_tags: true
+  opencalais_naturalfeature_tags: true
+  opencalais_organization_tags: true
+  opencalais_person_tags: true
+  opencalais_provinceorstate_tags: true
+  opencalais_region_tags: true
+  taxonomy_vocabulary_3: true

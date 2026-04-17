@@ -1,0 +1,26 @@
+uuid: 9ebc4079-3946-491c-b7f4-cc543a037005
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edition_component
+    - node.type.editions_page
+    - taxonomy.vocabulary.edition_components
+id: node.editions_page.field_edition_component
+field_name: field_edition_component
+entity_type: node
+bundle: editions_page
+label: 'Edition component'
+description: 'You can use this field to categorize the various documents in your edition on the Table of Contents page. Only one item can be selected. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      edition_components: edition_components
+    sort:
+      field: _none
+field_type: entity_reference

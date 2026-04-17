@@ -1,0 +1,248 @@
+uuid: 87f3f64f-b161-48a5-b8be-613dc8ea0b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.chronology.body
+    - field.field.node.chronology.feeds_item
+    - field.field.node.chronology.field_items_in_this_chronology
+    - field.field.node.chronology.field_resource_index
+    - field.field.node.chronology.group_content_access
+    - field.field.node.chronology.og_audience
+    - field.field.node.chronology.og_group_ref
+    - node.type.chronology
+    - views.view.custom_timeline
+  module:
+    - layout_builder
+    - layout_discovery
+    - options
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          1f52afe1-7030-4c29-afaf-d86bc1078f0f:
+            uuid: 1f52afe1-7030-4c29-afaf-d86bc1078f0f
+            region: content
+            configuration:
+              id: 'field_block:node:chronology:field_resource_index'
+              label: 'Parent Resource'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          49c9f8ee-6cfe-4a7a-9d65-5f85802e9b23:
+            uuid: 49c9f8ee-6cfe-4a7a-9d65-5f85802e9b23
+            region: content
+            configuration:
+              id: 'field_block:node:chronology:og_group_ref'
+              label: 'Part of Group'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional:
+              bootstrap_styles:
+                block_style:
+                  background:
+                    background_type: null
+                  background_color:
+                    class: null
+                  background_media:
+                    image:
+                      media_id: null
+                    video:
+                      media_id: null
+                    background_options:
+                      background_position: center
+                      background_repeat: no-repeat
+                      background_attachment: not_fixed
+                      background_size: cover
+                  text_color:
+                    class: null
+                  text_alignment:
+                    class: null
+                  padding:
+                    class: _none
+                  padding_left:
+                    class: _none
+                  padding_top:
+                    class: _none
+                  padding_right:
+                    class: _none
+                  padding_bottom:
+                    class: _none
+                  margin:
+                    class: _none
+                  margin_left:
+                    class: _none
+                  margin_top:
+                    class: _none
+                  margin_right:
+                    class: _none
+                  margin_bottom:
+                    class: _none
+                  border:
+                    border_style:
+                      class: null
+                    border_width:
+                      class: _none
+                    border_color:
+                      class: null
+                    rounded_corners:
+                      class: _none
+                    border_left_style:
+                      class: null
+                    border_left_width:
+                      class: _none
+                    border_left_color:
+                      class: null
+                    border_top_style:
+                      class: null
+                    border_top_width:
+                      class: _none
+                    border_top_color:
+                      class: null
+                    border_right_style:
+                      class: null
+                    border_right_width:
+                      class: _none
+                    border_right_color:
+                      class: null
+                    border_bottom_style:
+                      class: null
+                    border_bottom_width:
+                      class: _none
+                    border_bottom_color:
+                      class: null
+                    rounded_corner_top_left:
+                      class: _none
+                    rounded_corner_top_right:
+                      class: _none
+                    rounded_corner_bottom_left:
+                      class: _none
+                    rounded_corner_bottom_right:
+                      class: _none
+                  box_shadow:
+                    class: null
+                  scroll_effects:
+                    class: null
+          dedcef27-ff71-4386-8b56-9a138280961d:
+            uuid: dedcef27-ff71-4386-8b56-9a138280961d
+            region: content
+            configuration:
+              id: 'views_block:custom_timeline-block_1'
+              label: Timeline
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: Timeline
+              items_per_page: none
+            weight: 2
+            additional: {  }
+          00e8c256-e1e0-430d-804c-749a4e9e3be0:
+            uuid: 00e8c256-e1e0-430d-804c-749a4e9e3be0
+            region: content
+            configuration:
+              id: 'field_block:node:chronology:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          b5b46778-a7ca-4ea0-b3a6-66ab0b5a42d3:
+            uuid: b5b46778-a7ca-4ea0-b3a6-66ab0b5a42d3
+            region: content
+            configuration:
+              id: 'views_block:custom_timeline-block_2'
+              label: 'Table of Events'
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: 'Table of Events'
+              items_per_page: none
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+id: node.chronology.default
+targetEntityType: node
+bundle: chronology
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_items_in_this_chronology:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_resource_index:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  group_content_access:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  og_group_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  breadcrumbs: true
+  feeds_item: true
+  og_audience: true

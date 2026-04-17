@@ -1,0 +1,30 @@
+uuid: 49f52f61-f433-4bbc-958b-3e75de4f2bd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_index
+    - node.type.editions_index_page
+    - node.type.editions_page
+id: node.editions_page.field_resource_index
+field_name: field_resource_index
+entity_type: node
+bundle: editions_page
+label: 'Parent Resource'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_index_page: editions_index_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

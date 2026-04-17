@@ -1,0 +1,23 @@
+uuid: 87d8473f-7f16-4d2c-b222-f46a30af9d1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.og_membership.feeds_item
+    - og.og_membership_type.default
+  module:
+    - feeds
+id: og_membership.default.feeds_item
+field_name: feeds_item
+entity_type: og_membership
+bundle: default
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

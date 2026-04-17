@@ -1,0 +1,31 @@
+uuid: 11b32c51-ac79-4075-a1ea-7361ad56d3ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_annotatable_editions
+    - node.type.editions_index_page
+  module:
+    - user
+id: user.user.field_annotatable_editions
+field_name: field_annotatable_editions
+entity_type: user
+bundle: user
+label: 'Annotatable Editions'
+description: "Editions to which you've been assigned as Annotator."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_index_page: editions_index_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

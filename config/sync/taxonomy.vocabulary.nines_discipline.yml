@@ -1,0 +1,9 @@
+uuid: fc16c6db-02ee-4637-8140-ca99c5d1beee
+langcode: en
+status: true
+dependencies: {  }
+name: 'NINES Discipline'
+vid: nines_discipline
+description: 'information about the disciplines that may be interested in the object, for NINES RDF export'
+weight: 0
+new_revision: false

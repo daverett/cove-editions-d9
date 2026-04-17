@@ -1,0 +1,298 @@
+uuid: 1dd4c008-ed88-4cd4-86c3-d4bdd7ef22df
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.associated_places
+    - field.field.node.gallery_image.feeds_item
+    - field.field.node.gallery_image.field_accession_number_
+    - field.field.node.gallery_image.field_artist
+    - field.field.node.gallery_image.field_artist_unknown
+    - field.field.node.gallery_image.field_assoc_events
+    - field.field.node.gallery_image.field_assoc_places
+    - field.field.node.gallery_image.field_copyright
+    - field.field.node.gallery_image.field_description
+    - field.field.node.gallery_image.field_display_date
+    - field.field.node.gallery_image.field_event_date
+    - field.field.node.gallery_image.field_featured_in_exhibit
+    - field.field.node.gallery_image.field_gallery_associated_events
+    - field.field.node.gallery_image.field_gallery_location
+    - field.field.node.gallery_image.field_galleryimage
+    - field.field.node.gallery_image.field_height_in_centimeters
+    - field.field.node.gallery_image.field_latitude_longitude
+    - field.field.node.gallery_image.field_nines_discipline_s_
+    - field.field.node.gallery_image.field_nines_genre_s_
+    - field.field.node.gallery_image.field_nines_type_s_
+    - field.field.node.gallery_image.field_publisher
+    - field.field.node.gallery_image.field_vetted_
+    - field.field.node.gallery_image.field_width_in_centimeters_
+    - field.field.node.gallery_image.group_content_access
+    - field.field.node.gallery_image.og_audience
+    - field.field.node.gallery_image.og_group_ref
+    - field.field.node.gallery_image.taxonomy_vocabulary_3
+    - image.style.thumbnail
+    - node.type.gallery_image
+  module:
+    - datetime_range
+    - entity_browser
+    - field_group
+    - image
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_advanced:
+      children:
+        - field_accession_number_
+        - field_height_in_centimeters
+        - field_width_in_centimeters_
+        - field_publisher
+        - field_gallery_location
+        - field_nines_discipline_s_
+        - field_nines_genre_s_
+        - field_nines_type_s_
+        - taxonomy_vocabulary_3
+      label: 'Advanced Fields'
+      region: content
+      parent_name: ''
+      weight: 13
+      format_type: details
+      format_settings:
+        classes: 'group-advanced field-group-fieldset'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: 'This area provides additional metadata fields, all of which are optional. '
+        required_fields: false
+id: node.gallery_image.default
+targetEntityType: node
+bundle: gallery_image
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_accession_number_:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_artist:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_artist_unknown:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_assoc_events:
+    type: entity_browser_entity_reference
+    weight: 9
+    region: content
+    settings:
+      entity_browser: associated_events_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_assoc_places:
+    type: entity_browser_entity_reference
+    weight: 10
+    region: content
+    settings:
+      entity_browser: associated_places
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_copyright:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_date:
+    type: daterange_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_featured_in_exhibit:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_gallery_location:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_galleryimage:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_height_in_centimeters:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_nines_discipline_s_:
+    type: options_buttons
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_genre_s_:
+    type: options_buttons
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_type_s_:
+    type: options_buttons
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_publisher:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vetted_:
+    type: options_buttons
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_width_in_centimeters_:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  group_content_access:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  og_group_ref:
+    type: options_select
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 19
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  taxonomy_vocabulary_3:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  field_display_date: true
+  field_gallery_associated_events: true
+  field_latitude_longitude: true
+  og_audience: true

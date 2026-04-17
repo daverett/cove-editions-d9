@@ -1,0 +1,80 @@
+uuid: cab333dc-fe99-4eef-94f7-c8d72db70c01
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_og_role
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Og roles'
+source:
+  plugin: d7_og_role
+process:
+  id:
+    -
+      plugin: concat
+      source:
+        - group_type
+        - group_bundle
+        - name
+      delimiter: '-'
+    -
+      plugin: og_role_machine_name
+    -
+      plugin: make_unique_entity_field
+      entity_type: og_role
+      field: id
+      migrated: true
+  label:
+    -
+      plugin: get
+      source: name
+  weight:
+    -
+      plugin: get
+      source: rid
+  group_type:
+    -
+      plugin: get
+      source: group_type
+  group_bundle:
+    -
+      plugin: get
+      source: group_bundle
+  group_id:
+    -
+      plugin: get
+      source: gid
+  is_admin:
+    -
+      plugin: static_map
+      source: name
+      bypass: false
+      map:
+        member: false
+        non-member: false
+        administrator: true
+      default_value: false
+  role_type:
+    -
+      plugin: static_map
+      source: name
+      bypass: false
+      map:
+        member: required
+        non-member: required
+        administrator: required
+      default_value: standard
+  permissions:
+    -
+      plugin: get
+      source: permissions
+destination:
+  plugin: 'entity:og_role'
+migration_dependencies:
+  required:
+    - upgrade_d7_og_group
+  optional: {  }

@@ -1,0 +1,9 @@
+uuid: 07fbf3e1-e405-432e-b964-916ec1bac7ff
+langcode: en
+status: true
+dependencies: {  }
+name: 'Special Roles'
+vid: special_roles
+description: 'Used with user profiles to mark users with special status, e.g. Advisory Board Member or General Editor'
+weight: 0
+new_revision: false

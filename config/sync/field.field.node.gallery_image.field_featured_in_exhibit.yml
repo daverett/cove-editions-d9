@@ -1,0 +1,29 @@
+uuid: 8f9688f0-cd9d-4898-bd63-3993b1b3f05d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_in_exhibit
+    - node.type.galler_exhibit
+    - node.type.gallery_image
+id: node.gallery_image.field_featured_in_exhibit
+field_name: field_featured_in_exhibit
+entity_type: node
+bundle: gallery_image
+label: 'Featured in Exhibit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      galler_exhibit: galler_exhibit
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

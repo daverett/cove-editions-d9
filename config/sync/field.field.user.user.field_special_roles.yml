@@ -1,0 +1,27 @@
+uuid: ad2a1421-b0c7-4728-8c83-8d512d1f0080
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_special_roles
+    - taxonomy.vocabulary.special_roles
+  module:
+    - user
+id: user.user.field_special_roles
+field_name: field_special_roles
+entity_type: user
+bundle: user
+label: 'Special Roles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      special_roles: special_roles
+    sort:
+      field: _none
+field_type: entity_reference

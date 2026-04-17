@@ -1,0 +1,9 @@
+uuid: f9457f36-9e13-4add-957d-27c7b2cbeaa6
+langcode: en
+status: true
+dependencies: {  }
+name: 'AI Edit Commands'
+vid: ai_agent_commands
+description: 'Commands for AI editing tools'
+weight: 0
+new_revision: false

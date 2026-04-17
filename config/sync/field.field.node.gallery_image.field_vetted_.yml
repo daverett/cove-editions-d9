@@ -1,0 +1,23 @@
+uuid: 97ca8c8b-4a8d-4417-8072-b2c662fdad75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vetted_
+    - node.type.gallery_image
+id: node.gallery_image.field_vetted_
+field_name: field_vetted_
+entity_type: node
+bundle: gallery_image
+label: 'Vetted?'
+description: 'An admin-only field. If marked vetted, images will appear in the Gallery landing page. Otherwise, not. '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Vetted
+  off_label: 'Not Vetted'
+field_type: boolean

@@ -1,0 +1,103 @@
+uuid: eb688e67-d996-4fae-ab46-51ae2179c4b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: return_to_annotated_page
+label: 'Return to annotated page'
+module: views
+description: 'A simple link that returns users to the annotated page when working on an annotation'
+tag: default
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Master
+    display_plugin: default
+    position: 1
+    display_options:
+      fields: {  }
+      pager:
+        type: full
+        options:
+          pagination_heading_level: h4
+      exposed_form:
+        type: basic
+      access:
+        type: perm
+      cache:
+        type: none
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            field_identifier: created
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          plugin_id: node_nid
+          default_action: default
+          default_argument_type: node
+          summary_options:
+            items_per_page: 25
+          summary:
+            number_of_records: 0
+            format: default_summary
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options: {  }
+      use_more_always: false
+      display_extenders: {  }
+      style_plugin: default
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  panel_pane_1:
+    id: panel_pane_1
+    display_title: 'Content pane'
+    display_plugin: default
+    position: 2
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+      tags: {  }

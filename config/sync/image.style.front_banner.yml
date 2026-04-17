@@ -1,0 +1,15 @@
+uuid: f160232a-9f5b-418a-89d7-727da54c1570
+langcode: en
+status: true
+dependencies: {  }
+name: front_banner
+label: 'Front Banner'
+effects:
+  7e881d36-7182-4232-828e-d0dbee3001f6:
+    uuid: 7e881d36-7182-4232-828e-d0dbee3001f6
+    id: image_scale
+    weight: 1
+    data:
+      width: 742
+      height: null
+      upscale: false

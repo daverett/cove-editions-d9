@@ -1,0 +1,21 @@
+uuid: c90d8814-f56f-4d13-89b3-9357f197bca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_bio
+  module:
+    - text
+    - user
+id: user.user.field_bio
+field_name: field_bio
+entity_type: user
+bundle: user
+label: Biography
+description: 'Tell us a little about yourself. This could be a faculty profile or just a brief informal description. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

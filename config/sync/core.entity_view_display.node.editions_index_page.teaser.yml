@@ -1,0 +1,89 @@
+uuid: 878edcb1-e4b4-4adf-b5d4-e8d15296f261
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.editions_index_page.body
+    - field.field.node.editions_index_page.field_annotator
+    - field.field.node.editions_index_page.field_documents_in_this_edition
+    - field.field.node.editions_index_page.field_edited_by
+    - field.field.node.editions_index_page.field_edition_state
+    - field.field.node.editions_index_page.field_editor_in_chief
+    - field.field.node.editions_index_page.field_exhibits_in_this_edition
+    - field.field.node.editions_index_page.field_icon
+    - field.field.node.editions_index_page.field_index_banner
+    - field.field.node.editions_index_page.field_main_author
+    - field.field.node.editions_index_page.field_maps_in_this_edition
+    - field.field.node.editions_index_page.field_nines_discipline_s_
+    - field.field.node.editions_index_page.field_nines_genre_s_
+    - field.field.node.editions_index_page.field_nines_type_s_
+    - field.field.node.editions_index_page.field_original_publication_date
+    - field.field.node.editions_index_page.field_postgraduate_researcher
+    - field.field.node.editions_index_page.field_published
+    - field.field.node.editions_index_page.field_resource_technical_editor
+    - field.field.node.editions_index_page.field_timelines_in_this_edition
+    - field.field.node.editions_index_page.layout_builder__layout
+    - field.field.node.editions_index_page.opencalais_person_tags
+    - field.field.node.editions_index_page.taxonomy_vocabulary_3
+    - node.type.editions_index_page
+  module:
+    - datetime
+    - text
+    - user
+id: node.editions_index_page.teaser
+targetEntityType: node
+bundle: editions_index_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_published:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  taxonomy_vocabulary_3:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  breadcrumbs: true
+  field_annotator: true
+  field_documents_in_this_edition: true
+  field_edited_by: true
+  field_edition_state: true
+  field_editor_in_chief: true
+  field_exhibits_in_this_edition: true
+  field_icon: true
+  field_index_banner: true
+  field_main_author: true
+  field_maps_in_this_edition: true
+  field_nines_discipline_s_: true
+  field_nines_genre_s_: true
+  field_nines_type_s_: true
+  field_original_publication_date: true
+  field_postgraduate_researcher: true
+  field_resource_technical_editor: true
+  field_timelines_in_this_edition: true
+  layout_builder__layout: true
+  opencalais_person_tags: true

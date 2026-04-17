@@ -1,0 +1,108 @@
+uuid: bef082fb-9fb5-429f-9ba8-0f6b216d4840
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.colorbox
+    - field.field.node.gallery_image.feeds_item
+    - field.field.node.gallery_image.field_accession_number_
+    - field.field.node.gallery_image.field_artist
+    - field.field.node.gallery_image.field_artist_unknown
+    - field.field.node.gallery_image.field_assoc_events
+    - field.field.node.gallery_image.field_assoc_places
+    - field.field.node.gallery_image.field_copyright
+    - field.field.node.gallery_image.field_description
+    - field.field.node.gallery_image.field_display_date
+    - field.field.node.gallery_image.field_event_date
+    - field.field.node.gallery_image.field_featured_in_exhibit
+    - field.field.node.gallery_image.field_gallery_associated_events
+    - field.field.node.gallery_image.field_gallery_location
+    - field.field.node.gallery_image.field_galleryimage
+    - field.field.node.gallery_image.field_height_in_centimeters
+    - field.field.node.gallery_image.field_latitude_longitude
+    - field.field.node.gallery_image.field_nines_discipline_s_
+    - field.field.node.gallery_image.field_nines_genre_s_
+    - field.field.node.gallery_image.field_nines_type_s_
+    - field.field.node.gallery_image.field_publisher
+    - field.field.node.gallery_image.field_vetted_
+    - field.field.node.gallery_image.field_width_in_centimeters_
+    - field.field.node.gallery_image.group_content_access
+    - field.field.node.gallery_image.og_audience
+    - field.field.node.gallery_image.og_group_ref
+    - field.field.node.gallery_image.taxonomy_vocabulary_3
+    - node.type.gallery_image
+  module:
+    - colorbox
+    - text
+    - user
+id: node.gallery_image.colorbox
+targetEntityType: node
+bundle: gallery_image
+mode: colorbox
+content:
+  field_copyright:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_galleryimage:
+    type: colorbox
+    label: hidden
+    settings:
+      colorbox_image_style: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+      colorbox_node_style: ''
+      colorbox_node_style_first: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_publisher:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  feeds_item: true
+  field_accession_number_: true
+  field_artist: true
+  field_artist_unknown: true
+  field_assoc_events: true
+  field_assoc_places: true
+  field_display_date: true
+  field_event_date: true
+  field_featured_in_exhibit: true
+  field_gallery_associated_events: true
+  field_gallery_location: true
+  field_height_in_centimeters: true
+  field_latitude_longitude: true
+  field_nines_discipline_s_: true
+  field_nines_genre_s_: true
+  field_nines_type_s_: true
+  field_vetted_: true
+  field_width_in_centimeters_: true
+  group_content_access: true
+  og_audience: true
+  og_group_ref: true
+  taxonomy_vocabulary_3: true

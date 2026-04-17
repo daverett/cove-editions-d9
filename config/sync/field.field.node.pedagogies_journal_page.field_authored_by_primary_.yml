@@ -1,0 +1,30 @@
+uuid: 55f7054e-11cf-4094-beff-1375f2194dba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authored_by_primary_
+    - node.type.contributor
+    - node.type.pedagogies_journal_page
+id: node.pedagogies_journal_page.field_authored_by_primary_
+field_name: field_authored_by_primary_
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'Authored by (Primary)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contributor: contributor
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 1
+field_type: entity_reference

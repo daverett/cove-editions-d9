@@ -1,0 +1,21 @@
+uuid: 7d65ab6b-9bfe-4c68-9898-35edb0b4bc4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_pedagogies_journa
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_pedagogies_journa.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_pedagogies_journa
+label: Comment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

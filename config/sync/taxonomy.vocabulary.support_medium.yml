@@ -1,0 +1,9 @@
+uuid: 990b89f9-88e4-4280-a537-9473e1546935
+langcode: en
+status: true
+dependencies: {  }
+name: 'Support Medium'
+vid: support_medium
+description: 'The medium of support (paper, wood, etc) for the item'
+weight: 0
+new_revision: false

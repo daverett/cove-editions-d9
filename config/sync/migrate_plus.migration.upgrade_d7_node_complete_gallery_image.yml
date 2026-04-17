@@ -1,0 +1,203 @@
+uuid: cbb526cd-8fdd-46d1-8167-3fcc55f4712b
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_gallery_image
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Gallery Image)'
+source:
+  plugin: d7_node_complete
+  node_type: gallery_image
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_gallery_image/0/status:
+    -
+      plugin: get
+      source: comment
+  field_nines_discipline_s_:
+    -
+      plugin: sub_process
+      source: field_nines_discipline_s_
+      process:
+        target_id: tid
+  field_nines_genre_s_:
+    -
+      plugin: sub_process
+      source: field_nines_genre_s_
+      process:
+        target_id: tid
+  field_nines_type_s_:
+    -
+      plugin: sub_process
+      source: field_nines_type_s_
+      process:
+        target_id: tid
+  taxonomy_vocabulary_3:
+    -
+      plugin: sub_process
+      source: taxonomy_vocabulary_3
+      process:
+        target_id: tid
+  field_accession_number_:
+    -
+      plugin: get
+      source: field_accession_number_
+  field_artist_unknown:
+    -
+      plugin: get
+      source: field_artist_unknown
+  field_copyright:
+    -
+      plugin: get
+      source: field_copyright
+  field_description:
+    -
+      plugin: get
+      source: field_description
+  field_featured_in_exhibit:
+    -
+      plugin: get
+      source: field_featured_in_exhibit
+  field_from_the_collection:
+    -
+      plugin: get
+      source: field_from_the_collection
+  field_gallery_location:
+    -
+      plugin: sub_process
+      source: field_gallery_location
+      process:
+        target_id: tid
+  field_galleryimage:
+    -
+      plugin: sub_process
+      source: field_galleryimage
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_height_in_centimeters:
+    -
+      plugin: get
+      source: field_height_in_centimeters
+  field_image_date:
+    -
+      plugin: get
+      source: field_image_date
+  field_publisher:
+    -
+      plugin: get
+      source: field_publisher
+  field_width_in_centimeters_:
+    -
+      plugin: get
+      source: field_width_in_centimeters_
+  field_artist:
+    -
+      plugin: sub_process
+      source: field_artist
+      process:
+        target_id: tid
+  field_latitude_longitude:
+    -
+      plugin: geofield_d7d8
+      source: field_latitude_longitude
+  field_vetted_:
+    -
+      plugin: get
+      source: field_vetted_
+  field_assoc_events:
+    -
+      plugin: get
+      source: field_assoc_events
+  field_assoc_places:
+    -
+      plugin: get
+      source: field_assoc_places
+  group_content_access:
+    -
+      plugin: get
+      source: group_content_access
+  field_gallery_associated_events:
+    -
+      plugin: get
+      source: field_gallery_associated_events
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: gallery_image
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

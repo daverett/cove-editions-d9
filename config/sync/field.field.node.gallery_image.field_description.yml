@@ -1,0 +1,27 @@
+uuid: 6d1b8d4c-eca5-4c1c-9c60-610d65994ac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.gallery_image
+  module:
+    - linkchecker
+    - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
+id: node.gallery_image.field_description
+field_name: field_description
+entity_type: node
+bundle: gallery_image
+label: Description
+description: 'Please provide a description of the image here. It may be as long or as brief as you like, but keep in mind that some information about the image can also be captured in the metadata fields below. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

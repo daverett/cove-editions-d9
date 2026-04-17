@@ -1,0 +1,17 @@
+uuid: 67c2a402-612b-4c0a-8a38-a0d2f57c9794
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Editions Resource'
+type: editions_index_page
+description: 'Master Resource Page for Editions. A <em>page</em>, similar in form to a <em>story</em>, is a simple method for creating and displaying information that rarely changes, such as an "About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site''s initial home page.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

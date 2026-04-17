@@ -1,0 +1,31 @@
+uuid: 4542bf75-4bf9-45b9-972e-935ee268a737
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.find_associated_places
+  module:
+    - views
+name: associated_places
+label: 'Associated places browser'
+display: modal
+display_configuration:
+  width: '1200'
+  height: '800'
+  link_text: 'Add items'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: drop_down
+widget_selector_configuration: {  }
+widgets:
+  5c14d980-e466-4e3b-b605-e054bf4db057:
+    id: view
+    uuid: 5c14d980-e466-4e3b-b605-e054bf4db057
+    label: view
+    weight: 1
+    settings:
+      submit_text: 'Add items'
+      auto_select: false
+      view: find_associated_places
+      view_display: entity_browser_1

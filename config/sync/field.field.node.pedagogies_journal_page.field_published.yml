@@ -1,0 +1,21 @@
+uuid: b0ae06bd-692c-4f69-ace3-95d40ac5e800
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_published
+    - node.type.pedagogies_journal_page
+  module:
+    - datetime
+id: node.pedagogies_journal_page.field_published
+field_name: field_published
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'Date published'
+description: 'Enter the date this page is to be published (i.e. not created), specifying only Month and Year.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

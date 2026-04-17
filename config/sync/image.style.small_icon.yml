@@ -1,0 +1,15 @@
+uuid: 06612de0-28a2-4dcf-a55d-326850fa8100
+langcode: en
+status: true
+dependencies: {  }
+name: small_icon
+label: 'Small Icon'
+effects:
+  79abb5ca-046a-4d2a-9a5f-3876fd3d3b51:
+    uuid: 79abb5ca-046a-4d2a-9a5f-3876fd3d3b51
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: null
+      upscale: false

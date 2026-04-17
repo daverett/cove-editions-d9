@@ -1,0 +1,9 @@
+uuid: ea018b7b-1394-4dc6-b40a-1ee73c24e329
+langcode: en
+status: true
+dependencies: {  }
+name: Organization
+vid: organization
+description: 'Tags sourced from OpenCalais about Organization.'
+weight: 10
+new_revision: false

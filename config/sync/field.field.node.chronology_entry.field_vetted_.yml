@@ -1,0 +1,23 @@
+uuid: 5d1a3128-3236-406c-98e4-7b2b9004bb32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vetted_
+    - node.type.chronology_entry
+id: node.chronology_entry.field_vetted_
+field_name: field_vetted_
+entity_type: node
+bundle: chronology_entry
+label: 'Vetted?'
+description: 'If marked as vetted, this chronology entry will be available for all users to add to their timelines or associate with places. '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Vetted
+  off_label: 'Not Vetted'
+field_type: boolean

@@ -1,0 +1,279 @@
+uuid: ee4b2ead-c2ea-4f88-b4a3-31f7487d1033
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.chronology_entry.title
+    - field.field.node.chronology_entry.field_assoc_places
+    - field.field.node.chronology_entry.field_display_date
+    - field.field.node.chronology_entry.field_event2
+    - field.field.node.chronology_entry.field_event_date
+    - field.field.node.chronology_entry.field_event_source
+    - field.field.node.chronology_entry.field_image
+    - field.field.node.chronology_entry.field_parent_chronology
+    - field.field.node.chronology_entry.group_content_access
+    - field.field.node.chronology_entry.og_group_ref
+    - node.type.chronology_entry
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      e8c14a7f-e5a7-4ea4-a06e-7953fb7a3a3a:
+        separator: ','
+        limit: null
+        uuid: e8c14a7f-e5a7-4ea4-a06e-7953fb7a3a3a
+        plugin: explode
+        source: associated_places
+        weight: 0
+        label: Explode
+      530db91c-7ce7-4981-80d7-fc3d18b7b878:
+        uuid: 530db91c-7ce7-4981-80d7-fc3d18b7b878
+        plugin: strtotime
+        source: from_date
+        weight: 0
+        label: 'String to Unix Timestamp'
+      2159bb1d-44e8-4b39-a352-ba595cd0221a:
+        uuid: 2159bb1d-44e8-4b39-a352-ba595cd0221a
+        plugin: strtotime
+        source: to_date
+        weight: 0
+        label: 'String to Unix Timestamp'
+label: 'Timeline entry import'
+id: timeline_entry_import
+description: 'For final imports from the D7 site'
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: chronology_entry
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: true
+  skip_validation_types:
+    - NotNull
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  post_date:
+    value: 'Post date'
+    label: 'Post date'
+    machine_name: post_date
+    type: csv
+  author_uid:
+    value: 'Author uid'
+    label: 'Author uid'
+    machine_name: author_uid
+    type: csv
+  groups_audience:
+    value: 'Groups audience'
+    label: 'Groups audience'
+    machine_name: groups_audience
+    type: csv
+  group_content_visibility:
+    value: 'Group content visibility'
+    label: 'Group content visibility'
+    machine_name: group_content_visibility
+    type: csv
+  body:
+    value: Body
+    label: Body
+    machine_name: body
+    type: csv
+  event_description:
+    value: 'Event Description'
+    label: 'Event Description'
+    machine_name: event_description
+    type: csv
+  associated_places:
+    value: 'Associated Places'
+    label: 'Associated Places'
+    machine_name: associated_places
+    type: csv
+  event_date:
+    value: 'Event date'
+    label: 'Event date'
+    machine_name: event_date
+    type: csv
+  event_source:
+    value: 'Event Source'
+    label: 'Event Source'
+    machine_name: event_source
+    type: csv
+  parent_chronology:
+    value: 'Parent Chronology'
+    label: 'Parent Chronology'
+    machine_name: parent_chronology
+    type: csv
+  path:
+    value: Path
+    label: Path
+    machine_name: path
+    type: csv
+  alt_text:
+    value: 'Alt Text'
+    label: 'Alt Text'
+    machine_name: alt_text
+    type: csv
+  title_text:
+    value: 'Title Text'
+    label: 'Title Text'
+    machine_name: title_text
+    type: csv
+  from_date:
+    value: 'from date'
+    label: 'from date'
+    machine_name: from_date
+    type: csv
+  to_date:
+    value: 'to date'
+    label: 'to date'
+    machine_name: to_date
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: created
+    map:
+      value: post_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: uid
+    map:
+      target_id: author_uid
+    settings:
+      language: ''
+      reference_by: uid
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: og_group_ref
+    map:
+      target_id: groups_audience
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: course
+      feeds_item: false
+  -
+    target: group_content_access
+    map:
+      value: group_content_visibility
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_event2
+    map:
+      value: event_description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_assoc_places
+    map:
+      target_id: associated_places
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: place
+      feeds_item: false
+  -
+    target: field_display_date
+    map:
+      value: event_date
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_event_source
+    map:
+      target_id: event_source
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: event_source
+  -
+    target: field_image
+    map:
+      target_id: path
+      alt: alt_text
+      title: title_text
+    settings:
+      language: ''
+      reference_by: fid
+      autocreate: 1
+      existing: '2'
+      autocreate_bundle: false
+  -
+    target: field_parent_chronology
+    map:
+      target_id: parent_chronology
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: chronology
+  -
+    target: field_event_date
+    map:
+      value: from_date
+      end_value: to_date
+    settings:
+      language: ''
+      timezone: UTC

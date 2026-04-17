@@ -1,0 +1,21 @@
+uuid: 10fbb42f-6b69-4537-83a1-1ce485015b89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latitude_longitude
+    - node.type.place
+  module:
+    - geofield
+id: node.place.field_latitude_longitude
+field_name: field_latitude_longitude
+entity_type: node
+bundle: place
+label: Latitude/Longitude
+description: 'Legacy field. Do not use. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

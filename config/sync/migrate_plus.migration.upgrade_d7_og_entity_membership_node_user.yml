@@ -1,0 +1,115 @@
+uuid: ab59b010-696a-4a4c-9fdb-aae847b6cfec
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_og_entity_membership_node_user
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Group entity memberships (node user)'
+source:
+  plugin: d7_og_membership
+  group_type: node
+  entity_type: user
+process:
+  id:
+    -
+      plugin: get
+      source: id
+  type:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_og_membership_type
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Membership type is missing'
+  uid:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_user
+      source: etid
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'User is missing'
+  entity_id:
+    -
+      plugin: migration_lookup
+      migration: {  }
+      source: gid
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Migration group is missing'
+  entity_type:
+    -
+      plugin: og_entity_type_exists
+      source: group_type
+      bundle_property: entity_bundle
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Entity type is missing'
+  roles:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_og_role
+      source: roles
+  state:
+    -
+      plugin: static_map
+      source: state
+      map:
+        1: active
+        2: pending
+        3: blocked
+      default_value: active
+  created:
+    -
+      plugin: get
+      source: created
+  language:
+    -
+      plugin: get
+      source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:og_membership'
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_og_role
+    - upgrade_d7_og_group
+    - upgrade_d7_og_membership_type
+    - upgrade_d7_field_instance
+    - upgrade_d7_node_complete_article
+    - upgrade_d7_node_complete_blog
+    - upgrade_d7_node_complete_chronology
+    - upgrade_d7_node_complete_chronology_entry
+    - upgrade_d7_node_complete_contributor
+    - upgrade_d7_node_complete_course
+    - upgrade_d7_node_complete_editions_index_page
+    - upgrade_d7_node_complete_editions_page
+    - upgrade_d7_node_complete_feed
+    - upgrade_d7_node_complete_feed_item
+    - upgrade_d7_node_complete_gallery_image
+    - upgrade_d7_node_complete_galler_exhibit
+    - upgrade_d7_node_complete_map
+    - upgrade_d7_node_complete_page
+    - upgrade_d7_node_complete_panel
+    - upgrade_d7_node_complete_pedagogies_journal_page
+    - upgrade_d7_node_complete_place
+    - upgrade_d7_node_complete_webform
+    - upgrade_d7_user
+  optional:
+    - upgrade_d7_og_membership_type
+    - upgrade_d7_user
+    - upgrade_d7_og_role

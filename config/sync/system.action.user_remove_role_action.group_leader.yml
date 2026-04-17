@@ -1,0 +1,14 @@
+uuid: 70ff54f4-ad46-430b-bade-2859d62c6c18
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_leader
+  module:
+    - user
+id: user_remove_role_action.group_leader
+label: 'Remove the Group leader role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: group_leader

@@ -1,0 +1,62 @@
+uuid: d6bf0924-e399-4b05-927a-b59d752bd67f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.feeds_item
+    - field.field.user.user.field_affiliation
+    - field.field.user.user.field_annotatable_editions
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_edited_editions
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_group_memberships
+    - field.field.user.user.field_home_page
+    - field.field.user.user.field_migrate_example_favbeers
+    - field.field.user.user.field_migrate_example_gender
+    - field.field.user.user.field_profile_picture
+    - field.field.user.user.field_special_roles
+    - field.field.user.user.field_surname
+    - field.field.user.user.og_user_node
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  dxpr_user_is_disavowed: true
+  feeds_item: true
+  field_affiliation: true
+  field_annotatable_editions: true
+  field_bio: true
+  field_edited_editions: true
+  field_firstname: true
+  field_group_memberships: true
+  field_home_page: true
+  field_migrate_example_favbeers: true
+  field_migrate_example_gender: true
+  field_profile_picture: true
+  field_special_roles: true
+  field_surname: true
+  member_for: true
+  og_user_node: true
+  realname: true

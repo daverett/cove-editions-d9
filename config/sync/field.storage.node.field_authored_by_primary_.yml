@@ -1,0 +1,23 @@
+uuid: 731dfb38-7358-47f0-b721-e7bb55ad0d19
+langcode: und
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_authored_by_primary_
+field_name: field_authored_by_primary_
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

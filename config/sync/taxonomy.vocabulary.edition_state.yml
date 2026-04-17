@@ -1,0 +1,9 @@
+uuid: db5f2a8f-d146-4680-b4d9-aeb7e53df1f3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Edition state'
+vid: edition_state
+description: 'The workflow-state of a given edition, from prototype to peer-reviewed'
+weight: 0
+new_revision: false

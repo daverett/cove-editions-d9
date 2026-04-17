@@ -1,0 +1,7 @@
+uuid: a87bc37d-438f-497b-8803-f0ed6780645a
+langcode: en
+status: true
+dependencies: {  }
+formId: comment_node_article_form
+captchaType: captcha/
+label: comment_node_article_form

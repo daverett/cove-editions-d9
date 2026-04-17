@@ -1,0 +1,49 @@
+uuid: ce90b4dd-cd36-4632-8efc-2792ccb29bd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.map_thumb
+    - field.field.node.place.body
+    - field.field.node.place.feeds_item
+    - field.field.node.place.field_assoc_events
+    - field.field.node.place.field_associated_place_anchor_ta
+    - field.field.node.place.field_geocode
+    - field.field.node.place.field_geocoder
+    - field.field.node.place.field_latitude_longitude
+    - field.field.node.place.field_parent_map
+    - field.field.node.place.field_place_search
+    - field.field.node.place.field_resource_index
+    - field.field.node.place.field_vetted_
+    - field.field.node.place.group_content_access
+    - field.field.node.place.og_audience
+    - field.field.node.place.og_group_ref
+    - node.type.place
+  module:
+    - user
+id: node.place.map_thumb
+targetEntityType: node
+bundle: place
+mode: map_thumb
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  feeds_item: true
+  field_assoc_events: true
+  field_associated_place_anchor_ta: true
+  field_geocode: true
+  field_geocoder: true
+  field_latitude_longitude: true
+  field_parent_map: true
+  field_place_search: true
+  field_resource_index: true
+  field_vetted_: true
+  group_content_access: true
+  og_audience: true
+  og_group_ref: true

@@ -1,0 +1,6 @@
+uuid: b960f476-a860-49ac-bc47-6558cda14cb0
+langcode: en
+status: true
+dependencies: {  }
+id: shortcut_set_2
+label: 'Content Authoring'

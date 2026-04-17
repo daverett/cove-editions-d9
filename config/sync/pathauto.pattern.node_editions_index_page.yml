@@ -1,0 +1,21 @@
+uuid: 11000564-0d06-40b1-8494-0d0052efee2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_editions_index_page
+label: 'Content - Editions Resource'
+type: 'canonical_entities:node'
+pattern: 'edition/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      editions_index_page: editions_index_page
+selection_logic: and
+weight: 0
+relationships: {  }

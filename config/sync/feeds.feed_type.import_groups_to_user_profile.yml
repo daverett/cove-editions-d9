@@ -1,0 +1,104 @@
+uuid: df0f8cca-bf15-40a3-8d71-bbb570a8196c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.og_user_node
+  module:
+    - feeds_log
+    - feeds_tamper
+    - user
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      0fbafcb7-e48a-47b2-a525-809697d952f2:
+        separator: ','
+        limit: null
+        uuid: 0fbafcb7-e48a-47b2-a525-809697d952f2
+        plugin: explode
+        source: group_id
+        weight: 0
+        label: Explode
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+label: 'Import groups to user profile'
+id: import_groups_to_user_profile
+description: 'Add all the group membership designations to the user profile'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:user'
+processor_configuration:
+  values: {  }
+  langcode: en
+  insert_new: 0
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  uid:
+    value: UID
+    label: UID
+    machine_name: uid
+    type: csv
+  group_id:
+    value: Group_ID
+    label: Group_ID
+    machine_name: group_id
+    type: csv
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: blank
+  membership_id:
+    value: Membership_ID
+    label: Membership_ID
+    machine_name: membership_id
+    type: csv
+mappings:
+  -
+    target: uid
+    map:
+      value: uid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: og_user_node
+    map:
+      target_id: group_id
+    settings:
+      language: ''
+      reference_by: nid
+      autocreate: 0
+      autocreate_bundle: course

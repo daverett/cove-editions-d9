@@ -1,0 +1,68 @@
+uuid: 24310a12-c8bb-4935-8764-e2cc85270a75
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.pedagogies_journal_page.body
+    - field.field.node.pedagogies_journal_page.field_authored_by_primary_
+    - field.field.node.pedagogies_journal_page.field_authored_by_secondary_
+    - field.field.node.pedagogies_journal_page.field_embed_code
+    - field.field.node.pedagogies_journal_page.field_nines_discipline_s_
+    - field.field.node.pedagogies_journal_page.field_nines_genre_s_
+    - field.field.node.pedagogies_journal_page.field_nines_type_s_
+    - field.field.node.pedagogies_journal_page.field_published
+    - field.field.node.pedagogies_journal_page.field_resource_index
+    - field.field.node.pedagogies_journal_page.field_xml_tei
+    - field.field.node.pedagogies_journal_page.opencalais_city_tags
+    - field.field.node.pedagogies_journal_page.opencalais_continent_tags
+    - field.field.node.pedagogies_journal_page.opencalais_country_tags
+    - field.field.node.pedagogies_journal_page.opencalais_naturalfeature_tags
+    - field.field.node.pedagogies_journal_page.opencalais_organization_tags
+    - field.field.node.pedagogies_journal_page.opencalais_person_tags
+    - field.field.node.pedagogies_journal_page.opencalais_provinceorstate_tags
+    - field.field.node.pedagogies_journal_page.opencalais_region_tags
+    - field.field.node.pedagogies_journal_page.taxonomy_vocabulary_3
+    - node.type.pedagogies_journal_page
+  module:
+    - datetime
+    - user
+id: node.pedagogies_journal_page.search_index
+targetEntityType: node
+bundle: pedagogies_journal_page
+mode: search_index
+content:
+  field_published:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  field_authored_by_primary_: true
+  field_authored_by_secondary_: true
+  field_embed_code: true
+  field_nines_discipline_s_: true
+  field_nines_genre_s_: true
+  field_nines_type_s_: true
+  field_resource_index: true
+  field_xml_tei: true
+  opencalais_city_tags: true
+  opencalais_continent_tags: true
+  opencalais_country_tags: true
+  opencalais_naturalfeature_tags: true
+  opencalais_organization_tags: true
+  opencalais_person_tags: true
+  opencalais_provinceorstate_tags: true
+  opencalais_region_tags: true
+  taxonomy_vocabulary_3: true

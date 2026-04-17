@@ -1,0 +1,23 @@
+uuid: dd0d1588-02b8-4eac-8ae7-9550fccb963c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.group_access
+    - node.type.course
+id: node.course.group_access
+field_name: group_access
+entity_type: node
+bundle: course
+label: 'Group visibility'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Private - accessible only to group members'
+  off_label: 'Public - accessible to all site users'
+field_type: boolean

@@ -1,0 +1,268 @@
+_core:
+  default_config_hash: fqxTev6tvsJawK6Fh00ONACo-GoP0GlNAjoSRzF7wMw
+favicon:
+  path: ''
+  use_default: false
+features:
+  comment_user_picture: false
+  comment_user_verification: false
+  favicon: false
+  node_user_picture: false
+logo:
+  path: 'public://cove-logo for site_cc_1.png'
+  url: ''
+  use_default: false
+header_mobile_breakpoint: '1200'
+full_width_containers:
+  cnt_secondary_header: cnt_secondary_header
+  cnt_footer: cnt_footer
+  cnt_header_nav: 0
+  cnt_page_title: 0
+  cnt_content_top: 0
+  cnt_content: 0
+  cnt_content_bottom: 0
+full_width_content_types:
+  drag_and_drop_page: drag_and_drop_page
+  article: 0
+  blog: 0
+  chronology: 0
+  chronology_entry: 0
+  contributor: 0
+  course: 0
+  draggableviews_demo: 0
+  editions_index_page: 0
+  editions_page: 0
+  entity_browser_test: 0
+  gallery_image: 0
+  galler_exhibit: 0
+  map: 0
+  page: 0
+  pedagogies_journal_page: 0
+  place: 0
+  webform: 0
+block_design_regions:
+  sidebar_first: sidebar_first
+  sidebar_second: sidebar_second
+  content_top: content_top
+  content_bottom: content_bottom
+  secondary_header: 0
+  navigation: 0
+  slider: 0
+  header: 0
+  highlighted: 0
+  help: 0
+  content: 0
+  footer: 0
+boxed_layout: 1
+sticky_footer: 1
+boxed_layout_boxbg: '#ffffff'
+box_max_width: '1580'
+layout_max_width: '1280'
+gutter_horizontal: '30'
+gutter_vertical: '30'
+gutter_container: '60'
+gutter_horizontal_mobile: '30'
+gutter_vertical_mobile: '30'
+gutter_container_mobile: '40'
+body_line_height: '1.6'
+body_font_size: '17'
+nav_font_size: '14'
+headings_line_height: '1.4'
+scale_factor: '1.19'
+h1_font_size: '34'
+h2_font_size: '29'
+h3_font_size: '24'
+h4_font_size: '20'
+blockquote_font_size: '17'
+blockquote_line_height: '1.6'
+headings_letter_spacing: '0.05'
+headings_uppercase: 0
+headings_bold: 1
+body_mobile_font_size: '16'
+nav_mobile_font_size: '16'
+h1_mobile_font_size: '26'
+h2_mobile_font_size: '22'
+h3_mobile_font_size: '20'
+h4_mobile_font_size: '18'
+body_font_face: '0Noto+Sans:'
+body_font_face_selector: body
+headings_font_face: '0Noto+Serif:700'
+headings_font_face_selector: 'h1,h2,h3,h4,h5,h6,label,.field--label,.page-title, .html .tp-caption'
+nav_font_face: '0Poppins:600'
+nav_font_face_selector: 'nav,nav ul li,nav a'
+sitename_font_face: '0Noto+Sans:'
+sitename_font_face_selector: '.site-name, .navbar-brand'
+blockquote_font_face: '0Noto+Sans:italic'
+blockquote_font_face_selector: 'blockquote, blockquote p'
+portfolio_details: top
+portfolio_sidebar: '4'
+portfolio_images: sidecaption
+region_cards:
+  secondary_header: ''
+  navigation: ''
+  navigation_collapsible: ''
+  highlighted: ''
+  page_title: ''
+  help: ''
+  content_top: ''
+  content: ''
+  content_bottom: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer: ''
+table_responsive: '-1'
+table: ''
+blockquote_mobile_font_size: '18'
+divider_thickness: '8'
+divider_length: '0'
+divider_position: '1'
+divider_color: ''
+divider_color_custom: '#eeeeee'
+page_title_breadcrumbs: 0
+page_title_home_hide: 1
+page_title_align: left
+page_title_height: '120'
+page_title_animate: '0'
+page_title_image_opacity: '1'
+page_title_image_style: cover
+page_title_image_mode: normal
+page_title_image_position: center_center
+background_image_style: cover
+background_image_position: center_center
+background_image_attachment: fixed
+header_position: 0
+header_top_layout: '0'
+header_style: normal
+header_top_bg_opacity: '1'
+header_top_height: '100'
+header_top_fixed: 0
+header_top_sticky: 0
+header_top_sticky_show: always
+header_top_height_sticky_offset: '60'
+header_top_height_scroll: '50'
+header_top_bg_opacity_scroll: '1'
+navbar_background: ''
+navbar_background_custom: ''
+header_block_background: ''
+header_block_background_custom: ''
+header_block_text_color: ''
+header_block_text_color_custom: ''
+menu_background: ''
+menu_background_custom: ''
+menu_text_color: ''
+menu_text_color_custom: ''
+menu_hover_background: ''
+menu_hover_background_custom: ''
+menu_hover_text_color: ''
+menu_hover_text_color_custom: ''
+dropdown_background: ''
+dropdown_background_custom: ''
+dropdown_text_color: ''
+dropdown_text_color_custom: ''
+dropdown_hover_background: ''
+dropdown_hover_background_custom: ''
+dropdown_hover_text_color: ''
+dropdown_hover_text_color_custom: ''
+header_side_align: left
+header_side_direction: left
+header_side_width: '300'
+hamburger_menu: three-dash
+hamburger_animation: none
+menu_type: uppercase
+menu_hover: opacity
+menu_border_position: bottom
+menu_border_animate: drop
+menu_border_position_offset: '0'
+menu_border_position_offset_sticky: '0'
+menu_border_size: '2'
+menu_border_color: ''
+menu_border_color_custom: ''
+header_mobile_height: '60'
+secondary_header_hide: hidden_none
+custom_css_site: "/* This effectively fixes a bug in the theme, where on mobile devices images extend past their container divs */\r\n@media screen and (max-width: 48rem) {\r\n    img {\r\n    max-width: 100% !important;\r\n}\r\n}\r\n\r\n/* Page builder pages don't respect margin bottom zero because of a line in its bootstrap 5 CSS file. Trying to override that here.*/\r\n/* .row>* {\r\n   margin-bottom: 0; \r\n}\r\n*/\r\n\r\n@media (max-width:767px) {\r\n#toolbar-item-administration-tray {\r\ndisplay:none;\r\n}\r\n#toolbar-item-shortcuts-tray {\r\ndisplay:none;\r\n}\r\n#toolbar-item-user-tray {\r\ndisplay:none;\r\n}\r\n}\r\n@media (max-width:767px) {\r\nnav#toolbar-bar {\r\n    display: none;\r\n}\r\n}\r\n\r\n/* Mods to mobile menu */\r\n\r\n.dxpr-theme-header--side ul.menu.nav.navbar-nav.menu__level.menu__level--current {\r\n    top: 130px !important;\r\n    height: calc(-80px + 100vh) !important;\r\n}\r\n\r\nul.menu ul.dropdown-menu.menu__level.menu__level--current {\r\n    top: 10px;\r\n}\r\n\r\n/* ul.menu.nav.navbar-nav.menu__level.menu__level--current li:first-of-type {\r\n    display: none;\r\n} */\r\n\r\nnav.menu__breadcrumbs {\r\n    top:10px !important;\r\n}\r\n\r\nul.dropdown-menu.menu__level.menu__level--current {\r\n    top: 80px !important;\r\n}\r\n\r\n.dxpr-theme-header--side #block-dxpr-theme-main-menu .dropdown-menu {\r\n    & .dropdown {\r\n        * {\r\n            color: white !important;\r\n        }\r\n    }\r\n}\r\n\r\n.dxpr-theme-header--side input::placeholder {\r\ncolor:white;\r\n}\r\n\r\n.dxpr-theme-header--side input::focus {\r\ncolor:white;\r\n}\r\n\r\n/*.dxpr-theme-header--side .menu__breadcrumbs {\r\n    font-size: 1.2em;\r\n    line-height: 0;\r\n}*/\r\n\r\n.dxpr-theme-header--side .menu__link[data-submenu]::after {\r\n    content: \">>\";\r\n    font-size: 1.2em;\r\n}\r\n\r\n/* Not sure whey there is no horizontal padding in the top header */\r\n#secondary-header {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n}\r\n\r\n/* Darkening input form borders throughout site */ \r\n.html .form-control, .html input[type=date], .html input[type=datetime-local], .html input[type=email], .html input[type=file], .html input[type=month], .html input[type=number], .html input[type=password], .html input[type=search], .html input[type=tel], .html input[type=text], .html input[type=time], .html input[type=url], .html input[type=week], .html textarea, .html select {\r\n    border: 0.0625rem solid #cac9c9;\r\n}\r\n\r\n/ * A method for making iframe/Youtube videos responsive on the site */\r\n\r\niframe.responsive-video {\r\n    width: 100%;\r\n    aspect-ratio: 16 / 9;\r\n}\r\n\r\n.region-footer .views-title h2 {\r\n    margin-top: 0px;\r\n}\r\n\r\n/* Small mod to full pager on views--removing the 10th item, which just renders as a dark gray box*/\r\n\r\nli.page-item.disabled {\r\n    display: none;\r\n}\r\n/* To fix conflict with annotation viewer */\r\nbody .dxpr-theme-header {\r\n    z-index: 1 !important;\r\n}\r\n/* Navsa login block */\r\nsection#block-dxpr-theme-openidconnectlogin div {\r\nfloat: right;\r\nmargin: 0px 0px 0px 12px;\r\n}\r\n\r\n/* Adjusting buttons for open id connect login */\r\n#block-cove-editions-subtheme-openidconnectlogin input#edit-openid-connect-client-bavs-login {\r\nfloat: left;\r\nmargin-right: 10px;\r\n}\r\n\r\ninput#edit-openid-connect-client-navsa-login, input#edit-openid-connect-client-bavs-login {\r\n   color: #f3f2ee;\r\n    padding: 3px 8px;\r\n    border: 0;\r\n    border-radius: 2px;\r\n    font-weight: 600;\r\n}\r\n\r\n/* section.block.block-layout-builder {\r\n    margin: 10px;\r\n}*/\r\n\r\n/*Giving space to blocks, regions, etc.*/\r\n.main-container section {\r\nmargin-bottom: 20px;\r\n}\r\n\r\n/* buttons no underline and homepage search form bg color */\r\n\r\na.az-button-content.btn.btn-primary:hover {\r\ntext-decoration:none;\r\n}\r\n\r\n.az-element form.search-block-form input:focus {\r\n    background: white;\r\n}\r\n/*Above margins cause problems on home page and other drag and drop pages so reversing */\r\n\r\n.page-node-type-drag-and-drop-page .main-container section {\r\nmargin-bottom: 0px;\r\n}\r\n\r\n/* Give Views Blocks some space on page layouts*/\r\nsection.views-element-container.contextual-region.block.block-views.block-views-blockcove-og-content-block-1.clearfix {\r\n    margin-top: 40px;\r\n}\r\n\r\n/* Reworking page title section to accommodate content type label*/\r\ndiv#page-title-full-width-container {\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n}\r\n\r\n#page-title .page-title {\r\n    height: auto !important; \r\n    display:block !important;\r\n}\r\n\r\n/* Hiding page titles in Editions page because they are hard coded into the docs */\r\n.page-node-type-editions-page div#page-title-full-width-container {\r\n    display: none;\r\n} \r\n\r\nsection#block-views-block-content-type-label-block-1 {\r\n    margin-bottom: 0px;\r\n}\r\n\r\n/* Way too much space after the page title. Closing it up. */\r\n.page-title-full-width-container {\r\n    margin-bottom: 40px !important;\r\n}\r\n/* Sitewide horizontal rule */\r\nhr {\r\n    color: #6689A1;\r\n    border-top-width: 2px;\r\n}\r\n\r\n/* Front page specific tweaks */\r\n.path-frontpage .az-video {\r\n    margin-left: -15px;\r\n    margin-right: -15px;\r\n}\r\n\r\n.view-frontpage-slider .views-field.views-field-title {\r\n    margin: 20px 0px 0px 20px;\r\n}\r\n\r\n.view-frontpage-slider .views-field-field-main-author {\r\nmargin-left: 20px;\r\n}\r\n\r\n.view-frontpage-slider .views-field-body {\r\nmargin-left: 20px;\r\nmargin-bottom: 60px;\r\n}\r\n\r\nh2.block-title {\r\n    font-size: 20px;\r\n}\r\n\r\n/* NEEDS WORK: navbar stuff below is intended to replicate the NAVSA top header on the site*/\r\n/*.navbar-inverse {\r\n    background-color: #000000;\r\n    border-color: #3a3a3a;\r\n}\r\n\r\n.navbar-inverse .navbar-nav li.active a,.navbar-inverse .navbar-nav li.active a:hover,.navbar-inverse .navbar-nav li.active a:focus {\r\n    color: #ffffff;\r\n    background-color: #3a3a3a;\r\n}\r\n\r\n.navbar-inverse .navbar-nav li a {\r\n    color: #ecf0f1;\r\n}\r\n\r\n.navbar-fixed-top {\r\n    font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n    font-size: 14px;\r\n    font-weight: bold;\r\n}\r\n\r\n.block-openid-connect h2 {\r\n    display: none;\r\n}\r\n.navbar li {\r\n    float: left;\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n    .navbar li a {\r\n        font-size:60%;\r\n        padding: 5px !important;\r\n    }\r\n}\r\n\r\n.logged-in .navbar-fixed-top {\r\n    top: 29px;\r\n}\r\n\r\n.navbar-fixed-top {\r\n    border-width: 0 0 1px;\r\n    z-index: 500;\r\n}\r\n\r\n.region-top-menu .block .pull-left a {\r\n    padding-top: 15px;\r\n    padding-bottom: 15px;\r\n    line-height: 20px;\r\n    height: inherit;\r\n}\r\n*/\r\n/* Enlarging the logo */\r\n\r\n.body--dxpr-theme-nav-desktop .dxpr-theme-header--top #logo {\r\n    max-height: 55px;\r\n}\r\n/* And then making it smaller when scrolling */\r\n.body--dxpr-theme-nav-desktop .dxpr-theme-header--top.affix #logo {\r\n    max-height: 35px;\r\n}\r\n/* Adding slight drop shadow at bottom of navbar */\r\n#navbar.dxpr-theme-header--top {\r\n    filter: drop-shadow(0px 1px 1px #555555);\r\n}\r\n\r\n.descbig {\r\n    border-left: 5px solid #F28F3B;\r\n    padding: 15px 15px 15px 15px;\r\n    /* margin: 20px 30px 0px 0px; */\r\n    background-color: #25597c;\r\n    color: white;\r\n}\r\n\r\n.teaserItem .views-row {\r\n    padding: 12px 0px;\r\n    /* background: rgba(255, 255, 255, 0.7); */\r\n    border-bottom: 2px solid #dedede;\r\n    overflow: auto;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n/* Old teaseritem \r\n.teaserItem .views-row {\r\n    padding: 15px 12px 12px;\r\n    background: rgba(255,255,255,0.7);\r\n    border: 2px solid #F28F3B;\r\n    overflow: auto;\r\n    margin-bottom: 10px;\r\n}\r\n*/\r\n\r\n.leftFloat {\r\n    float: left;\r\n    margin-right: 5px;\r\n    display: block;\r\n    position: relative;\r\n    clear: none;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.rightFloat {\r\n    float: right;\r\n    margin-left: 5px;\r\n    display: block;\r\n    position: relative;\r\n    z-index: 100;\r\n    clear: none;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n/* So far, 'inline-list' is just for the What Can I Do at COVE Editions links on group pages */\r\nli.inline-list {\r\n    display: inline;\r\n    margin-right: 20px;\r\n}\r\n\r\nli.inline-list a {\r\n    margin-left: 10px;\r\n}\r\n\r\n/* Stop floats on landing pages for smaller devices */\r\n@media (max-width:640px) {\r\n.teaserItem .views-field.views-field-field-index-banner {\r\n    float: none;\r\n}\r\n}\r\n\r\n/* Positioning the profile pic on user pages */\r\nsection.block-field-blockuseruserfield-profile-picture {\r\n    float: left;\r\n}\r\n\r\n.field--name-field-profile-picture img {\r\n    margin-right: 12px;\r\n}\r\n\r\n/* All the places where entity reference lists should be bulleted. Editions Resource Content lists */\r\n.page-node-type-editions-index-page .col-lg-9.col-md-9.col-12 .field--type-entity-reference .field__item, .field--name-field-featured-in-exhibit .field__item {\r\n    display: list-item;\r\n    list-style-position: outside;\r\n    margin-left: 1em;\r\n}\r\n\r\nimg.alignleft,img.alignright {\r\n    margin-bottom: 10px;\r\n}\r\n\r\nimg.alignleft,img.alignright {\r\n    display: inline;\r\n}\r\n\r\n.alignleft,.left {\r\n    float: left;\r\n    margin-right: 15px;\r\n}\r\n\r\n.alignright,.right {\r\n    float: right;\r\n    margin-left: 15px;\r\n}\r\n\r\n.noFloat {\r\n    float: none;\r\n}\r\n\r\ndiv.section {\r\n    margin: 10px 0px;\r\n}\r\n\r\n/* Force images in map popovers not to float */\r\n.leaflet-popup-content img {\r\n    display: block;\r\n}\r\n\r\n/* Gallery landing page styles */\r\n.galleryGrid .views-col {\r\n    padding: 12px;\r\n    margin-left: -12px;\r\n}\r\ndiv#views-bootstrap-cove-gallery-galleryhome .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3 {\r\n    background: #f3f2ee;\r\n    border: 1px solid white;\r\n    padding-top: 30px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n/* Padding and border around timeline */\r\n.block-views.block-views-blockcustom-timeline-block-1, .block-views-blockassociated-events-block-2 {\r\n    padding: 20px;\r\n    border: 2px solid #6689A1;\r\n}\r\n\r\n/* Main menu tweaks */\r\n.body--dxpr-theme-nav-desktop .dxpr-theme-header--top .nav>li {\r\n    margin: 0px 5px 0px 5px;\r\nletter-spacing: 0.5px;\r\n} \r\n\r\n/* Timeline tweaks */\r\n.tl-timeline h1, .tl-timeline h2, .tl-timeline h3, .tl-timeline h4, .tl-timeline h5, .tl-timeline h6 {\r\n    font-family: 'Noto Serif, serif';\r\n    text-transform: none;\r\n    font-weight: 700;\r\n    font-size: 36px;\r\n    line-height: 36px;\r\n    /* color: #330F0A; */\r\n}\r\n\r\n/* Content type label in orange */\r\nspan.content-type {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n    color: #F28F3B;\r\n}\r\n\r\n/* Color coding for vetted and unvetted material on site */\r\nspan.field-content.Vetted {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n    color: white;\r\n    border-radius: 3px;\r\n    padding: 2px 5px;\r\n    background: #2bbf8f;\r\n}\r\n\r\nspan.field-content.Not.Vetted {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n    color: white;\r\n    border-radius: 3px;\r\n    padding: 2px 5px;\r\n    background: #bf2b2b;\r\n}\r\n\r\n/* Similar to above, this color codes the Peer Reviewed and Under Construction resources in editions */\r\nspan.\\32 24 {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n    color: white;\r\n    border-radius: 3px;\r\n    padding: 2px 5px;\r\n    background: rgb(43, 191, 143);\r\n}\r\n\r\nspan.\\32 23 {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n    color: white;\r\n    border-radius: 3px;\r\n    padding: 2px 5px;\r\n    background: #bf2b2b;\r\n}\r\n\r\n.view-add-items-to-this-chronology h4 {\r\n    font-size: 17px;\r\n    line-height: 1.6;\r\n}\r\n\r\n.tl-timeline a {\r\n    text-decoration: none;\r\n    color: #25597C;\r\n}\r\n\r\n.tl-timeline p {\r\n    font-family: 'Noto Sans';\r\n    line-height: 1.3em;\r\n}\r\n\r\nh4.field-content.content-type {\r\n    color: #F28F3B;\r\n}\r\n\r\n/*Positioning search box in header */\r\n\r\n.body--dxpr-theme-nav-desktop .dxpr-theme-header--top .block, .body--dxpr-theme-nav-desktop .dxpr-theme-header--top nav nav {\r\n    float: none;\r\n    position: static;\r\n    display: table-cell;\r\n    vertical-align: middle;\r\n}\r\n\r\n#dxpr-theme-main-menu {\r\nfloat:right;\r\n}\r\n\r\nsection#block-dxpr-theme-views-block-add-items-to-this-chronology-block-1 a, section#block-dxpr-theme-views-block-add-items-to-this-chronology-block-2 a, section#block-dxpr-theme-views-block-add-items-to-this-chronology-block-3 a  {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n    color: #25597c !important;\r\n    border-radius: 3px;\r\n    padding: 2px 5px;\r\n    background: white;\r\n}\r\n\r\n.view-add-items-to-this-chronology {\r\n    margin-top: 10px;\r\n}\r\n\r\n.parent-resource a {\r\n    font-family: \"Noto Serif Bold\", \"Noto Serif\";\r\n    font-weight: bold;\r\n    line-height: 1.1;\r\n    letter-spacing: 0.05em;\r\n}\r\n\r\n/*\r\nul.tabs--primary.nav.nav-tabs {\r\n    margin-top: -40px;\r\n}\r\n*/\r\n\r\n/* Establishing basic colors for use with Bootstrap Layout Builder styles */\r\n.bs-bg-blue {background-color: #25597c;}\r\n.bs-bg-orange {background-color: #F28F3B;}\r\n.bs-text-blue {color: #25597c;}\r\n.bs-text-orange {color: #F28F3B;}\r\n\r\n/* Fixing issue with overlap of dropdown arrows on dropdown filters. See, e.g. Editions landing page */\r\n.html select, .html select.form-control {\r\n    padding: 0px 22px 0px 10px;\r\n}\r\n\r\n/* Trying to fix footnote anchors being covered by fixed site header. LEAVING IN FOR PARTIAL TO SOLUTION SHOULD FIXED HEADER BE NECESSARY. COMMENTING OUT FOR NOW.  */\r\n\r\n/* \r\na[href*=\"#_edn\"]:before {\r\n    content: '';\r\n    display: block;\r\n    position: relative;\r\n    width: 0;\r\n    height: 5em;\r\n    margin-top: -5em;\r\n}\r\n\r\na[name*=\"_ednref\"]:before {\r\n    /* position: relative; */\r\n    display: inline;\r\n}\r\n*/\r\n\r\n.view-editions-home h4.field-content {\r\n    margin-bottom: 4px;\r\n}\r\n\r\n/* Mods to contact form */\r\n\r\n#block-dxpr-theme-footer form#webform-submission-contact-add-form input, #block-dxpr-theme-footer form#webform-submission-contact-add-form textarea {\r\n    box-shadow: none;\r\n    outline: none;\r\n    border-color: white;\r\n    color: white;\r\n}\r\n\r\n/* Manually setting the width of the date column for the timeline table */\r\nth#view-field-event-date-1-table-column {\r\n    width: 150px;\r\n}\r\n\r\n/* Slight adjustments to margin's around images in Views */\r\n.views-field img {\r\n    margin-bottom: 10px;\r\n    margin-right: 5px;\r\n}"
+custom_javascript_site: ''
+block_preset: block_outline
+block_card: ''
+block_background: ''
+block_background_custom: '#eeeeee'
+block_padding: '15'
+block_border_radius: '0'
+block_border: '1'
+block_border_color: text
+block_border_color_custom: '#eeeeee'
+title_font_size: h3
+title_align: left
+title_card: ''
+title_background: ''
+title_background_custom: '#eeeeee'
+title_padding: '0'
+title_border: '0'
+title_border_radius: '0'
+title_border_color: ''
+title_border_color_custom: '#eeeeee'
+title_sticker: 0
+block_divider: 0
+block_divider_custom: 0
+block_divider_color: ''
+block_divider_color_custom: '#eeeeee'
+block_divider_thickness: '0'
+block_divider_length: '0'
+block_divider_spacing: '0'
+page_title_image: null
+background_image: null
+hidden_regions:
+  navigation: 0
+  navigation_collapsible: 0
+  secondary_header: 0
+  page_title: 0
+  highlighted: 0
+  header: 0
+  content_top: 0
+  content: 0
+  content_bottom: 0
+  sidebar_first: 0
+  sidebar_second: 0
+  footer: 0
+popover_placement: top
+tooltip_placement: 'auto top'
+modal_enabled: 0
+modal_jquery_ui_bridge: 0
+cdn_provider: ''
+background_image_path: ''
+second_header_sticky: 0
+mark_menu_with_children: 1
+dropdown_width: '160'
+header_mobile_fixed: 0
+page_title_breadcrumbs_align: right
+page_title_breadcrumbs_separator: /
+title_type:
+  uppercase: 0
+  bold: 0
+  italic: 0
+page_title_image_path: ''
+color_scheme: custom
+color_palette: 'a:22:{s:4:"base";s:7:"#25597c";s:4:"link";s:7:"#6689a1";s:7:"accent1";s:7:"#279eb2";s:7:"accent2";s:7:"#f28f3b";s:4:"text";s:7:"#555555";s:8:"headings";s:7:"#25597c";s:4:"card";s:7:"#eeeeee";s:8:"cardtext";s:7:"#444444";s:6:"footer";s:7:"#555555";s:10:"footertext";s:7:"#f3f2ee";s:9:"secheader";s:7:"#444444";s:13:"secheadertext";s:7:"#f3f2ee";s:6:"header";s:7:"#f3f2ee";s:10:"headertext";s:7:"#330f0a";s:10:"headerside";s:7:"#279eb2";s:14:"headersidetext";s:7:"#f3f2ee";s:9:"pagetitle";s:7:"#25597c";s:13:"pagetitletext";s:7:"#f3f2ee";s:9:"graylight";s:7:"#cccccc";s:11:"graylighter";s:7:"#ededed";s:6:"silver";s:7:"#f1f1f1";s:4:"body";s:7:"#efefef";}'
+color_palette_base: '#25597c'
+color_palette_link: '#6689a1'
+color_palette_accent1: '#279eb2'
+color_palette_accent2: '#f28f3b'
+color_palette_text: '#555555'
+color_palette_headings: '#25597c'
+color_palette_footer: '#555555'
+color_palette_footertext: '#f3f2ee'
+color_palette_secheader: '#444444'
+color_palette_secheadertext: '#f3f2ee'
+color_palette_card: '#eeeeee'
+color_palette_cardtext: '#444444'
+color_palette_header: '#f3f2ee'
+color_palette_headertext: '#330f0a'
+color_palette_headerside: '#279eb2'
+color_palette_headersidetext: '#f3f2ee'
+color_palette_pagetitle: '#25597c'
+color_palette_pagetitletext: '#f3f2ee'
+color_palette_graylight: '#cccccc'
+color_palette_graylighter: '#ededed'
+color_palette_silver: '#f1f1f1'
+color_palette_body: '#efefef'
+logo_height: '50'
+header_side_logo_height: '30'

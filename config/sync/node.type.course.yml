@@ -1,0 +1,17 @@
+uuid: 4d90a739-3369-45a7-8bc6-30496c05951f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Group
+type: course
+description: 'Content type for course-based or scholar-driven groups'
+help: "As an administrator, your first step is to create a group. Groups can take the form of either academic courses or scholar-driven projects. Once you've created a group, you can then add content and users."
+new_revision: true
+preview_mode: 1
+display_submitted: true

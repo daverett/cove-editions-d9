@@ -1,0 +1,21 @@
+uuid: f90ee320-1769-4b1e-bdd8-2fba0f6640e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - cove_editions_subtheme
+id: cove_editions_subtheme_searchform
+theme: cove_editions_subtheme
+region: navigation_collapsible
+weight: -11
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

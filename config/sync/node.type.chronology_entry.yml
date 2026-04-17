@@ -1,0 +1,17 @@
+uuid: acc903bb-3db2-4e9d-86c0-eb20519fcb4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Timeline Entry'
+type: chronology_entry
+description: 'Stories individual entries (rows) in a chronology or timeline. '
+help: 'Now that you''ve created a chronology, create a series of entries to populate your chronology. To create many  items at once, use the "Save and add another" button below. '
+new_revision: true
+preview_mode: 1
+display_submitted: true

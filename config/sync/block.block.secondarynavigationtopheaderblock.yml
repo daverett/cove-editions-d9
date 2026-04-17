@@ -1,0 +1,41 @@
+uuid: fe4ef485-e186-41ca-aa4e-75b8d71d3438
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:drag_and_drop_block:63eb52e7-82d4-458b-995d-26d0425242f2'
+  module:
+    - block_content
+    - user
+  theme:
+    - dxpr_theme
+id: secondarynavigationtopheaderblock
+theme: dxpr_theme
+region: secondary_header
+weight: -6
+provider: null
+plugin: 'block_content:63eb52e7-82d4-458b-995d-26d0425242f2'
+settings:
+  id: 'block_content:63eb52e7-82d4-458b-995d-26d0425242f2'
+  label: 'Secondary Navigation Top Header Block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      author: author
+      content_editor: content_editor
+      group_leader: group_leader
+      editor: editor
+      section_editor: section_editor
+      manager: manager
+      administrator: administrator

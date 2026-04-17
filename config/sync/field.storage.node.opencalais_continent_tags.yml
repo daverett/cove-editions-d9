@@ -1,0 +1,24 @@
+uuid: 9772ea31-9be0-49e8-ae4c-22f5e3e4196b
+langcode: und
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.opencalais_continent_tags
+field_name: opencalais_continent_tags
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

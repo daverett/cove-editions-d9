@@ -1,0 +1,19 @@
+uuid: fc144f3e-64a0-4d8c-95d8-0ac60ce46c20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_firstname
+    - node.type.contributor
+id: node.contributor.field_firstname
+field_name: field_firstname
+entity_type: node
+bundle: contributor
+label: 'First/Middle name'
+description: 'The first and middle name or anything else that precedes the person''s last name, e.g. "George Gordon Lord" for "George Gordon Lord Byron". '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

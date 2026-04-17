@@ -1,0 +1,18 @@
+uuid: 737c1fec-1b46-4247-8722-6dc0582990cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.place
+id: node.place.title
+field_name: title
+entity_type: node
+bundle: place
+label: 'Place name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

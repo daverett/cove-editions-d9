@@ -1,0 +1,28 @@
+uuid: 20b52781-4ea5-4751-a838-53b971669e83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_associated_tags
+    - node.type.contributor
+id: node.contributor.field_associated_tags
+field_name: field_associated_tags
+entity_type: node
+bundle: contributor
+label: 'Associated Tags'
+description: 'These are tags associated with you or another person. It could be your name, or, in the case of historical figures, any aliases or nicknames they may have. These tags should reflect people and their names, not other keywords that may be associated with those people, such as works, locations, etc. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

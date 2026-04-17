@@ -1,0 +1,21 @@
+uuid: f933dc6b-bb75-4077-bd3d-07f14ab65b02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.gallery_image
+  module:
+    - datetime_range
+id: node.gallery_image.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: gallery_image
+label: 'Image date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

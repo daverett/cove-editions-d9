@@ -1,0 +1,177 @@
+uuid: d331b2e7-34aa-42dc-a28c-2cb65a6dcdfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.unfiltered_html
+    - node.type.blog
+    - node.type.chronology
+    - node.type.chronology_entry
+    - node.type.contributor
+    - node.type.course
+    - node.type.editions_index_page
+    - node.type.editions_page
+    - node.type.galler_exhibit
+    - node.type.gallery_image
+    - node.type.map
+    - node.type.page
+    - node.type.pedagogies_journal_page
+    - node.type.place
+  module:
+    - comment
+    - contextual
+    - field_permissions
+    - file
+    - filter
+    - help
+    - node
+    - system
+    - toolbar
+    - view_unpublished
+id: section_editor
+label: 'section editor'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access contextual links'
+  - 'access help pages'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer permissions'
+  - 'administer users'
+  - 'create blog content'
+  - 'create body'
+  - 'create chronology content'
+  - 'create chronology_entry content'
+  - 'create contributor content'
+  - 'create course content'
+  - 'create editions_index_page content'
+  - 'create editions_page content'
+  - 'create field_authored_at_rc1'
+  - 'create field_authored_at_rc2'
+  - 'create field_authored_by_primary_'
+  - 'create field_authored_by_secondary_'
+  - 'create field_doc_owner'
+  - 'create field_edited_by'
+  - 'create field_edition_state'
+  - 'create field_geocoder'
+  - 'create field_index_banner'
+  - 'create field_items_in_this_chronology'
+  - 'create field_lccn_permalink'
+  - 'create field_loc_authority_birth_year'
+  - 'create field_loc_authority_record_name'
+  - 'create field_main_author'
+  - 'create field_place_search'
+  - 'create field_places_in_this_map'
+  - 'create field_published'
+  - 'create field_resource_index'
+  - 'create field_resource_technical_editor'
+  - 'create field_vetted_'
+  - 'create galler_exhibit content'
+  - 'create gallery_image content'
+  - 'create map content'
+  - 'create page content'
+  - 'create pedagogies_journal_page content'
+  - 'create place content'
+  - 'delete any blog content'
+  - 'delete any chronology content'
+  - 'delete any chronology_entry content'
+  - 'delete any contributor content'
+  - 'delete any course content'
+  - 'delete any editions_index_page content'
+  - 'delete any editions_page content'
+  - 'delete any gallery_image content'
+  - 'delete any page content'
+  - 'delete any pedagogies_journal_page content'
+  - 'delete own blog content'
+  - 'delete own chronology content'
+  - 'delete own chronology_entry content'
+  - 'delete own contributor content'
+  - 'delete own course content'
+  - 'delete own editions_index_page content'
+  - 'delete own editions_page content'
+  - 'delete own files'
+  - 'delete own galler_exhibit content'
+  - 'delete own map content'
+  - 'delete own page content'
+  - 'delete own pedagogies_journal_page content'
+  - 'delete own place content'
+  - 'edit any blog content'
+  - 'edit any chronology content'
+  - 'edit any chronology_entry content'
+  - 'edit any contributor content'
+  - 'edit any course content'
+  - 'edit any editions_index_page content'
+  - 'edit any editions_page content'
+  - 'edit any gallery_image content'
+  - 'edit any page content'
+  - 'edit any pedagogies_journal_page content'
+  - 'edit body'
+  - 'edit field_authored_at_rc1'
+  - 'edit field_authored_at_rc2'
+  - 'edit field_authored_by_primary_'
+  - 'edit field_authored_by_secondary_'
+  - 'edit field_edited_by'
+  - 'edit field_edition_state'
+  - 'edit field_geocoder'
+  - 'edit field_index_banner'
+  - 'edit field_items_in_this_chronology'
+  - 'edit field_lccn_permalink'
+  - 'edit field_loc_authority_birth_year'
+  - 'edit field_loc_authority_record_name'
+  - 'edit field_main_author'
+  - 'edit field_parent_chronology'
+  - 'edit field_place_search'
+  - 'edit field_places_in_this_map'
+  - 'edit field_published'
+  - 'edit field_resource_index'
+  - 'edit field_resource_technical_editor'
+  - 'edit field_vetted_'
+  - 'edit own blog content'
+  - 'edit own body'
+  - 'edit own chronology content'
+  - 'edit own chronology_entry content'
+  - 'edit own comments'
+  - 'edit own contributor content'
+  - 'edit own course content'
+  - 'edit own editions_index_page content'
+  - 'edit own editions_page content'
+  - 'edit own field_authored_at_rc1'
+  - 'edit own field_authored_at_rc2'
+  - 'edit own field_authored_by_primary_'
+  - 'edit own field_authored_by_secondary_'
+  - 'edit own field_edited_by'
+  - 'edit own field_edition_state'
+  - 'edit own field_geocoder'
+  - 'edit own field_index_banner'
+  - 'edit own field_items_in_this_chronology'
+  - 'edit own field_lccn_permalink'
+  - 'edit own field_loc_authority_birth_year'
+  - 'edit own field_loc_authority_record_name'
+  - 'edit own field_main_author'
+  - 'edit own field_parent_chronology'
+  - 'edit own field_place_search'
+  - 'edit own field_places_in_this_map'
+  - 'edit own field_published'
+  - 'edit own field_resource_index'
+  - 'edit own field_resource_technical_editor'
+  - 'edit own field_vetted_'
+  - 'edit own galler_exhibit content'
+  - 'edit own map content'
+  - 'edit own page content'
+  - 'edit own pedagogies_journal_page content'
+  - 'edit own place content'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'use text format unfiltered_html'
+  - 'view any unpublished content'
+  - 'view any unpublished editions_index_page content'
+  - 'view field_parent_chronology'
+  - 'view field_vetted_'
+  - 'view own field_geocoder'
+  - 'view own field_vetted_'
+  - 'view own unpublished content'
+  - 'view the administration theme'

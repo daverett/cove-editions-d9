@@ -1,0 +1,54 @@
+uuid: 8211c77e-2d06-4de9-9a98-cf1d6da83db0
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_group_node_gallery_image
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Field groups of node (bundle: gallery_image)'
+source:
+  plugin: d7_field_group
+  entity_type: node
+  bundle: gallery_image
+process:
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  mode:
+    -
+      plugin: static_map
+      source: mode
+      bypass: true
+      map:
+        form: default
+  type:
+    -
+      plugin: static_map
+      source: mode
+      default_value: entity_view_display
+      map:
+        form: entity_form_display
+  group_name:
+    -
+      plugin: get
+      source: group_name
+  settings:
+    -
+      plugin: get
+      source: settings
+destination:
+  plugin: d7_field_group
+migration_dependencies:
+  required:
+    - upgrade_d7_view_modes
+  optional: {  }

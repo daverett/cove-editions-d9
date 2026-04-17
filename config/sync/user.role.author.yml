@@ -1,0 +1,62 @@
+uuid: 20226273-d2d8-43c9-b7a2-5704def71ea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.blog
+    - node.type.chronology
+    - node.type.chronology_entry
+    - node.type.map
+    - node.type.place
+  module:
+    - comment
+    - contextual
+    - field_permissions
+    - file
+    - filter
+    - help
+    - node
+    - system
+id: author
+label: author
+weight: 2
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access contextual links'
+  - 'access help pages'
+  - 'create blog content'
+  - 'create body'
+  - 'create chronology content'
+  - 'create chronology_entry content'
+  - 'create field_doc_owner'
+  - 'create field_geocoder'
+  - 'create field_items_in_this_chronology'
+  - 'create field_place_search'
+  - 'create field_places_in_this_map'
+  - 'create map content'
+  - 'create place content'
+  - 'delete own blog content'
+  - 'delete own chronology content'
+  - 'delete own chronology_entry content'
+  - 'delete own files'
+  - 'delete own map content'
+  - 'delete own place content'
+  - 'edit own blog content'
+  - 'edit own chronology content'
+  - 'edit own chronology_entry content'
+  - 'edit own comments'
+  - 'edit own field_geocoder'
+  - 'edit own field_items_in_this_chronology'
+  - 'edit own field_place_search'
+  - 'edit own field_places_in_this_map'
+  - 'edit own field_resource_index'
+  - 'edit own map content'
+  - 'edit own place content'
+  - 'use text format full_html'
+  - 'view field_parent_chronology'
+  - 'view own field_geocoder'
+  - 'view own field_vetted_'
+  - 'view own unpublished content'
+  - 'view the administration theme'

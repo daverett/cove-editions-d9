@@ -1,0 +1,28 @@
+uuid: 84768cf6-558c-4575-82a1-5a67b7b72fd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authored_by_secondary_
+    - node.type.editions_page
+id: node.editions_page.field_authored_by_secondary_
+field_name: field_authored_by_secondary_
+entity_type: node
+bundle: editions_page
+label: 'Authored by (Secondary)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

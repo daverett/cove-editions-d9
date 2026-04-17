@@ -1,0 +1,18 @@
+uuid: ffafc654-27c7-4056-876d-0603bd5836e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.map
+id: node.map.title
+field_name: title
+entity_type: node
+bundle: map
+label: 'Map name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

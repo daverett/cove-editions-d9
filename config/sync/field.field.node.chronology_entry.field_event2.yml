@@ -1,0 +1,27 @@
+uuid: 10f786c4-a472-48a4-93db-477e2f925943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event2
+    - node.type.chronology_entry
+  module:
+    - linkchecker
+    - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
+id: node.chronology_entry.field_event2
+field_name: field_event2
+entity_type: node
+bundle: chronology_entry
+label: 'Event Description'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

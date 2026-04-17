@@ -1,0 +1,141 @@
+uuid: 0f3db09c-d91a-4387-93c4-cf8c55162078
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_surname
+  module:
+    - feeds_log
+    - user
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+label: 'User import'
+id: user_import
+description: 'imports recent users to site'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:user'
+processor_configuration:
+  values: {  }
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  uid:
+    value: Uid
+    label: Uid
+    machine_name: uid
+    type: csv
+  username:
+    value: User-name
+    label: User-name
+    machine_name: username
+    type: csv
+  created_date:
+    value: 'Created date'
+    label: 'Created date'
+    machine_name: created_date
+    type: csv
+  first_middle_name:
+    value: 'First/Middle name'
+    label: 'First/Middle name'
+    machine_name: first_middle_name
+    type: csv
+  surname:
+    value: Surname
+    label: Surname
+    machine_name: surname
+    type: csv
+  email:
+    value: Email
+    label: Email
+    machine_name: email
+    type: csv
+  active_status:
+    value: 'Active status'
+    label: 'Active status'
+    machine_name: active_status
+    type: csv
+mappings:
+  -
+    target: uid
+    map:
+      value: uid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: name
+    map:
+      value: username
+    settings: {  }
+    unique: {  }
+  -
+    target: created
+    map:
+      value: created_date
+    settings:
+      timezone: UTC
+  -
+    target: field_firstname
+    map:
+      value: first_middle_name
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_surname
+    map:
+      value: surname
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: mail
+    map:
+      value: email
+    settings:
+      defuse: 0
+    unique: {  }
+  -
+    target: status
+    map:
+      value: active_status
+    settings: {  }

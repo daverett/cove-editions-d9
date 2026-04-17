@@ -1,0 +1,166 @@
+uuid: 6343dbe8-3084-487a-8343-b8b78437ed2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.chronology.body
+    - field.field.node.chronology.field_resource_index
+    - field.field.node.chronology.group_content_access
+    - field.field.node.chronology.og_group_ref
+    - node.type.chronology
+  module:
+    - feeds_log
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+label: 'Chronology import'
+id: chronology_import
+description: 'Chronology info imported from D7 site'
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: chronology
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: true
+  skip_validation_types:
+    - NotNull
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  nid:
+    value: Nid
+    label: Nid
+    machine_name: nid
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  post_date:
+    value: 'Post date'
+    label: 'Post date'
+    machine_name: post_date
+    type: csv
+  author_uid:
+    value: 'Author uid'
+    label: 'Author uid'
+    machine_name: author_uid
+    type: csv
+  groups_audience:
+    value: 'Groups audience'
+    label: 'Groups audience'
+    machine_name: groups_audience
+    type: csv
+  group_content_visibility:
+    value: 'Group content visibility'
+    label: 'Group content visibility'
+    machine_name: group_content_visibility
+    type: csv
+  parent_resource:
+    value: 'Parent Resource'
+    label: 'Parent Resource'
+    machine_name: parent_resource
+    type: csv
+  body:
+    value: Body
+    label: Body
+    machine_name: body
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: created
+    map:
+      value: post_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: uid
+    map:
+      target_id: author_uid
+    settings:
+      language: ''
+      reference_by: uid
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: og_group_ref
+    map:
+      target_id: groups_audience
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: course
+      feeds_item: false
+  -
+    target: group_content_access
+    map:
+      value: group_content_visibility
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_resource_index
+    map:
+      target_id: parent_resource
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: editions_index_page
+      feeds_item: false
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: ''
+      format: full_html

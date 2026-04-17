@@ -1,0 +1,22 @@
+uuid: 906189e0-eb9f-4e19-9031-f71478c88880
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - cove_editions_subtheme
+_core:
+  default_config_hash: mV9h_NNjjbPAWoq62QCf5yvnX3TeL4r49DFhFuRfidE
+id: cove_editions_subtheme_help
+theme: cove_editions_subtheme
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

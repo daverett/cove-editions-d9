@@ -1,0 +1,8 @@
+uuid: 0d86e213-ef25-406d-b01c-965a26446ce1
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_map
+label: 'Map comment'
+target_entity_type_id: node
+description: null

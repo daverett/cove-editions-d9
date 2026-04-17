@@ -1,0 +1,589 @@
+uuid: 2249f39c-12b2-4e6d-a85f-df2fb9b82111
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.editions_index_page.body
+    - field.field.node.editions_index_page.field_annotator
+    - field.field.node.editions_index_page.field_documents_in_this_edition
+    - field.field.node.editions_index_page.field_edited_by
+    - field.field.node.editions_index_page.field_edition_state
+    - field.field.node.editions_index_page.field_editor_in_chief
+    - field.field.node.editions_index_page.field_exhibits_in_this_edition
+    - field.field.node.editions_index_page.field_icon
+    - field.field.node.editions_index_page.field_index_banner
+    - field.field.node.editions_index_page.field_main_author
+    - field.field.node.editions_index_page.field_maps_in_this_edition
+    - field.field.node.editions_index_page.field_nines_discipline_s_
+    - field.field.node.editions_index_page.field_nines_genre_s_
+    - field.field.node.editions_index_page.field_nines_type_s_
+    - field.field.node.editions_index_page.field_original_publication_date
+    - field.field.node.editions_index_page.field_postgraduate_researcher
+    - field.field.node.editions_index_page.field_published
+    - field.field.node.editions_index_page.field_resource_technical_editor
+    - field.field.node.editions_index_page.field_timelines_in_this_edition
+    - field.field.node.editions_index_page.layout_builder__layout
+    - field.field.node.editions_index_page.opencalais_person_tags
+    - field.field.node.editions_index_page.taxonomy_vocabulary_3
+    - image.style.index_banner
+    - node.type.editions_index_page
+  module:
+    - datetime
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          a6787577-dd7e-4ef4-b895-d966845c4b62:
+            uuid: a6787577-dd7e-4ef4-b895-d966845c4b62
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_published'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          8ac4376f-9689-4e6f-9731-3b5790f3f43b:
+            uuid: 8ac4376f-9689-4e6f-9731-3b5790f3f43b
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_index_banner'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: index_banner
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          6bef3193-2192-4645-ad13-8910c615fc62:
+            uuid: 6bef3193-2192-4645-ad13-8910c615fc62
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          1051874c-3b2c-482b-9998-8e19884896ba:
+            uuid: 1051874c-3b2c-482b-9998-8e19884896ba
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_original_publication_date'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: long
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          07577c22-5546-49b1-a302-79dc7bcd28e4:
+            uuid: 07577c22-5546-49b1-a302-79dc7bcd28e4
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_main_author'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          d03f1de5-0d98-4ac8-947d-e8fbabe21e44:
+            uuid: d03f1de5-0d98-4ac8-947d-e8fbabe21e44
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_edited_by'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          a99332aa-796d-4b1f-97d9-9eaaf9870c30:
+            uuid: a99332aa-796d-4b1f-97d9-9eaaf9870c30
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_annotator'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          a4059c10-4906-449d-b393-bccd2cedde9e:
+            uuid: a4059c10-4906-449d-b393-bccd2cedde9e
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_resource_technical_editor'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          8f068ee8-f3b2-401d-b79a-562514ff7d53:
+            uuid: 8f068ee8-f3b2-401d-b79a-562514ff7d53
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_documents_in_this_edition'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          7d34a525-b062-4ca9-b7b8-c4e8e51e2195:
+            uuid: 7d34a525-b062-4ca9-b7b8-c4e8e51e2195
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_nines_genre_s_'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          252758ad-e32e-4807-9fdc-259772767218:
+            uuid: 252758ad-e32e-4807-9fdc-259772767218
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_nines_discipline_s_'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          8f747f20-8c60-4d1a-8c15-85d9a69f0bb3:
+            uuid: 8f747f20-8c60-4d1a-8c15-85d9a69f0bb3
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_nines_type_s_'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          0dbf9b7e-df63-4d83-9bb1-9212b1328309:
+            uuid: 0dbf9b7e-df63-4d83-9bb1-9212b1328309
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:taxonomy_vocabulary_3'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          44403d82-b226-4773-813c-326c5227b12b:
+            uuid: 44403d82-b226-4773-813c-326c5227b12b
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:opencalais_person_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          8f136dd7-1499-4210-84b4-1d14080d7f33:
+            uuid: 8f136dd7-1499-4210-84b4-1d14080d7f33
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_icon'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
+          3c6b84ce-6aaf-4876-ae67-990603b1e33a:
+            uuid: 3c6b84ce-6aaf-4876-ae67-990603b1e33a
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_postgraduate_researcher'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 15
+            additional: {  }
+          786c4840-a5c7-40b2-bd52-b41659c0ec94:
+            uuid: 786c4840-a5c7-40b2-bd52-b41659c0ec94
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_timelines_in_this_edition'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 16
+            additional: {  }
+          5881e4ab-fcef-4f4d-8cf2-88f589115bcc:
+            uuid: 5881e4ab-fcef-4f4d-8cf2-88f589115bcc
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_maps_in_this_edition'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 17
+            additional: {  }
+          1dd3df0c-3415-4ddc-9360-6aea95fc7e54:
+            uuid: 1dd3df0c-3415-4ddc-9360-6aea95fc7e54
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_edition_state'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 19
+            additional: {  }
+          088cc456-8a0f-4bdf-8667-46e82e2a281b:
+            uuid: 088cc456-8a0f-4bdf-8667-46e82e2a281b
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_editor_in_chief'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 20
+            additional: {  }
+          46a615b0-ff93-435a-963d-be43a21f411c:
+            uuid: 46a615b0-ff93-435a-963d-be43a21f411c
+            region: content
+            configuration:
+              id: 'field_block:node:editions_index_page:field_exhibits_in_this_edition'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 21
+            additional: {  }
+          f59f5734-cb19-4f23-87e9-2b2be387a8e6:
+            uuid: f59f5734-cb19-4f23-87e9-2b2be387a8e6
+            region: content
+            configuration:
+              id: 'extra_field_block:node:editions_index_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 22
+            additional: {  }
+        third_party_settings: {  }
+id: node.editions_index_page.full
+targetEntityType: node
+bundle: editions_index_page
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_annotator:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_documents_in_this_edition:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_edited_by:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_edition_state:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_editor_in_chief:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_exhibits_in_this_edition:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_index_banner:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: index_banner
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_main_author:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_maps_in_this_edition:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_nines_discipline_s_:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_nines_genre_s_:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_nines_type_s_:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_original_publication_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_postgraduate_researcher:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_published:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  field_resource_technical_editor:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_timelines_in_this_edition:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  opencalais_person_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  taxonomy_vocabulary_3:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+hidden:
+  breadcrumbs: true
+  layout_builder__layout: true

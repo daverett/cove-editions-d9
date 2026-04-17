@@ -1,0 +1,9 @@
+uuid: 2d16fedd-8591-4a41-a484-35dfe5d9fb5d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Gallery Tags'
+vid: gallery_tags
+description: 'A freetagging vocab for all the tags in the Romantic Circles Gallery'
+weight: 0
+new_revision: false

@@ -1,0 +1,28 @@
+uuid: de500093-f56d-492b-b954-b37cb28e9bd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authored_by_secondary_
+    - node.type.pedagogies_journal_page
+id: node.pedagogies_journal_page.field_authored_by_secondary_
+field_name: field_authored_by_secondary_
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'Authored by (Secondary)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

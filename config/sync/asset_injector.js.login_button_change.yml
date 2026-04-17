@@ -1,0 +1,37 @@
+uuid: 0388ac27-199d-49ac-9d48-118c42e515a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: login_button_change
+label: 'Login button change'
+code: |-
+  (function (Drupal, once) {
+    Drupal.behaviors.coveLoginButtonText = {
+      attach(context) {
+        once(
+          'cove-login-text',
+          'input[data-drupal-selector="edit-openid-connect-client-navsa-login"]',
+          context
+        ).forEach((btn) => {
+          btn.value = 'Log in';
+        });
+      }
+    };
+  })(Drupal, once);
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+contexts: {  }
+conditions_require_all: true

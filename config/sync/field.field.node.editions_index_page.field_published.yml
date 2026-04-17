@@ -1,0 +1,21 @@
+uuid: 56bb2df9-243f-49fd-8acc-0d52feba4a12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_published
+    - node.type.editions_index_page
+  module:
+    - datetime
+id: node.editions_index_page.field_published
+field_name: field_published
+entity_type: node
+bundle: editions_index_page
+label: 'Date published'
+description: 'Enter the date this page is to be published (i.e. not created) on the site, specifying only Month and Year.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

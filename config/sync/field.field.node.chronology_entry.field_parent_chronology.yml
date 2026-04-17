@@ -1,0 +1,30 @@
+uuid: aaa20abc-d312-4d76-a331-cc40b48e9904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_chronology
+    - node.type.chronology
+    - node.type.chronology_entry
+id: node.chronology_entry.field_parent_chronology
+field_name: field_parent_chronology
+entity_type: node
+bundle: chronology_entry
+label: 'Parent Chronology'
+description: 'Select the parent chronology of which this entry is a part. This should happen automatically!'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      chronology: chronology
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

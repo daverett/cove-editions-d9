@@ -1,0 +1,21 @@
+uuid: f8ed2727-27b2-47fa-b186-2f22ad6859e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.chronology_entry
+  module:
+    - datetime_range
+id: node.chronology_entry.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: chronology_entry
+label: 'Event date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

@@ -1,0 +1,8 @@
+uuid: eee3248a-6552-4918-aa40-2ebfbe4ccf7c
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_place
+label: 'Place comment'
+target_entity_type_id: node
+description: null

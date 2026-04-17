@@ -1,0 +1,14 @@
+uuid: 17e1f95a-73e1-412a-9c64-d1dbec27cfd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_leader
+  module:
+    - user
+id: user_add_role_action.group_leader
+label: 'Add the Group leader role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: group_leader

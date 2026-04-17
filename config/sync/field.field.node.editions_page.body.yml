@@ -1,0 +1,23 @@
+uuid: fa9c6fa0-e8ea-482e-b5cd-c9e1755821cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.editions_page
+  module:
+    - text
+id: node.editions_page.body
+field_name: body
+entity_type: node
+bundle: editions_page
+label: Body
+description: 'For Editions. A <em>page</em>, similar in form to a <em>story</em>, is a simple method for creating and displaying information that rarely changes, such as an "About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site''s initial home page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

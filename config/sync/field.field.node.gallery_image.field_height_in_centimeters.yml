@@ -1,0 +1,19 @@
+uuid: c2a0c082-bb89-477d-9a98-8a87f2f752ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_height_in_centimeters
+    - node.type.gallery_image
+id: node.gallery_image.field_height_in_centimeters
+field_name: field_height_in_centimeters
+entity_type: node
+bundle: gallery_image
+label: 'Height (in centimeters)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: 8eb8ab81-9e1e-4ac1-944d-f5bee36cb3d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.section_editor
+  module:
+    - user
+id: user_add_role_action.section_editor
+label: 'Add the section editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: section_editor

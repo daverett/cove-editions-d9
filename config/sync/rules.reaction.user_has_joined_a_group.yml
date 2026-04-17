@@ -1,0 +1,77 @@
+uuid: 62c77136-3872-49a9-9af4-f419bbfc78ac
+langcode: en
+status: true
+dependencies: {  }
+id: user_has_joined_a_group
+label: 'User has joined a group'
+events:
+  -
+    event_name: 'rules_entity_insert:og_membership'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: fab65c38-c855-4b29-bfb9-f59d5b486b4f
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 74074efa-a878-4288-ae69-0e18aa62d624
+    weight: 0
+    conditions:
+      -
+        id: rules_condition
+        uuid: 02144faa-e994-4ccb-b006-c0dc5cd24380
+        weight: 0
+        condition_id: rules_data_comparison
+        negate: false
+        context_values:
+          operation: '=='
+          value: Active
+        context_mapping:
+          data: og_membership.state.value
+        context_processors:
+          operation:
+            rules_tokens: {  }
+          value:
+            rules_tokens: {  }
+        provides_mapping: {  }
+  actions:
+    id: rules_action_set
+    uuid: 0a88d139-7815-4714-92b1-2adeade1dd20
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 5e869529-1d00-457c-86eb-8ca143e6f01c
+        weight: 0
+        action_id: rules_send_email
+        context_values:
+          subject: 'Your membership request was approved'
+          message: "Dear @user.current_user_context:current_user.name, you are now a member of the group '@og.context:og’."
+          reply: ''
+          language: ''
+        context_mapping:
+          to: '@user.current_user_context:current_user.mail'
+        context_processors:
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }
+      -
+        id: rules_action
+        uuid: 5de3936a-8146-4b62-b6bf-7cbbdb3ae8e2
+        weight: 0
+        action_id: rules_page_redirect
+        context_values:
+          url: '/form/cove-publishing-agreement/?destination=@og.context:og'
+        context_mapping: {  }
+        context_processors:
+          url:
+            rules_tokens: {  }
+        provides_mapping: {  }

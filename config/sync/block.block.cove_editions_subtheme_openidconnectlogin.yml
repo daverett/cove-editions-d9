@@ -1,0 +1,20 @@
+uuid: bf6ff631-d089-4bdc-af7b-c6f349f8d64e
+langcode: en
+status: true
+dependencies:
+  module:
+    - openid_connect
+  theme:
+    - cove_editions_subtheme
+id: cove_editions_subtheme_openidconnectlogin
+theme: cove_editions_subtheme
+region: secondary_header
+weight: -12
+provider: null
+plugin: openid_connect_login
+settings:
+  id: openid_connect_login
+  label: 'OpenID Connect login'
+  label_display: '0'
+  provider: openid_connect
+visibility: {  }

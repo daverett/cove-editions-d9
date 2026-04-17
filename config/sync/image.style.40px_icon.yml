@@ -1,0 +1,15 @@
+uuid: a05798f3-5737-4fa4-8e07-426bd663faeb
+langcode: en
+status: true
+dependencies: {  }
+name: 40px_icon
+label: 40px_icon
+effects:
+  08361567-3dc0-46fb-8a6f-aeced2def177:
+    uuid: 08361567-3dc0-46fb-8a6f-aeced2def177
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 40
+      upscale: false

@@ -1,0 +1,10 @@
+uuid: 1b515c89-c28d-4fa3-9fc6-b20e72303ece
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: 'About COVE'
+description: 'Site information links'
+locked: true

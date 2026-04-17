@@ -1,0 +1,21 @@
+uuid: a644cfb5-f083-4419-bc88-b106bce773ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_original_publication_date
+    - node.type.editions_page
+  module:
+    - datetime_range
+id: node.editions_page.field_original_publication_date
+field_name: field_original_publication_date
+entity_type: node
+bundle: editions_page
+label: 'Original publication date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

@@ -1,0 +1,9 @@
+uuid: 7fb33025-7a7c-4db1-b19b-aa70d90d5cf2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Natural Feature'
+vid: natural_feature
+description: 'Tags sourced from OpenCalais about Natural Feature.'
+weight: 9
+new_revision: false

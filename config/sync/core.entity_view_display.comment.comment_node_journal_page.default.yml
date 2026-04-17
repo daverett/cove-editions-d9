@@ -1,0 +1,28 @@
+uuid: 607e32a2-1d52-4469-8225-370eb8980e36
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_journal_page
+    - field.field.comment.comment_node_journal_page.comment_body
+  module:
+    - text
+id: comment.comment_node_journal_page.default
+targetEntityType: comment
+bundle: comment_node_journal_page
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true

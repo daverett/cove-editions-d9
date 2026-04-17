@@ -1,0 +1,18 @@
+uuid: e463b87a-8b4a-477b-a6d4-f0ccacb0b637
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'Pedagogies Journal Page'
+type: pedagogies_journal_page
+description: 'A page, most often an essay, contained within a Pedagogies Journal issue. Reference each page with its "resource" counterpart on the "Pedagogies Journal Issue" content type'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

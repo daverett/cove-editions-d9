@@ -1,0 +1,19 @@
+uuid: d39b7461-7f6b-42c0-9fb5-1af503a72c59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.containedbycounty
+    - taxonomy.vocabulary.city
+id: taxonomy_term.city.containedbycounty
+field_name: containedbycounty
+entity_type: taxonomy_term
+bundle: city
+label: 'OpenCalais Metadata: ContainedByCounty'
+description: 'Tags sourced from OpenCalais about City.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

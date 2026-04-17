@@ -1,0 +1,30 @@
+uuid: 42d9c31d-c67c-449e-b9fa-8c9c39a8a96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_maps_in_this_edition
+    - node.type.editions_index_page
+    - node.type.map
+id: node.editions_index_page.field_maps_in_this_edition
+field_name: field_maps_in_this_edition
+entity_type: node
+bundle: editions_index_page
+label: 'Maps in this Edition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      map: map
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

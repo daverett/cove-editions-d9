@@ -1,0 +1,9 @@
+uuid: 450d8180-2340-4aef-b68c-7ea5f7674ce5
+langcode: en
+status: true
+dependencies: {  }
+name: Region
+vid: region
+description: 'Tags sourced from OpenCalais about Region.'
+weight: 10
+new_revision: false

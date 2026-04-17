@@ -1,0 +1,223 @@
+uuid: 3431f035-0c04-4499-95e7-845922a14b41
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.associated_events_browser
+    - entity_browser.browser.associated_images_browser
+    - entity_browser.browser.associated_places
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.blog
+    - node.type.chronology
+    - node.type.chronology_entry
+    - node.type.course
+    - node.type.editions_index_page
+    - node.type.galler_exhibit
+    - node.type.gallery_image
+    - node.type.map
+    - node.type.place
+    - taxonomy.vocabulary.artist
+    - taxonomy.vocabulary.creation_technique
+    - taxonomy.vocabulary.gallery_locations
+    - taxonomy.vocabulary.gallery_tags
+    - taxonomy.vocabulary.nines_discipline
+    - taxonomy.vocabulary.nines_genre
+    - taxonomy.vocabulary.nines_type
+    - taxonomy.vocabulary.person
+    - taxonomy.vocabulary.style
+    - taxonomy.vocabulary.support_medium
+    - taxonomy.vocabulary.vocabulary_3
+  module:
+    - contact
+    - entity_browser
+    - field_permissions
+    - file
+    - filter
+    - geocoder
+    - geocoder_autocomplete
+    - help
+    - media
+    - node
+    - search
+    - system
+    - taxonomy
+    - toolbar
+    - view_unpublished
+_core:
+  default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access associated_events_browser entity browser pages'
+  - 'access associated_images_browser entity browser pages'
+  - 'access associated_places entity browser pages'
+  - 'access content'
+  - 'access geocoder api endpoints'
+  - 'access geocoder autocomplete'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'cancel account'
+  - 'change own username'
+  - 'create audio media'
+  - 'create blog content'
+  - 'create body'
+  - 'create chronology content'
+  - 'create chronology_entry content'
+  - 'create course content'
+  - 'create document media'
+  - 'create field_associated_place_anchor_ta'
+  - 'create field_firstname'
+  - 'create field_gallery_associated_events'
+  - 'create field_gallery_items_in_this_exhi'
+  - 'create field_geocoder'
+  - 'create field_items_in_this_chronology'
+  - 'create field_latitude_longitude'
+  - 'create field_parent_chronology'
+  - 'create field_place_search'
+  - 'create field_places_in_this_map'
+  - 'create field_surname'
+  - 'create galler_exhibit content'
+  - 'create gallery_image content'
+  - 'create image media'
+  - 'create map content'
+  - 'create media'
+  - 'create place content'
+  - 'create remote_video media'
+  - 'create taxonomy_vocabulary_3'
+  - 'create terms in artist'
+  - 'create terms in creation_technique'
+  - 'create terms in gallery_locations'
+  - 'create terms in gallery_tags'
+  - 'create terms in nines_discipline'
+  - 'create terms in nines_genre'
+  - 'create terms in nines_type'
+  - 'create terms in person'
+  - 'create terms in style'
+  - 'create terms in support_medium'
+  - 'create terms in vocabulary_3'
+  - 'create video media'
+  - 'delete media'
+  - 'delete own audio media'
+  - 'delete own blog content'
+  - 'delete own chronology content'
+  - 'delete own chronology_entry content'
+  - 'delete own course content'
+  - 'delete own document media'
+  - 'delete own files'
+  - 'delete own galler_exhibit content'
+  - 'delete own gallery_image content'
+  - 'delete own image media'
+  - 'delete own map content'
+  - 'delete own place content'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'edit own audio media'
+  - 'edit own blog content'
+  - 'edit own body'
+  - 'edit own chronology content'
+  - 'edit own chronology_entry content'
+  - 'edit own course content'
+  - 'edit own document media'
+  - 'edit own field_associated_place_anchor_ta'
+  - 'edit own field_firstname'
+  - 'edit own field_gallery_associated_events'
+  - 'edit own field_gallery_items_in_this_exhi'
+  - 'edit own field_geocoder'
+  - 'edit own field_items_in_this_chronology'
+  - 'edit own field_latitude_longitude'
+  - 'edit own field_main_author'
+  - 'edit own field_parent_chronology'
+  - 'edit own field_place_search'
+  - 'edit own field_places_in_this_map'
+  - 'edit own field_surname'
+  - 'edit own galler_exhibit content'
+  - 'edit own gallery_image content'
+  - 'edit own image media'
+  - 'edit own map content'
+  - 'edit own place content'
+  - 'edit own remote_video media'
+  - 'edit own taxonomy_vocabulary_3'
+  - 'edit own video media'
+  - 'edit taxonomy_vocabulary_3'
+  - 'search content'
+  - 'update media'
+  - 'use advanced search'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'view any unpublished editions_index_page content'
+  - 'view body'
+  - 'view field_annotator'
+  - 'view field_associated_place_anchor_ta'
+  - 'view field_authored_at_rc1'
+  - 'view field_authored_at_rc2'
+  - 'view field_authored_by_primary_'
+  - 'view field_authored_by_secondary_'
+  - 'view field_edited_by'
+  - 'view field_edition_state'
+  - 'view field_firstname'
+  - 'view field_gallery_associated_events'
+  - 'view field_gallery_items_in_this_exhi'
+  - 'view field_geocoder'
+  - 'view field_index_banner'
+  - 'view field_items_in_this_chronology'
+  - 'view field_latitude_longitude'
+  - 'view field_lccn_permalink'
+  - 'view field_loc_authority_birth_year'
+  - 'view field_loc_authority_record_name'
+  - 'view field_main_author'
+  - 'view field_parent_chronology'
+  - 'view field_place_search'
+  - 'view field_places_in_this_map'
+  - 'view field_published'
+  - 'view field_resource_index'
+  - 'view field_resource_technical_editor'
+  - 'view field_special_roles'
+  - 'view field_surname'
+  - 'view field_vetted_'
+  - 'view media'
+  - 'view own body'
+  - 'view own field_annotator'
+  - 'view own field_associated_place_anchor_ta'
+  - 'view own field_authored_at_rc1'
+  - 'view own field_authored_at_rc2'
+  - 'view own field_authored_by_primary_'
+  - 'view own field_authored_by_secondary_'
+  - 'view own field_edited_by'
+  - 'view own field_edition_state'
+  - 'view own field_firstname'
+  - 'view own field_gallery_associated_events'
+  - 'view own field_gallery_items_in_this_exhi'
+  - 'view own field_geocoder'
+  - 'view own field_index_banner'
+  - 'view own field_items_in_this_chronology'
+  - 'view own field_latitude_longitude'
+  - 'view own field_lccn_permalink'
+  - 'view own field_loc_authority_birth_year'
+  - 'view own field_loc_authority_record_name'
+  - 'view own field_main_author'
+  - 'view own field_parent_chronology'
+  - 'view own field_place_search'
+  - 'view own field_places_in_this_map'
+  - 'view own field_published'
+  - 'view own field_resource_index'
+  - 'view own field_resource_technical_editor'
+  - 'view own field_special_roles'
+  - 'view own field_surname'
+  - 'view own field_vetted_'
+  - 'view own taxonomy_vocabulary_3'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view taxonomy_vocabulary_3'
+  - 'view the administration theme'
+  - 'view vocabulary labels'

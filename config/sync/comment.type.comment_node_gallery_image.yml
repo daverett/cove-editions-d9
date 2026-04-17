@@ -1,0 +1,8 @@
+uuid: 85d7d56d-7260-4cdd-8781-69ab80cf7cd6
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_gallery_image
+label: 'Gallery Image comment'
+target_entity_type_id: node
+description: null

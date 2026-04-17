@@ -1,0 +1,21 @@
+uuid: f1f7faee-84f5-46c4-a9d7-42c37e06b681
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_contributor
+label: 'Content - Primary Author'
+type: 'canonical_entities:node'
+pattern: 'contributor/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      contributor: contributor
+selection_logic: and
+weight: 0
+relationships: {  }

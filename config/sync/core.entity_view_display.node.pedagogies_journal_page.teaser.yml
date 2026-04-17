@@ -1,0 +1,83 @@
+uuid: fc540c43-dde7-4655-84e5-9060c92cf55c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pedagogies_journal_page.body
+    - field.field.node.pedagogies_journal_page.field_authored_by_primary_
+    - field.field.node.pedagogies_journal_page.field_authored_by_secondary_
+    - field.field.node.pedagogies_journal_page.field_embed_code
+    - field.field.node.pedagogies_journal_page.field_nines_discipline_s_
+    - field.field.node.pedagogies_journal_page.field_nines_genre_s_
+    - field.field.node.pedagogies_journal_page.field_nines_type_s_
+    - field.field.node.pedagogies_journal_page.field_published
+    - field.field.node.pedagogies_journal_page.field_resource_index
+    - field.field.node.pedagogies_journal_page.field_xml_tei
+    - field.field.node.pedagogies_journal_page.opencalais_city_tags
+    - field.field.node.pedagogies_journal_page.opencalais_continent_tags
+    - field.field.node.pedagogies_journal_page.opencalais_country_tags
+    - field.field.node.pedagogies_journal_page.opencalais_naturalfeature_tags
+    - field.field.node.pedagogies_journal_page.opencalais_organization_tags
+    - field.field.node.pedagogies_journal_page.opencalais_person_tags
+    - field.field.node.pedagogies_journal_page.opencalais_provinceorstate_tags
+    - field.field.node.pedagogies_journal_page.opencalais_region_tags
+    - field.field.node.pedagogies_journal_page.taxonomy_vocabulary_3
+    - node.type.pedagogies_journal_page
+  module:
+    - datetime
+    - text
+    - user
+id: node.pedagogies_journal_page.teaser
+targetEntityType: node
+bundle: pedagogies_journal_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_published:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: rc_published_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  taxonomy_vocabulary_3:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  breadcrumbs: true
+  field_authored_by_primary_: true
+  field_authored_by_secondary_: true
+  field_embed_code: true
+  field_nines_discipline_s_: true
+  field_nines_genre_s_: true
+  field_nines_type_s_: true
+  field_resource_index: true
+  field_xml_tei: true
+  opencalais_city_tags: true
+  opencalais_continent_tags: true
+  opencalais_country_tags: true
+  opencalais_naturalfeature_tags: true
+  opencalais_organization_tags: true
+  opencalais_person_tags: true
+  opencalais_provinceorstate_tags: true
+  opencalais_region_tags: true

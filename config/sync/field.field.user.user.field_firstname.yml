@@ -1,0 +1,20 @@
+uuid: eb6494aa-9b87-42a9-9ead-fd55ea314630
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_firstname
+  module:
+    - user
+id: user.user.field_firstname
+field_name: field_firstname
+entity_type: user
+bundle: user
+label: 'First/Middle name'
+description: 'Add your first name along with any middle names or initials that you like to go by. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

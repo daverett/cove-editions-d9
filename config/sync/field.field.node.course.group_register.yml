@@ -1,0 +1,23 @@
+uuid: c24f6055-8f62-4f8c-af00-297b8cd055c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.group_register
+    - node.type.course
+id: node.course.group_register
+field_name: group_register
+entity_type: node
+bundle: course
+label: 'Group register'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Show on registration page'
+  off_label: 'Do not show on registration page'
+field_type: boolean

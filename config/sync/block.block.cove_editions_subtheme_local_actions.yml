@@ -1,0 +1,20 @@
+uuid: 217c92ce-cf7f-4d80-9064-233357c353e5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cove_editions_subtheme
+_core:
+  default_config_hash: 72nlwRjqiXBAwD4_Wzf9YVMhGeEnqWlHF8NS6KoI7Js
+id: cove_editions_subtheme_local_actions
+theme: cove_editions_subtheme
+region: content
+weight: -30
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

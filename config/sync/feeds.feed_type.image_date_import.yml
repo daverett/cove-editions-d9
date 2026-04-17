@@ -1,0 +1,115 @@
+uuid: 7140b67a-957a-4792-b33a-8b55eec87728
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery_image.field_display_date
+    - field.field.node.gallery_image.field_event_date
+    - node.type.gallery_image
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      d53d6e01-8b65-4833-9144-7c9b9e7e043c:
+        uuid: d53d6e01-8b65-4833-9144-7c9b9e7e043c
+        plugin: strtotime
+        source: image_date
+        weight: 0
+        label: 'String to Unix Timestamp'
+label: 'Image date import'
+id: image_date_import
+description: 'CSV import of dates for Gallery images'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: gallery_image
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: true
+  skip_validation_types:
+    - AllowedValues
+    - Bundle
+    - ReferenceAccess
+    - ValidReference
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  nid:
+    value: Nid
+    label: Nid
+    machine_name: nid
+    type: csv
+  image_date:
+    value: 'Image Date'
+    label: 'Image Date'
+    machine_name: image_date
+    type: csv
+  additional_info:
+    value: 'Additional info'
+    label: 'Additional info'
+    machine_name: additional_info
+    type: csv
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: blank
+mappings:
+  -
+    target: nid
+    map:
+      value: nid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: field_event_date
+    map:
+      value: image_date
+      end_value: ''
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_display_date
+    map:
+      value: additional_info
+    settings:
+      language: null
+    unique: {  }

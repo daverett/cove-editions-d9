@@ -1,0 +1,523 @@
+uuid: 8577f7d1-d255-40ea-9023-3ef582cfad92
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.administrator
+    - user.role.manager
+  module:
+    - node
+    - user
+    - views_bulk_operations
+id: batch_editor
+label: 'Batch Editor'
+module: views
+description: 'Various ways to filter and manage content'
+tag: default
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Master
+    display_plugin: default
+    position: 1
+    display_options:
+      title: 'Annotation Batch Editor'
+      fields:
+        views_bulk_operations:
+          id: views_bulk_operations
+          table: views
+          field: views_bulk_operations_bulk_form
+          relationship: none
+          group_type: group
+          plugin_id: views_bulk_operations_bulk_form
+          label: Content
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          ui_name: ''
+          vbo_settings:
+            display_type: '0'
+            enable_select_all_pages: 1
+            row_clickable: 1
+            force_single: 0
+            entity_load_capacity: '10'
+            skip_batching: 0
+          vbo_operations:
+            'action::node_assign_owner_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_convert_convert_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_delete_item':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_delete_revision':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_script_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::flag_node_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_make_sticky_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_make_unsticky_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::views_bulk_operations_modify_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+              settings:
+                show_all_tokens: 1
+                display_values:
+                  _all_: _all_
+            'action::views_bulk_operations_argument_selector_action':
+              selected: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+              settings:
+                url: ''
+            'action::node_promote_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_publish_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_unpromote_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_save_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::system_send_email_action':
+              selected: 0
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_unpublish_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::node_unpublish_by_keyword_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+            'action::pathauto_node_update_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 0
+              override_label: 0
+              label: ''
+        name:
+          id: name
+          table: users_field_data
+          field: name
+          relationship: uid
+          group_type: group
+          plugin_id: field
+          label: Author
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: null
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          ui_name: ''
+          link_to_user: 1
+          overwrite_anonymous: 0
+          anonymous_text: ''
+          format_username: 1
+      pager:
+        type: full
+        options:
+          items_per_page: 100
+          pagination_heading_level: h4
+      exposed_form:
+        type: basic
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
+            manager: manager
+      cache:
+        type: none
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          plugin_id: date
+          order: DESC
+          expose:
+            label: 'Post date'
+            field_identifier: created
+            order: DESC
+          exposed: true
+          granularity: second
+          ui_name: ''
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Published?'
+            description: ''
+            use_operator: false
+            operator: status_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: status
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: anonymous
+              administrator: administrator
+              author: author
+              editor: editor
+              section_editor: section_editor
+              manager: manager
+              group_leader: group_leader
+            operator_label: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          ui_name: ''
+        name:
+          id: name
+          table: users_field_data
+          field: name
+          relationship: uid
+          group_type: group
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_op
+            label: 'Author name'
+            description: "Type all or part of an annotation author's name"
+            use_operator: false
+            operator: name_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: anonymous
+              administrator: administrator
+              author: author
+              editor: editor
+              section_editor: section_editor
+              manager: manager
+              group_leader: group_leader
+            operator_label: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          ui_name: ''
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            views_bulk_operations: views_bulk_operations
+            annotation_reference: annotation_reference
+            quote: quote
+            text: text
+            name: name
+          default: '-1'
+          info:
+            views_bulk_operations:
+              align: ''
+              separator: ''
+              empty_column: false
+            annotation_reference:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            quote:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            text:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          row_class_special: 1
+      row:
+        type: fields
+      query:
+        type: views_query
+        options: {  }
+      relationships:
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: author
+          entity_type: node
+          plugin_id: standard
+          required: false
+          ui_name: ''
+          label: author
+      display_extenders: {  }
+      style_plugin: table
+      style_options:
+        grouping: {  }
+        row_class: ''
+        default_row_class: 1
+        row_class_special: 1
+        override: 1
+        sticky: 0
+        caption: ''
+        summary: ''
+        columns:
+          views_bulk_operations: views_bulk_operations
+          annotation_reference: annotation_reference
+          quote: quote
+          text: text
+          name: name
+        info:
+          views_bulk_operations:
+            align: ''
+            separator: ''
+            empty_column: 0
+          annotation_reference:
+            sortable: 1
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          quote:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          text:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          name:
+            sortable: 1
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+        default: '-1'
+        empty_table: 0
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - 'user.node_grants:view'
+        - user.roles
+      tags: {  }
+  page:
+    id: page
+    display_title: Page
+    display_plugin: page
+    position: 2
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+      path: admin/batch-editor
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - 'user.node_grants:view'
+        - user.roles
+      tags: {  }

@@ -1,0 +1,9 @@
+uuid: e4a82667-0f81-4c36-aabb-4fea254fe447
+langcode: en
+status: true
+dependencies: {  }
+name: 'Gallery Locations'
+vid: gallery_locations
+description: 'A Vocab for storing terms in the Gallery Location field'
+weight: 0
+new_revision: false

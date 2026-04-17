@@ -1,0 +1,9 @@
+uuid: bb0720e8-6444-4271-b31e-d3ac46e58557
+langcode: en
+status: true
+dependencies: {  }
+name: Country
+vid: country
+description: 'Tags sourced from OpenCalais about Country.'
+weight: 5
+new_revision: false

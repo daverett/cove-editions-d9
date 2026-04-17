@@ -1,0 +1,20 @@
+uuid: 9ce0e64c-be2a-49f4-864f-df98e6f6afa8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dxpr_theme_STARTERKIT
+_core:
+  default_config_hash: 5p6onlbwg8IfOoLBo-hjKA7w3Wmb37ZZxGGxZp5vVm8
+id: dxpr_theme_STARTERKIT_page_title
+theme: dxpr_theme_STARTERKIT
+region: page_title
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

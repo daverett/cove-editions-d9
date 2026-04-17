@@ -1,0 +1,17 @@
+uuid: bd80f4e5-01a6-4819-86e4-37d6539d533e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Gallery Exhibit'
+type: galler_exhibit
+description: 'Exhibits are assemblages of Gallery images. Users can create their own images and collect them in custom exhibits or re-use vetted image content created by others. '
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,26 @@
+uuid: be93c52b-e366-413a-8374-028589790426
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_person_tags
+    - node.type.editions_index_page
+    - taxonomy.vocabulary.person
+id: node.editions_index_page.opencalais_person_tags
+field_name: opencalais_person_tags
+entity_type: node
+bundle: editions_index_page
+label: Person
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+field_type: entity_reference

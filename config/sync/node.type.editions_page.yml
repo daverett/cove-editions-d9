@@ -1,0 +1,18 @@
+uuid: 537129d1-ceea-46fa-bcea-1bdba2078e29
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'Editions Page'
+type: editions_page
+description: 'For Editions. A <em>page</em>, similar in form to a <em>story</em>, is a simple method for creating and displaying information that rarely changes, such as an "About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site''s initial home page.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

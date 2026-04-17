@@ -1,0 +1,10 @@
+uuid: 2cd0a344-53b1-44d2-9eea-e8d5e126ab4b
+langcode: en
+status: true
+dependencies: {  }
+id: places
+label: Places
+description: 'Cove places'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

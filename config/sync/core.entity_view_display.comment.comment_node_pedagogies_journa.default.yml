@@ -1,0 +1,28 @@
+uuid: dbce6309-5d83-46b3-9a7e-a34fa4b27255
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_pedagogies_journa
+    - field.field.comment.comment_node_pedagogies_journa.comment_body
+  module:
+    - text
+id: comment.comment_node_pedagogies_journa.default
+targetEntityType: comment
+bundle: comment_node_pedagogies_journa
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true

@@ -1,0 +1,26 @@
+uuid: 2be9d48a-363b-40b7-b8f9-1b95f9a2af10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_organization_tags
+    - node.type.editions_page
+    - taxonomy.vocabulary.organization
+id: node.editions_page.opencalais_organization_tags
+field_name: opencalais_organization_tags
+entity_type: node
+bundle: editions_page
+label: Organization
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      organization: organization
+    sort:
+      field: _none
+field_type: entity_reference

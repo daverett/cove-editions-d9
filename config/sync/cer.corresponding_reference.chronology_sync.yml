@@ -1,0 +1,14 @@
+uuid: 21fb7eb6-76f6-4c25-9a11-9091ba8d0822
+langcode: en
+status: true
+dependencies: {  }
+id: chronology_sync
+label: 'Chronology sync'
+enabled: true
+first_field: field_items_in_this_chronology
+second_field: field_parent_chronology
+add_direction: append
+bundles:
+  node:
+    - chronology
+    - chronology_entry

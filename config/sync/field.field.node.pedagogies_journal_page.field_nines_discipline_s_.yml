@@ -1,0 +1,28 @@
+uuid: 9e03462c-c7ba-4ce6-a646-d1f3ff7af524
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nines_discipline_s_
+    - node.type.pedagogies_journal_page
+    - taxonomy.vocabulary.nines_discipline
+id: node.pedagogies_journal_page.field_nines_discipline_s_
+field_name: field_nines_discipline_s_
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'NINES Discipline(s)'
+description: 'Applicable NINES disciplines for RDF output. Multiple values may be selected.'
+required: true
+translatable: false
+default_value:
+  -
+    tid: 27162
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nines_discipline: nines_discipline
+    sort:
+      field: _none
+field_type: entity_reference

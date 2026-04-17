@@ -1,0 +1,20 @@
+uuid: bbfae604-d6a4-4058-8966-249afc6407b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - openid_connect
+  theme:
+    - dxpr_theme
+id: dxpr_theme_openidconnectlogin
+theme: dxpr_theme
+region: secondary_header
+weight: -12
+provider: null
+plugin: openid_connect_login
+settings:
+  id: openid_connect_login
+  label: 'OpenID Connect login'
+  label_display: '0'
+  provider: openid_connect
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: aacc837a-1427-4969-bd86-a6d1ada79ddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_place_search
+    - node.type.place
+id: node.place.field_place_search
+field_name: field_place_search
+entity_type: node
+bundle: place
+label: 'Place Search'
+description: 'Optionally, type the name of a location, then click the "Find" button to automatically geocode a location or drill down into the map. This leverages the Google Geocoding API and works best with modern municipalities.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

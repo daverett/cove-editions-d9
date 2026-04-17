@@ -1,0 +1,27 @@
+uuid: 5c2a1fe4-d5de-47e9-8b9a-9b5f63b625dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_upload
+    - node.type.editions_page
+  module:
+    - file
+id: node.editions_page.field_document_upload
+field_name: field_document_upload
+entity_type: node
+bundle: editions_page
+label: 'Document Upload'
+description: 'Here you can upload a document, such as a PDF or text file, to be part of an edition. Please provide a description of the file in the body field above. Also, be sure to give uploaded files a descriptive name that end users can understand. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: ''
+  max_filesize: '50 MB'
+  description_field: true
+field_type: file

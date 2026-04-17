@@ -1,0 +1,13 @@
+uuid: 68a532af-1c77-4a57-b327-54ac482048b2
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - dxpr_builder_block
+_core:
+  default_config_hash: pN5_tFjELgPmCgq-KxPUDIlunjk_ypvPvsP1fWBNMS8
+id: drag_and_drop_block
+label: 'Drag and Drop Block'
+revision: true
+description: 'Advanced page with visual page building tools. Powered by DXPR Builder.'

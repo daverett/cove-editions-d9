@@ -1,0 +1,21 @@
+uuid: 945165a8-222d-443f-a7b9-64ff1b5d9adb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_chronology_entry
+label: 'Content - Chronology Entry'
+type: 'canonical_entities:node'
+pattern: 'chronologies/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      chronology_entry: chronology_entry
+selection_logic: and
+weight: 0
+relationships: {  }

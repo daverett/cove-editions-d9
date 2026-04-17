@@ -1,0 +1,47 @@
+uuid: f7c18872-06d4-40ee-ab38-2f98af8907f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contributor.comment_node_contributor
+    - field.field.node.contributor.field_associated_tags
+    - field.field.node.contributor.field_authored_at_rc1
+    - field.field.node.contributor.field_authored_at_rc2
+    - field.field.node.contributor.field_bio
+    - field.field.node.contributor.field_common_name
+    - field.field.node.contributor.field_firstname
+    - field.field.node.contributor.field_home_page
+    - field.field.node.contributor.field_lccn_permalink
+    - field.field.node.contributor.field_loc_authority_birth_year
+    - field.field.node.contributor.field_loc_authority_record_name
+    - field.field.node.contributor.field_profile_picture
+    - field.field.node.contributor.field_surname
+    - node.type.contributor
+  module:
+    - user
+id: node.contributor.teaser
+targetEntityType: node
+bundle: contributor
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  comment_node_contributor: true
+  field_associated_tags: true
+  field_authored_at_rc1: true
+  field_authored_at_rc2: true
+  field_bio: true
+  field_common_name: true
+  field_firstname: true
+  field_home_page: true
+  field_lccn_permalink: true
+  field_loc_authority_birth_year: true
+  field_loc_authority_record_name: true
+  field_profile_picture: true
+  field_surname: true

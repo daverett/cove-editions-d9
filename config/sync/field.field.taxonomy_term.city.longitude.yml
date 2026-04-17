@@ -1,0 +1,19 @@
+uuid: fed857dc-e3dc-4776-8286-9f6b8e76afbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.longitude
+    - taxonomy.vocabulary.city
+id: taxonomy_term.city.longitude
+field_name: longitude
+entity_type: taxonomy_term
+bundle: city
+label: 'OpenCalais Metadata: Longitude'
+description: 'Tags sourced from OpenCalais about City.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

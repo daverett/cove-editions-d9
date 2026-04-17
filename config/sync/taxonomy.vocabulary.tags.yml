@@ -1,0 +1,11 @@
+uuid: f3b6c452-f760-4b47-94da-97f00cbe28b7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
+name: 'Annotation Tags'
+vid: tags
+description: 'User-generated tags for annotations'
+weight: 1
+new_revision: false

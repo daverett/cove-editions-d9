@@ -1,0 +1,19 @@
+uuid: bc66809a-3e33-4fbd-89ec-49a8c0e5cf48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accession_number_
+    - node.type.gallery_image
+id: node.gallery_image.field_accession_number_
+field_name: field_accession_number_
+entity_type: node
+bundle: gallery_image
+label: 'Accession Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

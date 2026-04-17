@@ -1,0 +1,25 @@
+uuid: a23d0b1e-2eef-41a9-ae1e-4627195792b0
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:28202923-ae26-4563-ae6d-528340b5f003'
+  module:
+    - block_content
+  theme:
+    - dxpr_theme
+id: navsabar
+theme: dxpr_theme
+region: secondary_header
+weight: -10
+provider: null
+plugin: 'block_content:28202923-ae26-4563-ae6d-528340b5f003'
+settings:
+  id: 'block_content:28202923-ae26-4563-ae6d-528340b5f003'
+  label: 'NAVSA bar'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: 0b722cea-1ea8-4a5f-983b-ec5f2b2847de
+langcode: en
+status: true
+dependencies: {  }
+id: cove_feedback
+label: 'COVE Feedback'
+recipients:
+  - dave_rett@yahoo.com
+reply: ''
+weight: 0
+message: null
+redirect: null

@@ -1,0 +1,22 @@
+uuid: b3041379-fdc5-4706-88a7-dc3de358e8fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dxpr_theme_STARTERKIT
+_core:
+  default_config_hash: T7gZEkBqqElnOklin4m1rfJYv28ry5eY-FjEDOrHGTU
+id: dxpr_theme_STARTERKIT_messages
+theme: dxpr_theme_STARTERKIT
+region: content
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

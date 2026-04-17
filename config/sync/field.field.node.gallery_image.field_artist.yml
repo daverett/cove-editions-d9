@@ -1,0 +1,29 @@
+uuid: 44e2f631-c64e-414b-b0e3-44b053ade354
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artist
+    - node.type.gallery_image
+    - taxonomy.vocabulary.artist
+id: node.gallery_image.field_artist
+field_name: field_artist
+entity_type: node
+bundle: gallery_image
+label: Artist
+description: 'Use the autocomplete to find an existing artist in the database. If one does not exist, you can add one in the form of FIRSTNAME LASTNAME.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      artist: artist
+    sort:
+      field: _none
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

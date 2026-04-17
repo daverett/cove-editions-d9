@@ -1,0 +1,117 @@
+uuid: f03ddbbe-301b-443a-8277-8d474a5784b1
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_smtp_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'SMTP Authentication Support configuration'
+source:
+  plugin: variable
+  variables:
+    - smtp_allowhtml
+    - smtp_client_helo
+    - smtp_client_hostname
+    - smtp_debugging
+    - smtp_from
+    - smtp_fromname
+    - smtp_host
+    - smtp_hostbackup
+    - smtp_on
+    - smtp_password
+    - smtp_port
+    - smtp_protocol
+    - smtp_queue
+    - smtp_queue_fail
+    - smtp_reroute_address
+    - smtp_test_address
+    - smtp_username
+  source_module: smtp
+process:
+  smtp_on:
+    -
+      plugin: get
+      source: smtp_on
+  smtp_host:
+    -
+      plugin: get
+      source: smtp_host
+  smtp_hostbackup:
+    -
+      plugin: get
+      source: smtp_hostbackup
+  smtp_port:
+    -
+      plugin: get
+      source: smtp_port
+  smtp_protocol:
+    -
+      plugin: get
+      source: smtp_protocol
+  smtp_autotls:
+    -
+      plugin: default_value
+      default_value: true
+  smtp_timeout:
+    -
+      plugin: default_value
+      default_value: 10
+  smtp_username:
+    -
+      plugin: get
+      source: smtp_username
+  smtp_password:
+    -
+      plugin: get
+      source: smtp_password
+  smtp_from:
+    -
+      plugin: get
+      source: smtp_from
+  smtp_fromname:
+    -
+      plugin: get
+      source: smtp_fromname
+  smtp_client_hostname:
+    -
+      plugin: get
+      source: smtp_client_hostname
+  smtp_client_helo:
+    -
+      plugin: get
+      source: smtp_client_helo
+  smtp_allowhtml:
+    -
+      plugin: get
+      source: smtp_allowhtml
+  smtp_reroute_address:
+    -
+      plugin: get
+      source: smtp_reroute_address
+  smtp_test_address:
+    -
+      plugin: get
+      source: smtp_test_address
+  smtp_debugging:
+    -
+      plugin: get
+      source: smtp_debugging
+  prev_mail_system:
+    -
+      plugin: default_value
+      default_value: php_mail
+  smtp_keepalive:
+    -
+      plugin: default_value
+      default_value: false
+destination:
+  plugin: config
+  config_name: smtp.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

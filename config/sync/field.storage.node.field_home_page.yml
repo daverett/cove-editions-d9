@@ -1,0 +1,23 @@
+uuid: b2b8e0a4-3e66-4ba6-9bae-5989f826956e
+langcode: und
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_home_page
+field_name: field_home_page
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

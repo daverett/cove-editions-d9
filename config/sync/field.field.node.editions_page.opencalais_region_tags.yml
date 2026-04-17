@@ -1,0 +1,26 @@
+uuid: af177e27-5101-45ef-ab01-690c581d8526
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_region_tags
+    - node.type.editions_page
+    - taxonomy.vocabulary.region
+id: node.editions_page.opencalais_region_tags
+field_name: opencalais_region_tags
+entity_type: node
+bundle: editions_page
+label: Region
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      region: region
+    sort:
+      field: _none
+field_type: entity_reference

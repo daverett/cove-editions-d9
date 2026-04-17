@@ -1,0 +1,31 @@
+uuid: ce910d26-c672-4163-80d9-5b16f4b84f82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_edited_editions
+    - node.type.editions_index_page
+  module:
+    - user
+id: user.user.field_edited_editions
+field_name: field_edited_editions
+entity_type: user
+bundle: user
+label: 'Edited Editions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_index_page: editions_index_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

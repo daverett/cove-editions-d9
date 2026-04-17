@@ -1,0 +1,29 @@
+uuid: 62b145f7-3a7a-487d-9780-df0c65602c30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.og_group_ref
+    - node.type.course
+    - node.type.gallery_image
+id: node.gallery_image.og_group_ref
+field_name: og_group_ref
+entity_type: node
+bundle: gallery_image
+label: 'Part of Group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

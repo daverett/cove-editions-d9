@@ -1,0 +1,26 @@
+uuid: f4d5bb0e-e2ab-4f75-b4e9-f32803923924
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_provinceorstate_tags
+    - node.type.editions_page
+    - taxonomy.vocabulary.province_or_state
+id: node.editions_page.opencalais_provinceorstate_tags
+field_name: opencalais_provinceorstate_tags
+entity_type: node
+bundle: editions_page
+label: ProvinceOrState
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      province_or_state: province_or_state
+    sort:
+      field: _none
+field_type: entity_reference

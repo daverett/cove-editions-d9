@@ -1,0 +1,30 @@
+uuid: c28dcdf2-4a47-479f-93e9-67773ef5b372
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assoc_events
+    - node.type.chronology_entry
+    - node.type.place
+id: node.place.field_assoc_events
+field_name: field_assoc_events
+entity_type: node
+bundle: place
+label: 'Associated Events'
+description: 'You can associated events in our database with a place. To do so, click the "Add items" button below. If a place does not already exist in the database, you can create one <a target="_blank" href="/node/add/place">here</a>. Once saved, your newly created place will be available in the list. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      chronology_entry: chronology_entry
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

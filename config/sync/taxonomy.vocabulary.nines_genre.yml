@@ -1,0 +1,9 @@
+uuid: a8326e84-c9cf-4a14-8c8b-725ce2d760f7
+langcode: en
+status: true
+dependencies: {  }
+name: 'NINES Genre'
+vid: nines_genre
+description: 'Each object is required to have at least one valid genre, for NINES RDF export'
+weight: 0
+new_revision: false

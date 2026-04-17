@@ -1,0 +1,27 @@
+uuid: 6123401f-5a16-4826-92c4-7e9be9c99813
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.galler_exhibit
+  module:
+    - linkchecker
+    - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
+id: node.galler_exhibit.field_description
+field_name: field_description
+entity_type: node
+bundle: galler_exhibit
+label: Description
+description: 'Please provide a short description of your exhibit. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

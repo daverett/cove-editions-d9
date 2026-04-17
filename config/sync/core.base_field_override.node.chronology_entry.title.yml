@@ -1,0 +1,18 @@
+uuid: aa465f3d-700a-4894-baa7-8300cc7c2221
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.chronology_entry
+id: node.chronology_entry.title
+field_name: title
+entity_type: node
+bundle: chronology_entry
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

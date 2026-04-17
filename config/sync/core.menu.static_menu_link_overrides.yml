@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: CXhei_vpaZk-3f_Mj2cH0YmpK-ZpKHoSzVA3yZrDq0g
+definitions:
+  contact__site_page:
+    weight: -46
+    menu_name: footer
+    parent: ''
+    enabled: false
+    expanded: false
+  standard__front_page:
+    weight: -50
+    enabled: true
+    menu_name: main
+    parent: ''
+    expanded: false

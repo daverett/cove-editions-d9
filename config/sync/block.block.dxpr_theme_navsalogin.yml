@@ -1,0 +1,25 @@
+uuid: 40035d1f-7e4a-4465-a31d-9de66a60abb9
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:drag_and_drop_block:7e358e72-cb63-4480-a500-3e182dbcd62a'
+  module:
+    - block_content
+  theme:
+    - dxpr_theme
+id: dxpr_theme_navsalogin
+theme: dxpr_theme
+region: secondary_header
+weight: -7
+provider: null
+plugin: 'block_content:7e358e72-cb63-4480-a500-3e182dbcd62a'
+settings:
+  id: 'block_content:7e358e72-cb63-4480-a500-3e182dbcd62a'
+  label: 'NAVSA login'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

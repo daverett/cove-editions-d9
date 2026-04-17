@@ -1,0 +1,23 @@
+uuid: c9c4e0b1-1736-4413-b149-c04364825950
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artist_unknown
+    - node.type.gallery_image
+id: node.gallery_image.field_artist_unknown
+field_name: field_artist_unknown
+entity_type: node
+bundle: gallery_image
+label: 'Artist Unknown'
+description: 'Check this box if the artist is unknown.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Artist Unknown'
+  off_label: ''
+field_type: boolean

@@ -1,0 +1,38 @@
+uuid: 7322a1ee-5b20-4007-9d9d-40ed80e383b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icon
+    - node.type.editions_index_page
+  module:
+    - image
+id: node.editions_index_page.field_icon
+field_name: field_icon
+entity_type: node
+bundle: editions_index_page
+label: Icon
+description: 'Add a small <strong>100px x 100px</strong> icon here. It is used as a thumbnail on landing pages.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: icons
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: 100x100
+  min_resolution: 100x100
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

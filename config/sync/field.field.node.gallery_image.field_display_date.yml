@@ -1,0 +1,19 @@
+uuid: 7ab64204-ed51-45d9-9240-07a843befbfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_date
+    - node.type.gallery_image
+id: node.gallery_image.field_display_date
+field_name: field_display_date
+entity_type: node
+bundle: gallery_image
+label: 'Display date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

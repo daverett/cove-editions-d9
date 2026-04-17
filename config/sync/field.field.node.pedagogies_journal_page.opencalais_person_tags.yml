@@ -1,0 +1,26 @@
+uuid: d4a389f0-64db-4859-9d49-7b82a1968798
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_person_tags
+    - node.type.pedagogies_journal_page
+    - taxonomy.vocabulary.person
+id: node.pedagogies_journal_page.opencalais_person_tags
+field_name: opencalais_person_tags
+entity_type: node
+bundle: pedagogies_journal_page
+label: Person
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+field_type: entity_reference

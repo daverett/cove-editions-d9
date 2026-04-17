@@ -1,0 +1,44 @@
+uuid: 94ba7673-e5a2-4364-bd59-8db3a0f215aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: admin_tweaks
+label: 'Admin tweaks'
+code: |-
+  .entities-list .item-container {
+      display: block;
+      margin: 10px 10px 15px;
+      vertical-align: text-bottom;
+  }
+
+  .entities-list .item-container > img, .entities-list .item-container > input {
+      display: inline;
+      margin: 5px auto 0;
+  }
+
+  .entities-list input.button {
+      padding: 5px;
+      margin: 0px 10px;
+      border-radius: 0;
+      font-weight: 500;
+  }
+
+  td.Vetted.views-field.views-field-field-vetted- {
+      background-color: #2bbf8f;
+      color: white;
+  }
+
+  td.Not.Vetted.views-field.views-field-field-vetted- {
+      background-color: #bf2b2b;
+  }
+media: all
+preprocess: true
+conditions:
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: claro
+contexts: {  }
+conditions_require_all: true

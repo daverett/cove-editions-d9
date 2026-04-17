@@ -1,0 +1,15 @@
+uuid: 67487ef7-6645-4a29-be77-16e01faa664d
+langcode: en
+status: true
+dependencies: {  }
+name: gallery_home
+label: 'Gallery home'
+effects:
+  f97dfc8c-9a25-4b0a-b060-fc83243b180a:
+    uuid: f97dfc8c-9a25-4b0a-b060-fc83243b180a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 380
+      anchor: center-center

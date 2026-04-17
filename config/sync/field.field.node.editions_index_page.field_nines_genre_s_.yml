@@ -1,0 +1,26 @@
+uuid: d5ff63dc-be71-449e-9a3e-f192c6a3bf45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nines_genre_s_
+    - node.type.editions_index_page
+    - taxonomy.vocabulary.nines_genre
+id: node.editions_index_page.field_nines_genre_s_
+field_name: field_nines_genre_s_
+entity_type: node
+bundle: editions_index_page
+label: 'NINES Genre(s)'
+description: 'Applicable NINES genres for RDF output. Multiple values may be selected.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nines_genre: nines_genre
+    sort:
+      field: _none
+field_type: entity_reference

@@ -1,0 +1,121 @@
+uuid: 5fe75ff9-8612-4092-a69a-2120f2ffea38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.chronology_entry.field_display_date
+    - field.field.node.chronology_entry.field_event_date
+    - node.type.chronology_entry
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      f960a248-59b5-4db8-861b-2af81861f6cd:
+        uuid: f960a248-59b5-4db8-861b-2af81861f6cd
+        plugin: strtotime
+        source: from_date
+        weight: 0
+        label: 'String to Unix Timestamp'
+      0e57532b-4ec5-4ba2-b6b9-25d90fbb5a07:
+        uuid: 0e57532b-4ec5-4ba2-b6b9-25d90fbb5a07
+        plugin: strtotime
+        source: to_date
+        weight: 0
+        label: 'String to Unix Timestamp'
+label: 'Chronology date import'
+id: chronology_date_import
+description: 'CSV import of dates for chronology/timeline entries'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: chronology_entry
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: true
+  skip_validation_types:
+    - AllowedValues
+    - Bundle
+    - ReferenceAccess
+    - ValidReference
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  nid:
+    value: Nid
+    label: Nid
+    machine_name: nid
+    type: csv
+  from_date:
+    value: 'from date'
+    label: 'from date'
+    machine_name: from_date
+    type: csv
+  to_date:
+    value: 'to date'
+    label: 'to date'
+    machine_name: to_date
+    type: csv
+  additional_info:
+    value: 'Additional info'
+    label: 'Additional info'
+    machine_name: additional_info
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: nid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: field_event_date
+    map:
+      value: from_date
+      end_value: to_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_display_date
+    map:
+      value: additional_info
+    settings:
+      language: null
+    unique: {  }

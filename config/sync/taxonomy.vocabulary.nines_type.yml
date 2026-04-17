@@ -1,0 +1,9 @@
+uuid: 8f9b7231-afc7-44c0-9dce-500ec18abf11
+langcode: en
+status: true
+dependencies: {  }
+name: 'NINES Type'
+vid: nines_type
+description: 'adapted from the DCMI list of types, this term should describe the medium, or format of the object for NINES RDF export'
+weight: 0
+new_revision: false

@@ -1,0 +1,37 @@
+uuid: 2775e51f-4ed3-4e8b-85dd-1899eee97d47
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_captcha_points
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Captcha Points Table'
+source:
+  plugin: d7_captcha_points
+process:
+  formId:
+    -
+      plugin: get
+      source: form_id
+  label:
+    -
+      plugin: get
+      source: form_id
+  captchaType:
+    -
+      plugin: captcha_type_formatter
+      source: captcha_type
+  status:
+    -
+      plugin: default_value
+      default_value: true
+destination:
+  plugin: 'entity:captcha_point'
+migration_dependencies:
+  required: {  }
+  optional: {  }

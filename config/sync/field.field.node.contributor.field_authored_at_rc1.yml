@@ -1,0 +1,30 @@
+uuid: 526f719f-e028-4fce-93fa-0c5a4bc05535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authored_at_rc1
+    - node.type.contributor
+    - node.type.editions_page
+id: node.contributor.field_authored_at_rc1
+field_name: field_authored_at_rc1
+entity_type: node
+bundle: contributor
+label: 'Pages Authored'
+description: "This field almost always applies to historical figures. Say, for example, you're working on Charlotte Smith's profile page and you happen to know she's the author of two poems within the edition on British War Poetry. You would use the autocomplete feature add the titles of those pages/poems here. Usually, though, you will fill out that information on the content pages and it will automatically be reflected here. "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_page: editions_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

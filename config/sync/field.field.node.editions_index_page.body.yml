@@ -1,0 +1,32 @@
+uuid: 08d9fb62-3bce-49cb-bb60-a3cf604469b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.basic_html
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.unfiltered_html
+    - node.type.editions_index_page
+  module:
+    - text
+id: node.editions_index_page.body
+field_name: body
+entity_type: node
+bundle: editions_index_page
+label: 'Edition Description'
+description: 'This text area should only be used for a brief description or abstract of the edition. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - full_html
+    - filtered_html
+    - unfiltered_html
+    - basic_html
+field_type: text_with_summary

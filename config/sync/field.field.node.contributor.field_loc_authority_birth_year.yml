@@ -1,0 +1,21 @@
+uuid: c2148d0d-eb8c-4bf6-8a24-36aff89abe36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_loc_authority_birth_year
+    - node.type.contributor
+  module:
+    - datetime_range
+id: node.contributor.field_loc_authority_birth_year
+field_name: field_loc_authority_birth_year
+entity_type: node
+bundle: contributor
+label: 'LC Authority Birth/Death Range'
+description: 'The birth/death date range appended to the LOC Name Authority at http://authorities.loc.gov/'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

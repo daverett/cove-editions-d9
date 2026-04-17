@@ -1,0 +1,24 @@
+uuid: 345d48d2-8c12-4c7b-9698-cdb0d6610c65
+langcode: und
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - geofield
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_latitude_longitude
+field_name: field_latitude_longitude
+entity_type: node
+type: geofield
+settings:
+  backend: geofield_backend_default
+module: geofield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,38 @@
+uuid: a4262569-b55d-4112-9026-99e160c9f8f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_picture
+  module:
+    - image
+    - user
+id: user.user.field_profile_picture
+field_name: field_profile_picture
+entity_type: user
+bundle: user
+label: 'Profile Picture'
+description: 'Have a headshot or avatar you like to use? Upload that here. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '3 MB'
+  max_resolution: ''
+  min_resolution: 80x80
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

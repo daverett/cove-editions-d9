@@ -1,0 +1,23 @@
+uuid: 5d413727-9e5d-4af0-af53-e9805047f890
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_xml_tei
+    - node.type.pedagogies_journal_page
+  module:
+    - link
+id: node.pedagogies_journal_page.field_xml_tei
+field_name: field_xml_tei
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'XML:TEI'
+description: 'A link to the XML:TEI file on the server.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

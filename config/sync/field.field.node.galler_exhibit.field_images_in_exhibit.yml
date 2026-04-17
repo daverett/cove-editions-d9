@@ -1,0 +1,30 @@
+uuid: 83e41ce6-24a3-4d60-b655-11d7a0bb8455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_images_in_exhibit
+    - node.type.galler_exhibit
+    - node.type.gallery_image
+id: node.galler_exhibit.field_images_in_exhibit
+field_name: field_images_in_exhibit
+entity_type: node
+bundle: galler_exhibit
+label: 'Images in Exhibit'
+description: 'Here, you can add images to your Exhibit. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      gallery_image: gallery_image
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

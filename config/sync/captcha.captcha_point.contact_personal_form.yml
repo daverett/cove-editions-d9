@@ -1,0 +1,7 @@
+uuid: 684e5667-09c2-484d-adaf-66130edab9b8
+langcode: en
+status: true
+dependencies: {  }
+formId: contact_personal_form
+captchaType: captcha/
+label: contact_personal_form
