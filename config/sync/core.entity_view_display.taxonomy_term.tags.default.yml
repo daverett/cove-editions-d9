@@ -1,0 +1,31 @@
+uuid: decba01d-c82f-4a58-b08e-c55e265f9d54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tags.annotation_tag
+    - taxonomy.vocabulary.tags
+  module:
+    - text
+id: taxonomy_term.tags.default
+targetEntityType: taxonomy_term
+bundle: tags
+mode: default
+content:
+  annotation_tag:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

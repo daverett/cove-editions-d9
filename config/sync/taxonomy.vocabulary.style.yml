@@ -1,0 +1,9 @@
+uuid: d8a89708-33c7-453a-a9c4-d3074e94b281
+langcode: en
+status: true
+dependencies: {  }
+name: Style
+vid: style
+description: "The style of an, such as landscape painting or children's illustration, from the Gallery"
+weight: 0
+new_revision: false

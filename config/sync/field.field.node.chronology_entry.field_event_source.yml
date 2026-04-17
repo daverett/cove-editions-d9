@@ -1,0 +1,26 @@
+uuid: dd71e039-06aa-4f08-a6ca-4756e25826fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_source
+    - node.type.chronology_entry
+    - taxonomy.vocabulary.event_source
+id: node.chronology_entry.field_event_source
+field_name: field_event_source
+entity_type: node
+bundle: chronology_entry
+label: 'Event Source'
+description: 'Optionally, you may add a source for your chronology entry here. Just provide a label that identifies where the entry came from. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_source: event_source
+    sort:
+      field: _none
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 9da67534-b0f9-4477-96ac-fbf92cb3f381
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.latitude
+    - taxonomy.vocabulary.province_or_state
+id: taxonomy_term.province_or_state.latitude
+field_name: latitude
+entity_type: taxonomy_term
+bundle: province_or_state
+label: 'OpenCalais Metadata: Latitude'
+description: 'Tags sourced from OpenCalais about Province Or State.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

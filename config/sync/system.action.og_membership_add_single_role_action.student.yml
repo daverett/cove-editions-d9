@@ -1,0 +1,12 @@
+uuid: 2783a44f-af5c-41b7-a8f9-f9d930d83a8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - og
+id: og_membership_add_single_role_action.student
+label: 'Add the student role to the selected members'
+type: og_membership
+plugin: og_membership_add_single_role_action
+configuration:
+  role_name: student

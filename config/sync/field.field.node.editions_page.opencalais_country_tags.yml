@@ -1,0 +1,26 @@
+uuid: c177bc5a-15f2-4f67-b608-cf226cc6cab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_country_tags
+    - node.type.editions_page
+    - taxonomy.vocabulary.country
+id: node.editions_page.opencalais_country_tags
+field_name: opencalais_country_tags
+entity_type: node
+bundle: editions_page
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: _none
+field_type: entity_reference

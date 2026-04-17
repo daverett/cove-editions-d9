@@ -1,0 +1,30 @@
+uuid: c39436c1-7e29-4cd5-93e1-756795e30e55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_map
+    - node.type.map
+    - node.type.place
+id: node.place.field_parent_map
+field_name: field_parent_map
+entity_type: node
+bundle: place
+label: 'Parent Map'
+description: 'Select the parent map of which this place is a part. This should happen automatically!'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      map: map
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

@@ -1,0 +1,31 @@
+uuid: da1f2cd1-bb38-47af-b267-b56d8f54a679
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nines_genre.synonyms_synonyms
+    - taxonomy.vocabulary.nines_genre
+  module:
+    - text
+id: taxonomy_term.nines_genre.default
+targetEntityType: taxonomy_term
+bundle: nines_genre
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  synonyms_synonyms:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

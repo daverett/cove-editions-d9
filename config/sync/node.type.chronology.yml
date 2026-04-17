@@ -1,0 +1,17 @@
+uuid: 18770d2e-0cf4-4638-9500-01e879230471
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Timeline
+type: chronology
+description: 'Parent to "Timeline entry" content type. Allows grouping of timeline entries into custom timelines.'
+help: 'Provide basic information about your timeline. Give it a title and a description so that folks can understand its scope and purpose. As a first step in populating your timeline, you can use the "Add Items to this Chronology" selector below to add events that already exist in the database. You''ll add your own entries to your chronology in a second step, after you save. '
+new_revision: true
+preview_mode: 1
+display_submitted: true

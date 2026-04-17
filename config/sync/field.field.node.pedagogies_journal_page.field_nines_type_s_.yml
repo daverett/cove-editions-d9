@@ -1,0 +1,28 @@
+uuid: 51e1ec57-d67d-4009-9425-173b8ed673e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nines_type_s_
+    - node.type.pedagogies_journal_page
+    - taxonomy.vocabulary.nines_type
+id: node.pedagogies_journal_page.field_nines_type_s_
+field_name: field_nines_type_s_
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'NINES Type(s)'
+description: 'Applicable NINES types for RDF output. Multiple values may be selected.'
+required: true
+translatable: false
+default_value:
+  -
+    tid: 27149
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nines_type: nines_type
+    sort:
+      field: _none
+field_type: entity_reference

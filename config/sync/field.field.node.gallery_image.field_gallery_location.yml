@@ -1,0 +1,29 @@
+uuid: a0ff7aac-bdea-42ea-b274-7dd0fd02ba29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery_location
+    - node.type.gallery_image
+    - taxonomy.vocabulary.gallery_locations
+id: node.gallery_image.field_gallery_location
+field_name: field_gallery_location
+entity_type: node
+bundle: gallery_image
+label: Location
+description: 'The geographic or other physical location of the item'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gallery_locations: gallery_locations
+    sort:
+      field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

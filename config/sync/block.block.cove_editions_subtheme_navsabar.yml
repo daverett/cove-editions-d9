@@ -1,0 +1,25 @@
+uuid: 7c1402ff-8fb7-4731-b380-1a289378d5b7
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:28202923-ae26-4563-ae6d-528340b5f003'
+  module:
+    - block_content
+  theme:
+    - cove_editions_subtheme
+id: cove_editions_subtheme_navsabar
+theme: cove_editions_subtheme
+region: secondary_header
+weight: -10
+provider: null
+plugin: 'block_content:28202923-ae26-4563-ae6d-528340b5f003'
+settings:
+  id: 'block_content:28202923-ae26-4563-ae6d-528340b5f003'
+  label: 'NAVSA bar'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

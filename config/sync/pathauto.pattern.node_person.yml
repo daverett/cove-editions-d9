@@ -1,0 +1,21 @@
+uuid: bed0c492-fcc2-470c-a655-8ed13fffcc14
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_person
+label: 'Content - Person'
+type: 'canonical_entities:node'
+pattern: 'person/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      person: person
+selection_logic: and
+weight: 0
+relationships: {  }

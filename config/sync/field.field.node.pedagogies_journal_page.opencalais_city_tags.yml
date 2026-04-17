@@ -1,0 +1,26 @@
+uuid: 87fc0eee-9cd3-4ea0-80e9-15b4c70da409
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_city_tags
+    - node.type.pedagogies_journal_page
+    - taxonomy.vocabulary.city
+id: node.pedagogies_journal_page.opencalais_city_tags
+field_name: opencalais_city_tags
+entity_type: node
+bundle: pedagogies_journal_page
+label: City
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city: city
+    sort:
+      field: _none
+field_type: entity_reference

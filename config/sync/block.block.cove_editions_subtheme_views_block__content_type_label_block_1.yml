@@ -1,0 +1,25 @@
+uuid: 08376c74-5d99-436f-a122-0d6fe0844826
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_type_label
+  module:
+    - views
+  theme:
+    - cove_editions_subtheme
+id: cove_editions_subtheme_views_block__content_type_label_block_1
+theme: cove_editions_subtheme
+region: page_title
+weight: -6
+provider: null
+plugin: 'views_block:content_type_label-block_1'
+settings:
+  id: 'views_block:content_type_label-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

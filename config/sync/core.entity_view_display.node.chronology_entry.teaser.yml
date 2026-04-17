@@ -1,0 +1,45 @@
+uuid: 7b7a2b8e-5bf6-41af-bb93-cece100de01b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.chronology_entry.feeds_item
+    - field.field.node.chronology_entry.field_assoc_places
+    - field.field.node.chronology_entry.field_display_date
+    - field.field.node.chronology_entry.field_event2
+    - field.field.node.chronology_entry.field_event_date
+    - field.field.node.chronology_entry.field_event_source
+    - field.field.node.chronology_entry.field_image
+    - field.field.node.chronology_entry.field_parent_chronology
+    - field.field.node.chronology_entry.field_vetted_
+    - field.field.node.chronology_entry.group_content_access
+    - field.field.node.chronology_entry.og_audience
+    - field.field.node.chronology_entry.og_group_ref
+    - node.type.chronology_entry
+  module:
+    - user
+id: node.chronology_entry.teaser
+targetEntityType: node
+bundle: chronology_entry
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  feeds_item: true
+  field_assoc_places: true
+  field_display_date: true
+  field_event2: true
+  field_event_date: true
+  field_event_source: true
+  field_image: true
+  field_parent_chronology: true
+  field_vetted_: true
+  group_content_access: true
+  og_audience: true
+  og_group_ref: true

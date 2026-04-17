@@ -1,0 +1,30 @@
+uuid: 4d837118-3982-4389-9da8-2363cd538be8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_index
+    - node.type.editions_index_page
+    - node.type.galler_exhibit
+id: node.galler_exhibit.field_resource_index
+field_name: field_resource_index
+entity_type: node
+bundle: galler_exhibit
+label: 'Parent Resource'
+description: 'If this Gallery exhibit is part of a "resource," e.g. an edition, select a value here; otherwise, leave it blank. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_index_page: editions_index_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

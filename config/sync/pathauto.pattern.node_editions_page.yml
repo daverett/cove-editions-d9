@@ -1,0 +1,21 @@
+uuid: d1a4ee58-79f5-4889-9b92-18d79a4754a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_editions_page
+label: 'Content - Editions Page'
+type: 'canonical_entities:node'
+pattern: 'edition/[node:field_resource_index]/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      editions_page: editions_page
+selection_logic: and
+weight: 0
+relationships: {  }

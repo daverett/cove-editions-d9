@@ -1,0 +1,58 @@
+uuid: c80a4756-672b-4fb2-84b7-5f8b21aee0bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.city.containedbycounty
+    - field.field.taxonomy_term.city.containedbystate
+    - field.field.taxonomy_term.city.latitude
+    - field.field.taxonomy_term.city.longitude
+    - taxonomy.vocabulary.city
+  module:
+    - text
+id: taxonomy_term.city.default
+targetEntityType: taxonomy_term
+bundle: city
+mode: default
+content:
+  containedbycounty:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  containedbystate:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  latitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  longitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true

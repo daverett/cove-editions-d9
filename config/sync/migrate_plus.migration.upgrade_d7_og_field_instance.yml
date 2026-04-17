@@ -1,0 +1,47 @@
+uuid: 74342377-6123-41e8-8f3b-1ef6ed9e1ca4
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_og_field_instance
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: migrate_drupal_7
+label: 'Og entity reference fields'
+source:
+  plugin: d7_og_field_instance
+process:
+  plugin_id:
+    -
+      plugin: static_map
+      source: field_name
+      map:
+        og_group_ref: og_audience
+        default: ''
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Field is unused'
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+  entity_bundle:
+    -
+      plugin: get
+      source: bundle
+  settings:
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: log
+      source: 'og field instance settings are not migrated'
+destination:
+  plugin: og_field
+migration_dependencies:
+  required:
+    - upgrade_d7_og_group
+  optional: {  }

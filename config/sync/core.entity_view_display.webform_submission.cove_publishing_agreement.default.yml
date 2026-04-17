@@ -1,0 +1,22 @@
+uuid: 2d5d30d8-fd27-438e-ba4c-9e7c5816f628
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.webform_submission.cove_publishing_agreement.og_audience
+    - webform.webform.cove_publishing_agreement
+id: webform_submission.cove_publishing_agreement.default
+targetEntityType: webform_submission
+bundle: cove_publishing_agreement
+mode: default
+content:
+  og_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

@@ -1,0 +1,15 @@
+uuid: 5c690384-dd76-446e-8f3d-9a681df937e0
+langcode: en
+status: true
+dependencies: {  }
+name: front_thumbnail
+label: 'Front Thumbnail'
+effects:
+  0ce4b2bd-163a-46f8-b2e8-507b8ecfcb0d:
+    uuid: 0ce4b2bd-163a-46f8-b2e8-507b8ecfcb0d
+    id: image_scale
+    weight: 1
+    data:
+      width: 138
+      height: null
+      upscale: false

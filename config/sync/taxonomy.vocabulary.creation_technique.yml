@@ -1,0 +1,9 @@
+uuid: c1582407-5b13-4b35-a50c-82329b00cdfe
+langcode: en
+status: true
+dependencies: {  }
+name: 'Creation Technique'
+vid: creation_technique
+description: "The technique of the item's creation"
+weight: 0
+new_revision: false

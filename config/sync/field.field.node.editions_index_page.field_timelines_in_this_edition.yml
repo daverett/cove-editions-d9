@@ -1,0 +1,30 @@
+uuid: ec253bb1-1954-460d-a64b-6a7dce884f19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_timelines_in_this_edition
+    - node.type.chronology
+    - node.type.editions_index_page
+id: node.editions_index_page.field_timelines_in_this_edition
+field_name: field_timelines_in_this_edition
+entity_type: node
+bundle: editions_index_page
+label: 'Timelines in this Edition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      chronology: chronology
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

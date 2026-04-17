@@ -1,0 +1,31 @@
+uuid: d6e353ba-db02-4054-9f70-7688da7e20b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nines_discipline.synonyms_synonyms
+    - taxonomy.vocabulary.nines_discipline
+  module:
+    - text
+id: taxonomy_term.nines_discipline.default
+targetEntityType: taxonomy_term
+bundle: nines_discipline
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  synonyms_synonyms:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

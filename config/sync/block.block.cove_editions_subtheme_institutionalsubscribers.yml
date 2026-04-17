@@ -1,0 +1,25 @@
+uuid: 6f15fde0-d740-4b43-aea2-e007b26fe1dd
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:deb5d7ce-89e7-4e9e-9649-df4bd029f859'
+  module:
+    - block_content
+  theme:
+    - cove_editions_subtheme
+id: cove_editions_subtheme_institutionalsubscribers
+theme: cove_editions_subtheme
+region: secondary_header
+weight: -8
+provider: null
+plugin: 'block_content:deb5d7ce-89e7-4e9e-9649-df4bd029f859'
+settings:
+  id: 'block_content:deb5d7ce-89e7-4e9e-9649-df4bd029f859'
+  label: 'Institutional Subscribers'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,186 @@
+uuid: 999a7b00-5da9-4d01-b864-36a7d21963f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: pedagogies_home
+label: 'Pedagogies Home'
+module: views
+description: 'The landing page for Pedagogies'
+tag: default
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Master
+    display_plugin: default
+    position: 1
+    display_options:
+      title: Teaching
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: 1
+      pager:
+        type: full
+        options:
+          items_per_page: 20
+          pagination_heading_level: h4
+      exposed_form:
+        type: basic
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+        perm: 'access content'
+      cache:
+        type: none
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          label: ''
+          empty: true
+          ui_name: ''
+          content:
+            value: ' '
+            format: full_html
+          tokenize: 0
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            field_identifier: created
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            pedagogies_journal_issue: pedagogies_journal_issue
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          label: ''
+          empty: true
+          ui_name: ''
+          content:
+            value: |-
+              <div class="descbig">The COVE toolsets can be used in different disciplines and in several ways. Here, we will showcase how early adopters have engaged students with COVE, offering inspiration for instructors to develop dynamic modules of their own. Stay tuned for their stories!
+              </div>
+              <p><em>This section publishes articles discussing the use of COVE by our users. Anyone wishing to publish an article in this section, should contact Paul Fyfe (paul.fyfe@ncsu.edu) and Dino Franco Felluga (felluga@purdue.edu). New articles are put through peer review and copy-editing before publication.</em></p>
+            format: full_html
+          tokenize: 0
+      display_extenders: {  }
+      style_plugin: default
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page:
+    id: page
+    display_title: Page
+    display_plugin: page
+    position: 2
+    display_options:
+      enabled: false
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+      path: teaching
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  panel_pane_1:
+    id: panel_pane_1
+    display_title: 'Content pane'
+    display_plugin: default
+    position: 3
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+      allow:
+        title_override: title_override
+        use_pager: 0
+        items_per_page: 0
+        offset: 0
+        link_to_view: 0
+        more_link: 0
+        path_override: 0
+        exposed_form: 0
+        fields_override: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+      tags: {  }

@@ -1,0 +1,19 @@
+uuid: ac468d36-0da6-460a-9965-f6567b62629d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publisher
+    - node.type.gallery_image
+id: node.gallery_image.field_publisher
+field_name: field_publisher
+entity_type: node
+bundle: gallery_image
+label: Publisher
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

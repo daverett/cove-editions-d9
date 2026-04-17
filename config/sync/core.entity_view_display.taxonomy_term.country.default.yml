@@ -1,0 +1,58 @@
+uuid: 793e1843-e82d-4e91-a0f4-5437b7bd1953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.country.containedbycounty
+    - field.field.taxonomy_term.country.containedbystate
+    - field.field.taxonomy_term.country.latitude
+    - field.field.taxonomy_term.country.longitude
+    - taxonomy.vocabulary.country
+  module:
+    - text
+id: taxonomy_term.country.default
+targetEntityType: taxonomy_term
+bundle: country
+mode: default
+content:
+  containedbycounty:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  containedbystate:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  latitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  longitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true

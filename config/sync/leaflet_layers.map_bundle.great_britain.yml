@@ -1,0 +1,64 @@
+uuid: f8e9fd5d-8645-464a-be9a-19c46a19efd9
+langcode: en
+status: true
+dependencies: {  }
+id: great_britain
+label: 'Great Britain'
+layers:
+  osm_mapnik_openstreetmap:
+    enabled: true
+    weight: -3
+    id: osm_mapnik_openstreetmap
+    label: OpenStreetMap
+    module: leaflet
+    layer_id: OpenStreetMap
+    map_bundle: 'OSM Mapnik'
+    on_by_default: true
+  google_hybrid_layer:
+    enabled: true
+    weight: -2
+    id: google_hybrid_layer
+    label: 'Google Hybrid'
+    module: leaflet_more_maps
+    layer_id: layer
+    map_bundle: google-hybrid
+    on_by_default: true
+  google_roadmap_layer:
+    enabled: true
+    weight: -1
+    id: google_roadmap_layer
+    label: 'Google Street'
+    module: leaflet_more_maps
+    layer_id: layer
+    map_bundle: google-roadmap
+    on_by_default: true
+  leaflet_layers_uk_great_britain_ordnance_survey_hills_edition_1885_1903:
+    id: leaflet_layers_uk_great_britain_ordnance_survey_hills_edition_1885_1903
+    label: "UK Great Britain, Ordnance Survey, 'Hills' edition, 1885-1903"
+    module: leaflet_layers
+    layer_id: uk_great_britain_ordnance_survey_hills_edition_1885_1903
+    map_bundle: leaflet_layers
+    enabled: true
+    on_by_default: '1'
+    weight: -2
+  leaflet_layers_sample_nls_maptiler_layer:
+    id: leaflet_layers_sample_nls_maptiler_layer
+    label: ''
+    module: leaflet_layers
+    layer_id: sample_nls_maptiler_layer
+    map_bundle: leaflet_layers
+    enabled: true
+    on_by_default: 0
+    weight: -1
+settings:
+  dragging: 1
+  touchZoom: 1
+  scrollWheelZoom: 0
+  doubleClickZoom: 1
+  zoomControl: 1
+  attributionControl: 1
+  trackResize: 1
+  fadeAnimation: 1
+  zoomAnimation: 1
+  closePopupOnClick: 1
+  layerControl: 1

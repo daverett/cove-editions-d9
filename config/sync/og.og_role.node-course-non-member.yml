@@ -1,0 +1,62 @@
+uuid: 30aa13ce-2ae5-4a2b-987a-e601d89d1a15
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.course
+id: node-course-non-member
+label: non-member
+weight: 4
+group_id: '0'
+group_type: node
+group_bundle: course
+is_admin: false
+permissions:
+  - subscribe
+  - subscribe
+  - 'update body field'
+  - 'update field_affiliation field'
+  - 'update field_assoc_events field'
+  - 'update field_assoc_places field'
+  - 'update field_bio field'
+  - 'update field_event2 field'
+  - 'update field_event_date field'
+  - 'update field_event_source field'
+  - 'update field_firstname field'
+  - 'update field_geocode field'
+  - 'update field_home_page field'
+  - 'update field_image field'
+  - 'update field_items_in_this_chronology field'
+  - 'update field_parent_chronology field'
+  - 'update field_parent_map field'
+  - 'update field_places_in_this_map field'
+  - 'update field_profile_picture field'
+  - 'update field_resource_index field'
+  - 'update field_surname field'
+  - 'view body field'
+  - 'view field_affiliation field'
+  - 'view field_annotatable_editions field'
+  - 'view field_assoc_events field'
+  - 'view field_assoc_places field'
+  - 'view field_bio field'
+  - 'view field_course_description field'
+  - 'view field_edited_editions field'
+  - 'view field_event2 field'
+  - 'view field_event_date field'
+  - 'view field_event_source field'
+  - 'view field_firstname field'
+  - 'view field_geocode field'
+  - 'view field_home_page field'
+  - 'view field_image field'
+  - 'view field_items_in_this_chronology field'
+  - 'view field_parent_chronology field'
+  - 'view field_parent_map field'
+  - 'view field_places_in_this_map field'
+  - 'view field_profile_picture field'
+  - 'view field_resource_index field'
+  - 'view field_special_roles field'
+  - 'view field_surname field'
+  - 'view group_group field'
+  - 'view og_group_ref field'
+  - 'view og_user_node field'
+role_type: required

@@ -1,0 +1,26 @@
+uuid: 1e48b2bf-9e20-4197-8eb7-17d5636f4d74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_naturalfeature_tags
+    - node.type.editions_page
+    - taxonomy.vocabulary.natural_feature
+id: node.editions_page.opencalais_naturalfeature_tags
+field_name: opencalais_naturalfeature_tags
+entity_type: node
+bundle: editions_page
+label: NaturalFeature
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      natural_feature: natural_feature
+    sort:
+      field: _none
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: 3a492930-bb5a-477c-8830-6cb11d01acb7
+langcode: en
+status: true
+dependencies: {  }
+name: Tags
+vid: vocabulary_3
+description: 'Tags for all of Romantic Circles Pages (i.e. not Blog entries or Stories)'
+weight: -5
+new_revision: false

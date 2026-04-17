@@ -1,0 +1,22 @@
+uuid: 2c618faa-c653-4d9f-934b-c0c508f5623f
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - dxpr_theme_STARTERKIT
+_core:
+  default_config_hash: mV9h_NNjjbPAWoq62QCf5yvnX3TeL4r49DFhFuRfidE
+id: dxpr_theme_STARTERKIT_help
+theme: dxpr_theme_STARTERKIT
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

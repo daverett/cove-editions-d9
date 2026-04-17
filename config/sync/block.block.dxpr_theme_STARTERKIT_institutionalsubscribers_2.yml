@@ -1,0 +1,25 @@
+uuid: e97beb61-4c00-4103-b358-8f3174e421af
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:db24b20d-f2af-4eb6-babb-876f62b4992f'
+  module:
+    - block_content
+  theme:
+    - dxpr_theme_STARTERKIT
+id: dxpr_theme_STARTERKIT_institutionalsubscribers_2
+theme: dxpr_theme_STARTERKIT
+region: secondary_header
+weight: -11
+provider: null
+plugin: 'block_content:db24b20d-f2af-4eb6-babb-876f62b4992f'
+settings:
+  id: 'block_content:db24b20d-f2af-4eb6-babb-876f62b4992f'
+  label: 'Institutional Subscribers'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

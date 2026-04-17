@@ -1,0 +1,95 @@
+uuid: 48678bb1-b09a-4094-9e3a-404e6323ec10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.chronology.og_group_ref
+    - node.type.chronology
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      a3abbf0d-5246-4919-9e7a-2ac17a2e4b97:
+        separator: ','
+        limit: null
+        uuid: a3abbf0d-5246-4919-9e7a-2ac17a2e4b97
+        plugin: explode
+        source: groups_audience
+        weight: 0
+        label: Explode
+label: 'Chronos to groups'
+id: chronos_to_groups
+description: 'Attaching Chronologies to their groups'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: chronology
+  langcode: en
+  insert_new: 0
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  nid:
+    value: NID
+    label: NID
+    machine_name: nid
+    type: csv
+  groups_audience:
+    value: Groups_Audience
+    label: Groups_Audience
+    machine_name: groups_audience
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: nid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: og_group_ref
+    map:
+      target_id: groups_audience
+    settings:
+      language: ''
+      reference_by: nid
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: course

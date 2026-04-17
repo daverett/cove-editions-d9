@@ -1,0 +1,22 @@
+uuid: 11a9a4ef-f1cc-44ca-8658-acb5148c6cb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cove_editions_subtheme
+_core:
+  default_config_hash: FR6TscQ_wWvu_Oif0Ha6seHBgJwsupKvwisRs1yTxYw
+id: cove_editions_subtheme_content
+theme: cove_editions_subtheme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

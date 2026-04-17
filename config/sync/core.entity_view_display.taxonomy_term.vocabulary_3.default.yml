@@ -1,0 +1,31 @@
+uuid: 3def9a67-6f0d-4e47-9162-6fa39f4a0045
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.vocabulary_3.synonyms_synonyms
+    - taxonomy.vocabulary.vocabulary_3
+  module:
+    - text
+id: taxonomy_term.vocabulary_3.default
+targetEntityType: taxonomy_term
+bundle: vocabulary_3
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  synonyms_synonyms:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

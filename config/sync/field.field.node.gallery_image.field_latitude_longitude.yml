@@ -1,0 +1,21 @@
+uuid: 1f450c49-6292-4cf9-b196-c1417f7f054a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latitude_longitude
+    - node.type.gallery_image
+  module:
+    - geofield
+id: node.gallery_image.field_latitude_longitude
+field_name: field_latitude_longitude
+entity_type: node
+bundle: gallery_image
+label: Latitude/Longitude
+description: 'Here add latitude and longitude coordinates for Gallery images tied to a particular place. This will be run via imports on TEI places files. See the feeds importers for more. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

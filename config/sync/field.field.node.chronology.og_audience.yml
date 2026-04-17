@@ -1,0 +1,31 @@
+uuid: fd3bf8eb-6c0c-43a0-a0d7-bd9684b0f931
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.og_audience
+    - node.type.chronology
+    - node.type.course
+  module:
+    - og
+id: node.chronology.og_audience
+field_name: og_audience
+entity_type: node
+bundle: chronology
+label: 'Part of Group'
+description: 'OG group audience reference field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: og_standard_reference

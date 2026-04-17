@@ -1,0 +1,25 @@
+uuid: 2eb8e653-ebf4-4749-9bea-c9df4e12621d
+langcode: und
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - og
+third_party_settings:
+  field_permissions:
+    permission_type: public
+_core:
+  default_config_hash: 5712dAes1LfhZC-TRQb-2h4elYVUxfniVafaKRVOg5Q
+id: og_membership.og_membership_request
+field_name: og_membership_request
+entity_type: og_membership
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

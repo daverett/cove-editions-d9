@@ -1,0 +1,28 @@
+uuid: 4089bcc9-bdd3-41a5-82d4-d8739b684af5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_doc_owner
+    - node.type.editions_page
+id: node.editions_page.field_doc_owner
+field_name: field_doc_owner
+entity_type: node
+bundle: editions_page
+label: 'Doc Owner'
+description: 'Hidden field. All posts from COVE Studio are coming from admin, but POST requests are also sending along the UID of the user who should own the document. That is being stored here for processing via Rules. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

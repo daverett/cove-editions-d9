@@ -1,0 +1,21 @@
+uuid: e0ecab4a-90fa-4ba5-aef2-37333a63470e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - og
+    - webform
+id: webform_submission.og_audience
+field_name: og_audience
+entity_type: webform_submission
+type: og_standard_reference
+settings:
+  target_type: node
+module: og
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

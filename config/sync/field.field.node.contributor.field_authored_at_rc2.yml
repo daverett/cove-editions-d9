@@ -1,0 +1,30 @@
+uuid: 8059b5b8-302e-4d7e-b7ef-643793f2a44d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authored_at_rc2
+    - node.type.contributor
+    - node.type.editions_index_page
+id: node.contributor.field_authored_at_rc2
+field_name: field_authored_at_rc2
+entity_type: node
+bundle: contributor
+label: 'Resources Authored'
+description: 'This field usually applies to historical figures. Here you may enter the name of a resource authored by a person. For example, Robert Southey is considered the author of the resource, "The Collected Letters of Robert Southey." Usually, though, you will fill out that information on the content pages and it will automatically be reflected here. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_index_page: editions_index_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

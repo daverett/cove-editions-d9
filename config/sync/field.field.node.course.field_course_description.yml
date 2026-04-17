@@ -1,0 +1,27 @@
+uuid: bf91f51f-1b28-4bb4-8aad-a8e4dfb0acbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_description
+    - node.type.course
+  module:
+    - linkchecker
+    - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
+id: node.course.field_course_description
+field_name: field_course_description
+entity_type: node
+bundle: course
+label: Description
+description: 'Enter a short description of your group here. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

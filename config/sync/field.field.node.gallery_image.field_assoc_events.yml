@@ -1,0 +1,30 @@
+uuid: 33ee1cfa-0a6b-41aa-931f-9ebb5cb5c739
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assoc_events
+    - node.type.chronology_entry
+    - node.type.gallery_image
+id: node.gallery_image.field_assoc_events
+field_name: field_assoc_events
+entity_type: node
+bundle: gallery_image
+label: 'Associated Events'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      chronology_entry: chronology_entry
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

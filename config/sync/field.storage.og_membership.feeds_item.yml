@@ -1,0 +1,20 @@
+uuid: 5d6bfa85-b875-4c24-a359-dca4624ec3f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - feeds
+    - og
+id: og_membership.feeds_item
+field_name: feeds_item
+entity_type: og_membership
+type: feeds_item
+settings:
+  target_type: feeds_feed
+module: feeds
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: b0a5223a-3bb0-4d42-885a-3f3be9105727
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.taxonomy_vocabulary_3
+    - node.type.pedagogies_journal_page
+    - taxonomy.vocabulary.vocabulary_3
+id: node.pedagogies_journal_page.taxonomy_vocabulary_3
+field_name: taxonomy_vocabulary_3
+entity_type: node
+bundle: pedagogies_journal_page
+label: Tags
+description: 'Enter a comma-separated list of words. Wherever possible, match your tag or tags with an existing term from the autocomplete list. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vocabulary_3: vocabulary_3
+    sort:
+      field: _none
+field_type: entity_reference

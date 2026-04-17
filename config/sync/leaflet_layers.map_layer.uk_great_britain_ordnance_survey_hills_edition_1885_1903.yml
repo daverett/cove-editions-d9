@@ -1,0 +1,21 @@
+uuid: 7c7680e0-9abd-4109-9556-42bff69a8387
+langcode: en
+status: true
+dependencies: {  }
+id: uk_great_britain_ordnance_survey_hills_edition_1885_1903
+label: "UK Great Britain, Ordnance Survey, 'Hills' edition, 1885-1903"
+description: 'Prepared by the National Library of Scotland and served by MapTiler'
+settings:
+  plugin_type: tilelayer
+  urlTemplate: 'https://api.maptiler.com/tiles/uk-osgb63k1885/{z}/{x}/{y}.png?key=fsOTLgqFEbPBSN4AICBj'
+  attribution: 'Copyright <a href="http://maps.nls.uk/projects/subscription-api/">National Library of Scotland</a>'
+  minZoom: '0'
+  maxZoom: '18'
+  opacity: '1'
+  subdomains: ''
+  errorTileUrl: ''
+  zoomOffset: '0'
+  tms: 0
+  zoomReverse: 0
+  detectRetina: 0
+  layer_type: overlay

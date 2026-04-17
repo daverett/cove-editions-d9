@@ -1,0 +1,19 @@
+uuid: 824f10b6-ebf6-4377-bb81-c72bf83f64c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unique_target
+    - node.type.editions_page
+id: node.editions_page.field_unique_target
+field_name: field_unique_target
+entity_type: node
+bundle: editions_page
+label: 'Unique Target'
+description: 'This is a unique target, with the <idno type="edition"> element from the TEI. This allows us to use multiple feeds importers to target the same node. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

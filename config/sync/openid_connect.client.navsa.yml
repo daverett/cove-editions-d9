@@ -1,0 +1,19 @@
+uuid: b323e83d-b6e5-497d-8d77-9a470bada50b
+langcode: en
+status: true
+dependencies: {  }
+id: navsa
+label: COVE
+plugin: generic
+settings:
+  client_id: 8yK0G9lb1qWPZP522CLBa2PTw52qvr
+  client_secret: lE05FGe0SgrO5rDbtFNehXh6ROcTeH
+  iss_allowed_domains: ''
+  issuer_url: ''
+  authorization_endpoint: 'https://cove.navsa.org/oauth/authorize'
+  token_endpoint: 'https://cove.navsa.org/oauth/token'
+  userinfo_endpoint: 'https://cove.navsa.org/oauth/me'
+  end_session_endpoint: ''
+  scopes:
+    - openid
+    - email

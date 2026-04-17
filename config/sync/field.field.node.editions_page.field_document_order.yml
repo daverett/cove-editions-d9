@@ -1,0 +1,23 @@
+uuid: 724912e8-edf8-4847-b418-604156a6442a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_order
+    - node.type.editions_page
+id: node.editions_page.field_document_order
+field_name: field_document_order
+entity_type: node
+bundle: editions_page
+label: 'Document Order'
+description: 'Set the order of a document for Table of Contents and navigation lists'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

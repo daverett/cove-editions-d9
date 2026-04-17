@@ -1,0 +1,15 @@
+uuid: a10c3f9f-c956-4766-8c4c-ad484d911084
+langcode: en
+status: true
+dependencies: {  }
+name: index_banner
+label: 'Index Banner'
+effects:
+  a79faede-3dd9-4f69-86f8-dca4d0d90de3:
+    uuid: a79faede-3dd9-4f69-86f8-dca4d0d90de3
+    id: image_scale
+    weight: 1
+    data:
+      width: 350
+      height: null
+      upscale: false

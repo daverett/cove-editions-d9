@@ -1,0 +1,8 @@
+uuid: bb4c1be7-1df1-4644-bdad-b235ff07a15d
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_journal_issue
+label: 'Journal Issue comment'
+target_entity_type_id: node
+description: null

@@ -1,0 +1,19 @@
+uuid: f7872da0-1415-429e-a944-b05ae4cd6e67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_date
+    - node.type.chronology_entry
+id: node.chronology_entry.field_display_date
+field_name: field_display_date
+entity_type: node
+bundle: chronology_entry
+label: 'Display date'
+description: 'Please enter a date for display here. For example, you can add "circa." to indicate approximation or "Summer 1810" to better describe the date you entered in the picker above. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

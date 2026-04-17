@@ -1,0 +1,21 @@
+uuid: 7548f3b7-e89f-4cfc-aec2-5310aa1d0be8
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - dxpr_theme
+id: searchform
+theme: dxpr_theme
+region: navigation_collapsible
+weight: -11
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

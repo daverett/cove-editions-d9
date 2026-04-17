@@ -1,0 +1,312 @@
+uuid: d9680509-e0e7-44b1-b3e3-28d174aecd43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_index_banner
+    - field.storage.node.field_original_publication_date
+    - image.style.index_banner
+    - node.type.editions_index_page
+  module:
+    - datetime_range
+    - image
+    - node
+    - text
+    - user
+    - views_timelinejs
+id: timeline
+label: 'Editions Timeline'
+module: views
+description: 'Showing all editions on a timeline'
+tag: default
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Master
+    display_plugin: default
+    position: 1
+    display_options:
+      title: 'Timeline of COVE Editions'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          alter:
+            word_boundary: false
+            ellipsis: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          plugin_id: field
+          alter:
+            alter_text: true
+            text: '{{ created }}'
+          settings:
+            date_format: long
+          second_date_format: long
+        field_original_publication_date:
+          id: field_original_publication_date
+          table: node__field_original_publication_date
+          field: field_original_publication_date
+          plugin_id: field
+          label: ''
+          alter:
+            text: '{{ field_original_publication_date-value }}'
+          element_label_colon: false
+          type: daterange_default
+          settings:
+            datetime_type: date
+          delta_limit: 1
+          delta_offset: 0
+          separator: ''
+        field_index_banner:
+          id: field_index_banner
+          table: node__field_index_banner
+          field: field_index_banner
+          plugin_id: field
+          label: ''
+          alter:
+            text: '{{ field_index_banner }}'
+          element_label_colon: false
+          click_sort_column: fid
+          settings:
+            image_style: index_banner
+            image_link: ''
+        body:
+          id: body
+          table: node__body
+          field: body
+          plugin_id: field
+          label: ''
+          alter:
+            max_length: 600
+            strip_tags: true
+            trim: true
+          element_label_colon: false
+          type: text_summary_or_trimmed
+          settings:
+            trim_length: 600
+        field_original_publication_date_1:
+          id: field_original_publication_date_1
+          table: node__field_original_publication_date
+          field: field_original_publication_date
+          plugin_id: field
+          label: 'Original publication date (for display)'
+          settings:
+            format_type: long
+            fromto: both
+            multiple_number: ''
+            multiple_from: ''
+            multiple_to: ''
+            show_remaining_days: 0
+          delta_offset: 0
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: basic
+      access:
+        type: perm
+      cache:
+        type: none
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            editions_index_page: editions_index_page
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: timelinejs
+        options:
+          timeline_config:
+            hash_bookmark: true
+            start_at_end: false
+          additional_config:
+            start_at_current: false
+          timeline_fields:
+            media: field_index_banner
+            start_date: field_original_publication_date
+            end_date: field_original_publication_date
+            display_date: field_original_publication_date_1
+            text: body
+            headline: title
+      query:
+        type: views_query
+        options: {  }
+      use_more_always: false
+      display_extenders: {  }
+      style_plugin: timelinejs
+      style_options:
+        timeline_config:
+          hash_bookmark: true
+          start_at_end: 0
+        additional_config:
+          start_at_current: 0
+        timeline_fields:
+          media: field_index_banner
+          start_date: field_original_publication_date
+          end_date: field_original_publication_date
+          display_date: field_original_publication_date_1
+          text: body
+          headline: title
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_index_banner'
+        - 'config:field.storage.node.field_original_publication_date'
+  page:
+    id: page
+    display_title: Page
+    display_plugin: page
+    position: 2
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+      path: editions/timeline
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_index_banner'
+        - 'config:field.storage.node.field_original_publication_date'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 3
+    display_options:
+      style:
+        type: table
+        options:
+          columns:
+            title: title
+            created: created
+            field_original_publication_date: field_original_publication_date
+            field_index_banner: field_index_banner
+            body: body
+          default: '-1'
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            created:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            field_original_publication_date:
+              align: ''
+              separator: ''
+              empty_column: false
+            field_index_banner:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+            body:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+      query:
+        type: views_query
+        options: {  }
+      defaults:
+        style: false
+        row: false
+      display_extenders: {  }
+      path: edition/timeline/table
+      style_plugin: table
+      style_options:
+        columns:
+          title: title
+          created: created
+          field_original_publication_date: field_original_publication_date
+          field_index_banner: field_index_banner
+          body: body
+        default: '-1'
+        info:
+          title:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          created:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_original_publication_date:
+            align: ''
+            separator: ''
+            empty_column: 0
+          field_index_banner:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+          body:
+            sortable: 0
+            default_sort_order: asc
+            align: ''
+            separator: ''
+            empty_column: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_index_banner'
+        - 'config:field.storage.node.field_original_publication_date'

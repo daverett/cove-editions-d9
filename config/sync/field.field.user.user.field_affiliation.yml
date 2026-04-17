@@ -1,0 +1,20 @@
+uuid: bc933d8c-a602-4721-ba72-53322e4fba23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_affiliation
+  module:
+    - user
+id: user.user.field_affiliation
+field_name: field_affiliation
+entity_type: user
+bundle: user
+label: Affiliation
+description: 'With which institution are you affiliated? We don''t need to know your official title here, just something like "Purdue University." If you are not currently affiliated with an institution, "Independent Scholar" is appropriate here. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

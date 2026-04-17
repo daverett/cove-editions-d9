@@ -1,0 +1,23 @@
+uuid: c45c57f6-2810-4120-9ca5-a3c3b32fc3b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.group_content_access
+    - node.type.chronology_entry
+  module:
+    - options
+id: node.chronology_entry.group_content_access
+field_name: group_content_access
+entity_type: node
+bundle: chronology_entry
+label: 'Group content visibility'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

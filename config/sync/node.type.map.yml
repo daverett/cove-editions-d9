@@ -1,0 +1,18 @@
+uuid: 86184820-56a1-4df6-b265-9af78efbd4c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: Map
+type: map
+description: 'Parent to "Place" content type. Allows grouping of places into discrete maps.'
+help: 'Provide basic information about your map. Give it a title and a description so that folks can understand its scope and purpose. As a first step in populating your map, you can use the "Associated Places" selector below to add places that already exist in the database. You''ll add your own places to your map in a second step, after you save. '
+new_revision: true
+preview_mode: 1
+display_submitted: true

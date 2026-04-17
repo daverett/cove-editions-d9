@@ -1,0 +1,26 @@
+uuid: bec16f8a-f74f-4d8b-9d99-7f4dbb9767b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edition_state
+    - node.type.editions_index_page
+    - taxonomy.vocabulary.edition_state
+id: node.editions_index_page.field_edition_state
+field_name: field_edition_state
+entity_type: node
+bundle: editions_index_page
+label: 'Edition state'
+description: 'The current state of the edition. Each edition can be elevated from prototype to peer-reviewed as these milestones are reached. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      edition_state: edition_state
+    sort:
+      field: _none
+field_type: entity_reference

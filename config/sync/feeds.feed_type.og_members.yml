@@ -1,0 +1,130 @@
+uuid: 53ad3e5d-5fc8-469e-8f51-e82dfffe1c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - og.og_membership_type.default
+  module:
+    - feeds_log
+    - feeds_tamper
+    - og
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers: {  }
+label: 'Og members'
+id: og_members
+description: 'Bulk import OG members to Group'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:og_membership'
+processor_configuration:
+  values:
+    type: default
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: true
+  skip_validation_types:
+    - ValidOgRole
+    - ValidOgMembershipReference
+    - UniqueOgMembership
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  uid:
+    value: UID
+    label: UID
+    machine_name: uid
+    type: csv
+  group_id:
+    value: Group_ID
+    label: Group_ID
+    machine_name: group_id
+    type: csv
+  membership_id:
+    value: Membership_ID
+    label: Membership_ID
+    machine_name: membership_id
+    type: csv
+  group_id2:
+    value: Group_ID
+    label: Group_ID
+    machine_name: group_id2
+    type: csv
+  membership_id2:
+    value: Membership_ID
+    label: Membership_ID
+    machine_name: membership_id2
+    type: csv
+  entity_type:
+    value: Entity_type
+    label: Entity_type
+    machine_name: entity_type
+    type: csv
+  user_uuid:
+    value: 'User UUID'
+    label: 'User UUID'
+    machine_name: user_uuid
+    type: csv
+  membership_id3:
+    value: Membership_ID
+    label: Membership_ID
+    machine_name: membership_id3
+    type: csv
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: csv
+mappings:
+  -
+    target: uid
+    map:
+      target_id: uid
+    settings:
+      reference_by: uid
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: entity_id
+    map:
+      value: group_id
+    settings: {  }
+    unique: {  }
+  -
+    target: uuid
+    map:
+      value: user_uuid
+    settings: {  }
+    unique:
+      value: 1

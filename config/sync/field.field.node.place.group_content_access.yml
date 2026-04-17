@@ -1,0 +1,23 @@
+uuid: 43596230-e2b3-4ad5-bd50-b177820cfdc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.group_content_access
+    - node.type.place
+  module:
+    - options
+id: node.place.group_content_access
+field_name: group_content_access
+entity_type: node
+bundle: place
+label: 'Group content visibility'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

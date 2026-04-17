@@ -1,0 +1,150 @@
+uuid: 28692f93-f1a1-44ac-be96-b3e9475ad506
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+    - views_bulk_operations
+id: bulk_save_content
+label: 'Bulk Save content'
+module: views
+description: ''
+tag: default
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Master
+    display_plugin: default
+    position: 1
+    display_options:
+      title: 'Bulk save content'
+      fields:
+        views_bulk_operations:
+          id: views_bulk_operations
+          table: views
+          field: views_bulk_operations_bulk_form
+          plugin_id: views_bulk_operations_bulk_form
+          vbo_settings:
+            display_type: '0'
+            enable_select_all_pages: 1
+            row_clickable: 1
+            force_single: 0
+            entity_load_capacity: '1'
+          vbo_operations:
+            'action::node_save_action':
+              selected: 1
+              postpone_processing: 0
+              skip_confirmation: 1
+              skip_permission_check: 0
+              override_label: 0
+              label: ''
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          alter:
+            word_boundary: false
+            ellipsis: false
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 200
+          id: 0
+          quantity: 9
+          pagination_heading_level: h4
+      exposed_form:
+        type: basic
+      access:
+        type: perm
+      cache:
+        type: none
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            field_identifier: created
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: Type
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: anonymous
+              author: author
+              group_leader: group_leader
+              editor: editor
+              section_editor: section_editor
+              manager: manager
+              administrator: administrator
+      style:
+        type: table
+      query:
+        type: views_query
+        options: {  }
+      use_more_always: false
+      display_extenders: {  }
+      style_plugin: table
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page:
+    id: page
+    display_title: Page
+    display_plugin: page
+    position: 2
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+      path: bulk-save-content
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

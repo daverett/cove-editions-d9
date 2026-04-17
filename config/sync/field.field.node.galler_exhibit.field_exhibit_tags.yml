@@ -1,0 +1,29 @@
+uuid: 0907f07f-7d1a-409a-9b1f-94a3fa3314f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exhibit_tags
+    - node.type.galler_exhibit
+    - taxonomy.vocabulary.vocabulary_3
+id: node.galler_exhibit.field_exhibit_tags
+field_name: field_exhibit_tags
+entity_type: node
+bundle: galler_exhibit
+label: 'Exhibit Tags'
+description: 'Providing keywords here will help us associate this exhibit with other pieces of content. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vocabulary_3: vocabulary_3
+    sort:
+      field: _none
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,26 @@
+uuid: bb251f23-b1bd-407b-b90d-baf485a50642
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.opencalais_provinceorstate_tags
+    - node.type.pedagogies_journal_page
+    - taxonomy.vocabulary.province_or_state
+id: node.pedagogies_journal_page.opencalais_provinceorstate_tags
+field_name: opencalais_provinceorstate_tags
+entity_type: node
+bundle: pedagogies_journal_page
+label: ProvinceOrState
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      province_or_state: province_or_state
+    sort:
+      field: _none
+field_type: entity_reference

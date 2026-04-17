@@ -1,0 +1,30 @@
+uuid: 1957e54f-5df4-4c00-b151-9b2d099df2b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.og_user_node
+    - node.type.course
+  module:
+    - user
+id: user.user.og_user_node
+field_name: og_user_node
+entity_type: user
+bundle: user
+label: 'Group membership'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

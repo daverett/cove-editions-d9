@@ -1,0 +1,49 @@
+uuid: 416e4684-9759-4f31-9f9b-8b19b57ccee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.colorbox
+    - field.field.node.galler_exhibit.feeds_item
+    - field.field.node.galler_exhibit.field_description
+    - field.field.node.galler_exhibit.field_edition_component
+    - field.field.node.galler_exhibit.field_exhibit_icon
+    - field.field.node.galler_exhibit.field_exhibit_tags
+    - field.field.node.galler_exhibit.field_images_in_exhibit
+    - field.field.node.galler_exhibit.field_nines_discipline_s_
+    - field.field.node.galler_exhibit.field_nines_genre_s_
+    - field.field.node.galler_exhibit.field_nines_type_s_
+    - field.field.node.galler_exhibit.field_resource_index
+    - field.field.node.galler_exhibit.field_vetted_
+    - field.field.node.galler_exhibit.group_content_access
+    - field.field.node.galler_exhibit.og_audience
+    - field.field.node.galler_exhibit.og_group_ref
+    - node.type.galler_exhibit
+  module:
+    - user
+id: node.galler_exhibit.colorbox
+targetEntityType: node
+bundle: galler_exhibit
+mode: colorbox
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  feeds_item: true
+  field_description: true
+  field_edition_component: true
+  field_exhibit_icon: true
+  field_exhibit_tags: true
+  field_images_in_exhibit: true
+  field_nines_discipline_s_: true
+  field_nines_genre_s_: true
+  field_nines_type_s_: true
+  field_resource_index: true
+  field_vetted_: true
+  group_content_access: true
+  og_audience: true
+  og_group_ref: true

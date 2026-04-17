@@ -1,0 +1,375 @@
+uuid: b55432a7-398c-4153-a82c-68d2202aaabb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.editions_index_page.body
+    - field.field.node.editions_index_page.field_annotator
+    - field.field.node.editions_index_page.field_documents_in_this_edition
+    - field.field.node.editions_index_page.field_edited_by
+    - field.field.node.editions_index_page.field_edition_state
+    - field.field.node.editions_index_page.field_editor_in_chief
+    - field.field.node.editions_index_page.field_exhibits_in_this_edition
+    - field.field.node.editions_index_page.field_icon
+    - field.field.node.editions_index_page.field_index_banner
+    - field.field.node.editions_index_page.field_main_author
+    - field.field.node.editions_index_page.field_maps_in_this_edition
+    - field.field.node.editions_index_page.field_nines_discipline_s_
+    - field.field.node.editions_index_page.field_nines_genre_s_
+    - field.field.node.editions_index_page.field_nines_type_s_
+    - field.field.node.editions_index_page.field_original_publication_date
+    - field.field.node.editions_index_page.field_postgraduate_researcher
+    - field.field.node.editions_index_page.field_published
+    - field.field.node.editions_index_page.field_resource_technical_editor
+    - field.field.node.editions_index_page.field_timelines_in_this_edition
+    - field.field.node.editions_index_page.layout_builder__layout
+    - field.field.node.editions_index_page.opencalais_person_tags
+    - field.field.node.editions_index_page.taxonomy_vocabulary_3
+    - image.style.thumbnail
+    - node.type.editions_index_page
+  module:
+    - datetime
+    - datetime_range
+    - field_group
+    - image
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_dates:
+      children:
+        - field_published
+        - field_original_publication_date
+      label: Dates
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        classes: 'group-dates field-group-fieldset'
+        id: ''
+        description: ''
+        required_fields: true
+        formatter: collapsed
+    group_images:
+      children:
+        - field_icon
+        - field_index_banner
+      label: Images
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        classes: 'group-images field-group-fieldset'
+        id: ''
+        description: ''
+        required_fields: true
+        formatter: collapsed
+    group_keywords:
+      children:
+        - taxonomy_vocabulary_3
+        - opencalais_person_tags
+      label: 'Taxonomy Keywords'
+      region: content
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
+      format_settings:
+        classes: 'group-keywords field-group-fieldset'
+        id: ''
+        description: ''
+        required_fields: true
+        formatter: collapsed
+    group_nines:
+      children:
+        - field_nines_genre_s_
+        - field_nines_discipline_s_
+        - field_nines_type_s_
+      label: 'NINES Metadata'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        classes: 'group-nines field-group-fieldset'
+        id: ''
+        description: ''
+        required_fields: true
+        formatter: open
+    group_people:
+      children:
+        - field_main_author
+        - field_editor_in_chief
+        - field_edited_by
+        - field_annotator
+        - field_resource_technical_editor
+        - field_postgraduate_researcher
+      label: People
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        classes: 'group-people field-group-fieldset'
+        id: ''
+        description: 'Fields related to authors, editors, etc.'
+        required_fields: true
+        formatter: collapsed
+    group_structure:
+      children:
+        - field_edition_state
+      label: 'Site Structure'
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        classes: 'group-structure field-group-fieldset'
+        id: ''
+        description: 'The fields that define hierarchical relationships among pages in the site, i.e. from Sections ("Editions") > Resources > Individual pages. '
+        required_fields: true
+        formatter: collapsed
+id: node.editions_index_page.default
+targetEntityType: node
+bundle: editions_index_page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_annotator:
+    type: entity_reference_autocomplete
+    weight: 20
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_documents_in_this_edition:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_edited_by:
+    type: entity_reference_autocomplete
+    weight: 19
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_edition_state:
+    type: options_buttons
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_editor_in_chief:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_exhibits_in_this_edition:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_icon:
+    type: image_image
+    weight: 12
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_index_banner:
+    type: image_image
+    weight: 14
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_main_author:
+    type: entity_reference_autocomplete_tags
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_maps_in_this_edition:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_nines_discipline_s_:
+    type: options_buttons
+    weight: 43
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_genre_s_:
+    type: options_buttons
+    weight: 42
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_type_s_:
+    type: options_buttons
+    weight: 44
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_original_publication_date:
+    type: daterange_datelist
+    weight: 6
+    region: content
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+  field_postgraduate_researcher:
+    type: entity_reference_autocomplete_tags
+    weight: 23
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_published:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_resource_technical_editor:
+    type: entity_reference_autocomplete_tags
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_timelines_in_this_edition:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_person_tags:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  taxonomy_vocabulary_3:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  layout_builder__layout: true

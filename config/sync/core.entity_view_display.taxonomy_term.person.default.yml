@@ -1,0 +1,22 @@
+uuid: 4f54fbac-11c6-413a-9370-886e297967fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person
+  module:
+    - text
+id: taxonomy_term.person.default
+targetEntityType: taxonomy_term
+bundle: person
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true

@@ -1,0 +1,11 @@
+uuid: 665dd1a9-f029-45b3-b238-fc540c84fee8
+langcode: en
+status: true
+dependencies:
+  module:
+    - og
+id: og_membership.full
+label: Full
+description: ''
+targetEntityType: og_membership
+cache: true

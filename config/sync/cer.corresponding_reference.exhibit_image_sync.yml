@@ -1,0 +1,14 @@
+uuid: 24ffbaec-9eee-468a-a58e-2025aa2ae3f2
+langcode: en
+status: true
+dependencies: {  }
+id: exhibit_image_sync
+label: 'Exhibit-image sync'
+enabled: true
+first_field: field_images_in_exhibit
+second_field: field_featured_in_exhibit
+add_direction: append
+bundles:
+  node:
+    - galler_exhibit
+    - gallery_image

@@ -1,0 +1,8 @@
+uuid: 44edb7b0-a198-41a7-beba-131b1c46cb47
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_journal_page
+label: 'Journal Page comment'
+target_entity_type_id: node
+description: null

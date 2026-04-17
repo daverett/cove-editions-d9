@@ -1,0 +1,30 @@
+uuid: 29c843cb-c33a-4cf2-bd9d-70e0d2498eb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_author
+    - node.type.contributor
+    - node.type.editions_index_page
+id: node.editions_index_page.field_main_author
+field_name: field_main_author
+entity_type: node
+bundle: editions_index_page
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contributor: contributor
+    sort:
+      field: title
+      direction: DESC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

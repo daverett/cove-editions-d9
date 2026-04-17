@@ -1,0 +1,21 @@
+uuid: 7e7d9d0e-56de-4f58-bb2a-40252b8c6767
+langcode: en
+status: true
+dependencies: {  }
+id: sample_nls_maptiler_layer
+label: 'Sample NLS/Maptiler layer'
+description: 'Testing to see if I can get layers working from maptiler'
+settings:
+  plugin_type: tilelayer
+  urlTemplate: 'https://api.maptiler.com/tiles/uk-osgb1919/{z}/{x}/{y}.jpg?key=7Y0Q1ck46BnB8cXXXg8X'
+  attribution: NLS
+  minZoom: '0'
+  maxZoom: '18'
+  opacity: '1'
+  subdomains: ''
+  errorTileUrl: ''
+  zoomOffset: '0'
+  tms: 0
+  zoomReverse: 0
+  detectRetina: 0
+  layer_type: overlay

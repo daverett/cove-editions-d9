@@ -1,0 +1,9 @@
+uuid: 315ce5c7-ccc6-40f4-8183-93b46091f8cc
+langcode: en
+status: true
+dependencies: {  }
+name: City
+vid: city
+description: 'Tags sourced from OpenCalais about City.'
+weight: -4
+new_revision: false

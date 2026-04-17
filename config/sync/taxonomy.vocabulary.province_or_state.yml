@@ -1,0 +1,9 @@
+uuid: bf2a3994-b21a-4572-8549-40e696bbf9c1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Province Or State'
+vid: province_or_state
+description: 'Tags sourced from OpenCalais about Province Or State.'
+weight: 10
+new_revision: false

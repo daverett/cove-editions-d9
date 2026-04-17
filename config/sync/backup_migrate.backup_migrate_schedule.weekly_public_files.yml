@@ -1,0 +1,13 @@
+uuid: d354ba18-3a05-470a-8703-ffc62478cac6
+langcode: en
+status: true
+dependencies: {  }
+id: weekly_public_files
+label: 'Weekly public files'
+enabled: true
+keep: 2
+period: 604800
+cron: null
+source_id: public_files
+destination_id: private_files
+settings_profile_id: null

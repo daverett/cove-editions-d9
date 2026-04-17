@@ -1,0 +1,31 @@
+uuid: 01e30ecf-b110-4b54-924a-d1d22e11e8d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.duplicate_of_find_associated_events
+  module:
+    - views
+name: associated_images_browser
+label: 'Associated images browser'
+display: modal
+display_configuration:
+  width: '1200'
+  height: '800'
+  link_text: 'Add items'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  b2ba36df-63cf-4870-ac86-2d698cb5e74e:
+    id: view
+    uuid: b2ba36df-63cf-4870-ac86-2d698cb5e74e
+    label: view
+    weight: 2
+    settings:
+      submit_text: 'Add items'
+      auto_select: false
+      view: duplicate_of_find_associated_events
+      view_display: entity_browser_1

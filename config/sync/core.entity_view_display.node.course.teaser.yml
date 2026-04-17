@@ -1,0 +1,39 @@
+uuid: cdd30111-e763-4291-8987-9ef50bf5b71d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_course_description
+    - field.field.node.course.group_access
+    - field.field.node.course.group_group
+    - field.field.node.course.group_register
+    - field.field.node.course.og_group_ref
+    - node.type.course
+  module:
+    - og
+    - user
+id: node.course.teaser
+targetEntityType: node
+bundle: course
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  og_group:
+    type: og_group_subscribe
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_course_description: true
+  group_access: true
+  group_group: true
+  group_register: true
+  og_group_ref: true

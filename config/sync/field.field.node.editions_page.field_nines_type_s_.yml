@@ -1,0 +1,26 @@
+uuid: dd68f831-b9c7-46c1-ba36-b24170b0debd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nines_type_s_
+    - node.type.editions_page
+    - taxonomy.vocabulary.nines_type
+id: node.editions_page.field_nines_type_s_
+field_name: field_nines_type_s_
+entity_type: node
+bundle: editions_page
+label: 'NINES Type(s)'
+description: 'Applicable NINES types for RDF output. Multiple values may be selected.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nines_type: nines_type
+    sort:
+      field: _none
+field_type: entity_reference

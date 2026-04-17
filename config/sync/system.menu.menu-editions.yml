@@ -1,0 +1,8 @@
+uuid: 6819d299-92e5-4756-b56f-7d24e8b8547b
+langcode: en
+status: true
+dependencies: {  }
+id: menu-editions
+label: Editions
+description: 'Menu for Electronic Editions'
+locked: false

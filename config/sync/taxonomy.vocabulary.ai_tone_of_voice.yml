@@ -1,0 +1,9 @@
+uuid: 32d1db12-f0ba-4891-a1a9-f278a12f61e9
+langcode: en
+status: true
+dependencies: {  }
+name: 'AI Tone of Voice'
+vid: ai_tone_of_voice
+description: 'Tones of voice for AI content generation'
+weight: 0
+new_revision: false

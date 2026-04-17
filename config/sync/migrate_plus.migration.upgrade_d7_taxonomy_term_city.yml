@@ -1,0 +1,122 @@
+uuid: 94ff0bb3-80ef-4a3a-92bf-12b6a21238ce
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_taxonomy_term_city
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Taxonomy terms (City)'
+source:
+  plugin: d7_taxonomy_term
+  bundle: city
+process:
+  tid:
+    -
+      plugin: get
+      source: tid
+  vid:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_taxonomy_vocabulary
+      source: vid
+  name:
+    -
+      plugin: get
+      source: name
+  description/value:
+    -
+      plugin: get
+      source: description
+  description/format:
+    -
+      plugin: get
+      source: format
+  weight:
+    -
+      plugin: get
+      source: weight
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration:
+        - upgrade_d7_taxonomy_term_audio_categories
+        - upgrade_d7_taxonomy_term_city
+        - upgrade_d7_taxonomy_term_continent
+        - upgrade_d7_taxonomy_term_country
+        - upgrade_d7_taxonomy_term_natural_feature
+        - upgrade_d7_taxonomy_term_nines_discipline
+        - upgrade_d7_taxonomy_term_nines_genre
+        - upgrade_d7_taxonomy_term_nines_type
+        - upgrade_d7_taxonomy_term_organization
+        - upgrade_d7_taxonomy_term_person
+        - upgrade_d7_taxonomy_term_province_or_state
+        - upgrade_d7_taxonomy_term_region
+        - upgrade_d7_taxonomy_term_video_categories
+        - upgrade_d7_taxonomy_term_vocabulary_3
+        - upgrade_d7_taxonomy_term_tags
+        - upgrade_d7_taxonomy_term_annotation_categories
+        - upgrade_d7_taxonomy_term_creation_technique
+        - upgrade_d7_taxonomy_term_gallery_locations
+        - upgrade_d7_taxonomy_term_gallery_tags
+        - upgrade_d7_taxonomy_term_style
+        - upgrade_d7_taxonomy_term_support_medium
+        - upgrade_d7_taxonomy_term_special_roles
+        - upgrade_d7_taxonomy_term_event_source
+        - upgrade_d7_taxonomy_term_edition_state
+        - upgrade_d7_taxonomy_term_artist
+        - upgrade_d7_taxonomy_term_edition_components
+  parent:
+    -
+      plugin: default_value
+      default_value: 0
+      source: '@parent_id'
+  forum_container:
+    -
+      plugin: get
+      source: is_container
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  langcode:
+    -
+      plugin: get
+      source: language
+  containedbycounty:
+    -
+      plugin: get
+      source: containedbycounty
+  containedbystate:
+    -
+      plugin: get
+      source: containedbystate
+  latitude:
+    -
+      plugin: get
+      source: latitude
+  longitude:
+    -
+      plugin: get
+      source: longitude
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: city
+migration_dependencies:
+  required:
+    - upgrade_d7_taxonomy_vocabulary
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_taxonomy_vocabulary

@@ -1,0 +1,19 @@
+uuid: 915dcb33-5399-4a1c-b7b8-e7d3d77584b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.containedbycounty
+    - taxonomy.vocabulary.province_or_state
+id: taxonomy_term.province_or_state.containedbycounty
+field_name: containedbycounty
+entity_type: taxonomy_term
+bundle: province_or_state
+label: 'OpenCalais Metadata: ContainedByCounty'
+description: 'Tags sourced from OpenCalais about Province Or State.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: 55f687e9-2d37-4f61-8d25-adc4edb6c0e8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_example_advanced_setup
+_core:
+  default_config_hash: pHHsU6-7K5JpjUbxrY9l0ELSq-U1NuymStyQyZ3tiRg
+name: 'Migrate Example Wine Varieties'
+vid: migrate_example_wine_varieties
+description: 'Wine varieties'
+weight: 0
+new_revision: false

@@ -1,0 +1,8 @@
+uuid: 545dd499-da95-410d-9300-38ae8f6c6064
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_pedagogies_journa1
+label: 'Pedagogies Journal Page comment'
+target_entity_type_id: node
+description: null

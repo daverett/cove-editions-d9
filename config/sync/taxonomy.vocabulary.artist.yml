@@ -1,0 +1,9 @@
+uuid: 0fea6114-1635-4162-9aea-0f52875824f6
+langcode: en
+status: true
+dependencies: {  }
+name: Artist
+vid: artist
+description: "Artists' names for Gallery images"
+weight: 0
+new_revision: false

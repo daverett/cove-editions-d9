@@ -1,0 +1,90 @@
+uuid: a3223d3e-4787-47ab-b420-5b416fd0bcf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.colorbox
+    - field.field.node.contributor.comment_node_contributor
+    - field.field.node.contributor.field_associated_tags
+    - field.field.node.contributor.field_authored_at_rc1
+    - field.field.node.contributor.field_authored_at_rc2
+    - field.field.node.contributor.field_bio
+    - field.field.node.contributor.field_common_name
+    - field.field.node.contributor.field_firstname
+    - field.field.node.contributor.field_home_page
+    - field.field.node.contributor.field_lccn_permalink
+    - field.field.node.contributor.field_loc_authority_birth_year
+    - field.field.node.contributor.field_loc_authority_record_name
+    - field.field.node.contributor.field_profile_picture
+    - field.field.node.contributor.field_surname
+    - image.style.medium
+    - node.type.contributor
+  module:
+    - colorbox
+    - text
+    - user
+id: node.contributor.colorbox
+targetEntityType: node
+bundle: contributor
+mode: colorbox
+content:
+  field_associated_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_authored_at_rc1:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_authored_at_rc2:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_bio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_profile_picture:
+    type: colorbox
+    label: hidden
+    settings:
+      colorbox_node_style: ''
+      colorbox_node_style_first: ''
+      colorbox_image_style: medium
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  comment_node_contributor: true
+  field_common_name: true
+  field_firstname: true
+  field_home_page: true
+  field_lccn_permalink: true
+  field_loc_authority_birth_year: true
+  field_loc_authority_record_name: true
+  field_surname: true

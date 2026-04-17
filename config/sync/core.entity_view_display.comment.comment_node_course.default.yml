@@ -1,0 +1,28 @@
+uuid: e364c11f-9c46-4d1f-8379-cc1204b65302
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_course
+    - field.field.comment.comment_node_course.comment_body
+  module:
+    - text
+id: comment.comment_node_course.default
+targetEntityType: comment
+bundle: comment_node_course
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true

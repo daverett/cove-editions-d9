@@ -1,0 +1,26 @@
+uuid: c77613e2-ffd9-49f7-9a5c-eebecc5ad6cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.webform_submission.og_audience
+    - node.type.course
+    - webform.webform.cove_publishing_agreement
+  module:
+    - og
+id: webform_submission.cove_publishing_agreement.og_audience
+field_name: og_audience
+entity_type: webform_submission
+bundle: cove_publishing_agreement
+label: 'Groups audience'
+description: 'OG group audience reference field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'og:default'
+  handler_settings:
+    target_bundles:
+      course: course
+field_type: og_standard_reference

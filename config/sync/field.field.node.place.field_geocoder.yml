@@ -1,0 +1,21 @@
+uuid: e26c5071-86ee-4fe7-a1e1-9e8229cd9323
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geocoder
+    - node.type.place
+  module:
+    - geofield
+id: node.place.field_geocoder
+field_name: field_geocoder
+entity_type: node
+bundle: place
+label: Geocoder
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

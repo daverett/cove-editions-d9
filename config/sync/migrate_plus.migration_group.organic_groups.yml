@@ -1,0 +1,10 @@
+uuid: a8007bac-13ab-437e-ae04-dd7cfae9d8c8
+langcode: en
+status: true
+dependencies: {  }
+id: organic_groups
+label: 'Organic Groups'
+description: 'All og migrations'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

@@ -1,0 +1,124 @@
+uuid: 578ced72-edc5-4c4e-a48e-58dec86558d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.blog
+    - node.type.chronology
+    - node.type.chronology_entry
+    - node.type.course
+    - node.type.editions_index_page
+    - node.type.editions_page
+    - node.type.galler_exhibit
+    - node.type.gallery_image
+    - node.type.map
+    - node.type.place
+  module:
+    - comment
+    - contextual
+    - devel
+    - field_permissions
+    - file
+    - filter
+    - help
+    - node
+    - system
+    - toolbar
+id: editor
+label: editor
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access help pages'
+  - 'access toolbar'
+  - 'create blog content'
+  - 'create body'
+  - 'create chronology content'
+  - 'create chronology_entry content'
+  - 'create course content'
+  - 'create editions_index_page content'
+  - 'create editions_page content'
+  - 'create field_authored_by_primary_'
+  - 'create field_authored_by_secondary_'
+  - 'create field_doc_owner'
+  - 'create field_edited_by'
+  - 'create field_edition_state'
+  - 'create field_geocoder'
+  - 'create field_index_banner'
+  - 'create field_items_in_this_chronology'
+  - 'create field_main_author'
+  - 'create field_place_search'
+  - 'create field_places_in_this_map'
+  - 'create field_published'
+  - 'create field_resource_index'
+  - 'create field_resource_technical_editor'
+  - 'create field_vetted_'
+  - 'create galler_exhibit content'
+  - 'create gallery_image content'
+  - 'create map content'
+  - 'create place content'
+  - 'delete any blog content'
+  - 'delete any place content'
+  - 'delete own blog content'
+  - 'delete own chronology content'
+  - 'delete own chronology_entry content'
+  - 'delete own course content'
+  - 'delete own editions_index_page content'
+  - 'delete own editions_page content'
+  - 'delete own files'
+  - 'delete own galler_exhibit content'
+  - 'delete own gallery_image content'
+  - 'delete own map content'
+  - 'delete own place content'
+  - 'edit any blog content'
+  - 'edit any place content'
+  - 'edit body'
+  - 'edit field_geocoder'
+  - 'edit field_items_in_this_chronology'
+  - 'edit field_place_search'
+  - 'edit field_places_in_this_map'
+  - 'edit field_vetted_'
+  - 'edit own blog content'
+  - 'edit own body'
+  - 'edit own chronology content'
+  - 'edit own chronology_entry content'
+  - 'edit own comments'
+  - 'edit own course content'
+  - 'edit own editions_index_page content'
+  - 'edit own editions_page content'
+  - 'edit own field_authored_by_primary_'
+  - 'edit own field_authored_by_secondary_'
+  - 'edit own field_edited_by'
+  - 'edit own field_edition_state'
+  - 'edit own field_geocoder'
+  - 'edit own field_index_banner'
+  - 'edit own field_items_in_this_chronology'
+  - 'edit own field_main_author'
+  - 'edit own field_place_search'
+  - 'edit own field_places_in_this_map'
+  - 'edit own field_published'
+  - 'edit own field_resource_index'
+  - 'edit own field_resource_technical_editor'
+  - 'edit own field_vetted_'
+  - 'edit own galler_exhibit content'
+  - 'edit own gallery_image content'
+  - 'edit own map content'
+  - 'edit own place content'
+  - 'switch users'
+  - 'use text format full_html'
+  - 'view body'
+  - 'view field_geocoder'
+  - 'view field_parent_chronology'
+  - 'view field_place_search'
+  - 'view field_vetted_'
+  - 'view own body'
+  - 'view own field_geocoder'
+  - 'view own field_place_search'
+  - 'view own field_vetted_'
+  - 'view own unpublished content'
+  - 'view the administration theme'

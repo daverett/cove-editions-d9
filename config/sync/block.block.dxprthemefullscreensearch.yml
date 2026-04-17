@@ -1,0 +1,20 @@
+uuid: e7d8ffcb-8466-4eb0-b5cf-5acc42298c11
+langcode: en
+status: false
+dependencies:
+  module:
+    - dxpr_theme_helper
+  theme:
+    - dxpr_theme
+id: dxprthemefullscreensearch
+theme: dxpr_theme
+region: secondary_header
+weight: -9
+provider: null
+plugin: full_screen_search
+settings:
+  id: full_screen_search
+  label: 'DXPR Theme Full Screen Search'
+  label_display: '0'
+  provider: dxpr_theme_helper
+visibility: {  }

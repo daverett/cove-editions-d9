@@ -1,0 +1,137 @@
+uuid: 59610c24-e192-4303-b4c1-3d0080e970fe
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_place
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Place)'
+source:
+  plugin: d7_node_complete
+  node_type: place
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_place/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_associated_place_anchor_ta:
+    -
+      plugin: get
+      source: field_associated_place_anchor_ta
+  field_latitude_longitude:
+    -
+      plugin: geofield_d7d8
+      source: field_latitude_longitude
+  field_resource_index:
+    -
+      plugin: get
+      source: field_resource_index
+  field_parent_map:
+    -
+      plugin: get
+      source: field_parent_map
+  field_geocode:
+    -
+      plugin: geofield_d7d8
+      source: field_geocode
+  field_assoc_events:
+    -
+      plugin: get
+      source: field_assoc_events
+  field_geocoder:
+    -
+      plugin: geofield_d7d8
+      source: field_geocoder
+  field_place_search:
+    -
+      plugin: get
+      source: field_place_search
+  field_vetted_:
+    -
+      plugin: get
+      source: field_vetted_
+  group_content_access:
+    -
+      plugin: get
+      source: group_content_access
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: place
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

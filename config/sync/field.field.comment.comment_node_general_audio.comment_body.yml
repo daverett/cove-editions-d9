@@ -1,0 +1,21 @@
+uuid: 0c4be42e-62bc-4858-9c23-18a4625e1f31
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_general_audio
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.comment_node_general_audio.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: comment_node_general_audio
+label: Comment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

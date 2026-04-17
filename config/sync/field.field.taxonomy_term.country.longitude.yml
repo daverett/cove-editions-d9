@@ -1,0 +1,19 @@
+uuid: d4435ffb-d6f0-4531-aa9b-f6a5e84db7b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.longitude
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.longitude
+field_name: longitude
+entity_type: taxonomy_term
+bundle: country
+label: 'OpenCalais Metadata: Longitude'
+description: 'Tags sourced from OpenCalais about Country.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 81f6db8b-3c44-40a4-af72-cc2fa00d0756
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.chronology
+  module:
+    - linkchecker
+    - text
+third_party_settings:
+  linkchecker:
+    scan: true
+    extractor: html_link_extractor
+id: node.chronology.body
+field_name: body
+entity_type: node
+bundle: chronology
+label: Description
+description: 'Provide a short description of your chronology'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

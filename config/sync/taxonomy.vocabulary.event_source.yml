@@ -1,0 +1,9 @@
+uuid: f2a17448-151b-4796-8ee5-fe8af1f7b0bc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Source'
+vid: event_source
+description: 'The source, usually BRANCH for an external event'
+weight: 0
+new_revision: false

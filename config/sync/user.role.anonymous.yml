@@ -1,0 +1,80 @@
+uuid: f01972c3-30da-4be0-86e3-54bd1d4c54c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.editions_index_page
+  module:
+    - comment
+    - field_permissions
+    - search
+    - system
+    - view_unpublished
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access user profiles'
+  - 'create field_firstname'
+  - 'create field_special_roles'
+  - 'create field_surname'
+  - 'edit own field_firstname'
+  - 'edit own field_surname'
+  - 'search content'
+  - 'use advanced search'
+  - 'view any unpublished editions_index_page content'
+  - 'view body'
+  - 'view field_annotator'
+  - 'view field_authored_at_rc1'
+  - 'view field_authored_at_rc2'
+  - 'view field_authored_by_primary_'
+  - 'view field_authored_by_secondary_'
+  - 'view field_edited_by'
+  - 'view field_edition_state'
+  - 'view field_firstname'
+  - 'view field_geocoder'
+  - 'view field_index_banner'
+  - 'view field_items_in_this_chronology'
+  - 'view field_lccn_permalink'
+  - 'view field_loc_authority_birth_year'
+  - 'view field_loc_authority_record_name'
+  - 'view field_main_author'
+  - 'view field_parent_chronology'
+  - 'view field_place_search'
+  - 'view field_places_in_this_map'
+  - 'view field_published'
+  - 'view field_resource_index'
+  - 'view field_resource_technical_editor'
+  - 'view field_special_roles'
+  - 'view field_surname'
+  - 'view field_vetted_'
+  - 'view own field_annotator'
+  - 'view own field_authored_at_rc1'
+  - 'view own field_authored_at_rc2'
+  - 'view own field_authored_by_primary_'
+  - 'view own field_authored_by_secondary_'
+  - 'view own field_edited_by'
+  - 'view own field_edition_state'
+  - 'view own field_firstname'
+  - 'view own field_geocoder'
+  - 'view own field_index_banner'
+  - 'view own field_items_in_this_chronology'
+  - 'view own field_lccn_permalink'
+  - 'view own field_loc_authority_birth_year'
+  - 'view own field_loc_authority_record_name'
+  - 'view own field_main_author'
+  - 'view own field_place_search'
+  - 'view own field_places_in_this_map'
+  - 'view own field_published'
+  - 'view own field_resource_index'
+  - 'view own field_resource_technical_editor'
+  - 'view own field_special_roles'
+  - 'view own field_surname'
+  - 'view own field_vetted_'
+  - 'view own taxonomy_vocabulary_3'
+  - 'view taxonomy_vocabulary_3'

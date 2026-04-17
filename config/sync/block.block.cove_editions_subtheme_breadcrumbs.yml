@@ -1,0 +1,22 @@
+uuid: a641a20f-4f08-41ef-bd61-668289ad60d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cove_editions_subtheme
+_core:
+  default_config_hash: KpBqqBIyNPTNavLklXPC1-cUAeuwAbBOsrvGussFh1E
+id: cove_editions_subtheme_breadcrumbs
+theme: cove_editions_subtheme
+region: page_title
+weight: -8
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

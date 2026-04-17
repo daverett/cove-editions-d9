@@ -1,0 +1,17 @@
+uuid: 11d4a07e-4030-4b4a-a22c-670a4049f7a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Place
+type: place
+description: 'Holds descriptions and geographical data (latitude and longitude). Used primarily for plotting on maps.'
+help: 'Now that you''ve created a map, create a series of geo-located places to populate your map. To create many  items at once, use the "Save and add another" button below. '
+new_revision: true
+preview_mode: 1
+display_submitted: false

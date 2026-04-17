@@ -1,0 +1,11 @@
+uuid: d6488caf-b3f5-4bd9-8d6e-15be0a12b867
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4iy5jeoTP0Y4BqSaV1C6cz4GKLFea1tWzk3ez1_CMVU
+id: private_files
+label: 'Private Files Directory'
+type: Directory
+config:
+  directory: 'private://backup_migrate/'

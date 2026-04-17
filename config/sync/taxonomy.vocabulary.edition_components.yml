@@ -1,0 +1,9 @@
+uuid: 50df8284-b788-462f-afbd-c3bfa057b5df
+langcode: en
+status: true
+dependencies: {  }
+name: 'Edition components'
+vid: edition_components
+description: 'Each page within an edition can fall under a series of categories.'
+weight: 0
+new_revision: false

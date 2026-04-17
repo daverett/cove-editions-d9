@@ -1,0 +1,16 @@
+uuid: 58ccf176-e721-438b-9066-d9fc705b6270
+langcode: en
+status: true
+dependencies: {  }
+id: document_upload
+label: 'Document upload'
+media_types:
+  document: document
+  audio: 0
+  image: 0
+  remote_video: 0
+  video: 0
+form_mode: media_library
+upload_location: 'public://media-bulk-upload'
+show_alt: null
+show_title: null

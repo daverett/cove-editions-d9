@@ -1,0 +1,38 @@
+uuid: 6c8c7d9a-81e9-4c25-bf03-f255ee492ff6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exhibit_icon
+    - node.type.galler_exhibit
+  module:
+    - image
+id: node.galler_exhibit.field_exhibit_icon
+field_name: field_exhibit_icon
+entity_type: node
+bundle: galler_exhibit
+label: 'Exhibit Icon'
+description: 'Optionally, add an image from the Gallery here for presentation purposes. This will appear on the listing of all site exhibits (https://editions.covecollective.org/gallery/exhibits) but not on the exhibit itself. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '20 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

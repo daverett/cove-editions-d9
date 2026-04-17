@@ -1,0 +1,365 @@
+uuid: a3a0c619-9e81-400f-9452-27eb663efa06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.editions_page.body
+    - field.field.node.editions_page.field_authored_by_primary_
+    - field.field.node.editions_page.field_authored_by_secondary_
+    - field.field.node.editions_page.field_cove_studio_uri
+    - field.field.node.editions_page.field_doc_owner
+    - field.field.node.editions_page.field_document_order
+    - field.field.node.editions_page.field_document_upload
+    - field.field.node.editions_page.field_edition_component
+    - field.field.node.editions_page.field_nines_discipline_s_
+    - field.field.node.editions_page.field_nines_genre_s_
+    - field.field.node.editions_page.field_nines_type_s_
+    - field.field.node.editions_page.field_original_publication_date
+    - field.field.node.editions_page.field_published
+    - field.field.node.editions_page.field_resource_index
+    - field.field.node.editions_page.field_unique_target
+    - field.field.node.editions_page.field_xml_tei
+    - field.field.node.editions_page.opencalais_city_tags
+    - field.field.node.editions_page.opencalais_continent_tags
+    - field.field.node.editions_page.opencalais_country_tags
+    - field.field.node.editions_page.opencalais_naturalfeature_tags
+    - field.field.node.editions_page.opencalais_organization_tags
+    - field.field.node.editions_page.opencalais_person_tags
+    - field.field.node.editions_page.opencalais_provinceorstate_tags
+    - field.field.node.editions_page.opencalais_region_tags
+    - field.field.node.editions_page.taxonomy_vocabulary_3
+    - node.type.editions_page
+  module:
+    - datetime
+    - datetime_range
+    - field_group
+    - file
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_dates:
+      children:
+        - field_published
+        - field_original_publication_date
+      label: Dates
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        classes: 'group-dates field-group-fieldset'
+        id: ''
+        description: "Enter a date below marking the original publication date of the document. If the exact date is unknown or there are other date-related considerations not covered by this section, please contact us and we'll assist you. "
+        required_fields: true
+        formatter: collapsible
+    group_keywords:
+      children:
+        - taxonomy_vocabulary_3
+        - opencalais_person_tags
+      label: 'Taxonomy Keywords'
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        classes: 'group-keywords field-group-fieldset'
+        id: ''
+        description: 'Below, you can provide tags for this document using a general free tagging category, "Tags", as well as a "Person" category designed specifically to target people referenced in the document. '
+        required_fields: true
+        formatter: collapsible
+    group_nines:
+      children:
+        - field_nines_genre_s_
+        - field_nines_discipline_s_
+        - field_nines_type_s_
+      label: 'NINES Metadata'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: 'group-nines field-group-fieldset'
+        id: ''
+        description: 'There is one more important step in classifying the document: the "Genre", "Discipline" and "Type." These are drawn from a tag set developed by NINES. Select all appropriate options below, paying particular attention to "Genre."'
+        required_fields: true
+        formatter: collapsible
+    group_people:
+      children:
+        - field_authored_by_primary_
+        - field_authored_by_secondary_
+      label: People
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        classes: 'group-people field-group-fieldset'
+        id: ''
+        description: ''
+        required_fields: true
+        formatter: collapsed
+    group_structure:
+      children:
+        - field_resource_index
+      label: 'Add to an Edition'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: 'group-structure field-group-fieldset'
+        id: ''
+        description: 'Before you get started creating content, we need to know a few things about this document so that we can place it properly within the site hierarchy. You or someone else should already have created a "Resource" under which this page should fall. Select that below in the "Parent Resource" drop-down. '
+        required_fields: true
+        formatter: collapsible
+id: node.editions_page.default
+targetEntityType: node
+bundle: editions_page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_authored_by_primary_:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_authored_by_secondary_:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cove_studio_uri:
+    type: link_default
+    weight: 21
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_doc_owner:
+    type: options_select
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_document_order:
+    type: number
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_document_upload:
+    type: file_generic
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_edition_component:
+    type: options_buttons
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_discipline_s_:
+    type: options_buttons
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_genre_s_:
+    type: options_buttons
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nines_type_s_:
+    type: options_buttons
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_original_publication_date:
+    type: daterange_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_published:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_resource_index:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  opencalais_city_tags:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_continent_tags:
+    type: entity_reference_autocomplete
+    weight: 12
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_country_tags:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_naturalfeature_tags:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_organization_tags:
+    type: entity_reference_autocomplete
+    weight: 19
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_person_tags:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_provinceorstate_tags:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  opencalais_region_tags:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 23
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  taxonomy_vocabulary_3:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_unique_target: true
+  field_xml_tei: true

@@ -1,0 +1,23 @@
+uuid: 6c4c90b9-ce27-421d-a3d3-346fad363472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vetted_
+    - node.type.place
+id: node.place.field_vetted_
+field_name: field_vetted_
+entity_type: node
+bundle: place
+label: 'Vetted?'
+description: 'If marked as vetted, this place will be cleared to appear on the COVE master map and available to associate with timeline events.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Vetted
+  off_label: 'Not Vetted'
+field_type: boolean

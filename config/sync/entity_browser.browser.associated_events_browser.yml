@@ -1,0 +1,31 @@
+uuid: 5d1b0211-244b-43f5-8cf6-49d4fac476a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.find_associated_events
+  module:
+    - views
+name: associated_events_browser
+label: 'Associated events browser'
+display: modal
+display_configuration:
+  width: '1200'
+  height: '800'
+  link_text: 'Add items'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  6f6368a4-1cee-457e-82dd-00a1f42aa30f:
+    id: view
+    uuid: 6f6368a4-1cee-457e-82dd-00a1f42aa30f
+    label: view
+    weight: 1
+    settings:
+      submit_text: 'Add items'
+      auto_select: false
+      view: find_associated_events
+      view_display: entity_browser_1

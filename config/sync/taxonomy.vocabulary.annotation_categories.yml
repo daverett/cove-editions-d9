@@ -1,0 +1,9 @@
+uuid: 49f53e68-a634-4ff2-81d5-dc76044f822b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Annotation Categories'
+vid: annotation_categories
+description: 'Categories for annotations'
+weight: 1
+new_revision: false

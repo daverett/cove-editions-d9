@@ -1,0 +1,21 @@
+uuid: 7c48202e-fba4-4523-a181-d5773129b6d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_place
+label: 'Content - Place'
+type: 'canonical_entities:node'
+pattern: 'place/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      place: place
+selection_logic: and
+weight: 0
+relationships: {  }

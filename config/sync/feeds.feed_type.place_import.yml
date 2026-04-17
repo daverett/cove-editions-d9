@@ -1,0 +1,218 @@
+uuid: 2547c787-07d5-4515-8897-9d3cb3a25cc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.place.title
+    - field.field.node.place.body
+    - field.field.node.place.field_geocoder
+    - field.field.node.place.field_latitude_longitude
+    - field.field.node.place.field_parent_map
+    - field.field.node.place.group_content_access
+    - field.field.node.place.og_group_ref
+    - node.type.place
+  module:
+    - feeds_log
+    - feeds_tamper
+    - geofield
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers: {  }
+label: 'Place import'
+id: place_import
+description: 'Import for places from D7 site'
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: place
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: true
+  skip_validation_types:
+    - NotNull
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  nid:
+    value: Nid
+    label: Nid
+    machine_name: nid
+    type: csv
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  post_date:
+    value: 'Post date'
+    label: 'Post date'
+    machine_name: post_date
+    type: csv
+  author_uid:
+    value: 'Author uid'
+    label: 'Author uid'
+    machine_name: author_uid
+    type: csv
+  groups_audience:
+    value: 'Groups audience'
+    label: 'Groups audience'
+    machine_name: groups_audience
+    type: csv
+  group_content_visibility:
+    value: 'Group content visibility'
+    label: 'Group content visibility'
+    machine_name: group_content_visibility
+    type: csv
+  vetted:
+    value: 'Vetted?'
+    label: 'Vetted?'
+    machine_name: vetted
+    type: csv
+  body:
+    value: Body
+    label: Body
+    machine_name: body
+    type: csv
+  geocoder:
+    value: Geocoder
+    label: Geocoder
+    machine_name: geocoder
+    type: csv
+  latitude_longitude:
+    value: Latitude/Longitude
+    label: Latitude/Longitude
+    machine_name: latitude_longitude
+    type: csv
+  parent_map:
+    value: 'Parent Map'
+    label: 'Parent Map'
+    machine_name: parent_map
+    type: csv
+  parent_resource:
+    value: 'Parent Resource'
+    label: 'Parent Resource'
+    machine_name: parent_resource
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: created
+    map:
+      value: post_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: uid
+    map:
+      target_id: author_uid
+    settings:
+      language: ''
+      reference_by: uid
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: og_group_ref
+    map:
+      target_id: groups_audience
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: course
+      feeds_item: false
+  -
+    target: group_content_access
+    map:
+      value: group_content_visibility
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_geocoder
+    map:
+      lat: ''
+      lon: ''
+      value: geocoder
+    settings:
+      language: ''
+  -
+    target: field_latitude_longitude
+    map:
+      lat: ''
+      lon: ''
+      value: latitude_longitude
+    settings:
+      language: null
+  -
+    target: field_parent_map
+    map:
+      target_id: parent_map
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 1
+      autocreate_bundle: map
+  -
+    target: field_resource_index
+    map:
+      target_id: parent_resource
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      autocreate_bundle: editions_index_page
+      feeds_item: false

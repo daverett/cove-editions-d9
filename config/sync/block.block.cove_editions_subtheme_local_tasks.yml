@@ -1,0 +1,22 @@
+uuid: b6bf383a-5283-49f9-a82a-fc3f8b341d26
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cove_editions_subtheme
+_core:
+  default_config_hash: bqcUyJfypWnp1brZbJafXVGafynv0TAEfKEDh4893qM
+id: cove_editions_subtheme_local_tasks
+theme: cove_editions_subtheme
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

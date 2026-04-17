@@ -1,0 +1,28 @@
+uuid: fedc7800-47f3-46de-83a9-91169b58b968
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_associated_place_anchor_ta
+    - node.type.place
+id: node.place.field_associated_place_anchor_ta
+field_name: field_associated_place_anchor_ta
+entity_type: node
+bundle: place
+label: 'Associated Place Anchor Tag'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

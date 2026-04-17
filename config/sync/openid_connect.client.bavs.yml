@@ -1,0 +1,19 @@
+uuid: 7bdcbf8b-f2f3-4333-b877-0b597f5660d7
+langcode: en
+status: false
+dependencies: {  }
+id: bavs
+label: BAVS
+plugin: generic
+settings:
+  client_id: hrV2nEBCOjuIdxziyuM64t5yaquVkb
+  client_secret: RPP2MEAkedk2UFMIaqJuzMc5u3gcn2
+  iss_allowed_domains: ''
+  issuer_url: ''
+  authorization_endpoint: 'https://bavs.ac.uk/oauth/authorize'
+  token_endpoint: 'https://bavs.ac.uk/oauth/token'
+  userinfo_endpoint: 'https://bavs.ac.uk/oauth/userinfo'
+  end_session_endpoint: ''
+  scopes:
+    - openid
+    - email

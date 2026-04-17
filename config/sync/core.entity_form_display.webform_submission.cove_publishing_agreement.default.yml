@@ -1,0 +1,25 @@
+uuid: 02ccea20-48b2-4916-bc85-b23323122014
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.webform_submission.cove_publishing_agreement.og_audience
+    - webform.webform.cove_publishing_agreement
+  module:
+    - og
+id: webform_submission.cove_publishing_agreement.default
+targetEntityType: webform_submission
+bundle: cove_publishing_agreement
+mode: default
+content:
+  og_audience:
+    type: og_complex
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

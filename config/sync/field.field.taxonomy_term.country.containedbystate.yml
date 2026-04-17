@@ -1,0 +1,19 @@
+uuid: 0c179a82-4d38-4e59-96c5-f64f64c6c7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.containedbystate
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.containedbystate
+field_name: containedbystate
+entity_type: taxonomy_term
+bundle: country
+label: 'OpenCalais Metadata: ContainedByState'
+description: 'Tags sourced from OpenCalais about Country.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

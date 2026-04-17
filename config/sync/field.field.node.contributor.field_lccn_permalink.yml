@@ -1,0 +1,23 @@
+uuid: aef89a18-61d2-4d85-a301-ad675ed4e01b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lccn_permalink
+    - node.type.contributor
+  module:
+    - link
+id: node.contributor.field_lccn_permalink
+field_name: field_lccn_permalink
+entity_type: node
+bundle: contributor
+label: 'LCCN permalink'
+description: 'The permalink for this person/contributors listing in the Library of Congress Name authorities'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

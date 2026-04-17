@@ -1,0 +1,20 @@
+uuid: 09fb0cd8-27ba-42f3-a6d2-434e6c8335f8
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_nines_type_s_
+field_name: field_nines_type_s_
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

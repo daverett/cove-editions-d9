@@ -1,0 +1,57 @@
+uuid: 60f470e3-0a57-48c8-bc51-0e6624138511
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.place.body
+    - field.field.node.place.feeds_item
+    - field.field.node.place.field_assoc_events
+    - field.field.node.place.field_associated_place_anchor_ta
+    - field.field.node.place.field_geocode
+    - field.field.node.place.field_geocoder
+    - field.field.node.place.field_latitude_longitude
+    - field.field.node.place.field_parent_map
+    - field.field.node.place.field_place_search
+    - field.field.node.place.field_resource_index
+    - field.field.node.place.field_vetted_
+    - field.field.node.place.group_content_access
+    - field.field.node.place.og_audience
+    - field.field.node.place.og_group_ref
+    - node.type.place
+  module:
+    - text
+    - user
+id: node.place.teaser
+targetEntityType: node
+bundle: place
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  feeds_item: true
+  field_assoc_events: true
+  field_associated_place_anchor_ta: true
+  field_geocode: true
+  field_geocoder: true
+  field_latitude_longitude: true
+  field_parent_map: true
+  field_place_search: true
+  field_resource_index: true
+  field_vetted_: true
+  group_content_access: true
+  og_audience: true
+  og_group_ref: true

@@ -1,0 +1,30 @@
+uuid: 7d2b720e-576e-449d-a486-b85cf481063b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_index
+    - node.type.chronology
+    - node.type.editions_index_page
+id: node.chronology.field_resource_index
+field_name: field_resource_index
+entity_type: node
+bundle: chronology
+label: 'Parent Resource'
+description: 'If this chronology is part of a "resource," e.g. an edition, select a value here; otherwise, leave it blank. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      editions_index_page: editions_index_page
+    sort:
+      field: title
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

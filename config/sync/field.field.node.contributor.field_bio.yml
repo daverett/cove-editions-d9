@@ -1,0 +1,21 @@
+uuid: 84bf0568-4499-4fb2-b98f-d2a664f3a98e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bio
+    - node.type.contributor
+  module:
+    - text
+id: node.contributor.field_bio
+field_name: field_bio
+entity_type: node
+bundle: contributor
+label: Biography
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

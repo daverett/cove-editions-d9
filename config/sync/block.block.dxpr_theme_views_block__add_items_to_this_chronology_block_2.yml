@@ -1,0 +1,33 @@
+uuid: 05928af4-b240-4b9c-bca0-90ca6a2300dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.add_items_to_this_chronology
+  module:
+    - node
+    - views
+  theme:
+    - dxpr_theme
+id: dxpr_theme_views_block__add_items_to_this_chronology_block_2
+theme: dxpr_theme
+region: page_title
+weight: 0
+provider: null
+plugin: 'views_block:add_items_to_this_chronology-block_2'
+settings:
+  id: 'views_block:add_items_to_this_chronology-block_2'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      map: map

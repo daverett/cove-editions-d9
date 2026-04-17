@@ -1,0 +1,9 @@
+uuid: a6abb479-8e14-4a5f-8a9a-75b5ab2e0434
+langcode: en
+status: true
+dependencies: {  }
+name: 'Video categories'
+vid: video_categories
+description: 'Broad genre categories for the video content type'
+weight: 0
+new_revision: false

@@ -1,0 +1,25 @@
+uuid: 38d9626c-1680-4af3-836e-0148257544f0
+langcode: und
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - file
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: file.field_file_image_title_text
+field_name: field_file_image_title_text
+entity_type: file
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

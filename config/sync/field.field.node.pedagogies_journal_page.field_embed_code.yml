@@ -1,0 +1,21 @@
+uuid: 4c45c9e3-7386-4eba-801b-f601160f45e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_embed_code
+    - node.type.pedagogies_journal_page
+  module:
+    - text
+id: node.pedagogies_journal_page.field_embed_code
+field_name: field_embed_code
+entity_type: node
+bundle: pedagogies_journal_page
+label: 'Embed Code'
+description: "If the Praxis volume is an interview or contains other audio, add the embed code from archive.org here. In relatively rare cases such as this, you'll also need to double-post the audio file and body contents as a General Audio node so that the material is available in both sections. "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

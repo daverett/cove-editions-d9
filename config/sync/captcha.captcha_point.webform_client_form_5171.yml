@@ -1,0 +1,7 @@
+uuid: b62a0fc6-bafc-405e-aa43-e92ed6585632
+langcode: en
+status: true
+dependencies: {  }
+formId: webform_client_form_5171
+captchaType: recaptcha/reCAPTCHA
+label: webform_client_form_5171

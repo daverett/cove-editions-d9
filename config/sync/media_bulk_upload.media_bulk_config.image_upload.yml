@@ -1,0 +1,16 @@
+uuid: 87c9aa7a-42f3-486f-813b-a01ff5424413
+langcode: en
+status: true
+dependencies: {  }
+id: image_upload
+label: 'Image upload'
+media_types:
+  image: image
+  audio: 0
+  document: 0
+  remote_video: 0
+  video: 0
+form_mode: media_library
+upload_location: /sites/default/files
+show_alt: null
+show_title: null

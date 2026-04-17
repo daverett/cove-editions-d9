@@ -1,0 +1,8 @@
+uuid: f5935268-691c-4be4-af3e-4c0d86f9efa7
+langcode: en
+status: true
+dependencies: {  }
+id: menu-strange-event-in-the-life-o
+label: 'Strange Event in the Life of Schalken the Painter'
+description: ''
+locked: false

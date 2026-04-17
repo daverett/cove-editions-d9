@@ -1,0 +1,19 @@
+uuid: 643ab792-68e8-4579-b1d6-88e6672da40e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_width_in_centimeters_
+    - node.type.gallery_image
+id: node.gallery_image.field_width_in_centimeters_
+field_name: field_width_in_centimeters_
+entity_type: node
+bundle: gallery_image
+label: 'Width (in centimeters)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
