@@ -97,3 +97,5 @@
 #/.env
 web/sites/default/settings.php
 *.sql.gz
+dump
+dump/*
