@@ -1,0 +1,20 @@
+name: cove
+recipe: pantheon
+config:
+  webroot: web
+  framework: drupal
+  site: cove
+  id: 43b2eefc-3d81-4b80-82ae-a9ab709592d7
+
+tooling:
+  drush:
+    service: appserver
+    env:
+      DRUSH_OPTIONS_URI: 'http://cove.lndo.site'
+
+
+services:
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver

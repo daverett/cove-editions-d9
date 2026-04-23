@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56483811801da050732c593504246731",
+    "content-hash": "afa22926ea81f3dd6f417c52ef3b1878",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9057,65 +9057,6 @@
             "time": "2021-12-15T12:32:42+00:00"
         },
         {
-            "name": "pantheon-systems/drupal-integrations",
-            "version": "9.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pantheon-systems/drupal-integrations.git",
-                "reference": "f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/drupal-integrations/zipball/f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f",
-                "reference": "f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f",
-                "shasum": ""
-            },
-            "conflict": {
-                "drupal/core": "<9"
-            },
-            "type": "project",
-            "extra": {
-                "drupal-scaffold": {
-                    "file-mapping": {
-                        "[project-root]/.drush-lock-update": "assets/drush-lock-update",
-                        "[web-root]/sites/default/settings.php": {
-                            "mode": "replace",
-                            "path": "assets/initial.settings.php",
-                            "overwrite": false
-                        },
-                        "[web-root]/sites/default/settings.pantheon.php": "assets/settings.pantheon.php",
-                        "[web-root]/sites/default/default.services.pantheon.preproduction.yml": "assets/default.services.pantheon.preproduction.yml"
-                    }
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Add this project to any Drupal distribution based on drupal/core-composer-scaffold to enable it for use on Pantheon.",
-            "support": {
-                "issues": "https://github.com/pantheon-systems/drupal-integrations/issues",
-                "source": "https://github.com/pantheon-systems/drupal-integrations/tree/9.0.5"
-            },
-            "time": "2023-05-17T17:44:50+00:00"
-        },
-        {
-            "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "upstream-configuration",
-                "reference": "8f0ed84bdee567675c8e41c5ce8c993f71899fa5"
-            },
-            "type": "project",
-            "extra": {
-                "_README": "To make a custom upstream, clone this repository and add any dependencies to be provided by this upstream to this composer.json file. Leave the root-level composer.json file for the exclusive use of each individual site; do not modify it after your custom upstream has been published. See https://pantheon.io/docs/create-custom-upstream for more information."
-            },
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "pear/archive_tar",
             "version": "1.5.0",
             "source": {
@@ -9896,6 +9837,49 @@
                 "source": "https://github.com/phpowermove/docblock/tree/v4.0"
             },
             "time": "2021-09-22T16:57:06+00:00"
+        },
+        {
+            "name": "platformsh/config-reader",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/platformsh/config-reader-php.git",
+                "reference": "cab2b6c0cdfc318df09a64136957dc1fc308f418"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/platformsh/config-reader-php/zipball/cab2b6c0cdfc318df09a64136957dc1fc308f418",
+                "reference": "cab2b6c0cdfc318df09a64136957dc1fc308f418",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Platformsh\\ConfigReader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Larry Garfield",
+                    "email": "larry@platform.sh"
+                }
+            ],
+            "description": "Small helper to access Platform.sh environment variables",
+            "support": {
+                "issues": "https://github.com/platformsh/config-reader-php/issues",
+                "source": "https://github.com/platformsh/config-reader-php/tree/3.0.1"
+            },
+            "time": "2025-02-25T17:22:15+00:00"
         },
         {
             "name": "politsin/jquery-ui-touch-punch",
@@ -12986,7 +12970,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tobia/Pause",
+                "url": "https://github.com/alt36/jquery.pause",
                 "reference": "master"
             },
             "type": "drupal-library"
@@ -18769,8 +18753,7 @@
         "drupal/page_manager": 5,
         "drupal/rdf": 10,
         "drupal/realname": 10,
-        "drupal/views_field_view": 10,
-        "pantheon-upstreams/upstream-configuration": 20
+        "drupal/views_field_view": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
