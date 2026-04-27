@@ -95,7 +95,6 @@
 
 # Ignore .env files as they are personal
 #/.env
-web/sites/default/settings.php
 *.sql.gz
 dump
 dump/*

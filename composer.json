@@ -124,7 +124,8 @@
         "oomphinc/composer-installers-extender": "*",
         "drupal/og": "2.x-dev@dev",
         "dropzone/dropzone": "^6.0@beta",
-        "platformsh/config-reader": "^3.0"
+        "platformsh/config-reader": "^3.0",
+        "drupal/config_ignore": "^3.4"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
