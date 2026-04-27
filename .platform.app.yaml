@@ -139,10 +139,7 @@ web:
 # access:
 
 # Variables to control the environment. More information: https://docs.platform.sh/create-apps/app-reference.html#variables
-# Make Composer-installed binaries (drush, etc.) available in PATH for hooks and SSH sessions.
-variables:
-    env:
-        PATH: "/app/vendor/bin:$PATH"
+#variables:
 
 # Outbound firewall rules for the application. More information: https://docs.platform.sh/create-apps/app-reference.html#firewall
 # firewall:
@@ -171,6 +168,8 @@ hooks:
     # fast.
     deploy: |
         set -e
+        # Make Composer-installed binaries (drush, etc.) findable.
+        export PATH="/app/vendor/bin:$PATH"
         php ./drush/platformsh_generate_drush_yml.php
         # if drupal is installed, will call the following drush commands:
         #   - `cache-rebuild`
