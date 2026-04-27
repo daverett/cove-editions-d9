@@ -180,6 +180,12 @@
         "patches": {
             "drupal/ckeditor_media_resize": {
             "Plugin not found error in CKEditor5 45.x prevents loading of CKEditor5 altogether when enabled": "patches/3531299-MR16-22.patch"
+        },
+        "drupal/views_slideshow": {
+            "Fix missing tobia/jquery.pause source": "patches/views-slideshow-3574500.patch"
+        },
+        "drupal/dxpr_builder": {
+            "COVE-4: Quote data-uuid selector value in entity_browser.media_selection.js to fix DOMException when uuid starts with a digit (spinning wheel on Add Items)": "patches/COVE-4-dxpr-builder-selector-quoting.patch"
         }
     },
         "enable-patching": true
