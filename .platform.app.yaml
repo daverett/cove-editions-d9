@@ -139,7 +139,10 @@ web:
 # access:
 
 # Variables to control the environment. More information: https://docs.platform.sh/create-apps/app-reference.html#variables
-#variables:
+# Make Composer-installed binaries (drush, etc.) available in PATH for hooks and SSH sessions.
+variables:
+    env:
+        PATH: "/app/vendor/bin:$PATH"
 
 # Outbound firewall rules for the application. More information: https://docs.platform.sh/create-apps/app-reference.html#firewall
 # firewall:
@@ -175,7 +178,6 @@ hooks:
         #   - and if config files are present, `config-import`
         cd web
         bash $PLATFORM_APP_DIR/drush/platformsh_deploy_drupal.sh
-        drush locale:import fr modules/custom/mcgill_base/translations/fr.po --override=none
 
     # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
     # More information: https://docs.platform.sh/create-apps/hooks/hooks-comparison.html#deploy-hook
