@@ -1,0 +1,49 @@
+/*Mod margins in main header */
+
+.navbar .col-sm-12.container-col {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+/* Put the two small blocks in secondary header on same line */
+
+.region-secondary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.region-secondary-header > section {
+  margin: 0;
+}
+
+.region-secondary-header #block-cove-editions-subtheme-institutionalsubscribers-2{
+  margin-left: auto;
+  text-align: right;
+}
+
+/* To fix conflict with annotation viewer */
+body .dxpr-theme-header {
+    z-index: 2 !important;
+}
+
+/* Adjusting color code of all submit buttons on site */
+input[type="submit"] {
+    color: white !important;
+}
+
+input[type="submit"]:focus {
+    color: white !important;
+}
+
+/* Adjust contact form in footer--and other places */
+.region-footer form#webform-submission-contact-add-form input, .region-footer form#webform-submission-contact-add-form textarea {
+    box-shadow: none;
+    outline: none;
+    border-color: white;
+    color: white;
+}
+
+/* Override shrinking of font size footer */
+.region-footer ul li a, .region-footer ul li .parent_link, .region-footer ul li .nav-link {
+    font-size: initial;
+}
