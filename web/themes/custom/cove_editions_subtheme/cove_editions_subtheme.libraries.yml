@@ -133,3 +133,15 @@ drupal-search:
   css:
     theme:
       css/vendor-extensions/drupal-search.css: { minified: true }
+
+annotation-viewer:
+  version: 1.x
+  js:
+    js/annotation-viewer/init.js: {}
+    js/annotation-viewer/panel.js: {}
+  css:
+    theme:
+      css/annotation-viewer/annotation-viewer.css: {}
+      css/annotation-viewer/linenumbers.css: {}
+  dependencies:
+    - core/jquery

@@ -33,6 +33,12 @@ function cove_editions_subtheme_page_attachments_alter(array &$attachments) {
     $index = array_search('cove_editions_subtheme/react_app', $attachments['#attached']['library']);
     $attachments['#attached']['library'][$index] = 'cove_editions_subtheme/react_app_dev';
   }
+
+  // Attach the annotation viewer library on editions_page node pages.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() === 'editions_page') {
+    $attachments['#attached']['library'][] = 'cove_editions_subtheme/annotation-viewer';
+  }
 }
 
 /**
