@@ -58,8 +58,7 @@ Assumes this is in the DOM:
 		}
 	};
 
-	AnnotationPanel.prototype.openTab = function(tabName){
-		this.panelOpen(true);
+	AnnotationPanel.prototype.switchTab = function(tabName){
 		// Hide tab content
 		jQuery(".ap_tabContent").hide();
 
@@ -75,6 +74,11 @@ Assumes this is in the DOM:
 		// Reveal proper tab content
 		var selector = 'div[tabName="'+tabName+'"]';
 		jQuery(selector).show();
+	}
+
+	AnnotationPanel.prototype.openTab = function(tabName){
+		this.panelOpen(true);
+		this.switchTab(tabName);
 	}
 
 	AnnotationPanel.prototype.togglePanel = function(){
@@ -200,9 +204,8 @@ Assumes this is in the DOM:
 		jQuery(divID).html(sortedTags);
 	}
 
-	// Load a particular annotation into the annotation panel
+	// No auto-open.
 	AnnotationPanel.prototype.loadAnnotation = function(spanID){
-		this.panelOpen(true);
 		var thisAnnotation = annotationsWithMetadata(jQuery("span[spanID='"+spanID+"']").first())[0];
 
 		// Load annotation info into infobar
@@ -257,5 +260,5 @@ Assumes this is in the DOM:
 		jQuery("#ap_annotation_annotation").append(thisAnnotation.annotation.text);
 		jQuery("#ap_annotation_annotation").scrollTop(0);
 
-		this.openTab('Annotations');
+		this.switchTab('Annotations');
 	}

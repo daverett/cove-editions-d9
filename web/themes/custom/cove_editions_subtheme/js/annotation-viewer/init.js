@@ -313,13 +313,17 @@ jQuery('[title]').mouseover(function () {
 		jQuery(currentPopoverDiv).css({top: topPos, left: leftPos, position:'absolute'}).fadeIn("fast");
 		jQuery(currentPopoverDiv).focus();
 
-		// Add click linked
+		// Click in popover also opens the sidebar.
 		jQuery("table").each(function(index) {
 			jQuery(this).on( "click", function(){
 				removeExistingPopover();
 				annotationPanel.loadAnnotation(jQuery(this)[0].getAttribute("spanID"));
+				annotationPanel.panelOpen(true);
 			});
 		});
+
+		// Sync sidebar with the first matched annotation.
+		annotationPanel.loadAnnotation(collectedAnnotations[0].getAttribute("spanID"));
 
 	}
 
