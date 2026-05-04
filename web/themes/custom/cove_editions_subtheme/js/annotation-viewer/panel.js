@@ -46,9 +46,9 @@ Assumes this is in the DOM:
 			});
 			jQuery("#ap_detail_panel_content").prepend(tabSet);
 
-			// Position the tabs
+			// Position the tabs.
 			var counter=0;
-			var indent=3;
+			var indent=8;
 			jQuery(".ap_tab").each(function(){
 				leftMargin=indent+"rem";
 				jQuery(this).css("left",leftMargin);
@@ -206,6 +206,8 @@ Assumes this is in the DOM:
 
 	// No auto-open.
 	AnnotationPanel.prototype.loadAnnotation = function(spanID){
+		jQuery("#ap_annotation_placeholder").hide();
+		jQuery("#ap_annotation_sourceinfo, #ap_annotation_sourcetext, #ap_annotation_annotation").show();
 		var thisAnnotation = annotationsWithMetadata(jQuery("span[spanID='"+spanID+"']").first())[0];
 
 		// Load annotation info into infobar

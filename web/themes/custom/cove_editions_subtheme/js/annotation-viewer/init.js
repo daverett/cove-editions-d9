@@ -46,22 +46,20 @@ jQuery('[title]').mouseover(function () {
 		panelDivs +='<div class="ap_tab_pinned">';
 		panelDivs +='<div id="ap_button_panelToggle" class="fa fa_button fa-arrow-circle-left"></div>';
 		panelDivs +='</div>';
-		panelDivs +='<div id="button_densityView" class="ap_DensityButton fa fa_button fa-adjust" aria-hidden="true" onclick="toggleDensity()" tabName="Density"></div>';
+		panelDivs +='<div id="button_densityView" class="ap_DensityButton" onclick="toggleDensity()" title="Toggle annotation colors"><span class="fa fa-toggle-on ap_DensityButton_toggle" aria-hidden="true"></span><span class="ap_DensityButton_label">Colors: ON</span></div>';
 		panelDivs +='<div class="ap_tabContent" id="ap_tab_annotation" tabName="Annotations">';
-		panelDivs +='<div id="ap_annotation_sourceinfo"></div>';
-		panelDivs +='<div id="ap_annotation_sourcetext"><center>Annotation Details</center></div>';
-		panelDivs +='<div id="ap_annotation_annotation"><span class="fa fa-info-circle" aria-hidden="true"></span> Select an annotation from the text above, or click the "filters" tab to filter the document.</div>';
+		panelDivs +='<div id="ap_annotation_placeholder" class="ap_intro"><span class="fa fa-info-circle" aria-hidden="true"></span> Click any highlighted text in the page to load the annotation here, or open the Filters tab to narrow down what is shown.</div>';
+		panelDivs +='<div id="ap_annotation_sourceinfo" style="display:none"></div>';
+		panelDivs +='<div id="ap_annotation_sourcetext" style="display:none"></div>';
+		panelDivs +='<div id="ap_annotation_annotation" style="display:none"></div>';
 		panelDivs +='</div>';
 		panelDivs +='<div class="ap_tabContent" id="ap_tab_filter" tabName="Filters">';
+		panelDivs +='<div class="ap_intro"><span class="fa fa-info-circle" aria-hidden="true"></span> Pick categories or people below to highlight only the matching annotations in the page.</div>';
 		panelDivs +='<div class="ap_filterSet activeSet">';
-		panelDivs +='<div id="button_filterApplied" class="fa fa-toggle-off" aria-hidden="true" onclick="toggleFilter()"></div>';
+		panelDivs +='<div id="button_filterApplied" class="fa fa-toggle-off" aria-hidden="true" onclick="toggleFilter()" title="Active filter toggle"></div>';
 		panelDivs +='<div id="button_filterAppliedStatus" class="off"></div>';
 		panelDivs +='<hr>';
 		panelDivs +='<div id="ap_filter_active"></div>';
-		panelDivs +='</div>';
-		panelDivs +='<div class="ap_filterSet tagSet">';
-		panelDivs +='Tags:';
-		panelDivs +='<div id="ap_filter_tags"></div>';
 		panelDivs +='</div>';
 		panelDivs +='<div class="ap_filterSet categorySet">';
 		panelDivs +='Categories:';
@@ -142,7 +140,6 @@ jQuery('[title]').mouseover(function () {
 		});
 
 
-		jQuery("#ap_filter_active").append("Click on tags, categories or people to build a filter.");
 		jQuery("#annotation_detail_panel").fadeIn("fast");
 	}
 
@@ -349,14 +346,16 @@ jQuery('[title]').mouseover(function () {
 	function setDensityMode(modeShouldBeOn){
 		densityView=modeShouldBeOn;
 		if(modeShouldBeOn){
-			jQuery("#button_densityView").removeClass("fa-adjust on");
-			jQuery("#button_densityView").addClass("fa-adjust off");
+			jQuery("#button_densityView").removeClass("on").addClass("off");
+			jQuery("#button_densityView .ap_DensityButton_toggle").removeClass("fa-toggle-on").addClass("fa-toggle-off");
+			jQuery("#button_densityView .ap_DensityButton_label").text("Colors: OFF");
 			jQuery("span[spanid]").each(function(index) {
 				jQuery(this).css("background-color", "rgba(64,64,64,.3)");
 			});
 		}else{
-			jQuery("#button_densityView").removeClass("fa-adjust off");
-			jQuery("#button_densityView").addClass("fa-adjust on");
+			jQuery("#button_densityView").removeClass("off").addClass("on");
+			jQuery("#button_densityView .ap_DensityButton_toggle").removeClass("fa-toggle-off").addClass("fa-toggle-on");
+			jQuery("#button_densityView .ap_DensityButton_label").text("Colors: ON");
 			resetAnnotationColor();
 		}
 	}
@@ -372,13 +371,16 @@ jQuery('[title]').mouseover(function () {
 		jQuery("span[spanID]").removeAttr("style");
 		jQuery("span[spanID]").off();
 
-		// Turn on selected if there is anything to apply
-		if(filterApplied && (jQuery("#ap_filter_active").find("div").length > 0) ){
-			jQuery("#button_filterApplied").removeClass("fa-toggle-off");
-			jQuery("#button_filterApplied").addClass("fa-toggle-on");
-			jQuery("#button_filterAppliedStatus").addClass("on");
-			jQuery("#button_filterAppliedStatus").removeClass("off");
+		// Visual reflects filterApplied alone (toggle can be on with no filter picked).
+		if(filterApplied){
+			jQuery("#button_filterApplied").removeClass("fa-toggle-off").addClass("fa-toggle-on");
+			jQuery("#button_filterAppliedStatus").addClass("on").removeClass("off");
+		}else{
+			jQuery("#button_filterApplied").removeClass("fa-toggle-on").addClass("fa-toggle-off");
+			jQuery("#button_filterAppliedStatus").removeClass("on").addClass("off");
+		}
 
+		if(filterApplied && (jQuery("#ap_filter_active").find("div").length > 0) ){
 			// Build an array of uuids that match the filter criteria
 			var matchingAnnotationIDs = [];
 			jQuery("#ap_filter_active").find("div").each(function(){
@@ -440,12 +442,7 @@ jQuery('[title]').mouseover(function () {
 				}
 			});
 
-		// Turn off
 		}else{
-			jQuery("#button_filterApplied").removeClass("fa-toggle-on");
-			jQuery("#button_filterApplied").addClass("fa-toggle-off");
-			jQuery("#button_filterAppliedStatus").removeClass("on");
-			jQuery("#button_filterAppliedStatus").addClass("off");
 			resetFilters();
 		}
 	}
