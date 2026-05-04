@@ -178,6 +178,9 @@ Assumes this is in the DOM:
 			jQuery(selector).appendTo("#ap_filter_active");
 		}
 
+		// Sync the filter toggle with the active filter list.
+		filterApplied = jQuery("#ap_filter_active").find("div").length > 0;
+
 		applyFilters();
 		this.sortFilterItems();
 
