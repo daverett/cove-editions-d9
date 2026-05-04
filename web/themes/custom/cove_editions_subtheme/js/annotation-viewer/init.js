@@ -21,7 +21,7 @@ jQuery('[title]').mouseover(function () {
 
 	// Sanity check: if there are annotations on this page
 	if (typeof annotations !== 'undefined') {
-		console.log('AnnotationSupport: Found annotations! Injecting support.');
+		// console.log('AnnotationSupport: Found annotations! Injecting support.');
 
 
 		currentSelectedSpan=null;

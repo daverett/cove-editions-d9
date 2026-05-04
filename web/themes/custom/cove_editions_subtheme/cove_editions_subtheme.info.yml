@@ -24,7 +24,8 @@ regions:
 
 libraries:
   - 'cove_editions_subtheme/global-styling'
-  - 'cove_editions_subtheme/react_app'
+  # react_app POC disabled (noisy console on every page, mount points not yet wired).
+  # - 'cove_editions_subtheme/react_app'
 
 libraries-override:
   dxpr_theme/bootstrap-3: false
