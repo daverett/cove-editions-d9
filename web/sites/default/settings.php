@@ -904,6 +904,13 @@ $databases['default']['default'] = [
  */
 if (getenv('LANDO') == 'ON') {
   $config['system.logging']['error_level'] = 'verbose';
+
+  // Configurations for stage file proxy.
+  $config['stage_file_proxy.settings']['origin'] = 'https://editions.covecollective.org';
+  // Do not verify SSL.
+  $config['stage_file_proxy.settings']['verify'] = FALSE;
+  // Do not copy file to local, this 301 to the origin instead.
+  $config['stage_file_proxy.settings']['hotlink'] = TRUE;
 }
 
 /**
