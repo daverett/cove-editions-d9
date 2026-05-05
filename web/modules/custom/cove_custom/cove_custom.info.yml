@@ -1,0 +1,5 @@
+name: 'COVE Custom'
+type: module
+description: 'Site-wide custom hooks and small tweaks for COVE that don''t belong to a domain-specific module.'
+package: COVE
+core_version_requirement: ^10 || ^11
