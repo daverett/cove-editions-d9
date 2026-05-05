@@ -1,6 +1,7 @@
 // js/src/index.jsx
-console.log("React bundle loaded, looking for .cove-react-mount elements");
-console.log(">>> BUNDLE VERSION XYZ <<<"); // add this at the top
+// Console output silenced: WIP POC, mount points don't exist in any template yet.
+// console.log("React bundle loaded, looking for .cove-react-mount elements");
+// console.log(">>> BUNDLE VERSION XYZ <<<"); // add this at the top
 
 
 import React from "react";
@@ -12,14 +13,14 @@ function bootCoveDocuments() {
   const mounts = document.querySelectorAll(".cove-react-mount[data-cove-tei-url]");
 
   if (!mounts.length) {
-    console.warn("No .cove-react-mount elements found on this page.");
+    // console.warn("No .cove-react-mount elements found on this page.");
     return;
   }
 
   mounts.forEach((el) => {
     const teiUrl = el.dataset.coveTeiUrl;
     if (!teiUrl) {
-      console.warn("Missing data-cove-tei-url on element", el);
+      // console.warn("Missing data-cove-tei-url on element", el);
       return;
     }
 
