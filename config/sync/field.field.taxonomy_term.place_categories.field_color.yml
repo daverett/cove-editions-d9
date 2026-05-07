@@ -1,0 +1,22 @@
+uuid: 96d31bdb-1be3-449f-be16-23613b49a69d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.place_categories
+  module:
+    - color_field
+id: taxonomy_term.place_categories.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: place_categories
+label: Color
+description: 'Color used for map markers tagged with this category.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

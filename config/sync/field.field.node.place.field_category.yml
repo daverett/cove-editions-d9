@@ -1,0 +1,29 @@
+uuid: 7cf30ac5-176b-4701-a2e8-62654ddfeaa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.place
+    - taxonomy.vocabulary.place_categories
+id: node.place.field_category
+field_name: field_category
+entity_type: node
+bundle: place
+label: Category
+description: 'Pick a category to color code this place on the map.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      place_categories: place_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -34,6 +34,7 @@ module:
   contact: 0
   contextual: 0
   cove_anno_viewer: 0
+  cove_custom: 0
   ctools: 0
   custom_breadcrumbs: 0
   datetime: 0

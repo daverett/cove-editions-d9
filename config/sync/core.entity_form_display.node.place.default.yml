@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.place.feeds_item
     - field.field.node.place.field_assoc_events
     - field.field.node.place.field_associated_place_anchor_ta
+    - field.field.node.place.field_category
     - field.field.node.place.field_geocode
     - field.field.node.place.field_geocoder
     - field.field.node.place.field_latitude_longitude
@@ -58,6 +59,12 @@ content:
       open: true
       field_widget_display_settings: {  }
       selection_mode: selection_append
+    third_party_settings: {  }
+  field_category:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_geocoder:
     type: leaflet_widget_default

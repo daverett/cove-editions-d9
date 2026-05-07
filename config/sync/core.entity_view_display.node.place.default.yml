@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.place.feeds_item
     - field.field.node.place.field_assoc_events
     - field.field.node.place.field_associated_place_anchor_ta
+    - field.field.node.place.field_category
     - field.field.node.place.field_geocode
     - field.field.node.place.field_geocoder
     - field.field.node.place.field_latitude_longitude
@@ -1197,6 +1198,7 @@ content:
 hidden:
   breadcrumbs: true
   feeds_item: true
+  field_category: true
   field_geocode: true
   field_latitude_longitude: true
   og_group_ref: true

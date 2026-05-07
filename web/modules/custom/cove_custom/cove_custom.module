@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Custom hooks for the Cove project.
+ */
+
+declare(strict_types=1);
+
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\TermInterface;
+use Drupal\views\ResultRow;
+
+/**
+ * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
+ */
+const COVE_CUSTOM_PIN_PALETTE = [
+  'red' => [255, 0, 0],
+  'blue' => [42, 129, 203],
+  'green' => [42, 173, 39],
+  'orange' => [203, 132, 39],
+  'yellow' => [202, 196, 40],
+  'violet' => [156, 43, 203],
+  'grey' => [123, 123, 123],
+  'black' => [61, 61, 61],
+  'gold' => [201, 162, 43],
+];
+
+/**
+ * Implements hook_leaflet_views_feature_alter().
+ */
+function cove_custom_leaflet_views_feature_alter(array &$feature, ResultRow $row, $rowPlugin): void {
+  $node = $row->_entity ?? NULL;
+  if (!$node instanceof NodeInterface
+    || $node->bundle() !== 'place'
+    || !$node->hasField('field_category')
+    || $node->get('field_category')->isEmpty()) {
+    return;
+  }
+
+  $term = $node->get('field_category')->entity;
+  if (!$term instanceof TermInterface
+    || !$term->hasField('field_color')
+    || $term->get('field_color')->isEmpty()) {
+    return;
+  }
+
+  $hex = ltrim((string) $term->get('field_color')->first()->get('color')->getValue(), '#');
+  if (!preg_match('/^[0-9A-Fa-f]{6}$/', $hex)) {
+    return;
+  }
+
+  $palette_color = _cove_custom_closest_palette_color($hex);
+  $base = '/modules/custom/cove_custom/images';
+  $feature['icon']['iconUrl'] = $base . '/marker-icon-' . $palette_color . '.png';
+  $feature['icon']['shadowUrl'] = $base . '/marker-shadow.png';
+  $feature['icon']['iconSize'] = ['x' => '25', 'y' => '41'];
+  $feature['icon']['iconAnchor'] = ['x' => '12', 'y' => '41'];
+  $feature['icon']['shadowSize'] = ['x' => '41', 'y' => '41'];
+  $feature['icon']['shadowAnchor'] = ['x' => '12', 'y' => '41'];
+  $feature['icon']['popupAnchor'] = ['x' => '1', 'y' => '-34'];
+}
+
+/**
+ * Returns the palette key closest (Euclidean RGB distance) to the given hex.
+ */
+function _cove_custom_closest_palette_color(string $hex): string {
+  $r = hexdec(substr($hex, 0, 2));
+  $g = hexdec(substr($hex, 2, 2));
+  $b = hexdec(substr($hex, 4, 2));
+
+  $best = 'blue';
+  $best_distance = PHP_INT_MAX;
+  foreach (COVE_CUSTOM_PIN_PALETTE as $name => [$pr, $pg, $pb]) {
+    $distance = ($r - $pr) ** 2 + ($g - $pg) ** 2 + ($b - $pb) ** 2;
+    if ($distance < $best_distance) {
+      $best_distance = $distance;
+      $best = $name;
+    }
+  }
+  return $best;
+}
