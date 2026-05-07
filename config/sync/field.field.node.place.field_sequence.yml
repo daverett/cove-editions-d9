@@ -1,0 +1,23 @@
+uuid: ac2a98e2-fbd0-4803-af85-fb3e305a200d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sequence
+    - node.type.place
+id: node.place.field_sequence
+field_name: field_sequence
+entity_type: node
+bundle: place
+label: 'Sequence number'
+description: "Optional integer to display the place's order in a chronological sequence on the map (small badge inside the pin)."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

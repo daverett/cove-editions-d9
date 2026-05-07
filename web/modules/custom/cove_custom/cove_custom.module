@@ -13,6 +13,9 @@ use Drupal\views\ResultRow;
 
 /**
  * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
+ *
+ * If you rename a key here, also update the matching `.cove-color-{key}` rule
+ * in cove_editions_subtheme/css/map-pin-sequence.css.
  */
 const COVE_CUSTOM_PIN_PALETTE = [
   'red' => [255, 0, 0],
@@ -59,6 +62,16 @@ function cove_custom_leaflet_views_feature_alter(array &$feature, ResultRow $row
   $feature['icon']['shadowSize'] = ['x' => '41', 'y' => '41'];
   $feature['icon']['shadowAnchor'] = ['x' => '12', 'y' => '41'];
   $feature['icon']['popupAnchor'] = ['x' => '1', 'y' => '-34'];
+
+  // Tag the tooltip className so CSS can match the badge color to the pin.
+  if (!empty($feature['tooltip']['options'])) {
+    $tooltip_options = json_decode($feature['tooltip']['options'], TRUE);
+    if (is_array($tooltip_options)) {
+      $existing = $tooltip_options['className'] ?? '';
+      $tooltip_options['className'] = trim($existing . ' cove-color-' . $palette_color);
+      $feature['tooltip']['options'] = json_encode($tooltip_options);
+    }
+  }
 }
 
 /**

@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.place.field_parent_map
     - field.field.node.place.field_place_search
     - field.field.node.place.field_resource_index
+    - field.field.node.place.field_sequence
     - field.field.node.place.field_vetted_
     - field.field.node.place.group_content_access
     - field.field.node.place.og_audience
@@ -1201,4 +1202,5 @@ hidden:
   field_category: true
   field_geocode: true
   field_latitude_longitude: true
+  field_sequence: true
   og_group_ref: true

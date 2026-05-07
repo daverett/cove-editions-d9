@@ -44,6 +44,10 @@ function cove_editions_subtheme_page_attachments_alter(array &$attachments) {
     if ($node->bundle() === 'chronology') {
       $attachments['#attached']['library'][] = 'cove_editions_subtheme/timeline-marker-colors';
     }
+    // Sequence number badges on map pages.
+    if ($node->bundle() === 'map') {
+      $attachments['#attached']['library'][] = 'cove_editions_subtheme/map-pin-sequence';
+    }
   }
 }
 

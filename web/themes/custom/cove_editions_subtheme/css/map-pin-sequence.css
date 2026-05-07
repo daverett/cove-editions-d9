@@ -1,0 +1,34 @@
+.leaflet-tooltip.cove-pin-sequence {
+  background: #2A81CB;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  opacity: 1 !important;
+}
+
+.leaflet-tooltip.cove-pin-sequence::before {
+  display: none;
+}
+
+.leaflet-tooltip.cove-pin-sequence:empty {
+  display: none;
+}
+
+.leaflet-tooltip.cove-color-red { background: #ff0000; }
+.leaflet-tooltip.cove-color-blue { background: #2A81CB; }
+.leaflet-tooltip.cove-color-green { background: #2AAD27; }
+.leaflet-tooltip.cove-color-orange { background: #CB8427; }
+.leaflet-tooltip.cove-color-yellow { background: #CAC428; color: #000; }
+.leaflet-tooltip.cove-color-violet { background: #9C2BCB; }
+.leaflet-tooltip.cove-color-grey { background: #7B7B7B; }
+.leaflet-tooltip.cove-color-black { background: #3D3D3D; }
+.leaflet-tooltip.cove-color-gold { background: #C9A22B; color: #000; }

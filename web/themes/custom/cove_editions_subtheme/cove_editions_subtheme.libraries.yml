@@ -150,3 +150,9 @@ timeline-marker-colors:
   version: 1.x
   js:
     js/timeline-marker-colors.js: {}
+
+map-pin-sequence:
+  version: 1.x
+  css:
+    theme:
+      css/map-pin-sequence.css: {}
