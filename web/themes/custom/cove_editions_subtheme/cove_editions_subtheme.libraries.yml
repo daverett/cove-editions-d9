@@ -145,3 +145,8 @@ annotation-viewer:
       css/annotation-viewer/linenumbers.css: {}
   dependencies:
     - core/jquery
+
+timeline-marker-colors:
+  version: 1.x
+  js:
+    js/timeline-marker-colors.js: {}

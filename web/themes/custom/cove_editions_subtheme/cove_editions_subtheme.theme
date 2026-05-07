@@ -34,10 +34,16 @@ function cove_editions_subtheme_page_attachments_alter(array &$attachments) {
     $attachments['#attached']['library'][$index] = 'cove_editions_subtheme/react_app_dev';
   }
 
-  // Attach the annotation viewer library on editions_page node pages.
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() === 'editions_page') {
-    $attachments['#attached']['library'][] = 'cove_editions_subtheme/annotation-viewer';
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // Annotation viewer on editions pages.
+    if ($node->bundle() === 'editions_page') {
+      $attachments['#attached']['library'][] = 'cove_editions_subtheme/annotation-viewer';
+    }
+    // Timeline marker colors on chronology pages.
+    if ($node->bundle() === 'chronology') {
+      $attachments['#attached']['library'][] = 'cove_editions_subtheme/timeline-marker-colors';
+    }
   }
 }
 
@@ -145,3 +151,43 @@ function cove_editions_subtheme_preprocess_input(&$variables) {
   $variables['#attached']['library'][] = 'cove_editions_subtheme/drupal-search';
 }
 // phpcs:enable
+
+/**
+ * Implements hook_preprocess_HOOK() for views_view templates.
+ *
+ * Exposes {nid: color} for timeline markers via drupalSettings.
+ */
+function cove_editions_subtheme_preprocess_views_view(array &$variables): void {
+  $view = $variables['view'] ?? NULL;
+  if (!$view || $view->id() !== 'custom_timeline') {
+    return;
+  }
+
+  $colors = [];
+  foreach ($view->result as $row) {
+    $node = $row->_entity ?? NULL;
+    if (!$node instanceof \Drupal\node\NodeInterface
+      || !$node->hasField('field_category')
+      || $node->get('field_category')->isEmpty()) {
+      continue;
+    }
+    $term = $node->get('field_category')->entity;
+    if (!$term instanceof \Drupal\taxonomy\TermInterface
+      || !$term->hasField('field_color')
+      || $term->get('field_color')->isEmpty()) {
+      continue;
+    }
+    $color = $term->get('field_color')->first()->get('color')->getValue();
+    if (!$color) {
+      continue;
+    }
+    if ($color[0] !== '#') {
+      $color = '#' . $color;
+    }
+    $colors[$node->id()] = $color;
+  }
+
+  if ($colors) {
+    $variables['#attached']['drupalSettings']['coveTimelineColors'] = $colors;
+  }
+}
