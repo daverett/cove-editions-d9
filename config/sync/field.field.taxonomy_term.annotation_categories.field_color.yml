@@ -20,4 +20,3 @@ default_value_callback: ''
 settings:
   opacity: 0
 field_type: color_field_type
-
