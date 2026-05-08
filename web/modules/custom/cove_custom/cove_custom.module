@@ -75,6 +75,22 @@ function cove_custom_leaflet_views_feature_alter(array &$feature, ResultRow $row
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_update() for taxonomy_term.
+ *
+ * Refreshes the timeline / map caches so a term color change picks up
+ * immediately.
+ */
+function cove_custom_taxonomy_term_update(TermInterface $term): void {
+  $invalidator = \Drupal::service('cache_tags.invalidator');
+  if ($term->bundle() === 'place_categories') {
+    $invalidator->invalidateTags(['node_list:place', 'node_list:map']);
+  }
+  elseif ($term->bundle() === 'timeline_categories') {
+    $invalidator->invalidateTags(['node_list:chronology_entry', 'node_list:chronology']);
+  }
+}
+
+/**
  * Returns the palette key closest (Euclidean RGB distance) to the given hex.
  */
 function _cove_custom_closest_palette_color(string $hex): string {
