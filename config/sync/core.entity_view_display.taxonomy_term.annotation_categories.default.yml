@@ -1,0 +1,24 @@
+uuid: 21d92bdd-8552-4469-adbd-e8d4400491d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.annotation_categories.field_color
+    - taxonomy.vocabulary.annotation_categories
+  module:
+    - text
+id: taxonomy_term.annotation_categories.default
+targetEntityType: taxonomy_term
+bundle: annotation_categories
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_color: true

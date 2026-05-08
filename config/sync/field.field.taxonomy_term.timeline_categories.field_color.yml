@@ -1,0 +1,22 @@
+uuid: 3849aef7-15c1-4b51-bdae-4af80a058ba7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.timeline_categories
+  module:
+    - color_field
+id: taxonomy_term.timeline_categories.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: timeline_categories
+label: Color
+description: 'Color used for events in the timeline tagged with this category.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

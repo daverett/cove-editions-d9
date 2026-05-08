@@ -1,0 +1,9 @@
+uuid: 5de01954-7311-45af-b0be-cb44c5d10f55
+langcode: en
+status: true
+dependencies: {  }
+name: 'Place Categories'
+vid: place_categories
+description: 'Categories for places (e.g. lived, worked, traveled).'
+weight: 0
+new_revision: false

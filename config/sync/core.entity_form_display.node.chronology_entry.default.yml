@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.associated_places
     - field.field.node.chronology_entry.feeds_item
     - field.field.node.chronology_entry.field_assoc_places
+    - field.field.node.chronology_entry.field_category
     - field.field.node.chronology_entry.field_display_date
     - field.field.node.chronology_entry.field_event2
     - field.field.node.chronology_entry.field_event_date
@@ -69,6 +70,12 @@ content:
       open: true
       field_widget_display_settings: {  }
       selection_mode: selection_append
+    third_party_settings: {  }
+  field_category:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_display_date:
     type: string_textfield

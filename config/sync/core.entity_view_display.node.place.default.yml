@@ -8,12 +8,14 @@ dependencies:
     - field.field.node.place.feeds_item
     - field.field.node.place.field_assoc_events
     - field.field.node.place.field_associated_place_anchor_ta
+    - field.field.node.place.field_category
     - field.field.node.place.field_geocode
     - field.field.node.place.field_geocoder
     - field.field.node.place.field_latitude_longitude
     - field.field.node.place.field_parent_map
     - field.field.node.place.field_place_search
     - field.field.node.place.field_resource_index
+    - field.field.node.place.field_sequence
     - field.field.node.place.field_vetted_
     - field.field.node.place.group_content_access
     - field.field.node.place.og_audience
@@ -1197,6 +1199,8 @@ content:
 hidden:
   breadcrumbs: true
   feeds_item: true
+  field_category: true
   field_geocode: true
   field_latitude_longitude: true
+  field_sequence: true
   og_group_ref: true
