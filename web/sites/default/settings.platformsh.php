@@ -94,3 +94,15 @@ foreach ($platformsh->variables() as $name => $value) {
       break;
   }
 }
+
+if (isset($platformsh->branch)) {
+  // Production type environment.
+  if ($platformsh->branch == 'master') {
+    $config['system.logging']['error_level'] = 'hide';
+    $config['reroute_email.settings']['enable'] = FALSE;
+  } else {
+    $config['system.logging']['error_level'] = 'verbose';
+    $config['reroute_email.settings']['enable'] = TRUE;
+    $config['reroute_email.settings']['address'] = 'testing@monarq.ca';
+  }
+}
