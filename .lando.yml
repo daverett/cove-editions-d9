@@ -1,19 +1,23 @@
 name: cove
-recipe: pantheon
+recipe: drupal10
 config:
+  php: "8.3"
+  drush: ^11
+  composer_version: 2-latest
   webroot: web
-  framework: drupal
-  site: cove
-  id: 43b2eefc-3d81-4b80-82ae-a9ab709592d7
-
-tooling:
-  drush:
-    service: appserver
-    env:
-      DRUSH_OPTIONS_URI: 'http://cove.lndo.site'
-
+  database: mysql:8.0
 
 services:
+  database:
+    type: mysql:8.0
+    creds:
+      user: drupal
+      password: drupal
+      database: drupal
+  appserver:
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: 'https://cove.lndo.site'
   mailhog:
     type: mailhog
     hogfrom:

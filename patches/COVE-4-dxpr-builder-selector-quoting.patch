@@ -1,0 +1,33 @@
+COVE-4 Spinning wheel when building timeline and map
+
+In js/entity_browser.media_selection.js line 38, the CSS attribute selector
+built for parent.document.querySelector interpolates the DXPR instance uuid
+without quotes:
+
+    `input.dxpr-builder-image-input[data-uuid*=${instance}]`
+
+The uuid is a hex string (0-9a-f). When it starts with a digit (~62% of
+cases), the resulting selector like [data-uuid*=8e01...] is invalid per CSS
+spec (an identifier cannot start with a digit). The browser raises a
+DOMException which is not caught, so the rest of the function — including
+the code that closes the media modal (lines 99-100) — never runs. The
+modal stays open with an endlessly spinning wheel.
+
+Fix: quote the interpolated value so any hex string is a valid string
+literal for the attribute selector.
+
+Verified: same buggy line is present in dxpr_builder 2.7.5 (installed),
+2.8.x and 3.0.x on drupal.org. Upstream has never fixed it.
+
+diff --git a/js/entity_browser.media_selection.js b/js/entity_browser.media_selection.js
+--- a/js/entity_browser.media_selection.js
++++ b/js/entity_browser.media_selection.js
+@@ -35,7 +35,7 @@
+   // input, this ensures we don't muck up an EB selection for some FAPI widget
+   const { parent } = window;
+   const input = parent.document.querySelector(
+-    `input.dxpr-builder-image-input[data-uuid*=${instance}]`,
++    `input.dxpr-builder-image-input[data-uuid*="${instance}"]`,
+   );
+
+   if (input) {
