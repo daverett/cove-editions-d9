@@ -9,4 +9,3 @@ toolbar_items:
   - devel.route_info
   - devel.run_cron
   - devel.switch_user
-

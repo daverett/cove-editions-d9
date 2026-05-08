@@ -139,6 +139,7 @@ module:
   prepopulate: 0
   rdf: 0
   realname: 0
+  reroute_email: 0
   rest: 0
   rip: 0
   rules: 0

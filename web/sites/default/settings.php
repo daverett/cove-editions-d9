@@ -900,11 +900,17 @@ $databases['default']['default'] = [
 ];
 
 /**
+ * Do not user reroute on the prod site.
+ */
+$config['reroute_email.settings']['enable'] = FALSE;
+
+/**
  * Lando-specific overrides.
  */
 if (getenv('LANDO') == 'ON') {
   $config['system.logging']['error_level'] = 'verbose';
-
+  // Disable reroute email since lando will capture emails with mailhog.
+  $config['reroute_email.settings']['enable'] = FALSE;
   // Configurations for stage file proxy.
   $config['stage_file_proxy.settings']['origin'] = 'https://editions.covecollective.org';
   // Do not verify SSL.
