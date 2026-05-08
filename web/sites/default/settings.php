@@ -889,9 +889,9 @@ $settings['config_sync_directory'] = '../config/sync';
  * can override them as needed.
  */
 $databases['default']['default'] = [
-  'database' => 'pantheon',
-  'username' => 'pantheon',
-  'password' => 'pantheon',
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
   'prefix' => '',
   'host' => 'database',
   'port' => '3306',
