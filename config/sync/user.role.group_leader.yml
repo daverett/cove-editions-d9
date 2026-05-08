@@ -34,7 +34,6 @@ permissions:
   - 'access contextual links'
   - 'access help pages'
   - 'access user profiles'
-  - 'administer nodes'
   - 'change own username'
   - 'create blog content'
   - 'create body'
@@ -101,3 +100,4 @@ permissions:
   - 'view own field_vetted_'
   - 'view own unpublished content'
   - 'view the administration theme'
+

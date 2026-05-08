@@ -50,8 +50,7 @@ permissions:
   - 'edit own field_places_in_this_map'
   - 'edit own page content'
   - 'edit terms in tags'
-  - 'revert all revisions'
   - 'use text format full_html'
-  - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
+
