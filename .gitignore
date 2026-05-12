@@ -98,3 +98,4 @@
 *.sql.gz
 dump
 dump/*
+settings.local.php
