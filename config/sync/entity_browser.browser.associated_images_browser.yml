@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.gallery_image
     - views.view.duplicate_of_find_associated_events
   module:
+    - entity_browser_entity_form
     - views
 name: associated_images_browser
 label: 'Associated images browser'
@@ -16,16 +18,26 @@ display_configuration:
   auto_open: false
 selection_display: no_display
 selection_display_configuration: {  }
-widget_selector: single
+widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   b2ba36df-63cf-4870-ac86-2d698cb5e74e:
     id: view
     uuid: b2ba36df-63cf-4870-ac86-2d698cb5e74e
-    label: view
-    weight: 2
+    label: 'Select existing image'
+    weight: 1
     settings:
       submit_text: 'Add items'
       auto_select: false
       view: duplicate_of_find_associated_events
       view_display: entity_browser_1
+  9d4e0f1a-2c3b-4d5e-8f6a-1b2c3d4e5f6a:
+    id: entity_form
+    uuid: 9d4e0f1a-2c3b-4d5e-8f6a-1b2c3d4e5f6a
+    label: 'Create new image'
+    weight: 2
+    settings:
+      submit_text: 'Save and add to exhibit'
+      entity_type: node
+      bundle: gallery_image
+      form_mode: default
