@@ -91,7 +91,7 @@
         "drupal/classy": "^1.0",
         "drupal/dxpr_theme": "^6.0",
         "drupal/dxpr_theme_helper": "^1.0",
-        "drupal/dxpr_builder": "^2.6",
+        "drupal/dxpr_builder": "^2.8",
         "drupal/inline_entity_form": "^2.0@RC",
         "jackmoore/colorbox": "^1.6",
         "drupal/feeds_tamper": "^2.0@beta",
