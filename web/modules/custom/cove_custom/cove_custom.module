@@ -21,7 +21,8 @@ use Drupal\views\ViewExecutable;
 /**
  * Implements hook_views_query_alter().
  *
- * COVE-9: pin Timeline and Map nodes above other entries in cove_og_content.
+ * Pin parent content types (Timeline, Map, Gallery Exhibit, Blog) above their
+ * children in cove_og_content.
  */
 function cove_custom_views_query_alter(ViewExecutable $view, QueryPluginBase $query): void {
   if ($view->id() !== 'cove_og_content' || !$query instanceof Sql) {
@@ -29,7 +30,7 @@ function cove_custom_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
   }
 
   // NULL table makes Views compile this as a SQL expression.
-  $query->addField(NULL, "CASE WHEN node_field_data.type IN ('chronology', 'map') THEN 0 ELSE 1 END", 'cove_pin_shared');
+  $query->addField(NULL, "CASE WHEN node_field_data.type IN ('chronology', 'map', 'galler_exhibit', 'blog') THEN 0 ELSE 1 END", 'cove_pin_shared');
   $query->addOrderBy(NULL, NULL, 'ASC', 'cove_pin_shared');
 
   // Prepend so this sort beats the existing 'created' DESC.

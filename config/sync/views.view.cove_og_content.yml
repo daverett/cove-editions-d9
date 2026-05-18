@@ -1028,6 +1028,9 @@ display:
             galler_exhibit: galler_exhibit
             map: map
             chronology: chronology
+            chronology_entry: chronology_entry
+            place: place
+            gallery_image: gallery_image
           group: 1
           exposed: false
           expose:
@@ -1073,6 +1076,9 @@ display:
             chronology: chronology
             galler_exhibit: galler_exhibit
             map: map
+            chronology_entry: chronology_entry
+            place: place
+            gallery_image: gallery_image
           group: 1
           exposed: true
           expose:
