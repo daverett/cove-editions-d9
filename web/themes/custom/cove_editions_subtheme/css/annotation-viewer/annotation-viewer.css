@@ -378,7 +378,7 @@ div#button_densityView.off {
 }
 
 .ap_intro {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   font-style: italic;
   color: #00000080;
   padding: 1rem 1rem 0.5rem 1.5rem;
@@ -456,12 +456,14 @@ div#button_densityView.off {
   content: "\f02d";
 }
 
-.filterOption:hover::before {
+.filterOption::after {
+  font-family: FontAwesome;
   color: green;
   content: "\f055";
+  padding-left: 0.3rem;
 }
 
-.filterOption.active:hover::before {
+.filterOption.active::after {
   color: red;
   content: "\f056";
 }

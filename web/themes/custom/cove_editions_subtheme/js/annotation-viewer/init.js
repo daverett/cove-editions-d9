@@ -54,8 +54,8 @@ jQuery('[title]').mouseover(function () {
 		panelDivs +='<div id="ap_annotation_annotation" style="display:none"></div>';
 		panelDivs +='</div>';
 		panelDivs +='<div class="ap_tabContent" id="ap_tab_filter" tabName="Filters">';
-		panelDivs +='<div class="ap_intro"><span class="fa fa-info-circle" aria-hidden="true"></span> Pick categories or people below to highlight only the matching annotations in the page.</div>';
-		panelDivs +='<div class="ap_filterSet activeSet">';
+		panelDivs +='<div class="ap_intro"><span class="fa fa-info-circle" aria-hidden="true"></span> Add filters for categories or people below to highlight only the matching annotations on the page.</div>';
+		panelDivs +='<div class="ap_filterSet activeSet" style="display:none">';
 		panelDivs +='<div id="button_filterApplied" class="fa fa-toggle-off" aria-hidden="true" onclick="toggleFilter()" title="Active filter toggle"></div>';
 		panelDivs +='<div id="button_filterAppliedStatus" class="off"></div>';
 		panelDivs +='<hr>';

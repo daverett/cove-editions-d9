@@ -185,6 +185,9 @@ Assumes this is in the DOM:
 		// Sync the filter toggle with the active filter list.
 		filterApplied = jQuery("#ap_filter_active").find("div").length > 0;
 
+		// Hide the toggle box entirely when no filter is selected.
+		jQuery(".activeSet").toggle(filterApplied);
+
 		applyFilters();
 		this.sortFilterItems();
 
