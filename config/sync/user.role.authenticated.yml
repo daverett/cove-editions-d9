@@ -35,6 +35,7 @@ dependencies:
     - taxonomy.vocabulary.vocabulary_3
   module:
     - contact
+    - cove_categories
     - entity_browser
     - field_permissions
     - file
@@ -157,6 +158,7 @@ permissions:
   - 'use text format full_html'
   - 'view any unpublished editions_index_page content'
   - 'view body'
+  - 'view cove_category'
   - 'view field_annotator'
   - 'view field_associated_place_anchor_ta'
   - 'view field_authored_at_rc1'

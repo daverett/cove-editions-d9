@@ -1,0 +1,11 @@
+cove_categories.course_categories:
+  path: '/node/{node}/categories'
+  defaults:
+    _controller: '\Drupal\cove_categories\Controller\CoveCategoryCourseController::listCategories'
+    _title: 'Categories'
+  requirements:
+    _custom_access: '\Drupal\cove_categories\Controller\CoveCategoryCourseController::access'
+  options:
+    parameters:
+      node:
+        type: 'entity:node'

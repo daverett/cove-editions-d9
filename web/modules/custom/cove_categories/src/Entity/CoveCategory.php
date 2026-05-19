@@ -124,7 +124,7 @@ class CoveCategory extends ContentEntityBase implements CoveCategoryInterface {
       ->setLabel(t('Course'))
       ->setRequired(TRUE)
       ->setSetting('target_type', 'node')
-      ->setSetting('handler', 'default')
+      ->setSetting('handler', 'cove_category_group')
       ->setSetting('handler_settings', [
         'target_bundles' => ['course' => 'course'],
       ])

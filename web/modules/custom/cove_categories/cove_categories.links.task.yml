@@ -1,0 +1,5 @@
+cove_categories.course_categories:
+  route_name: cove_categories.course_categories
+  base_route: entity.node.canonical
+  title: 'Categories'
+  weight: 20

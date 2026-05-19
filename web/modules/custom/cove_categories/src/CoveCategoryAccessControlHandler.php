@@ -9,12 +9,16 @@ use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+use Drupal\og\Og;
 
 /**
  * Access control handler for the Category entity.
  *
- * @todo Restrict "manage own course" to categories whose course the user
- * actually leads (OG membership check). For now it relies on the permission.
+ * Site admins go through the entity's admin_permission upstream of this
+ * handler. For other users, view is open with the view permission. Update and
+ * delete additionally require OG membership of the category's course, so that
+ * "manage own course cove_category" really means own courses only.
  */
 final class CoveCategoryAccessControlHandler extends EntityAccessControlHandler {
 
@@ -22,25 +26,45 @@ final class CoveCategoryAccessControlHandler extends EntityAccessControlHandler 
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account): AccessResultInterface {
-    if ($account->hasPermission('administer cove_category')) {
+    // Admin bypass. Overriding checkAccess() skips the parent's default
+    // admin_permission shortcut, so we restore it explicitly.
+    $admin_permission = $this->entityType->getAdminPermission();
+    if ($admin_permission && $account->hasPermission($admin_permission)) {
       return AccessResult::allowed()->cachePerPermissions();
     }
 
-    return match ($operation) {
-      'view' => AccessResult::allowedIfHasPermission($account, 'view cove_category'),
-      'update', 'delete' => AccessResult::allowedIfHasPermission($account, 'manage own course cove_category'),
-      default => AccessResult::neutral(),
-    };
+    if ($operation === 'view') {
+      return AccessResult::allowedIfHasPermission($account, 'view cove_category');
+    }
+    if ($operation !== 'update' && $operation !== 'delete') {
+      return AccessResult::neutral();
+    }
+
+    if (!$account->hasPermission('manage own course cove_category')) {
+      return AccessResult::neutral()->cachePerPermissions();
+    }
+
+    /** @var \Drupal\cove_categories\Entity\CoveCategoryInterface $entity */
+    $course = $entity->get('group')->entity;
+    if (!$course instanceof NodeInterface) {
+      return AccessResult::forbidden()->addCacheableDependency($entity);
+    }
+
+    return AccessResult::allowedIf(Og::isMember($course, $account))
+      ->cachePerPermissions()
+      ->cachePerUser()
+      ->addCacheableDependency($entity)
+      ->addCacheableDependency($course);
   }
 
   /**
    * {@inheritdoc}
+   *
+   * The actual per-course scoping happens on the resulting entity (checkAccess)
+   * and through the per-course tab UI, which pre-fills and locks the course at
+   * creation time. The site-wide add form is reserved for admins in practice.
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL): AccessResultInterface {
-    if ($account->hasPermission('administer cove_category')) {
-      return AccessResult::allowed()->cachePerPermissions();
-    }
-
     return AccessResult::allowedIfHasPermission($account, 'manage own course cove_category');
   }
 
