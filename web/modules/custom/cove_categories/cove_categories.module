@@ -35,3 +35,16 @@ const COVE_CATEGORIES_PIN_PALETTE = [
   'maroon' => [101, 22, 19],
   'olive' => [65, 102, 29],
 ];
+
+/**
+ * Allowed values callback for the cove_category color field.
+ *
+ * The color options are the keys of the fixed 20-color palette.
+ */
+function cove_categories_category_color_allowed_values(): array {
+  $options = [];
+  foreach (array_keys(COVE_CATEGORIES_PIN_PALETTE) as $key) {
+    $options[$key] = ucfirst($key);
+  }
+  return $options;
+}
