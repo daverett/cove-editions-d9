@@ -1,0 +1,24 @@
+uuid: c280fba6-05fb-42ae-a2a6-630293b64d49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_origin_group
+    - node.type.course
+    - node.type.map
+id: node.map.field_origin_group
+field_name: field_origin_group
+entity_type: node
+bundle: map
+label: 'Origin course'
+description: 'The course this map belongs to. Its categories are the ones offered to the places inside this map. Changing it affects which categories those places can use.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+field_type: entity_reference

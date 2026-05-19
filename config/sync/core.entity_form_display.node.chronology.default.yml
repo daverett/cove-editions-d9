@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.chronology.body
     - field.field.node.chronology.feeds_item
     - field.field.node.chronology.field_items_in_this_chronology
+    - field.field.node.chronology.field_origin_group
     - field.field.node.chronology.field_resource_index
     - field.field.node.chronology.group_content_access
     - field.field.node.chronology.og_audience
@@ -50,6 +51,16 @@ content:
       open: true
       field_widget_display_settings: {  }
       selection_mode: selection_append
+    third_party_settings: {  }
+  field_origin_group:
+    type: entity_reference_autocomplete
+    weight: 12
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_resource_index:
     type: options_select

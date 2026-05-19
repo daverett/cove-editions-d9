@@ -1,0 +1,24 @@
+uuid: 97073dd0-d80e-43ce-990a-33db194deafc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_origin_group
+    - node.type.chronology
+    - node.type.course
+id: node.chronology.field_origin_group
+field_name: field_origin_group
+entity_type: node
+bundle: chronology
+label: 'Origin course'
+description: 'The course this timeline belongs to. Its categories are the ones offered to the entries inside this timeline. Changing it affects which categories those entries can use.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+field_type: entity_reference
