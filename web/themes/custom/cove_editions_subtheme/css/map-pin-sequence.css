@@ -32,3 +32,14 @@
 .leaflet-tooltip.cove-color-grey { background: #7B7B7B; }
 .leaflet-tooltip.cove-color-black { background: #3D3D3D; }
 .leaflet-tooltip.cove-color-gold { background: #C9A22B; color: #000; }
+.leaflet-tooltip.cove-color-lime { background: #5AD21D; color: #000; }
+.leaflet-tooltip.cove-color-mint { background: #1DD278; color: #000; }
+.leaflet-tooltip.cove-color-cyan { background: #1DC0D2; color: #000; }
+.leaflet-tooltip.cove-color-indigo { background: #431DD2; }
+.leaflet-tooltip.cove-color-magenta { background: #D619A5; }
+.leaflet-tooltip.cove-color-pink { background: #D55D92; }
+.leaflet-tooltip.cove-color-navy { background: #0B4272; }
+.leaflet-tooltip.cove-color-teal { background: #0F8575; }
+.leaflet-tooltip.cove-color-brown { background: #844B3B; }
+.leaflet-tooltip.cove-color-maroon { background: #651613; }
+.leaflet-tooltip.cove-color-olive { background: #41661D; }

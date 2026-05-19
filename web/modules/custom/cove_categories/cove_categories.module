@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Per-course categories for COVE timelines, maps and galleries.
+ */
+
+declare(strict_types=1);
+
+/**
+ * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
+ *
+ * If you rename a key here, also update the matching `.cove-color-{key}` rule
+ * in cove_editions_subtheme/css/map-pin-sequence.css.
+ */
+const COVE_CATEGORIES_PIN_PALETTE = [
+  'red' => [255, 0, 0],
+  'blue' => [42, 129, 203],
+  'green' => [42, 173, 39],
+  'orange' => [203, 132, 39],
+  'yellow' => [202, 196, 40],
+  'violet' => [156, 43, 203],
+  'grey' => [123, 123, 123],
+  'black' => [61, 61, 61],
+  'gold' => [201, 162, 43],
+  'lime' => [90, 210, 29],
+  'mint' => [29, 210, 120],
+  'cyan' => [29, 192, 210],
+  'indigo' => [67, 29, 210],
+  'magenta' => [214, 25, 165],
+  'pink' => [213, 93, 146],
+  'navy' => [11, 66, 114],
+  'teal' => [15, 133, 117],
+  'brown' => [132, 75, 59],
+  'maroon' => [101, 22, 19],
+  'olive' => [65, 102, 29],
+];

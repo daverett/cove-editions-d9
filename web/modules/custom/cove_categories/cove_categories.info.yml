@@ -1,0 +1,8 @@
+name: 'COVE Categories'
+type: module
+description: 'Per-course categories for timelines, maps and galleries.'
+package: COVE
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:node
+  - drupal:options
