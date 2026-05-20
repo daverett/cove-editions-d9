@@ -1,11 +1,10 @@
-uuid: da3a9b0c-fe74-4ffb-a9dc-34c8f287142a
+uuid: e3113dea-9478-4082-9f5d-dd615f4909b3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_category
     - node.type.chronology_entry
-    - taxonomy.vocabulary.timeline_categories
 id: node.chronology_entry.field_category
 field_name: field_category
 entity_type: node
@@ -17,13 +16,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      timeline_categories: timeline_categories
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+  handler: 'default:cove_category'
+  handler_settings: {  }
 field_type: entity_reference

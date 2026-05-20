@@ -1,16 +1,16 @@
-uuid: b9c28f43-258f-494d-ba9c-66b298e145e5
+uuid: a9cf7601-2bca-45e3-b453-ad4800969c69
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_category
-    - node.type.place
-id: node.place.field_category
+    - node.type.gallery_image
+id: node.gallery_image.field_category
 field_name: field_category
 entity_type: node
-bundle: place
+bundle: gallery_image
 label: Category
-description: 'Pick a category to color code this place on the map.'
+description: 'Pick a category to color code this image in the gallery.'
 required: false
 translatable: false
 default_value: {  }

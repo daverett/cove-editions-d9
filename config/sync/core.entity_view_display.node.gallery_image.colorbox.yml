@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.gallery_image.field_artist_unknown
     - field.field.node.gallery_image.field_assoc_events
     - field.field.node.gallery_image.field_assoc_places
+    - field.field.node.gallery_image.field_category
     - field.field.node.gallery_image.field_copyright
     - field.field.node.gallery_image.field_description
     - field.field.node.gallery_image.field_display_date
@@ -90,6 +91,7 @@ hidden:
   field_artist_unknown: true
   field_assoc_events: true
   field_assoc_places: true
+  field_category: true
   field_display_date: true
   field_event_date: true
   field_featured_in_exhibit: true

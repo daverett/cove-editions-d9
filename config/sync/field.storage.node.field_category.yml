@@ -1,16 +1,16 @@
-uuid: 93db3233-2786-4386-a82a-7c094669b113
+uuid: e8c90ef1-c66b-4ec3-a795-da8d57dc2d45
 langcode: en
 status: true
 dependencies:
   module:
+    - cove_categories
     - node
-    - taxonomy
 id: node.field_category
 field_name: field_category
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: cove_category
 module: core
 locked: false
 cardinality: 1
