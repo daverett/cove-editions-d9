@@ -98,6 +98,93 @@ function cove_categories_cove_category_update(CoveCategoryInterface $category): 
 }
 
 /**
+ * Parent bundle => [child bundle, field linking the child to the parent].
+ */
+function _cove_categories_parent_children_map(): array {
+  return [
+    'chronology' => ['chronology_entry', 'field_parent_chronology'],
+    'map' => ['place', 'field_parent_map'],
+    'galler_exhibit' => ['gallery_image', 'field_featured_in_exhibit'],
+  ];
+}
+
+/**
+ * Counts child items categorized under the parent's saved origin course.
+ *
+ * These are the items a change of origin course would leave with an
+ * out-of-scope category. The saved (database) origin is used, so the result is
+ * stable whether called while building or while validating the parent form.
+ */
+function _cove_categories_origin_categorized_children_count(NodeInterface $parent): int {
+  $map = _cove_categories_parent_children_map();
+  if ($parent->isNew() || !isset($map[$parent->bundle()])) {
+    return 0;
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $saved = $storage->loadUnchanged($parent->id());
+  if (!$saved instanceof NodeInterface
+    || !$saved->hasField('field_origin_group')
+    || $saved->get('field_origin_group')->isEmpty()) {
+    return 0;
+  }
+  $origin_course = (int) $saved->get('field_origin_group')->target_id;
+
+  [$child_bundle, $parent_field] = $map[$parent->bundle()];
+  $child_ids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', $child_bundle)
+    ->condition($parent_field, $parent->id())
+    ->exists('field_category')
+    ->execute();
+
+  $count = 0;
+  foreach ($storage->loadMultiple($child_ids) as $child) {
+    $category = $child->get('field_category')->entity;
+    if ($category instanceof CoveCategoryInterface && $category->getGroupId() === $origin_course) {
+      $count++;
+    }
+  }
+  return $count;
+}
+
+/**
+ * Validate handler: confirm an origin course change that strands child items.
+ *
+ * Added to parent node forms by cove_categories_form_node_form_alter(). Blocks the
+ * save until the editor ticks the confirmation checkbox when moving the origin
+ * course away would leave child items with an out-of-scope category.
+ */
+function _cove_categories_origin_change_validate(array &$form, FormStateInterface $form_state): void {
+  $node = $form_state->getFormObject()->getEntity();
+  $map = _cove_categories_parent_children_map();
+  if (!$node instanceof NodeInterface || $node->isNew() || !isset($map[$node->bundle()])) {
+    return;
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $saved = $storage->loadUnchanged($node->id());
+  $old_course = $saved instanceof NodeInterface && !$saved->get('field_origin_group')->isEmpty()
+    ? (int) $saved->get('field_origin_group')->target_id
+    : NULL;
+
+  $value = $form_state->getValue('field_origin_group');
+  $new_course = is_array($value) && isset($value[0]['target_id']) && is_numeric($value[0]['target_id'])
+    ? (int) $value[0]['target_id']
+    : NULL;
+
+  // Nothing to confirm unless the origin moves away from an existing course.
+  if ($old_course === NULL || $old_course === $new_course) {
+    return;
+  }
+
+  if (_cove_categories_origin_categorized_children_count($node) > 0
+    && !$form_state->getValue('cove_origin_change_confirm')) {
+    $form_state->setErrorByName('cove_origin_change_confirm', t('Tick the confirmation checkbox to change the origin course: existing items use a category from the current course and would be left out of scope.'));
+  }
+}
+
+/**
  * Allowed values callback for the cove_category color field.
  *
  * The color options are the keys of the fixed 20-color palette.
@@ -210,8 +297,9 @@ function _cove_categories_grouped_category_options(array $course_ids): array {
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for node forms.
  *
- * On child content (chronology_entry / place / gallery_image), scopes the
- * field_category dropdown to the parent's course(s) with an AJAX refresh.
+ * On child content, scopes the field_category dropdown to the parent's
+ * course(s) with an AJAX refresh. On parent content, guards a change of the
+ * origin course with a confirmation checkbox.
  */
 function cove_categories_form_node_form_alter(array &$form, FormStateInterface $form_state): void {
   $form_object = $form_state->getFormObject();
@@ -223,6 +311,7 @@ function cove_categories_form_node_form_alter(array &$form, FormStateInterface $
     return;
   }
 
+  // Child content: scope the field_category dropdown to the parent course(s).
   $parent_field = _cove_categories_child_parent_field($node->bundle());
   if ($parent_field !== NULL
     && isset($form['field_category']['widget'], $form[$parent_field]['widget'])) {
@@ -240,6 +329,25 @@ function cove_categories_form_node_form_alter(array &$form, FormStateInterface $
       'event' => 'change',
     ];
     $form[$parent_field]['widget']['#limit_validation_errors'] = [[$parent_field]];
+  }
+
+  // Parent content: guard an origin course change that would strand child
+  // items. The checkbox is shown only when items are actually at stake.
+  $parent_map = _cove_categories_parent_children_map();
+  if (isset($parent_map[$node->bundle()]) && !$node->isNew() && isset($form['field_origin_group'])) {
+    $at_stake = _cove_categories_origin_categorized_children_count($node);
+    if ($at_stake > 0) {
+      $form['cove_origin_change_confirm'] = [
+        '#type' => 'checkbox',
+        '#title' => \Drupal::translation()->formatPlural(
+          $at_stake,
+          'Confirm origin course change. 1 item uses a category from this course and would be left out of scope.',
+          'Confirm origin course change. @count items use a category from this course and would be left out of scope.'
+        ),
+        '#weight' => ($form['field_origin_group']['#weight'] ?? 0) + 0.5,
+      ];
+      $form['#validate'][] = '_cove_categories_origin_change_validate';
+    }
   }
 }
 
