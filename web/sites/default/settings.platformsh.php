@@ -36,17 +36,16 @@ if (isset($platformsh->branch)) {
   if ($platformsh->branch == 'master') {
     // Production: hide errors.
     $config['system.logging']['error_level'] = 'hide';
-    // Do not use stage_file_proxy on prod.
-    $config['stage_file_proxy.settings']['origin'] = '';
   }
   else {
     // Non-production environments: verbose errors.
     $config['system.logging']['error_level'] = 'verbose';
-    // Same as on settings.php for lando.
-    $config['stage_file_proxy.settings']['origin'] = 'https://editions.covecollective.org';
-    $config['stage_file_proxy.settings']['verify'] = FALSE;
-    $config['stage_file_proxy.settings']['hotlink'] = TRUE;
   }
+
+  // stage_file_proxy active on all upsun envs.
+  $config['stage_file_proxy.settings']['origin'] = 'https://editions.covecollective.org';
+  $config['stage_file_proxy.settings']['verify'] = FALSE;
+  $config['stage_file_proxy.settings']['hotlink'] = TRUE;
 }
 
 // Runtime-only configuration (paths, hash salt, deployment id).
