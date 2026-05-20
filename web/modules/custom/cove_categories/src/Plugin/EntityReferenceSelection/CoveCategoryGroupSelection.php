@@ -6,7 +6,6 @@ namespace Drupal\cove_categories\Plugin\EntityReferenceSelection;
 
 use Drupal\node\Plugin\EntityReferenceSelection\NodeSelection;
 use Drupal\og\MembershipManagerInterface;
-use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -56,12 +55,8 @@ final class CoveCategoryGroupSelection extends NodeSelection {
    * Returns the node ids of the courses the current user is OG-member of.
    */
   private function userCourseIds(): array {
-    $user = User::load($this->currentUser->id());
-    if ($user === NULL) {
-      return [];
-    }
     $course_ids = [];
-    $groups = $this->membershipManager->getUserGroups($user);
+    $groups = $this->membershipManager->getUserGroups($this->currentUser->id());
     foreach ($groups['node'] ?? [] as $gid => $group) {
       if ($group->bundle() === 'course') {
         $course_ids[] = (int) $gid;
