@@ -45,7 +45,7 @@ if (isset($platformsh->branch)) {
   // stage_file_proxy active on all upsun envs.
   $config['stage_file_proxy.settings']['origin'] = 'https://editions.covecollective.org';
   $config['stage_file_proxy.settings']['verify'] = FALSE;
-  $config['stage_file_proxy.settings']['hotlink'] = TRUE;
+  $config['stage_file_proxy.settings']['hotlink'] = FALSE;
 }
 
 // Runtime-only configuration (paths, hash salt, deployment id).
