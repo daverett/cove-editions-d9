@@ -1,0 +1,92 @@
+From df6cc272e72c650e1f84640d0705c177b42b9137 Mon Sep 17 00:00:00 2001
+From: Adam Thorn <alt36@cam.ac.uk>
+Date: Fri, 20 Feb 2026 12:04:02 +0000
+Subject: [PATCH] replace links for tobia/jquery.pause repo
+
+https://github.com/tobia/Pause seems to have been removed. I've put a
+mirror of the original repo at https://github.com/alt36/jquery.pause
+---
+ README.md                                                   | 6 +++---
+ modules/views_slideshow_cycle/composer.libraries.json       | 2 +-
+ .../src/Commands/ViewsSlideshowCycleCommands.php            | 2 +-
+ .../views_slideshow_cycle.libraries.yml                     | 4 ++--
+ 4 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/README.md b/README.md
+index f2a6d66..a1a3720 100644
+--- a/README.md
++++ b/README.md
+@@ -35,7 +35,7 @@ you create.
+   * [jQuery Cycle 3.x](https://github.com/malsup/cycle)
+   * [JSON2](https://github.com/douglascrockford/JSON-js)
+   * [jQuery HoverIntent](https://github.com/briancherne/jquery-hoverIntent)
+-  * [jQuery Pause](https://github.com/tobia/Pause)
++  * [jQuery Pause](https://github.com/alt36/jquery.pause)
+ 
+ ## INSTALLATION
+ Install as you would normally install a contributed Drupal module. See the
+@@ -57,7 +57,7 @@ install some JavaScript libraries. The required libraries are:
+   `/libraries/jquery.cycle`
+ * [JSON2](https://github.com/douglascrockford/JSON-js) in `/libraries/json2`
+ 
+-* [jQuery Pause](https://github.com/tobia/Pause) in `/libraries/jquery.pause`
++* [jQuery Pause](https://github.com/alt36/jquery.pause) in `/libraries/jquery.pause`
+ 
+ Use the [Composer Merge plugin](https://github.com/wikimedia/composer-merge-plugin)
+ to include the module's composer.libraries.json. See also Composer Merge documentation.
+@@ -87,7 +87,7 @@ dir to download to the right place:
+  mkdir -p libraries/jquery.cycle && cd $_ && wget https://malsup.github.io/jquery.cycle.all.js \
+  && mkdir -p ../../libraries/jquery.hover-intent && cd $_ && wget https://raw.githubusercontent.com/briancherne/jquery-hoverIntent/master/jquery.hoverIntent.js \
+  && mkdir -p ../../libraries/json2 && cd $_ && wget https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js \
+- && mkdir -p ../../libraries/jquery.pause && cd $_ && wget https://raw.githubusercontent.com/tobia/Pause/master/jquery.pause.js
++ && mkdir -p ../../libraries/jquery.pause && cd $_ && wget https://raw.githubusercontent.com/alt36/jquery.pause/master/jquery.pause.js
+ ```
+ 
+ ## CONFIGURATION
+diff --git a/modules/views_slideshow_cycle/composer.libraries.json b/modules/views_slideshow_cycle/composer.libraries.json
+index 9851ea0..118a3d9 100644
+--- a/modules/views_slideshow_cycle/composer.libraries.json
++++ b/modules/views_slideshow_cycle/composer.libraries.json
+@@ -49,7 +49,7 @@
+           "version": "dev-master",
+           "type":"drupal-library",
+           "source": {
+-            "url": "https://github.com/tobia/Pause",
++            "url": "https://github.com/alt36/jquery.pause",
+             "type": "git",
+             "reference": "master"
+           }
+diff --git a/modules/views_slideshow_cycle/src/Commands/ViewsSlideshowCycleCommands.php b/modules/views_slideshow_cycle/src/Commands/ViewsSlideshowCycleCommands.php
+index 444e1ca..6b8acec 100644
+--- a/modules/views_slideshow_cycle/src/Commands/ViewsSlideshowCycleCommands.php
++++ b/modules/views_slideshow_cycle/src/Commands/ViewsSlideshowCycleCommands.php
+@@ -67,7 +67,7 @@ class ViewsSlideshowCycleCommands extends DrushCommands {
+       'jQuery Pause',
+       'libraries/jquery.pause',
+       'jquery.pause.js',
+-      'https://raw.githubusercontent.com/tobia/Pause/master/jquery.pause.js'
++      'https://raw.githubusercontent.com/alt36/jquery.pause/master/jquery.pause.js'
+     );
+   }
+ 
+diff --git a/modules/views_slideshow_cycle/views_slideshow_cycle.libraries.yml b/modules/views_slideshow_cycle/views_slideshow_cycle.libraries.yml
+index b475acb..93f9776 100644
+--- a/modules/views_slideshow_cycle/views_slideshow_cycle.libraries.yml
++++ b/modules/views_slideshow_cycle/views_slideshow_cycle.libraries.yml
+@@ -39,11 +39,11 @@ json2:
+     /libraries/json2/json2.js: {}
+ 
+ jquery_pause:
+-  remote: https://github.com/tobia/Pause
++  remote: https://github.com/alt36/jquery.pause
+   version: 3.0.3
+   license:
+     name: GNU
+-    url: https://raw.githubusercontent.com/tobia/Pause/master/LICENSE.txt
++    url: https://raw.githubusercontent.com/alt36/jquery.pause/master/LICENSE.txt
+     gpl-compatible: true
+   js:
+     /libraries/jquery.pause/jquery.pause.js: {}
+-- 
+GitLab
+

@@ -125,7 +125,10 @@
         "drupal/image_resize_filter": "^1.2",
         "oomphinc/composer-installers-extender": "*",
         "drupal/og": "2.x-dev@dev",
-        "dropzone/dropzone": "^6.0@beta"
+        "dropzone/dropzone": "^6.0@beta",
+        "platformsh/config-reader": "^3.0",
+        "drupal/reroute_email": "^2.2",
+        "drupal/stage_file_proxy": "^3.1"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
@@ -183,6 +186,9 @@
         },
         "drupal/dxpr_builder": {
             "COVE-4: Quote data-uuid selector value in entity_browser.media_selection.js to fix DOMException when uuid starts with a digit (spinning wheel on Add Items)": "patches/COVE-4-dxpr-builder-selector-quoting.patch"
+        },
+        "drupal/views_slideshow": {
+            "Replace dead tobia/jquery.pause repo with alt36 fork (drupal.org #3574500)": "patches/views-slideshow-3574500.patch"
         }
     },
         "enable-patching": true
