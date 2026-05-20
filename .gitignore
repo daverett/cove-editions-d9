@@ -98,7 +98,7 @@
 *.sql.gz
 dump
 dump/*
-<<<<<<< HEAD
 settings.local.php
-=======
->>>>>>> platform/master
+
+# Upsun / Platform.sh local CLI metadata
+/.platform/local/

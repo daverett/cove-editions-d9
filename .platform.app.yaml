@@ -168,6 +168,8 @@ hooks:
     # fast.
     deploy: |
         set -e
+        # Make Composer-installed binaries (drush, etc.) findable.
+        export PATH="/app/vendor/bin:$PATH"
         php ./drush/platformsh_generate_drush_yml.php
         # if drupal is installed, will call the following drush commands:
         #   - `cache-rebuild`
@@ -175,7 +177,6 @@ hooks:
         #   - and if config files are present, `config-import`
         cd web
         bash $PLATFORM_APP_DIR/drush/platformsh_deploy_drupal.sh
-        drush locale:import fr modules/custom/mcgill_base/translations/fr.po --override=none
 
     # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
     # More information: https://docs.platform.sh/create-apps/hooks/hooks-comparison.html#deploy-hook
