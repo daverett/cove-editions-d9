@@ -7,6 +7,10 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
 /**
  * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
  *
@@ -47,4 +51,196 @@ function cove_categories_category_color_allowed_values(): array {
     $options[$key] = ucfirst($key);
   }
   return $options;
+}
+
+/**
+ * Maps a child bundle to the field holding its parent timeline / map / exhibit.
+ */
+function _cove_categories_child_parent_field(string $bundle): ?string {
+  return [
+    'chronology_entry' => 'field_parent_chronology',
+    'place' => 'field_parent_map',
+    'gallery_image' => 'field_featured_in_exhibit',
+  ][$bundle] ?? NULL;
+}
+
+/**
+ * Returns the origin course ids for a child node, via its parent(s).
+ *
+ * A child keeps the categories of the course where its parent was created
+ * (field_origin_group), even when the parent is later added to other courses.
+ */
+function _cove_categories_origin_course_ids(NodeInterface $child): array {
+  $parent_field = _cove_categories_child_parent_field($child->bundle());
+  if ($parent_field === NULL || !$child->hasField($parent_field)) {
+    return [];
+  }
+
+  $parent_ids = [];
+  foreach ($child->get($parent_field)->referencedEntities() as $parent) {
+    $parent_ids[] = (int) $parent->id();
+  }
+
+  return _cove_categories_courses_from_parent_ids($parent_ids);
+}
+
+/**
+ * Resolves a set of parent node ids to their distinct origin course ids.
+ */
+function _cove_categories_courses_from_parent_ids(array $parent_ids): array {
+  if (!$parent_ids) {
+    return [];
+  }
+
+  $parents = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($parent_ids);
+  $course_ids = [];
+  foreach ($parents as $parent) {
+    if ($parent->hasField('field_origin_group') && !$parent->get('field_origin_group')->isEmpty()) {
+      $course_ids[] = (int) $parent->get('field_origin_group')->target_id;
+    }
+  }
+
+  return array_values(array_unique($course_ids));
+}
+
+/**
+ * Builds category options for a set of courses, grouped by course label.
+ *
+ * @return array
+ *   An array keyed by course label, each value an array of
+ *   [category id => category label]. Empty when no course is in scope.
+ */
+function _cove_categories_grouped_category_options(array $course_ids): array {
+  if (!$course_ids) {
+    return [];
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('cove_category');
+  $ids = $storage->getQuery()
+    ->accessCheck(TRUE)
+    ->condition('group', $course_ids, 'IN')
+    ->sort('label')
+    ->execute();
+  if (!$ids) {
+    return [];
+  }
+
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $grouped = [];
+  foreach ($storage->loadMultiple($ids) as $category) {
+    /** @var \Drupal\cove_categories\Entity\CoveCategoryInterface $category */
+    $course_id = $category->getGroupId();
+    if ($course_id === NULL) {
+      continue;
+    }
+    if (!isset($grouped[$course_id])) {
+      $course = $node_storage->load($course_id);
+      $grouped[$course_id] = [
+        'label' => $course !== NULL ? (string) $course->label() : (string) $course_id,
+        'options' => [],
+      ];
+    }
+    $grouped[$course_id]['options'][$category->id()] = (string) $category->label();
+  }
+
+  $result = [];
+  foreach ($grouped as $group) {
+    $result[$group['label']] = $group['options'];
+  }
+  return $result;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node forms.
+ *
+ * On child content (chronology_entry / place / gallery_image), scopes the
+ * field_category dropdown to the parent's course(s) with an AJAX refresh.
+ */
+function cove_categories_form_node_form_alter(array &$form, FormStateInterface $form_state): void {
+  $form_object = $form_state->getFormObject();
+  if (!$form_object instanceof EntityFormInterface) {
+    return;
+  }
+  $node = $form_object->getEntity();
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+
+  $parent_field = _cove_categories_child_parent_field($node->bundle());
+  if ($parent_field !== NULL
+    && isset($form['field_category']['widget'], $form[$parent_field]['widget'])) {
+    // Recompute the category options on every build from the current parent.
+    $wrapper_id = 'cove-category-options-wrapper';
+    $form['field_category']['#prefix'] = '<div id="' . $wrapper_id . '">';
+    $form['field_category']['#suffix'] = '</div>';
+    $form['field_category']['#cove_parent_field'] = $parent_field;
+    $form['field_category']['#after_build'][] = '_cove_categories_category_after_build';
+
+    // Refresh the category dropdown when the parent selection changes.
+    $form[$parent_field]['widget']['#ajax'] = [
+      'callback' => '_cove_categories_category_ajax',
+      'wrapper' => $wrapper_id,
+      'event' => 'change',
+    ];
+    $form[$parent_field]['widget']['#limit_validation_errors'] = [[$parent_field]];
+  }
+}
+
+/**
+ * After-build callback: narrows field_category options to the parent course(s).
+ */
+function _cove_categories_category_after_build(array $element, FormStateInterface $form_state): array {
+  $parent_field = $element['#cove_parent_field'] ?? NULL;
+  if ($parent_field === NULL || !isset($element['widget']['#options'])) {
+    return $element;
+  }
+
+  $course_ids = _cove_categories_course_ids_from_form_state($form_state, $parent_field);
+  $grouped = _cove_categories_grouped_category_options($course_ids);
+
+  // A single course in scope renders as a flat list, no optgroup.
+  if (count($grouped) === 1) {
+    $grouped = reset($grouped);
+  }
+
+  // Preserve the existing empty option for this non-required field.
+  $options = [];
+  if (isset($element['widget']['#options']['_none'])) {
+    $options['_none'] = $element['widget']['#options']['_none'];
+  }
+  $element['widget']['#options'] = $options + $grouped;
+
+  return $element;
+}
+
+/**
+ * AJAX callback: returns the refreshed field_category element.
+ */
+function _cove_categories_category_ajax(array $form, FormStateInterface $form_state): array {
+  return $form['field_category'];
+}
+
+/**
+ * Resolves the course ids in scope from the current form state.
+ *
+ * Uses the parent selected in the form when present (AJAX rebuild), and falls
+ * back to the saved parent of the node being edited on the initial build.
+ */
+function _cove_categories_course_ids_from_form_state(FormStateInterface $form_state, string $parent_field): array {
+  $value = $form_state->getValue($parent_field);
+  $parent_ids = [];
+  if (is_array($value)) {
+    foreach ($value as $item) {
+      if (is_array($item) && isset($item['target_id']) && is_numeric($item['target_id'])) {
+        $parent_ids[] = (int) $item['target_id'];
+      }
+    }
+  }
+
+  if ($parent_ids) {
+    return _cove_categories_courses_from_parent_ids($parent_ids);
+  }
+
+  $node = $form_state->getFormObject()->getEntity();
+  return $node instanceof NodeInterface ? _cove_categories_origin_course_ids($node) : [];
 }

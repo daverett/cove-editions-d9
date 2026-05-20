@@ -16,6 +16,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:cove_category'
+  handler: cove_category_by_course
   handler_settings: {  }
 field_type: entity_reference
