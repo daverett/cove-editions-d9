@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_category
     - field.storage.node.field_display_date
     - field.storage.node.field_event_date
     - field.storage.node.field_galleryimage
@@ -13,6 +14,7 @@ dependencies:
   module:
     - better_exposed_filters
     - colorbox
+    - cove_categories
     - datetime_range
     - node
     - taxonomy
@@ -168,6 +170,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_category:
+          id: field_category
+          table: node__field_category
+          field: field_category
+          plugin_id: field
+          label: ''
+          exclude: false
+          type: cove_category_chip
+          settings: {  }
         field_display_date:
           id: field_display_date
           table: node__field_display_date
@@ -708,6 +719,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_display_date'
         - 'config:field.storage.node.field_event_date'
         - 'config:field.storage.node.field_galleryimage'
@@ -827,6 +839,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_display_date'
         - 'config:field.storage.node.field_event_date'
         - 'config:field.storage.node.field_galleryimage'

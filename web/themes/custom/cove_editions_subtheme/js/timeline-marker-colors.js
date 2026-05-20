@@ -36,13 +36,32 @@
     });
   }
 
-  // Poll until TimelineJS has rendered the markers, then apply (max 10s).
-  var attempts = 0;
-  var interval = setInterval(function () {
-    if (document.querySelectorAll('.tl-timemarker').length > 0 || attempts > 50) {
-      clearInterval(interval);
-      applyColors();
-    }
-    attempts++;
-  }, 200);
+  // TimelineJS builds, and later rebuilds, its markers asynchronously. Observe
+  // the document for DOM changes and re-apply the colors each time, so they
+  // survive the rebuilds instead of being colored once and lost.
+  function start() {
+    applyColors();
+
+    var scheduled = false;
+    var observer = new MutationObserver(function () {
+      if (scheduled) {
+        return;
+      }
+      scheduled = true;
+      window.requestAnimationFrame(function () {
+        scheduled = false;
+        applyColors();
+      });
+    });
+    // Only childList/subtree: the style changes applyColors() makes are
+    // attribute changes and must not feed the observer back into a loop.
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.body) {
+    start();
+  }
+  else {
+    document.addEventListener('DOMContentLoaded', start);
+  }
 })();

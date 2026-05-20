@@ -9,7 +9,9 @@ declare(strict_types=1);
 
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\cove_categories\Entity\CoveCategoryInterface;
 use Drupal\node\NodeInterface;
+use Drupal\views\ResultRow;
 
 /**
  * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
@@ -39,6 +41,61 @@ const COVE_CATEGORIES_PIN_PALETTE = [
   'maroon' => [101, 22, 19],
   'olive' => [65, 102, 29],
 ];
+
+/**
+ * Implements hook_leaflet_views_feature_alter().
+ *
+ * Replaces the default pin with the colored marker matching the place's
+ * category, and tags the tooltip so the badge color matches.
+ */
+function cove_categories_leaflet_views_feature_alter(array &$feature, ResultRow $row, $rowPlugin): void {
+  $node = $row->_entity ?? NULL;
+  if (!$node instanceof NodeInterface
+    || $node->bundle() !== 'place'
+    || !$node->hasField('field_category')
+    || $node->get('field_category')->isEmpty()) {
+    return;
+  }
+
+  $category = $node->get('field_category')->entity;
+  if (!$category instanceof CoveCategoryInterface) {
+    return;
+  }
+  $palette_color = $category->getColor();
+  if ($palette_color === NULL || !isset(COVE_CATEGORIES_PIN_PALETTE[$palette_color])) {
+    return;
+  }
+
+  $base = '/modules/custom/cove_categories/images';
+  $feature['icon']['iconUrl'] = $base . '/marker-icon-' . $palette_color . '.png';
+  $feature['icon']['shadowUrl'] = $base . '/marker-shadow.png';
+  $feature['icon']['iconSize'] = ['x' => '25', 'y' => '41'];
+  $feature['icon']['iconAnchor'] = ['x' => '12', 'y' => '41'];
+  $feature['icon']['shadowSize'] = ['x' => '41', 'y' => '41'];
+  $feature['icon']['shadowAnchor'] = ['x' => '12', 'y' => '41'];
+  $feature['icon']['popupAnchor'] = ['x' => '1', 'y' => '-34'];
+
+  // Tag the tooltip className so CSS can match the badge color to the pin.
+  if (!empty($feature['tooltip']['options'])) {
+    $tooltip_options = json_decode($feature['tooltip']['options'], TRUE);
+    if (is_array($tooltip_options)) {
+      $existing = $tooltip_options['className'] ?? '';
+      $tooltip_options['className'] = trim($existing . ' cove-color-' . $palette_color);
+      $feature['tooltip']['options'] = json_encode($tooltip_options);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for cove_category.
+ *
+ * A category color change must refresh the maps, timelines and galleries that
+ * render it. Those views carry the generic 'node_list' cache tag (not the
+ * bundle-specific one), so that is the tag to invalidate.
+ */
+function cove_categories_cove_category_update(CoveCategoryInterface $category): void {
+  \Drupal::service('cache_tags.invalidator')->invalidateTags(['node_list']);
+}
 
 /**
  * Allowed values callback for the cove_category color field.
