@@ -185,7 +185,6 @@
             "COVE-4: Quote data-uuid selector value in entity_browser.media_selection.js to fix DOMException when uuid starts with a digit (spinning wheel on Add Items)": "patches/COVE-4-dxpr-builder-selector-quoting.patch"
         },
         "drupal/views_slideshow": {
-            "Fix missing tobia/jquery.pause source": "patches/views-slideshow-3574500.patch",
             "Replace dead tobia/jquery.pause repo with alt36 fork (drupal.org #3574500)": "patches/views-slideshow-3574500.patch"
         }
     },
