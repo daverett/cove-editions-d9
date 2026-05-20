@@ -98,4 +98,7 @@
 *.sql.gz
 dump
 dump/*
+<<<<<<< HEAD
 settings.local.php
+=======
+>>>>>>> platform/master
