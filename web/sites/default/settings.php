@@ -883,10 +883,10 @@ $settings['config_sync_directory'] = '../config/sync';
 /**
  * Default database credentials (Lando local environment).
  *
- * These are the defaults used when no environment-specific settings file is
- * loaded. On Upsun/Platform.sh, settings.platformsh.php overrides them using
- * the platformsh/config-reader. On developer machines, settings.local.php
- * can override them as needed.
+ * Defaults used when no environment-specific settings file is
+ * loaded. On prod use git ignored settings.local.php.
+ * On Upsun/Platform.sh, settings.platformsh.php overrides them using
+ * the platformsh/config-reader.
  */
 $databases['default']['default'] = [
   'database' => 'drupal',
@@ -900,7 +900,7 @@ $databases['default']['default'] = [
 ];
 
 /**
- * Do not user reroute on the prod site.
+ * Do not use reroute on the prod site.
  */
 $config['reroute_email.settings']['enable'] = FALSE;
 
@@ -922,7 +922,7 @@ if (getenv('LANDO') == 'ON') {
 /**
  * Load environment-specific overrides.
  *
- * On local developer machines, settings.local.php takes precedence.
+ * Use settings.local.php for production configurations that are git ignored.
  * On Upsun/Platform.sh, settings.platformsh.php is used instead.
  */
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {

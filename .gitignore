@@ -99,3 +99,7 @@
 *.sql
 dump
 dump/*
+settings.local.php
+
+# Upsun / Platform.sh local CLI metadata
+/.platform/local/
