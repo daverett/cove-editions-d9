@@ -7,11 +7,14 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\cove_categories\Entity\CoveCategoryInterface;
 use Drupal\node\NodeInterface;
 use Drupal\views\ResultRow;
+use Drupal\views\ViewExecutable;
 
 /**
  * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
@@ -408,4 +411,45 @@ function _cove_categories_course_ids_from_form_state(FormStateInterface $form_st
 
   $node = $form_state->getFormObject()->getEntity();
   return $node instanceof NodeInterface ? _cove_categories_origin_course_ids($node) : [];
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Adds a "Manage categories" link to the "What can I do in COVE Groups?" block,
+ * gated by the same access check as the Categories local task.
+ */
+function cove_categories_views_pre_render(ViewExecutable $view): void {
+  if ($view->id() !== 'what_can_i_do_in_cove_groups_' || !isset($view->field['nothing'])) {
+    return;
+  }
+  $nid = $view->args[0] ?? NULL;
+  if ($nid === NULL) {
+    return;
+  }
+
+  $url = Url::fromRoute('cove_categories.course_categories', ['node' => $nid]);
+  $access = $url->access(NULL, TRUE);
+
+  // The link is per-user, so the block must vary on the access result.
+  $metadata = CacheableMetadata::createFromRenderArray($view->element);
+  $metadata->addCacheableDependency($access);
+  $metadata->applyTo($view->element);
+
+  if (!$access->isAllowed()) {
+    return;
+  }
+
+  $icon = base_path()
+    . \Drupal::service('extension.list.module')->getPath('cove_categories')
+    . '/icons/manage-categories.svg';
+  $link = '<li class="inline-list"><img src="' . $icon
+    . '" style="width: 30px; margin-right: 7px;" width="30" /><a href="'
+    . $url->toString()
+    . '" style="font-size: 120%; margin-right: 15px;">Manage categories</a></li>';
+
+  $text = &$view->field['nothing']->options['alter']['text'];
+  if (is_string($text) && str_contains($text, '</ul>')) {
+    $text = str_replace('</ul>', $link . '</ul>', $text);
+  }
 }
