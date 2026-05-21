@@ -1,0 +1,112 @@
+uuid: b6ffb941-8b8f-4aa6-bea7-36129b5fdcb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery_image.field_galleryimage
+    - node.type.gallery_image
+  module:
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      519a6df8-4f43-478a-9aec-3ae4cf7e573f:
+        separator: '###SPLIT###'
+        limit: null
+        uuid: 519a6df8-4f43-478a-9aec-3ae4cf7e573f
+        plugin: explode
+        source: gallery_images
+        weight: 0
+        label: Explode
+label: 'Gallery image import NEW'
+id: gallery_image_import_new
+description: 'Imports gallery images and fixes issue with multiple images not importing. '
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: gallery_image
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  source_nid:
+    value: source_nid
+    label: source_nid
+    machine_name: source_nid
+    type: csv
+  gallery_images:
+    value: gallery_images
+    label: gallery_images
+    machine_name: gallery_images
+    type: csv
+  gallery_title:
+    value: gallery_title
+    label: gallery_title
+    machine_name: gallery_title
+    type: csv
+mappings:
+  -
+    target: nid
+    map:
+      value: source_nid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: field_galleryimage
+    map:
+      target_id: gallery_images
+      alt: ''
+      title: ''
+    settings:
+      language: ''
+      reference_by: filename
+      autocreate: 0
+      existing: '2'
+      autocreate_bundle: false
+  -
+    target: title
+    map:
+      value: gallery_title
+    settings:
+      language: null
+    unique:
+      value: 1
