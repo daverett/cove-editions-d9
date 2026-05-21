@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d31a5e0347b82c33243fa2a900b52dca",
+    "content-hash": "30aa5476f24cfb94919eb17720023b10",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -13106,7 +13106,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tobia/Pause",
+                "url": "https://github.com/alt36/jquery.pause",
                 "reference": "master"
             },
             "type": "drupal-library"
