@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8b00467875398665c8673478e6cbaef",
+    "content-hash": "33e749a738c559adbde98ed8b59faa5d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9343,6 +9343,65 @@
                 "source": "https://github.com/oomphinc/composer-installers-extender/tree/2.0.1"
             },
             "time": "2021-12-15T12:32:42+00:00"
+        },
+        {
+            "name": "pantheon-systems/drupal-integrations",
+            "version": "9.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/drupal-integrations.git",
+                "reference": "f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pantheon-systems/drupal-integrations/zipball/f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f",
+                "reference": "f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f",
+                "shasum": ""
+            },
+            "conflict": {
+                "drupal/core": "<9"
+            },
+            "type": "project",
+            "extra": {
+                "drupal-scaffold": {
+                    "file-mapping": {
+                        "[project-root]/.drush-lock-update": "assets/drush-lock-update",
+                        "[web-root]/sites/default/settings.php": {
+                            "mode": "replace",
+                            "path": "assets/initial.settings.php",
+                            "overwrite": false
+                        },
+                        "[web-root]/sites/default/settings.pantheon.php": "assets/settings.pantheon.php",
+                        "[web-root]/sites/default/default.services.pantheon.preproduction.yml": "assets/default.services.pantheon.preproduction.yml"
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Add this project to any Drupal distribution based on drupal/core-composer-scaffold to enable it for use on Pantheon.",
+            "support": {
+                "issues": "https://github.com/pantheon-systems/drupal-integrations/issues",
+                "source": "https://github.com/pantheon-systems/drupal-integrations/tree/9.0.5"
+            },
+            "time": "2023-05-17T17:44:50+00:00"
+        },
+        {
+            "name": "pantheon-upstreams/upstream-configuration",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "upstream-configuration",
+                "reference": "8f0ed84bdee567675c8e41c5ce8c993f71899fa5"
+            },
+            "type": "project",
+            "extra": {
+                "_README": "To make a custom upstream, clone this repository and add any dependencies to be provided by this upstream to this composer.json file. Leave the root-level composer.json file for the exclusive use of each individual site; do not modify it after your custom upstream has been published. See https://pantheon.io/docs/create-custom-upstream for more information."
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "pear/archive_tar",
@@ -19302,7 +19361,8 @@
         "drupal/page_manager": 5,
         "drupal/rdf": 10,
         "drupal/realname": 10,
-        "drupal/views_field_view": 10
+        "drupal/views_field_view": 10,
+        "pantheon-upstreams/upstream-configuration": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
