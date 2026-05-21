@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Plugin\views\query\Sql;
 use Drupal\views\ViewExecutable;
@@ -14,7 +16,8 @@ use Drupal\views\ViewExecutable;
 /**
  * Implements hook_views_query_alter().
  *
- * COVE-9: pin Timeline and Map nodes above other entries in cove_og_content.
+ * Pin parent content types (Timeline, Map, Gallery Exhibit, Blog) above their
+ * children in cove_og_content.
  */
 function cove_custom_views_query_alter(ViewExecutable $view, QueryPluginBase $query): void {
   if ($view->id() !== 'cove_og_content' || !$query instanceof Sql) {
@@ -22,10 +25,59 @@ function cove_custom_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
   }
 
   // NULL table makes Views compile this as a SQL expression.
-  $query->addField(NULL, "CASE WHEN node_field_data.type IN ('chronology', 'map') THEN 0 ELSE 1 END", 'cove_pin_shared');
+  $query->addField(NULL, "CASE WHEN node_field_data.type IN ('chronology', 'map', 'galler_exhibit', 'blog') THEN 0 ELSE 1 END", 'cove_pin_shared');
   $query->addOrderBy(NULL, NULL, 'ASC', 'cove_pin_shared');
 
   // Prepend so this sort beats the existing 'created' DESC.
   $last = array_pop($query->orderby);
   array_unshift($query->orderby, $last);
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ *
+ * Hides field_featured_in_exhibit when creating a gallery_image from an
+ * exhibit context, CER fills it on the exhibit's own save.
+ */
+function cove_custom_inline_entity_form_entity_form_alter(array &$entity_form, FormStateInterface $form_state): void {
+  if (($entity_form['#entity_type'] ?? '') !== 'node'
+    || ($entity_form['#bundle'] ?? '') !== 'gallery_image'
+    || ($entity_form['#op'] ?? '') !== 'add') {
+    return;
+  }
+
+  if (_cove_custom_resolve_exhibit_from_request() === NULL) {
+    return;
+  }
+
+  if (isset($entity_form['field_featured_in_exhibit'])) {
+    $entity_form['field_featured_in_exhibit']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Resolves the parent exhibit nid from routeMatch, then from entity_browser's
+ * `original_path` query param (set on the modal iframe).
+ */
+function _cove_custom_resolve_exhibit_from_request(): ?int {
+  $exhibit = \Drupal::routeMatch()->getParameter('node');
+  if ($exhibit instanceof NodeInterface && $exhibit->bundle() === 'galler_exhibit' && $exhibit->access('view')) {
+    return (int) $exhibit->id();
+  }
+
+  $original_path = \Drupal::request()->query->get('original_path');
+  if (!is_string($original_path) || $original_path === '') {
+    return NULL;
+  }
+
+  if (!preg_match('#^/node/(\d+)(?:/edit)?$#', $original_path, $matches)) {
+    return NULL;
+  }
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load((int) $matches[1]);
+  if (!$node instanceof NodeInterface || $node->bundle() !== 'galler_exhibit' || !$node->access('view')) {
+    return NULL;
+  }
+
+  return (int) $node->id();
 }
