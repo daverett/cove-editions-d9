@@ -1,0 +1,5 @@
+cove_categories.category_add:
+  route_name: entity.cove_category.add_form
+  title: 'Add category'
+  appears_on:
+    - entity.cove_category.collection
