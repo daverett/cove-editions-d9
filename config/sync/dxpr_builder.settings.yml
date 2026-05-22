@@ -8,14 +8,34 @@ json_web_token: eyJhbGciOiJQUzI1NiIsImtpZCI6IjR6RGRXS1pGNGRfbXprcVVMc2tYb3ItcE96
 ai_enabled: true
 ai_page_enabled: true
 ai_image_enabled: true
+ai_user_model_selection: true
+ai_model: dxai_kavya_m1
+ai_provider_selection_mode: automatic
 tone_of_voice_vocabulary: ai_tone_of_voice
 enable_taxonomy_tones: true
 commands_vocabulary: ai_agent_commands
 enable_taxonomy_commands: true
-ai_output_allowed_domains: |-
-  unsplash.com
-  images.unsplash.com
-  pexels.com
-  images.pexels.com
-  pixabay.com
-  promptahuman.com
+ai_output_allowed_domains: "unsplash.com\r\nimages.unsplash.com\r\npexels.com\r\nimages.pexels.com\r\npixabay.com\r\npromptahuman.com"
+ai_output_allowed_tags: "div\r\nsection\r\nspan\r\np\r\nbr\r\nhr\r\nh1\r\nh2\r\nh3\r\nh4\r\nh5\r\nh6\r\nul\r\nol\r\nli\r\ndl\r\ndt\r\ndd\r\ntable\r\nthead\r\ntbody\r\ntfoot\r\ntr\r\nth\r\ntd\r\ncaption\r\ncolgroup\r\ncol\r\nstrong\r\nb\r\nem\r\ni\r\nu\r\ns\r\nstrike\r\ndel\r\nins\r\nmark\r\nsmall\r\nsub\r\nsup\r\nblockquote\r\npre\r\ncode\r\nq\r\ncite\r\nabbr\r\ndfn\r\nkbd\r\nsamp\r\nvar\r\ntime\r\naddress\r\na\r\nimg\r\nfigure\r\nfigcaption\r\npicture\r\nsource\r\nbutton\r\ndetails\r\nsummary\r\nwbr\r\ndata\r\nruby\r\nrt\r\nrp"
+ai_output_stripped_tags: "script\r\nstyle"
+ai_providers:
+  xai:
+    enabled: true
+    weight: 4
+    region: enabled
+  gemini:
+    enabled: true
+    weight: 3
+    region: enabled
+  anthropic:
+    enabled: true
+    weight: 2
+    region: enabled
+  mistral:
+    enabled: true
+    weight: 1
+    region: enabled
+  openai:
+    enabled: true
+    weight: 0
+    region: enabled
