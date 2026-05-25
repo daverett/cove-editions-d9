@@ -1,0 +1,24 @@
+uuid: 23f45d5a-108b-4b36-855c-4ff0b144e9cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_origin_group
+    - node.type.course
+    - node.type.galler_exhibit
+id: node.galler_exhibit.field_origin_group
+field_name: field_origin_group
+entity_type: node
+bundle: galler_exhibit
+label: 'Origin course'
+description: 'The course this exhibit belongs to. Its categories are the ones offered to the gallery images inside this exhibit. Changing it affects which categories those images can use.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+field_type: entity_reference

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.galler_exhibit.field_nines_discipline_s_
     - field.field.node.galler_exhibit.field_nines_genre_s_
     - field.field.node.galler_exhibit.field_nines_type_s_
+    - field.field.node.galler_exhibit.field_origin_group
     - field.field.node.galler_exhibit.field_resource_index
     - field.field.node.galler_exhibit.field_vetted_
     - field.field.node.galler_exhibit.group_content_access
@@ -100,6 +101,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_origin_group:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_resource_index:
     type: options_select
     weight: 6
@@ -114,7 +125,7 @@ content:
     third_party_settings: {  }
   group_content_access:
     type: options_select
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }

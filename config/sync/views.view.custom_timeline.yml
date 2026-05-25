@@ -10,17 +10,14 @@ dependencies:
     - field.storage.node.field_event_date
     - field.storage.node.field_image
     - field.storage.node.field_items_in_this_chronology
-    - field.storage.taxonomy_term.field_color
     - image.style.gallery_zoom
     - node.type.chronology_entry
   module:
-    - color_field
     - datetime
     - datetime_range
     - image
     - node
     - realname
-    - taxonomy
     - text
     - user
     - views_timelinejs
@@ -1703,70 +1700,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_color:
-          id: field_color
-          table: taxonomy_term__field_color
-          field: field_color
-          relationship: field_category
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: color
-          type: color_field_formatter_text
-          settings:
-            format: hex
-            opacity: true
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_category:
           id: field_category
           table: node__field_category
@@ -1845,15 +1778,6 @@ display:
           entity_field: uid
           plugin_id: standard
           required: false
-        field_category:
-          id: field_category
-          table: node__field_category
-          field: field_category
-          relationship: none
-          group_type: group
-          admin_label: 'field_category: Taxonomy term'
-          plugin_id: standard
-          required: false
       display_description: ''
       display_extenders:
         metatag_display_extender:
@@ -1876,7 +1800,6 @@ display:
         - 'config:field.storage.node.field_event_date'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_items_in_this_chronology'
-        - 'config:field.storage.taxonomy_term.field_color'
   block_2:
     id: block_2
     display_title: Table

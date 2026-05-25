@@ -1,0 +1,21 @@
+uuid: a9cf7601-2bca-45e3-b453-ad4800969c69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.gallery_image
+id: node.gallery_image.field_category
+field_name: field_category
+entity_type: node
+bundle: gallery_image
+label: Category
+description: 'Pick a category to color code this image in the gallery.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: cove_category_by_course
+  handler_settings: {  }
+field_type: entity_reference

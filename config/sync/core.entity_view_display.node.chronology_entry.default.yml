@@ -968,14 +968,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_category:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_display_date:
     type: string
     label: above
@@ -1059,4 +1051,5 @@ content:
 hidden:
   breadcrumbs: true
   feeds_item: true
+  field_category: true
   og_group_ref: true

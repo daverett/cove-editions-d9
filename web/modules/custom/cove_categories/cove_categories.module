@@ -1,0 +1,455 @@
+<?php
+
+/**
+ * @file
+ * Per-course categories for COVE timelines, maps and galleries.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\cove_categories\Entity\CoveCategoryInterface;
+use Drupal\node\NodeInterface;
+use Drupal\views\ResultRow;
+use Drupal\views\ViewExecutable;
+
+/**
+ * RGB anchors for the leaflet-color-markers palette PNGs (snapped at runtime).
+ *
+ * If you rename a key here, also update the matching `.cove-color-{key}` rule
+ * in cove_editions_subtheme/css/map-pin-sequence.css.
+ */
+const COVE_CATEGORIES_PIN_PALETTE = [
+  'red' => [255, 0, 0],
+  'blue' => [42, 129, 203],
+  'green' => [42, 173, 39],
+  'orange' => [203, 132, 39],
+  'yellow' => [202, 196, 40],
+  'violet' => [156, 43, 203],
+  'grey' => [123, 123, 123],
+  'black' => [61, 61, 61],
+  'gold' => [201, 162, 43],
+  'lime' => [90, 210, 29],
+  'mint' => [29, 210, 120],
+  'cyan' => [29, 192, 210],
+  'indigo' => [67, 29, 210],
+  'magenta' => [214, 25, 165],
+  'pink' => [213, 93, 146],
+  'navy' => [11, 66, 114],
+  'teal' => [15, 133, 117],
+  'brown' => [132, 75, 59],
+  'maroon' => [101, 22, 19],
+  'olive' => [65, 102, 29],
+];
+
+/**
+ * Implements hook_leaflet_views_feature_alter().
+ *
+ * Replaces the default pin with the colored marker matching the place's
+ * category, and tags the tooltip so the badge color matches.
+ */
+function cove_categories_leaflet_views_feature_alter(array &$feature, ResultRow $row, $rowPlugin): void {
+  $node = $row->_entity ?? NULL;
+  if (!$node instanceof NodeInterface
+    || $node->bundle() !== 'place'
+    || !$node->hasField('field_category')
+    || $node->get('field_category')->isEmpty()) {
+    return;
+  }
+
+  $category = $node->get('field_category')->entity;
+  if (!$category instanceof CoveCategoryInterface) {
+    return;
+  }
+  $palette_color = $category->getColor();
+  if ($palette_color === NULL || !isset(COVE_CATEGORIES_PIN_PALETTE[$palette_color])) {
+    return;
+  }
+
+  $base = '/modules/custom/cove_categories/images';
+  $feature['icon']['iconUrl'] = $base . '/marker-icon-' . $palette_color . '.png';
+  $feature['icon']['shadowUrl'] = $base . '/marker-shadow.png';
+  $feature['icon']['iconSize'] = ['x' => '25', 'y' => '41'];
+  $feature['icon']['iconAnchor'] = ['x' => '12', 'y' => '41'];
+  $feature['icon']['shadowSize'] = ['x' => '41', 'y' => '41'];
+  $feature['icon']['shadowAnchor'] = ['x' => '12', 'y' => '41'];
+  $feature['icon']['popupAnchor'] = ['x' => '1', 'y' => '-34'];
+
+  // Tag the tooltip className so CSS can match the badge color to the pin.
+  if (!empty($feature['tooltip']['options'])) {
+    $tooltip_options = json_decode($feature['tooltip']['options'], TRUE);
+    if (is_array($tooltip_options)) {
+      $existing = $tooltip_options['className'] ?? '';
+      $tooltip_options['className'] = trim($existing . ' cove-color-' . $palette_color);
+      $feature['tooltip']['options'] = json_encode($tooltip_options);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for cove_category.
+ *
+ * A category color change must refresh the maps, timelines and galleries that
+ * render it. Those views carry the generic 'node_list' cache tag (not the
+ * bundle-specific one), so that is the tag to invalidate.
+ */
+function cove_categories_cove_category_update(CoveCategoryInterface $category): void {
+  \Drupal::service('cache_tags.invalidator')->invalidateTags(['node_list']);
+}
+
+/**
+ * Parent bundle => [child bundle, field linking the child to the parent].
+ */
+function _cove_categories_parent_children_map(): array {
+  return [
+    'chronology' => ['chronology_entry', 'field_parent_chronology'],
+    'map' => ['place', 'field_parent_map'],
+    'galler_exhibit' => ['gallery_image', 'field_featured_in_exhibit'],
+  ];
+}
+
+/**
+ * Counts child items categorized under the parent's saved origin course.
+ *
+ * These are the items a change of origin course would leave with an
+ * out-of-scope category. The saved (database) origin is used, so the result is
+ * stable whether called while building or while validating the parent form.
+ */
+function _cove_categories_origin_categorized_children_count(NodeInterface $parent): int {
+  $map = _cove_categories_parent_children_map();
+  if ($parent->isNew() || !isset($map[$parent->bundle()])) {
+    return 0;
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $saved = $storage->loadUnchanged($parent->id());
+  if (!$saved instanceof NodeInterface
+    || !$saved->hasField('field_origin_group')
+    || $saved->get('field_origin_group')->isEmpty()) {
+    return 0;
+  }
+  $origin_course = (int) $saved->get('field_origin_group')->target_id;
+
+  [$child_bundle, $parent_field] = $map[$parent->bundle()];
+  $child_ids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', $child_bundle)
+    ->condition($parent_field, $parent->id())
+    ->exists('field_category')
+    ->execute();
+
+  $count = 0;
+  foreach ($storage->loadMultiple($child_ids) as $child) {
+    $category = $child->get('field_category')->entity;
+    if ($category instanceof CoveCategoryInterface && $category->getGroupId() === $origin_course) {
+      $count++;
+    }
+  }
+  return $count;
+}
+
+/**
+ * Validate handler: confirm an origin course change that strands child items.
+ *
+ * Added to parent node forms by cove_categories_form_node_form_alter(). Blocks the
+ * save until the editor ticks the confirmation checkbox when moving the origin
+ * course away would leave child items with an out-of-scope category.
+ */
+function _cove_categories_origin_change_validate(array &$form, FormStateInterface $form_state): void {
+  $node = $form_state->getFormObject()->getEntity();
+  $map = _cove_categories_parent_children_map();
+  if (!$node instanceof NodeInterface || $node->isNew() || !isset($map[$node->bundle()])) {
+    return;
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $saved = $storage->loadUnchanged($node->id());
+  $old_course = $saved instanceof NodeInterface && !$saved->get('field_origin_group')->isEmpty()
+    ? (int) $saved->get('field_origin_group')->target_id
+    : NULL;
+
+  $value = $form_state->getValue('field_origin_group');
+  $new_course = is_array($value) && isset($value[0]['target_id']) && is_numeric($value[0]['target_id'])
+    ? (int) $value[0]['target_id']
+    : NULL;
+
+  // Nothing to confirm unless the origin moves away from an existing course.
+  if ($old_course === NULL || $old_course === $new_course) {
+    return;
+  }
+
+  if (_cove_categories_origin_categorized_children_count($node) > 0
+    && !$form_state->getValue('cove_origin_change_confirm')) {
+    $form_state->setErrorByName('cove_origin_change_confirm', t('Tick the confirmation checkbox to change the origin course: existing items use a category from the current course and would be left out of scope.'));
+  }
+}
+
+/**
+ * Allowed values callback for the cove_category color field.
+ *
+ * The color options are the keys of the fixed 20-color palette.
+ */
+function cove_categories_category_color_allowed_values(): array {
+  $options = [];
+  foreach (array_keys(COVE_CATEGORIES_PIN_PALETTE) as $key) {
+    $options[$key] = ucfirst($key);
+  }
+  return $options;
+}
+
+/**
+ * Maps a child bundle to the field holding its parent timeline / map / exhibit.
+ */
+function _cove_categories_child_parent_field(string $bundle): ?string {
+  return [
+    'chronology_entry' => 'field_parent_chronology',
+    'place' => 'field_parent_map',
+    'gallery_image' => 'field_featured_in_exhibit',
+  ][$bundle] ?? NULL;
+}
+
+/**
+ * Returns the origin course ids for a child node, via its parent(s).
+ *
+ * A child keeps the categories of the course where its parent was created
+ * (field_origin_group), even when the parent is later added to other courses.
+ */
+function _cove_categories_origin_course_ids(NodeInterface $child): array {
+  $parent_field = _cove_categories_child_parent_field($child->bundle());
+  if ($parent_field === NULL || !$child->hasField($parent_field)) {
+    return [];
+  }
+
+  $parent_ids = [];
+  foreach ($child->get($parent_field)->referencedEntities() as $parent) {
+    $parent_ids[] = (int) $parent->id();
+  }
+
+  return _cove_categories_courses_from_parent_ids($parent_ids);
+}
+
+/**
+ * Resolves a set of parent node ids to their distinct origin course ids.
+ */
+function _cove_categories_courses_from_parent_ids(array $parent_ids): array {
+  if (!$parent_ids) {
+    return [];
+  }
+
+  $parents = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($parent_ids);
+  $course_ids = [];
+  foreach ($parents as $parent) {
+    if ($parent->hasField('field_origin_group') && !$parent->get('field_origin_group')->isEmpty()) {
+      $course_ids[] = (int) $parent->get('field_origin_group')->target_id;
+    }
+  }
+
+  return array_values(array_unique($course_ids));
+}
+
+/**
+ * Builds category options for a set of courses, grouped by course label.
+ *
+ * @return array
+ *   An array keyed by course label, each value an array of
+ *   [category id => category label]. Empty when no course is in scope.
+ */
+function _cove_categories_grouped_category_options(array $course_ids): array {
+  if (!$course_ids) {
+    return [];
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('cove_category');
+  $ids = $storage->getQuery()
+    ->accessCheck(TRUE)
+    ->condition('group', $course_ids, 'IN')
+    ->sort('label')
+    ->execute();
+  if (!$ids) {
+    return [];
+  }
+
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $grouped = [];
+  foreach ($storage->loadMultiple($ids) as $category) {
+    /** @var \Drupal\cove_categories\Entity\CoveCategoryInterface $category */
+    $course_id = $category->getGroupId();
+    if ($course_id === NULL) {
+      continue;
+    }
+    if (!isset($grouped[$course_id])) {
+      $course = $node_storage->load($course_id);
+      $grouped[$course_id] = [
+        'label' => $course !== NULL ? (string) $course->label() : (string) $course_id,
+        'options' => [],
+      ];
+    }
+    $grouped[$course_id]['options'][$category->id()] = (string) $category->label();
+  }
+
+  $result = [];
+  foreach ($grouped as $group) {
+    $result[$group['label']] = $group['options'];
+  }
+  return $result;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node forms.
+ *
+ * On child content, scopes the field_category dropdown to the parent's
+ * course(s) with an AJAX refresh. On parent content, guards a change of the
+ * origin course with a confirmation checkbox.
+ */
+function cove_categories_form_node_form_alter(array &$form, FormStateInterface $form_state): void {
+  $form_object = $form_state->getFormObject();
+  if (!$form_object instanceof EntityFormInterface) {
+    return;
+  }
+  $node = $form_object->getEntity();
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+
+  // Child content: scope the field_category dropdown to the parent course(s).
+  $parent_field = _cove_categories_child_parent_field($node->bundle());
+  if ($parent_field !== NULL
+    && isset($form['field_category']['widget'], $form[$parent_field]['widget'])) {
+    // Recompute the category options on every build from the current parent.
+    $wrapper_id = 'cove-category-options-wrapper';
+    $form['field_category']['#prefix'] = '<div id="' . $wrapper_id . '">';
+    $form['field_category']['#suffix'] = '</div>';
+    $form['field_category']['#cove_parent_field'] = $parent_field;
+    $form['field_category']['#after_build'][] = '_cove_categories_category_after_build';
+
+    // Refresh the category dropdown when the parent selection changes.
+    $form[$parent_field]['widget']['#ajax'] = [
+      'callback' => '_cove_categories_category_ajax',
+      'wrapper' => $wrapper_id,
+      'event' => 'change',
+    ];
+    $form[$parent_field]['widget']['#limit_validation_errors'] = [[$parent_field]];
+  }
+
+  // Parent content: guard an origin course change that would strand child
+  // items. The checkbox is shown only when items are actually at stake.
+  $parent_map = _cove_categories_parent_children_map();
+  if (isset($parent_map[$node->bundle()]) && !$node->isNew() && isset($form['field_origin_group'])) {
+    $at_stake = _cove_categories_origin_categorized_children_count($node);
+    if ($at_stake > 0) {
+      $form['cove_origin_change_confirm'] = [
+        '#type' => 'checkbox',
+        '#title' => \Drupal::translation()->formatPlural(
+          $at_stake,
+          'Confirm origin course change. 1 item uses a category from this course and would be left out of scope.',
+          'Confirm origin course change. @count items use a category from this course and would be left out of scope.'
+        ),
+        '#weight' => ($form['field_origin_group']['#weight'] ?? 0) + 0.5,
+      ];
+      $form['#validate'][] = '_cove_categories_origin_change_validate';
+    }
+  }
+}
+
+/**
+ * After-build callback: narrows field_category options to the parent course(s).
+ */
+function _cove_categories_category_after_build(array $element, FormStateInterface $form_state): array {
+  $parent_field = $element['#cove_parent_field'] ?? NULL;
+  if ($parent_field === NULL || !isset($element['widget']['#options'])) {
+    return $element;
+  }
+
+  $course_ids = _cove_categories_course_ids_from_form_state($form_state, $parent_field);
+  $grouped = _cove_categories_grouped_category_options($course_ids);
+
+  // A single course in scope renders as a flat list, no optgroup.
+  if (count($grouped) === 1) {
+    $grouped = reset($grouped);
+  }
+
+  // Preserve the existing empty option for this non-required field.
+  $options = [];
+  if (isset($element['widget']['#options']['_none'])) {
+    $options['_none'] = $element['widget']['#options']['_none'];
+  }
+  $element['widget']['#options'] = $options + $grouped;
+
+  return $element;
+}
+
+/**
+ * AJAX callback: returns the refreshed field_category element.
+ */
+function _cove_categories_category_ajax(array $form, FormStateInterface $form_state): array {
+  return $form['field_category'];
+}
+
+/**
+ * Resolves the course ids in scope from the current form state.
+ *
+ * Uses the parent selected in the form when present (AJAX rebuild), and falls
+ * back to the saved parent of the node being edited on the initial build.
+ */
+function _cove_categories_course_ids_from_form_state(FormStateInterface $form_state, string $parent_field): array {
+  $value = $form_state->getValue($parent_field);
+  $parent_ids = [];
+  if (is_array($value)) {
+    foreach ($value as $item) {
+      if (is_array($item) && isset($item['target_id']) && is_numeric($item['target_id'])) {
+        $parent_ids[] = (int) $item['target_id'];
+      }
+    }
+  }
+
+  if ($parent_ids) {
+    return _cove_categories_courses_from_parent_ids($parent_ids);
+  }
+
+  $node = $form_state->getFormObject()->getEntity();
+  return $node instanceof NodeInterface ? _cove_categories_origin_course_ids($node) : [];
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Adds a "Manage categories" link to the "What can I do in COVE Groups?" block,
+ * gated by the same access check as the Categories local task.
+ */
+function cove_categories_views_pre_render(ViewExecutable $view): void {
+  if ($view->id() !== 'what_can_i_do_in_cove_groups_' || !isset($view->field['nothing'])) {
+    return;
+  }
+  $nid = $view->args[0] ?? NULL;
+  if ($nid === NULL) {
+    return;
+  }
+
+  $url = Url::fromRoute('cove_categories.course_categories', ['node' => $nid]);
+  $access = $url->access(NULL, TRUE);
+
+  // The link is per-user, so the block must vary on the access result.
+  $metadata = CacheableMetadata::createFromRenderArray($view->element);
+  $metadata->addCacheableDependency($access);
+  $metadata->applyTo($view->element);
+
+  if (!$access->isAllowed()) {
+    return;
+  }
+
+  $icon = base_path()
+    . \Drupal::service('extension.list.module')->getPath('cove_categories')
+    . '/icons/manage-categories.svg';
+  $link = '<li class="inline-list"><img src="' . $icon
+    . '" style="width: 30px; margin-right: 7px;" width="30" /><a href="'
+    . $url->toString()
+    . '" style="font-size: 120%; margin-right: 15px;">Manage categories</a></li>';
+
+  $text = &$view->field['nothing']->options['alter']['text'];
+  if (is_string($text) && str_contains($text, '</ul>')) {
+    $text = str_replace('</ul>', $link . '</ul>', $text);
+  }
+}

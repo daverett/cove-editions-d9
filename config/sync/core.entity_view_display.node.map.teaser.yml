@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.map.body
     - field.field.node.map.feeds_item
+    - field.field.node.map.field_origin_group
     - field.field.node.map.field_places_in_this_map
     - field.field.node.map.field_resource_index
     - field.field.node.map.group_content_access
@@ -36,6 +37,7 @@ content:
 hidden:
   breadcrumbs: true
   feeds_item: true
+  field_origin_group: true
   field_places_in_this_map: true
   field_resource_index: true
   group_content_access: true

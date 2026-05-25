@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.galler_exhibit.field_nines_discipline_s_
     - field.field.node.galler_exhibit.field_nines_genre_s_
     - field.field.node.galler_exhibit.field_nines_type_s_
+    - field.field.node.galler_exhibit.field_origin_group
     - field.field.node.galler_exhibit.field_resource_index
     - field.field.node.galler_exhibit.field_vetted_
     - field.field.node.galler_exhibit.group_content_access
@@ -42,6 +43,7 @@ hidden:
   field_nines_discipline_s_: true
   field_nines_genre_s_: true
   field_nines_type_s_: true
+  field_origin_group: true
   field_resource_index: true
   field_vetted_: true
   group_content_access: true

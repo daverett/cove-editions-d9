@@ -175,20 +175,15 @@ function cove_editions_subtheme_preprocess_views_view(array &$variables): void {
       || $node->get('field_category')->isEmpty()) {
       continue;
     }
-    $term = $node->get('field_category')->entity;
-    if (!$term instanceof \Drupal\taxonomy\TermInterface
-      || !$term->hasField('field_color')
-      || $term->get('field_color')->isEmpty()) {
+    $category = $node->get('field_category')->entity;
+    if (!$category instanceof \Drupal\cove_categories\Entity\CoveCategoryInterface) {
       continue;
     }
-    $color = $term->get('field_color')->first()->get('color')->getValue();
-    if (!$color) {
+    $hex = $category->getColorHex();
+    if ($hex === NULL) {
       continue;
     }
-    if ($color[0] !== '#') {
-      $color = '#' . $color;
-    }
-    $colors[$node->id()] = $color;
+    $colors[$node->id()] = $hex;
   }
 
   if ($colors) {

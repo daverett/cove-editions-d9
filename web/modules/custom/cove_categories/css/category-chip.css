@@ -1,0 +1,31 @@
+.cove-category-chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 11px;
+  font-size: 0.8em;
+  line-height: 1.7;
+  white-space: nowrap;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.cove-category-chip--red { background-color: rgb(255, 0, 0); color: #ffffff; }
+.cove-category-chip--blue { background-color: rgb(42, 129, 203); color: #ffffff; }
+.cove-category-chip--green { background-color: rgb(42, 173, 39); color: #ffffff; }
+.cove-category-chip--orange { background-color: rgb(203, 132, 39); color: #000000; }
+.cove-category-chip--yellow { background-color: rgb(202, 196, 40); color: #000000; }
+.cove-category-chip--violet { background-color: rgb(156, 43, 203); color: #ffffff; }
+.cove-category-chip--grey { background-color: rgb(123, 123, 123); color: #ffffff; }
+.cove-category-chip--black { background-color: rgb(61, 61, 61); color: #ffffff; }
+.cove-category-chip--gold { background-color: rgb(201, 162, 43); color: #000000; }
+.cove-category-chip--lime { background-color: rgb(90, 210, 29); color: #000000; }
+.cove-category-chip--mint { background-color: rgb(29, 210, 120); color: #000000; }
+.cove-category-chip--cyan { background-color: rgb(29, 192, 210); color: #000000; }
+.cove-category-chip--indigo { background-color: rgb(67, 29, 210); color: #ffffff; }
+.cove-category-chip--magenta { background-color: rgb(214, 25, 165); color: #ffffff; }
+.cove-category-chip--pink { background-color: rgb(213, 93, 146); color: #ffffff; }
+.cove-category-chip--navy { background-color: rgb(11, 66, 114); color: #ffffff; }
+.cove-category-chip--teal { background-color: rgb(15, 133, 117); color: #ffffff; }
+.cove-category-chip--brown { background-color: rgb(132, 75, 59); color: #ffffff; }
+.cove-category-chip--maroon { background-color: rgb(101, 22, 19); color: #ffffff; }
+.cove-category-chip--olive { background-color: rgb(65, 102, 29); color: #ffffff; }

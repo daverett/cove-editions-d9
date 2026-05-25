@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_category
     - field.storage.node.field_description
     - field.storage.node.field_galleryimage
     - image.style.gallery_for_exhibits
     - node.type.gallery_image
   module:
     - colorbox
+    - cove_categories
     - node
     - text
     - user
@@ -162,6 +164,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_category:
+          id: field_category
+          table: node__field_category
+          field: field_category
+          relationship: field_images_in_exhibit
+          plugin_id: field
+          label: ''
+          exclude: false
+          type: cove_category_chip
+          settings: {  }
         field_description:
           id: field_description
           table: node__field_description
@@ -402,6 +414,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_galleryimage'
   block_1:
@@ -423,5 +436,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_galleryimage'

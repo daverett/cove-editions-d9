@@ -1,0 +1,11 @@
+administer cove_category:
+  title: 'Administer categories'
+  description: 'Create, edit and delete every category on the site.'
+  restrict access: true
+
+view cove_category:
+  title: 'View categories'
+
+manage own course cove_category:
+  title: 'Manage categories of own course'
+  description: 'Create, edit and delete categories for the courses the user leads.'

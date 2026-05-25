@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.chronology.body
     - field.field.node.chronology.feeds_item
     - field.field.node.chronology.field_items_in_this_chronology
+    - field.field.node.chronology.field_origin_group
     - field.field.node.chronology.field_resource_index
     - field.field.node.chronology.group_content_access
     - field.field.node.chronology.og_audience
@@ -245,4 +246,5 @@ content:
 hidden:
   breadcrumbs: true
   feeds_item: true
+  field_origin_group: true
   og_audience: true

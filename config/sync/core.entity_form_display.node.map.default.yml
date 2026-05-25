@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.associated_places
     - field.field.node.map.body
     - field.field.node.map.feeds_item
+    - field.field.node.map.field_origin_group
     - field.field.node.map.field_places_in_this_map
     - field.field.node.map.field_resource_index
     - field.field.node.map.group_content_access
@@ -33,9 +34,19 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_origin_group:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_places_in_this_map:
     type: entity_browser_entity_reference
@@ -59,7 +70,7 @@ content:
     third_party_settings: {  }
   group_content_access:
     type: options_select
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -71,27 +82,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -106,7 +117,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS

@@ -1,9 +1,0 @@
-uuid: a83bc5bb-f5df-4029-862b-0a61437d498f
-langcode: en
-status: true
-dependencies: {  }
-name: 'Timeline Categories'
-vid: timeline_categories
-description: 'Categories for chronology entries (timeline events).'
-weight: 0
-new_revision: false
