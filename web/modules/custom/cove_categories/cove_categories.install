@@ -7,54 +7,22 @@
 
 declare(strict_types=1);
 
+use Drupal\cove_categories\EventSubscriber\OriginGroupMigrationSubscriber;
 use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_install().
  *
- * Two one-time tasks at module install:
- * - Remove the legacy taxonomy-based field_category so config import can
- *   recreate it as a cove_category reference. Only the taxonomy version is
- *   removed; environments that never had COVE-12 are no-ops here.
- * - Populate field_origin_group on existing timelines, maps and exhibits
- *   from their OG audience field (og_group_ref). field_origin_group is
- *   created by the module's config/install configs, so it exists by the
- *   time this hook runs.
- *
- * This work cannot live in a post-update: a freshly installed module has its
- * post-updates marked as already run, so the migration would never fire on
- * environments where cove_categories arrives new (i.e. everywhere on the
- * first COVE-22 deploy).
+ * Drops the legacy taxonomy-based field_category and signals
+ * OriginGroupMigrationSubscriber that existing parents need field_origin_group
+ * populated.
  */
 function cove_categories_install(): void {
-  // Drop the legacy taxonomy field_category. Environments without COVE-12
-  // simply find no taxonomy version and skip.
   $old = FieldStorageConfig::loadByName('node', 'field_category');
   if ($old instanceof FieldStorageConfig && $old->getSetting('target_type') === 'taxonomy_term') {
     $old->delete();
     field_purge_batch(10000);
   }
 
-  // Populate field_origin_group from og_group_ref on existing parents. Loading
-  // in chunks keeps memory predictable on sites with many parents.
-  $storage = \Drupal::entityTypeManager()->getStorage('node');
-  $ids = $storage->getQuery()
-    ->accessCheck(FALSE)
-    ->condition('type', ['chronology', 'map', 'galler_exhibit'], 'IN')
-    ->exists('og_group_ref')
-    ->execute();
-
-  foreach (array_chunk($ids, 50) as $chunk) {
-    foreach ($storage->loadMultiple($chunk) as $node) {
-      if (!$node->get('field_origin_group')->isEmpty()) {
-        continue;
-      }
-      $course = $node->get('og_group_ref')->target_id;
-      if ($course !== NULL) {
-        $node->set('field_origin_group', $course);
-        $node->save();
-      }
-    }
-    $storage->resetCache($chunk);
-  }
+  \Drupal::state()->set(OriginGroupMigrationSubscriber::STATE_FLAG, TRUE);
 }

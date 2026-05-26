@@ -1,0 +1,13 @@
+services:
+  logger.channel.cove_categories:
+    parent: logger.channel_base
+    arguments: ['cove_categories']
+
+  cove_categories.origin_group_migration_subscriber:
+    class: Drupal\cove_categories\EventSubscriber\OriginGroupMigrationSubscriber
+    arguments:
+      - '@entity_type.manager'
+      - '@state'
+      - '@logger.channel.cove_categories'
+    tags:
+      - { name: event_subscriber }
