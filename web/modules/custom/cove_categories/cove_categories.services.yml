@@ -3,6 +3,11 @@ services:
     parent: logger.channel_base
     arguments: ['cove_categories']
 
+  cove_categories.access:
+    class: Drupal\cove_categories\Access\CoveCategoryAccess
+    arguments:
+      - '@og.access'
+
   cove_categories.origin_group_migration_subscriber:
     class: Drupal\cove_categories\EventSubscriber\OriginGroupMigrationSubscriber
     arguments:

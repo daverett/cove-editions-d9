@@ -9,31 +9,34 @@ use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+use Drupal\cove_categories\Access\CoveCategoryAccess;
 use Drupal\node\NodeInterface;
-use Drupal\og\Og;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Per-course category management page.
  */
 final class CoveCategoryCourseController extends ControllerBase {
 
+  public function __construct(
+    private readonly CoveCategoryAccess $access,
+  ) {}
+
   /**
-   * Access for the categories tab: course bundle + admin or OG-member leader.
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container): self {
+    return new self($container->get('cove_categories.access'));
+  }
+
+  /**
+   * Access for the categories tab: course bundle + course manager.
    */
   public function access(NodeInterface $node, AccountInterface $account): AccessResultInterface {
     if ($node->bundle() !== 'course') {
       return AccessResult::forbidden()->addCacheableDependency($node);
     }
-    if ($account->hasPermission('administer cove_category')) {
-      return AccessResult::allowed()
-        ->cachePerPermissions()
-        ->addCacheableDependency($node);
-    }
-    $allowed = $account->hasPermission('manage own course cove_category')
-      && Og::isMember($node, $account);
-    return AccessResult::allowedIf($allowed)
-      ->cachePerPermissions()
-      ->cachePerUser()
+    return $this->access->managerAccess($node, $account)
       ->addCacheableDependency($node);
   }
 
