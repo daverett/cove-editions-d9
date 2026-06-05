@@ -40,7 +40,6 @@ permissions:
   - 'create body'
   - 'create chronology content'
   - 'create chronology_entry content'
-  - 'create course content'
   - 'create editions_index_page content'
   - 'create editions_page content'
   - 'create field_authored_by_primary_'

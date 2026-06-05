@@ -47,7 +47,6 @@ permissions:
   - 'create chronology content'
   - 'create chronology_entry content'
   - 'create contributor content'
-  - 'create course content'
   - 'create editions_index_page content'
   - 'create editions_page content'
   - 'create field_authored_at_rc1'
