@@ -190,3 +190,13 @@ function cove_editions_subtheme_preprocess_views_view(array &$variables): void {
     $variables['#attached']['drupalSettings']['coveTimelineColors'] = $colors;
   }
 }
+
+/**
+ * Implements hook_preprocess_views_view__VIEWID() for cove_og_content.
+ *
+ * Attaches the script that keeps the page in place when the exposed filters
+ * are applied.
+ */
+function cove_editions_subtheme_preprocess_views_view__cove_og_content(array &$variables) {
+  $variables['#attached']['library'][] = 'cove_editions_subtheme/og-content-filter-scroll';
+}

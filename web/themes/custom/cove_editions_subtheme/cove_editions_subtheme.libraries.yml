@@ -156,3 +156,12 @@ map-pin-sequence:
   css:
     theme:
       css/map-pin-sequence.css: {}
+
+og-content-filter-scroll:
+  version: 1.x
+  js:
+    js/og-content-filter-scroll.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
