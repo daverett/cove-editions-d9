@@ -5,7 +5,3 @@ administer cove_category:
 
 view cove_category:
   title: 'View categories'
-
-manage own course cove_category:
-  title: 'Manage categories of own course'
-  description: 'Create, edit and delete categories for the courses the user leads.'

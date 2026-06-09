@@ -6,13 +6,25 @@ namespace Drupal\cove_categories\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\cove_categories\Access\CoveCategoryAccess;
 use Drupal\node\NodeInterface;
-use Drupal\og\Og;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Add and edit form for the Category entity.
  */
 final class CoveCategoryForm extends ContentEntityForm {
+
+  private CoveCategoryAccess $access;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container): self {
+    $instance = parent::create($container);
+    $instance->access = $container->get('cove_categories.access');
+    return $instance;
+  }
 
   /**
    * {@inheritdoc}
@@ -82,12 +94,7 @@ final class CoveCategoryForm extends ContentEntityForm {
    * Whether the current user can manage categories of the given course.
    */
   private function userCanManageCourse(NodeInterface $course): bool {
-    $account = $this->currentUser();
-    if ($account->hasPermission('administer cove_category')) {
-      return TRUE;
-    }
-    return $account->hasPermission('manage own course cove_category')
-      && Og::isMember($course, $account);
+    return $this->access->isCourseManager($course, $this->currentUser());
   }
 
 }

@@ -88,7 +88,6 @@ permissions:
   - 'edit own map content'
   - 'edit own page content'
   - 'edit own place content'
-  - 'manage own course cove_category'
   - 'use text format full_html'
   - 'view body'
   - 'view field_geocoder'
