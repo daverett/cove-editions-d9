@@ -44,7 +44,7 @@ jQuery('[title]').mouseover(function () {
 		panelDivs +='<div id="ap_detail_panel">';
 		panelDivs +='<div id="ap_detail_panel_content">';
 		panelDivs +='<div class="ap_tab_pinned">';
-		panelDivs +='<div id="ap_button_panelToggle" class="fa fa_button fa-arrow-circle-left"></div>';
+		panelDivs +='<div id="ap_button_panelToggle" class="fa fa_button fa-arrow-circle-left" role="button" tabindex="0" aria-label="Open or close the annotations panel" title="Open/close annotations"></div>';
 		panelDivs +='</div>';
 		panelDivs +='<div id="button_densityView" class="ap_DensityButton" onclick="toggleDensity()" title="Toggle annotation colors"><span class="fa fa-toggle-on ap_DensityButton_toggle" aria-hidden="true"></span><span class="ap_DensityButton_label">Colors: ON</span></div>';
 		panelDivs +='<div class="ap_tabContent" id="ap_tab_annotation" tabName="Annotations">';
@@ -96,9 +96,21 @@ jQuery('[title]').mouseover(function () {
 		// Init panel
 		annotationPanel = new AnnotationPanel();
 
-		// Configure tabs and make visible
-		jQuery("#ap_button_panelToggle").click(function(){
+		// Configure tabs and make visible. Click plus Enter/Space so the toggle
+		// works from the keyboard (it is a role="button" div).
+		jQuery("#ap_button_panelToggle").on("click keydown", function(e){
+			if(e.type === "keydown" && e.key !== "Enter" && e.key !== " "){
+				return;
+			}
+			e.preventDefault();
 			annotationPanel.togglePanel();
+		});
+
+		// Escape closes the panel when it is open.
+		jQuery(document).on("keydown", function(e){
+			if(e.key === "Escape" && !jQuery("#ap_detail_panel").hasClass("ap_detail_panel_minimized")){
+				annotationPanel.panelOpen(false);
+			}
 		});
 
 		// Categories from filterList

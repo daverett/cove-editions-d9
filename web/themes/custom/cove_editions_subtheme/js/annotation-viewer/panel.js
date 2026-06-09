@@ -91,16 +91,12 @@ Assumes this is in the DOM:
 			jQuery("#ap_detail_panel").removeClass("ap_detail_panel_minimized");
 			jQuery(".ap_tab_pinned").removeClass("tab-closed");
 			jQuery(".ap_tab_pinned").addClass("tab-open");
-			jQuery("#ap_button_panelToggle").removeClass("fa-angle-double-left");
-			jQuery("#ap_button_panelToggle").addClass("fa-angle-double-right");
 
 		}else{
 			jQuery(".ap_tab").hide();
 			jQuery("#ap_detail_panel").addClass("ap_detail_panel_minimized");
 			jQuery(".ap_tab_pinned").addClass("tab-closed");
 			jQuery(".ap_tab_pinned").removeClass("tab-open");
-			jQuery("#ap_button_panelToggle").removeClass("fa-angle-double-right");
-			jQuery("#ap_button_panelToggle").addClass("fa-angle-double-left");
 		}
 	}
 

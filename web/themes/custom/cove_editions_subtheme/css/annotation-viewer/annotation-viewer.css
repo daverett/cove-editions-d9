@@ -527,3 +527,40 @@ div#button_densityView.off {
   max-width:2rem;
   overflow:hidden;
 }
+
+/* COVE-28 annotation viewer polish. */
+
+/* Toggle arrow: one icon that flips with the panel state. Closed it points left
+   (open me), open it points right (close me), animated. Hover/focus use opacity
+   rather than scale so they don't fight the rotation transform. */
+#ap_button_panelToggle {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+#ap_detail_panel:not(.ap_detail_panel_minimized) #ap_button_panelToggle {
+  transform: rotate(180deg);
+}
+#ap_button_panelToggle:hover {
+  opacity: 0.65;
+}
+#ap_button_panelToggle:focus-visible {
+  outline: 2px solid #4a90d9;
+  outline-offset: 2px;
+}
+
+/* Slide the toggle tab along with the panel instead of jumping to its open
+   position, so the arrow stays with the panel edge. */
+.ap_tab_pinned {
+  transition: right 0.3s ease;
+}
+
+/* Slide the panel open and closed instead of snapping. */
+#ap_detail_panel {
+  width: 36vw;
+  transition: width 0.3s ease;
+}
+
+/* Fade the highlight in and out when filters change. */
+span[spanid] {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
