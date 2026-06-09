@@ -334,22 +334,113 @@ function cove_categories_form_node_form_alter(array &$form, FormStateInterface $
     $form[$parent_field]['widget']['#limit_validation_errors'] = [[$parent_field]];
   }
 
-  // Parent content: guard an origin course change that would strand child
-  // items. The checkbox is shown only when items are actually at stake.
+  // Parent content: the origin course is set from the group (see
+  // cove_categories_node_prepare_form) and locked for everyone but site admins.
   $parent_map = _cove_categories_parent_children_map();
-  if (isset($parent_map[$node->bundle()]) && !$node->isNew() && isset($form['field_origin_group'])) {
-    $at_stake = _cove_categories_origin_categorized_children_count($node);
-    if ($at_stake > 0) {
-      $form['cove_origin_change_confirm'] = [
-        '#type' => 'checkbox',
-        '#title' => \Drupal::translation()->formatPlural(
-          $at_stake,
-          'Confirm origin course change. 1 item uses a category from this course and would be left out of scope.',
-          'Confirm origin course change. @count items use a category from this course and would be left out of scope.'
-        ),
-        '#weight' => ($form['field_origin_group']['#weight'] ?? 0) + 0.5,
-      ];
-      $form['#validate'][] = '_cove_categories_origin_change_validate';
+  if (isset($parent_map[$node->bundle()]) && isset($form['field_origin_group'])) {
+    $account = \Drupal::currentUser();
+    $is_site_admin = (int) $account->id() === 1 || $account->hasRole('administrator');
+
+    if (!$is_site_admin) {
+      $form['field_origin_group']['#disabled'] = TRUE;
+    }
+
+    // Changing the origin can strand categorized child items; only admins can
+    // change it, so only they get the confirmation.
+    if ($is_site_admin && !$node->isNew()) {
+      $at_stake = _cove_categories_origin_categorized_children_count($node);
+      if ($at_stake > 0) {
+        $form['cove_origin_change_confirm'] = [
+          '#type' => 'checkbox',
+          '#title' => \Drupal::translation()->formatPlural(
+            $at_stake,
+            'Confirm origin course change. 1 item uses a category from this course and would be left out of scope.',
+            'Confirm origin course change. @count items use a category from this course and would be left out of scope.'
+          ),
+          '#weight' => ($form['field_origin_group']['#weight'] ?? 0) + 0.5,
+        ];
+        $form['#validate'][] = '_cove_categories_origin_change_validate';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_prepare_form() for node.
+ *
+ * Defaults a new parent's origin course to the group it is created from, before
+ * the widgets build so the locked field shows it.
+ */
+function cove_categories_node_prepare_form(NodeInterface $node, string $operation, FormStateInterface $form_state): void {
+  if (!$node->isNew()) {
+    return;
+  }
+  $parent_map = _cove_categories_parent_children_map();
+  if (!isset($parent_map[$node->bundle()])
+    || !$node->hasField('field_origin_group')
+    || !$node->get('field_origin_group')->isEmpty()) {
+    return;
+  }
+  $group_id = _cove_categories_prepopulated_group_id();
+  if ($group_id === NULL) {
+    return;
+  }
+  $course = \Drupal::entityTypeManager()->getStorage('node')->load($group_id);
+  if ($course instanceof NodeInterface && $course->bundle() === 'course') {
+    $node->set('field_origin_group', $course->id());
+  }
+}
+
+/**
+ * Ids the prepopulate module sets for a field, read from the request
+ * (?edit[<field>][widget]=…), before the form is submitted.
+ */
+function _cove_categories_prepopulated_field_ids(string $field): array {
+  $edit = \Drupal::request()->query->all()['edit'] ?? NULL;
+  if (!is_array($edit)) {
+    return [];
+  }
+  $value = $edit[$field]['widget'] ?? NULL;
+  if ($value === NULL) {
+    return [];
+  }
+  $ids = [];
+  foreach (is_array($value) ? $value : [$value] as $v) {
+    if (is_numeric($v)) {
+      $ids[] = (int) $v;
+    }
+  }
+  return $ids;
+}
+
+/**
+ * The course id prepopulated into og_group_ref from the request, if any.
+ */
+function _cove_categories_prepopulated_group_id(): ?int {
+  return _cove_categories_prepopulated_field_ids('og_group_ref')[0] ?? NULL;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for node.
+ *
+ * Fallback: set a new parent's origin course to the first course of its group
+ * audience when the form left it empty.
+ */
+function cove_categories_node_presave(NodeInterface $node): void {
+  $parent_map = _cove_categories_parent_children_map();
+  if (!isset($parent_map[$node->bundle()]) || !$node->isNew()) {
+    return;
+  }
+  if (!$node->hasField('field_origin_group') || !$node->get('field_origin_group')->isEmpty()) {
+    return;
+  }
+  if (!$node->hasField('og_group_ref') || $node->get('og_group_ref')->isEmpty()) {
+    return;
+  }
+  foreach ($node->get('og_group_ref')->referencedEntities() as $group) {
+    if ($group instanceof NodeInterface && $group->bundle() === 'course') {
+      $node->set('field_origin_group', $group->id());
+      break;
     }
   }
 }
@@ -409,8 +500,18 @@ function _cove_categories_course_ids_from_form_state(FormStateInterface $form_st
     return _cove_categories_courses_from_parent_ids($parent_ids);
   }
 
+  // Saved parent of the node being edited.
   $node = $form_state->getFormObject()->getEntity();
-  return $node instanceof NodeInterface ? _cove_categories_origin_course_ids($node) : [];
+  if ($node instanceof NodeInterface) {
+    $course_ids = _cove_categories_origin_course_ids($node);
+    if ($course_ids) {
+      return $course_ids;
+    }
+  }
+
+  // Parent prepopulated in the request (creating an item from a timeline).
+  $prepopulated = _cove_categories_prepopulated_field_ids($parent_field);
+  return $prepopulated ? _cove_categories_courses_from_parent_ids($prepopulated) : [];
 }
 
 /**
