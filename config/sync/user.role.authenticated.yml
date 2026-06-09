@@ -75,7 +75,6 @@ permissions:
   - 'create body'
   - 'create chronology content'
   - 'create chronology_entry content'
-  - 'create course content'
   - 'create document media'
   - 'create field_associated_place_anchor_ta'
   - 'create field_firstname'
