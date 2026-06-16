@@ -2629,7 +2629,9 @@ td {
 }
 .sidebar-background {
   background-color: #e8e8e8;
-  height: 100%
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto
 }
 .sidebar-content {
   width: 100%;
