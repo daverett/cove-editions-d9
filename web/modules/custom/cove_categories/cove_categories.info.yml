@@ -7,3 +7,4 @@ dependencies:
   - drupal:node
   - drupal:options
   - og:og
+  - cove_custom
