@@ -47,3 +47,8 @@ input[type="submit"]:focus {
 .region-footer ul li a, .region-footer ul li .parent_link, .region-footer ul li .nav-link {
     font-size: initial;
 }
+
+/* Restore position:absolute on header dropdowns (dropped in the logged-in cascade) so they don't collapse. */
+.dxpr-theme-header .dxpr-theme-main-menu .dropdown-menu {
+    position: absolute;
+}
