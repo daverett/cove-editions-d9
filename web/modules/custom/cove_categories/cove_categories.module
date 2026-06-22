@@ -249,6 +249,16 @@ function _cove_categories_origin_course_ids(NodeInterface $child): array {
     $parent_ids[] = (int) $parent->id();
   }
 
+  // A gallery image created in an exhibit's image browser has no featured-in-
+  // exhibit link yet (it is stored on the exhibit side), so resolve the host
+  // exhibit from the request instead.
+  if (!$parent_ids && $child->bundle() === 'gallery_image') {
+    $exhibit_id = _cove_custom_resolve_exhibit_from_request();
+    if ($exhibit_id !== NULL) {
+      $parent_ids[] = $exhibit_id;
+    }
+  }
+
   return _cove_categories_courses_from_parent_ids($parent_ids);
 }
 
