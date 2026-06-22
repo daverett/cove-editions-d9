@@ -70,15 +70,17 @@ function cove_categories_leaflet_views_feature_alter(array &$feature, ResultRow 
   }
 
   $base = '/modules/custom/cove_categories/images';
-  $feature['icon']['iconUrl'] = $base . '/marker-icon-' . $palette_color . '.png';
-  $feature['icon']['shadowUrl'] = $base . '/marker-shadow.png';
-  $feature['icon']['iconSize'] = ['x' => '25', 'y' => '41'];
-  $feature['icon']['iconAnchor'] = ['x' => '12', 'y' => '41'];
-  $feature['icon']['shadowSize'] = ['x' => '41', 'y' => '41'];
-  $feature['icon']['shadowAnchor'] = ['x' => '12', 'y' => '41'];
-  $feature['icon']['popupAnchor'] = ['x' => '1', 'y' => '-34'];
+  $icon = [
+    'iconUrl' => $base . '/marker-icon-' . $palette_color . '.png',
+    'shadowUrl' => $base . '/marker-shadow.png',
+    'iconSize' => ['x' => '25', 'y' => '41'],
+    'iconAnchor' => ['x' => '12', 'y' => '41'],
+    'shadowSize' => ['x' => '41', 'y' => '41'],
+    'shadowAnchor' => ['x' => '12', 'y' => '41'],
+    'popupAnchor' => ['x' => '1', 'y' => '-34'],
+  ];
 
-  // Tag the tooltip className so CSS can match the badge color to the pin.
+  // Tag the tooltip className so CSS can match the numbered badge color to the pin.
   if (!empty($feature['tooltip']['options'])) {
     $tooltip_options = json_decode($feature['tooltip']['options'], TRUE);
     if (is_array($tooltip_options)) {
@@ -87,6 +89,25 @@ function cove_categories_leaflet_views_feature_alter(array &$feature, ResultRow 
       $feature['tooltip']['options'] = json_encode($tooltip_options);
     }
   }
+
+  // A multi-point place is one "multipoint" feature with its stops in
+  // $feature['component']; leaflet never propagates the root icon/tooltip to them.
+  // So color and number each stop, and drop the unused root-level ones.
+  if (isset($feature['component']) && is_array($feature['component'])) {
+    $tooltip = !empty($feature['tooltip']) ? $feature['tooltip'] : NULL;
+    foreach ($feature['component'] as &$component) {
+      $component['icon'] = $icon;
+      if ($tooltip !== NULL) {
+        $component['tooltip'] = $tooltip;
+      }
+    }
+    unset($component);
+    unset($feature['icon'], $feature['tooltip']);
+    return;
+  }
+
+  // Single-point place: color the pin directly.
+  $feature['icon'] = $icon;
 }
 
 /**
