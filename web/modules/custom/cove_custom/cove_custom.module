@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\FileInterface;
 use Drupal\node\NodeInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Plugin\views\query\Sql;
@@ -52,6 +53,76 @@ function cove_custom_inline_entity_form_entity_form_alter(array &$entity_form, F
 
   if (isset($entity_form['field_featured_in_exhibit'])) {
     $entity_form['field_featured_in_exhibit']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for nodes.
+ */
+function cove_custom_node_insert(NodeInterface $node): void {
+  _cove_custom_build_gallery_derivatives($node);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for nodes.
+ */
+function cove_custom_node_update(NodeInterface $node): void {
+  _cove_custom_build_gallery_derivatives($node);
+}
+
+/**
+ * Builds the derivatives a gallery image is displayed with, on save.
+ *
+ * Drupal builds them lazily on first request, so images could render broken
+ * for a moment right after upload, until the derivative existed (COVE-41).
+ */
+function _cove_custom_build_gallery_derivatives(NodeInterface $node): void {
+  if ($node->bundle() !== 'gallery_image'
+    || !$node->hasField('field_galleryimage')
+    || $node->get('field_galleryimage')->isEmpty()) {
+    return;
+  }
+
+  // The styles gallery images are rendered with: exhibit page and gallery
+  // listing (colorbox), then the image page itself (imagezoom + its thumbs).
+  $style_ids = ['gallery_for_exhibits', 'gallery_home', 'gallery_zoom', 'thumbnail'];
+  $styles = \Drupal::entityTypeManager()->getStorage('image_style')->loadMultiple($style_ids);
+  $logger = \Drupal::logger('cove_custom');
+
+  $missing = array_diff($style_ids, array_keys($styles));
+  if ($missing !== []) {
+    $logger->warning('Unknown image style(s) to pre-build: @ids.', ['@ids' => implode(', ', $missing)]);
+  }
+
+  foreach ($node->get('field_galleryimage')->referencedEntities() as $file) {
+    if (!$file instanceof FileInterface) {
+      continue;
+    }
+    $source = $file->getFileUri();
+    if (!file_exists($source)) {
+      $logger->warning('Source image not found for node @nid: @uri.', ['@nid' => $node->id(), '@uri' => $source]);
+      continue;
+    }
+
+    foreach ($styles as $style) {
+      $destination = $style->buildUri($source);
+      if (file_exists($destination)) {
+        continue;
+      }
+      try {
+        if (!$style->createDerivative($source, $destination)) {
+          $logger->warning('Could not build the @style derivative of @uri.', ['@style' => $style->id(), '@uri' => $source]);
+        }
+      }
+      catch (\Throwable $e) {
+        // Image processing must never break saving content.
+        $logger->error('Building the @style derivative of @uri failed: @message', [
+          '@style' => $style->id(),
+          '@uri' => $source,
+          '@message' => $e->getMessage(),
+        ]);
+      }
+    }
   }
 }
 
