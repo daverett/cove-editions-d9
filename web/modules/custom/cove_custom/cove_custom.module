@@ -57,70 +57,105 @@ function cove_custom_inline_entity_form_entity_form_alter(array &$entity_form, F
 }
 
 /**
+ * Image fields per bundle, mapped to the styles they display with.
+ *
+ * Drupal builds derivatives lazily on first request, so images can render
+ * broken right after upload. We pre-build them on save. Add an entry
+ * when a new content type starts displaying images.
+ */
+const COVE_CUSTOM_PREBUILD_STYLES = [
+  'gallery_image' => [
+    'field_galleryimage' => ['gallery_for_exhibits', 'gallery_home', 'gallery_zoom', 'thumbnail'],
+  ],
+  'chronology_entry' => [
+    'field_image' => ['gallery_zoom'],
+  ],
+  'article' => [
+    'field_image' => ['large', 'medium'],
+  ],
+  'contributor' => [
+    'field_profile_picture' => ['medium', 'thumbnail'],
+  ],
+  'galler_exhibit' => [
+    'field_exhibit_icon' => ['thumbnail'],
+  ],
+  'editions_index_page' => [
+    'field_index_banner' => ['cke_media_resize_large', 'front_thumbnail', 'index_banner', 'wide'],
+    'field_icon' => ['40px_icon'],
+  ],
+];
+
+/**
  * Implements hook_ENTITY_TYPE_insert() for nodes.
  */
 function cove_custom_node_insert(NodeInterface $node): void {
-  _cove_custom_build_gallery_derivatives($node);
+  _cove_custom_prebuild_image_derivatives($node);
 }
 
 /**
  * Implements hook_ENTITY_TYPE_update() for nodes.
  */
 function cove_custom_node_update(NodeInterface $node): void {
-  _cove_custom_build_gallery_derivatives($node);
+  _cove_custom_prebuild_image_derivatives($node);
 }
 
 /**
- * Builds the derivatives a gallery image is displayed with, on save.
+ * Pre-builds the derivatives a node's images are displayed with, on save.
  *
- * Drupal builds them lazily on first request, so images could render broken
- * for a moment right after upload, until the derivative existed (COVE-41).
+ * @see COVE_CUSTOM_PREBUILD_STYLES
  */
-function _cove_custom_build_gallery_derivatives(NodeInterface $node): void {
-  if ($node->bundle() !== 'gallery_image'
-    || !$node->hasField('field_galleryimage')
-    || $node->get('field_galleryimage')->isEmpty()) {
+function _cove_custom_prebuild_image_derivatives(NodeInterface $node): void {
+  $field_map = COVE_CUSTOM_PREBUILD_STYLES[$node->bundle()] ?? NULL;
+  if ($field_map === NULL) {
     return;
   }
 
-  // The styles gallery images are rendered with: exhibit page and gallery
-  // listing (colorbox), then the image page itself (imagezoom + its thumbs).
-  $style_ids = ['gallery_for_exhibits', 'gallery_home', 'gallery_zoom', 'thumbnail'];
-  $styles = \Drupal::entityTypeManager()->getStorage('image_style')->loadMultiple($style_ids);
   $logger = \Drupal::logger('cove_custom');
+  $style_storage = \Drupal::entityTypeManager()->getStorage('image_style');
 
-  $missing = array_diff($style_ids, array_keys($styles));
-  if ($missing !== []) {
-    $logger->warning('Unknown image style(s) to pre-build: @ids.', ['@ids' => implode(', ', $missing)]);
-  }
-
-  foreach ($node->get('field_galleryimage')->referencedEntities() as $file) {
-    if (!$file instanceof FileInterface) {
+  foreach ($field_map as $field_name => $style_ids) {
+    if (!$node->hasField($field_name)) {
       continue;
     }
-    $source = $file->getFileUri();
-    if (!file_exists($source)) {
-      $logger->warning('Source image not found for node @nid: @uri.', ['@nid' => $node->id(), '@uri' => $source]);
+    $field = $node->get($field_name);
+    if ($field->getFieldDefinition()->getType() !== 'image' || $field->isEmpty()) {
       continue;
     }
 
-    foreach ($styles as $style) {
-      $destination = $style->buildUri($source);
-      if (file_exists($destination)) {
+    $styles = $style_storage->loadMultiple($style_ids);
+    $missing = array_diff($style_ids, array_keys($styles));
+    if ($missing !== []) {
+      $logger->warning('Unknown image style(s) to pre-build: @ids.', ['@ids' => implode(', ', $missing)]);
+    }
+
+    foreach ($field->referencedEntities() as $file) {
+      if (!$file instanceof FileInterface) {
         continue;
       }
-      try {
-        if (!$style->createDerivative($source, $destination)) {
-          $logger->warning('Could not build the @style derivative of @uri.', ['@style' => $style->id(), '@uri' => $source]);
-        }
+      $source = $file->getFileUri();
+      if (!file_exists($source)) {
+        $logger->warning('Source image not found for node @nid: @uri.', ['@nid' => $node->id(), '@uri' => $source]);
+        continue;
       }
-      catch (\Throwable $e) {
-        // Image processing must never break saving content.
-        $logger->error('Building the @style derivative of @uri failed: @message', [
-          '@style' => $style->id(),
-          '@uri' => $source,
-          '@message' => $e->getMessage(),
-        ]);
+
+      foreach ($styles as $style) {
+        $destination = $style->buildUri($source);
+        if (file_exists($destination)) {
+          continue;
+        }
+        try {
+          if (!$style->createDerivative($source, $destination)) {
+            $logger->warning('Could not build the @style derivative of @uri.', ['@style' => $style->id(), '@uri' => $source]);
+          }
+        }
+        catch (\Throwable $e) {
+          // Image processing must never break saving content.
+          $logger->error('Building the @style derivative of @uri failed: @message', [
+            '@style' => $style->id(),
+            '@uri' => $source,
+            '@message' => $e->getMessage(),
+          ]);
+        }
       }
     }
   }
