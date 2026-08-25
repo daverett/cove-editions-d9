@@ -69,7 +69,7 @@
         "drupal/ctools": "^4.1",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/captcha": "^1.9",
-        "drupal/colorbox": "^2.0",
+        "drupal/colorbox": "^2.2",
         "drupal/draggableviews": "^2.1",
         "drupal/prepopulate": "^2.4",
         "drupal/field_group": "^3.4",
