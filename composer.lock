@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3cbc82c638c830c3f3b68e604f58e6e0",
+    "content-hash": "4bb8439055e79091e6a68c6d342dcc28",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4689,21 +4689,21 @@
         },
         {
             "name": "drupal/inline_entity_form",
-            "version": "2.0.0-rc10",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/inline_entity_form.git",
-                "reference": "2.0.0-rc10"
+                "reference": "3.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-2.0.0-rc10.zip",
-                "reference": "2.0.0-rc10",
-                "shasum": "f984e26786c5c5187246e8ee9f54d43f44b0ca53"
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-3.0.0.zip",
+                "reference": "3.0.0",
+                "shasum": "43417cf232df36d6a621151dffa569b77dfd9725"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10",
-                "drupal/rat": "^1.0.0@rc",
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11",
+                "drupal/rat": "^1.0.0@stable",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -4712,11 +4712,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc10",
-                    "datestamp": "1698919897",
+                    "version": "3.0.0",
+                    "datestamp": "1780695753",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -19343,7 +19343,6 @@
         "drupal/feeds": 10,
         "drupal/feeds_tamper": 10,
         "drupal/imagezoom": 10,
-        "drupal/inline_entity_form": 5,
         "drupal/og": 20,
         "drupal/openid_connect": 15,
         "drupal/optional_end_date": 10,
