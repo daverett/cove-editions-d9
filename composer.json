@@ -72,7 +72,7 @@
         "drupal/colorbox": "^2.2",
         "drupal/draggableviews": "^2.1",
         "drupal/prepopulate": "^2.4",
-        "drupal/field_group": "^3.4",
+        "drupal/field_group": "^4.0",
         "drupal/field_permissions": "^1.2",
         "drupal/libraries": "^4.0",
         "drupal/menu_block": "^1.10",
