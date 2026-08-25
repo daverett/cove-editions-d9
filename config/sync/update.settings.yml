@@ -9,5 +9,5 @@ fetch:
   timeout: 30
 notification:
   emails:
-    - dave_rett@yahoo.com
-  threshold: all
+    - support@monarq.ca
+  threshold: security
