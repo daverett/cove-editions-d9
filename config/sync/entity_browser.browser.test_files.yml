@@ -19,28 +19,29 @@ display_configuration:
   height: '500'
   link_text: 'Select entities'
   auto_open: false
+  use_admin_theme: true
 selection_display: no_display
 selection_display_configuration: {  }
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   a4ad947c-9669-497c-9988-24351955a02f:
+    id: view
+    uuid: a4ad947c-9669-497c-9988-24351955a02f
+    label: 'Files listing'
+    weight: 1
     settings:
       submit_text: 'Select entities'
       auto_select: false
       view: files_entity_browser
       view_display: entity_browser_1
-    uuid: a4ad947c-9669-497c-9988-24351955a02f
-    weight: 1
-    label: 'Files listing'
-    id: view
   735d146c-a4b2-4327-a057-d109e0905e05:
+    id: upload
+    uuid: 735d146c-a4b2-4327-a057-d109e0905e05
+    label: 'Upload files'
+    weight: 0
     settings:
       submit_text: 'Select files'
       upload_location: 'public://'
       multiple: true
       extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
-    uuid: 735d146c-a4b2-4327-a057-d109e0905e05
-    weight: 0
-    label: 'Upload files'
-    id: upload

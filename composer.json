@@ -98,7 +98,7 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/features": "^3.12",
-        "drupal/entity_browser": "^2.9",
+        "drupal/entity_browser": "^2.16",
         "drupal/views_migration": "^1.2",
         "drupal/imce": "^3.0",
         "drupal/feeds": "^3.0@beta",
