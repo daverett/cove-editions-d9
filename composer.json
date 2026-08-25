@@ -66,7 +66,7 @@
         "drupal/custom_breadcrumbs": "^1.1",
         "drupal/charts": "^5.1",
         "drupal/views_timelinejs": "^4.1",
-        "drupal/ctools": "^3.13",
+        "drupal/ctools": "^4.1",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/captcha": "^1.9",
         "drupal/colorbox": "^2.0",
