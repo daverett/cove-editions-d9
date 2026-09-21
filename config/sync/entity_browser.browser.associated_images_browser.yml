@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.gallery_image
     - views.view.duplicate_of_find_associated_events
   module:
     - entity_browser_entity_form
@@ -16,6 +15,7 @@ display_configuration:
   height: '800'
   link_text: 'Add items'
   auto_open: false
+  use_admin_theme: true
 selection_display: no_display
 selection_display_configuration: {  }
 widget_selector: tabs
