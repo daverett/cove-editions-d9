@@ -17,28 +17,29 @@ display_configuration:
   height: ''
   link_text: 'Select media'
   auto_open: true
+  use_admin_theme: true
 selection_display: no_display
 selection_display_configuration: {  }
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   fc729026-c85f-4561-acd5-38d4082b69fb:
+    id: view
+    uuid: fc729026-c85f-4561-acd5-38d4082b69fb
+    label: 'Media Library'
+    weight: -10
     settings:
       submit_text: 'Select image'
       auto_select: false
       view: dxpr_builder_media
       view_display: media_browser_all
-    uuid: fc729026-c85f-4561-acd5-38d4082b69fb
-    weight: -10
-    label: 'Media Library'
-    id: view
   9769d4e4-1f9c-4313-8b01-fe8cff8aa5a1:
+    id: entity_form
+    uuid: 9769d4e4-1f9c-4313-8b01-fe8cff8aa5a1
+    label: 'Upload new image'
+    weight: -9
     settings:
       submit_text: 'Save image'
       entity_type: media
       bundle: image
       form_mode: media_library
-    uuid: 9769d4e4-1f9c-4313-8b01-fe8cff8aa5a1
-    weight: -9
-    label: 'Upload new image'
-    id: entity_form

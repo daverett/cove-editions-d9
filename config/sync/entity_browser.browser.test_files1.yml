@@ -15,18 +15,19 @@ display_configuration:
   height: '500'
   link_text: 'Select entities'
   auto_open: false
+  use_admin_theme: true
 selection_display: no_display
 selection_display_configuration: {  }
 widget_selector: single
 widget_selector_configuration: {  }
 widgets:
   735d146c-a4b2-4327-a057-d109e0905e05:
+    id: upload
+    uuid: 735d146c-a4b2-4327-a057-d109e0905e05
+    label: 'Upload files'
+    weight: 0
     settings:
       submit_text: 'Select files'
       upload_location: 'public://'
       multiple: true
       extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
-    uuid: 735d146c-a4b2-4327-a057-d109e0905e05
-    weight: 0
-    label: 'Upload files'
-    id: upload
