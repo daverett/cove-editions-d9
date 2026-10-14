@@ -12,7 +12,7 @@ layers:
     label: OpenStreetMap
     module: leaflet
     layer_id: OpenStreetMap
-    map_bundle: 'OSM Mapnik'
+    map_bundle: openstreetmap
     on_by_default: true
   google_hybrid_layer:
     enabled: true
