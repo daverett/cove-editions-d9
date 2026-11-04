@@ -431,8 +431,8 @@ display:
       pager:
         type: full
         options:
-          id: 1
           pagination_heading_level: h4
+          id: 1
       exposed_form:
         type: bef
         options:

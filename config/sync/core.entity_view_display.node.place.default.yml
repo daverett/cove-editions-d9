@@ -1116,7 +1116,7 @@ content:
         control: false
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
         include_path: false
-        excluded: ''
+        excluded: false
       fullscreen:
         control: false
         options: '{"position":"topleft","pseudoFullscreen":false}'

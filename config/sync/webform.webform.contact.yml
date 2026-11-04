@@ -40,7 +40,6 @@ elements: |-
     '#test': 'Please ignore this email.'
   captcha:
     '#type': captcha
-    '#captcha_type': captcha/Math
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

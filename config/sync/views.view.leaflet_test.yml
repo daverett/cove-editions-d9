@@ -75,6 +75,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -89,7 +90,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -165,8 +165,8 @@ display:
             options: '{"permanent":false,"direction":"center"}'
           leaflet_popup:
             value: ''
-            options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
             view_mode: full
+            options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
           leaflet_map: openstreetmap
           height: '400'
           height_unit: px
@@ -215,16 +215,19 @@ display:
             circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
           leaflet_markercluster:
             control: false
-            include_path: false
-            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
             excluded: '0'
+            options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+            include_path: false
           fullscreen:
             control: false
             options: '{"position":"topleft","pseudoFullscreen":false}'
           path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+          feature_properties:
+            values: ''
           geocoder:
             control: true
             settings:
+              popup: false
               position: topright
               input_size: 20
               providers:
@@ -234,10 +237,7 @@ display:
               min_terms: 4
               delay: 800
               zoom: 16
-              popup: false
               options: ''
-          feature_properties:
-            values: ''
       row:
         type: fields
       query:
