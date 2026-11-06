@@ -332,7 +332,7 @@ display:
           click_sort_column: value
           type: boolean
           settings:
-            format: list_default
+            format: default
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -525,8 +525,8 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 50
           pagination_heading_level: h4
+          items_per_page: 50
       exposed_form:
         type: bef
         options:

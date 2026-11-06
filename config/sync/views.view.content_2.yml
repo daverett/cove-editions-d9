@@ -97,7 +97,6 @@ display:
           buttons: false
           action_title: Action
           clear_on_exposed: true
-          force_selection_info: false
           selected_actions:
             -
               action_id: views_bulk_operations_delete_entity
@@ -111,6 +110,7 @@ display:
                 add_confirmation: false
                 confirm_help_text: ''
                 message_override: ''
+          force_selection_info: false
           ui_name: ''
           vbo_settings:
             display_type: '0'
@@ -511,7 +511,7 @@ display:
           click_sort_column: value
           type: boolean
           settings:
-            format: list_default
+            format: default
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -640,7 +640,7 @@ display:
           click_sort_column: value
           type: boolean
           settings:
-            format: list_default
+            format: default
           group_column: value
           group_columns: {  }
           group_rows: true
