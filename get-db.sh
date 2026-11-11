@@ -13,7 +13,7 @@ out="dump/database.sql.gz"
 tmp="$out.part"
 trap 'rm -f "$tmp"' EXIT
 
-ssh "$SSH_TARGET" "cd $(printf %q "$REMOTE_ROOT") && vendor/bin/drush sql:dump --gzip --extra-dump=--no-tablespaces" > "$tmp"
+ssh "$SSH_TARGET" "cd $(printf %q "$REMOTE_ROOT") && vendor/bin/drush sql:dump --gzip --structure-tables-key=common --extra-dump=--no-tablespaces" > "$tmp"
 gzip -t "$tmp"
 mv "$tmp" "$out"
 echo "Saved $out ($(du -h "$out" | cut -f1))"
